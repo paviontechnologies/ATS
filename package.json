@@ -14,10 +14,18 @@
     "test": "node server/test/runTests.js",
     "ai": "cd ai-service && python3 -m uvicorn app.main:app --reload --port 8000"
   },
-  "keywords": ["ats", "recruitment", "ai-matching", "hr-tech", "multi-tenant", "kanban"],
+  "keywords": [
+    "ats",
+    "recruitment",
+    "ai-matching",
+    "hr-tech",
+    "multi-tenant",
+    "kanban"
+  ],
   "author": "Enterprise ATS Team",
   "license": "MIT",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.126.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

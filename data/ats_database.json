@@ -22,12 +22,12 @@
     {
       "_id": "doc_b9fa6d4f1a344f56",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-09-09T20:52:38.103Z",
+      "updatedAt": "2026-09-16T19:55:52.616Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Sarah",
       "lastName": "Connor",
       "email": "admin@techcorp.com",
-      "passwordHash": "$2a$10$fpSNFPpyaZ6HMyGZLzU0weh86rqjhECy2nAD6uCgkFaepT3cxjI6e",
+      "passwordHash": "$2a$10$pv7s4/Zsjb5r3dOL7TyWNeeF1Um4ok4Wpr3f/4Cng1jxBjKsvuTjm",
       "role": "COMPANY_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -36,12 +36,12 @@
     {
       "_id": "doc_a9289f33c4f52c25",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-09-09T20:52:38.187Z",
+      "updatedAt": "2026-09-16T19:55:52.701Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Alex",
       "lastName": "Morgan",
       "email": "recruiter@techcorp.com",
-      "passwordHash": "$2a$10$XG7ruWQKasDiFXOMjvJWAeceHIlgtyHl0reyyd71rPKjVG.h3XrWS",
+      "passwordHash": "$2a$10$tCSZNiJlldmUIn2Y6MswgufTzVlSRe9GT5Dc//wDSOWLX2BMWdUe2",
       "role": "RECRUITER",
       "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -50,12 +50,12 @@
     {
       "_id": "doc_493030e468962233",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-09-09T20:52:38.274Z",
+      "updatedAt": "2026-09-16T19:55:52.788Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "David",
       "lastName": "Chen",
       "email": "manager@techcorp.com",
-      "passwordHash": "$2a$10$YsddJXMURnLdpdaXTOIDKulkc7uR7P5SwcshHFjSbiaSd6yr9fATK",
+      "passwordHash": "$2a$10$fwf32k.xS2agSHQIPG9rvem473vi8vN.mGrQDCK9sy7h3.kGpYrzq",
       "role": "HIRING_MANAGER",
       "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -64,12 +64,12 @@
     {
       "_id": "doc_f498dda4a79ee504",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-09-09T20:52:38.359Z",
+      "updatedAt": "2026-09-16T19:55:52.873Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Elena",
       "lastName": "Rostova",
       "email": "interviewer@techcorp.com",
-      "passwordHash": "$2a$10$cl5fumqNYb3o64QrbvV0b.U8QvVLfFYpakwK.u8wCKWjTgEtewLQu",
+      "passwordHash": "$2a$10$yxH1mkTJrbmwUD/IhQuUHe8xaMhyawrp4/ZgNxZ1dZHmDf1Ie/pK.",
       "role": "INTERVIEWER",
       "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -78,12 +78,12 @@
     {
       "_id": "doc_967ecfc04dba1a83",
       "createdAt": "2026-09-04T16:29:48.945Z",
-      "updatedAt": "2026-09-09T20:52:37.899Z",
+      "updatedAt": "2026-09-16T19:55:52.530Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Marcus",
       "lastName": "Vance",
       "email": "superadmin@enterprise-ats.io",
-      "passwordHash": "$2a$10$Y7z7FTkWdByoa4K3XnuD/OEddcP2a9bk3sqhslNSLM4gkYCYl4f8S",
+      "passwordHash": "$2a$10$OSJN.Aw2qqHzfdEXq6MwM.iNfeo3a36iez6i9//GwYJFGJbuR01Ri",
       "plainPasswordForDemo": "SuperAdmin@2026",
       "role": "SUPER_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
@@ -92,12 +92,12 @@
     {
       "_id": "doc_7d5d39e5a28156a8",
       "createdAt": "2026-09-04T16:29:49.377Z",
-      "updatedAt": "2026-09-09T20:52:38.443Z",
+      "updatedAt": "2026-09-16T19:55:52.957Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jessica",
       "lastName": "Reed",
       "email": "agency@apexrecruiting.com",
-      "passwordHash": "$2a$10$tbuxfBRRoCBJXLnXBECC5uI4X7BLcysJbarqlG0BSLLb0dm5xOGJW",
+      "passwordHash": "$2a$10$jMXRxNKFlUrYyKHIUAwk8.MekXkmluWawl7otqWTXPSZ0tmY4lpNy",
       "plainPasswordForDemo": "Agency@2026",
       "role": "AGENCY_PARTNER",
       "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
@@ -106,12 +106,12 @@
     {
       "_id": "doc_f567a421a517e5e8",
       "createdAt": "2026-09-04T16:29:49.463Z",
-      "updatedAt": "2026-09-09T20:52:38.532Z",
+      "updatedAt": "2026-09-16T19:55:53.043Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jordan",
       "lastName": "Miller",
       "email": "candidate@example.com",
-      "passwordHash": "$2a$10$RJdGHxyDDJLN6JumpBak/uHTOSKKGLTrNofze4NnR5GnBAJIbBxxa",
+      "passwordHash": "$2a$10$qVYXDAkqCNvtdF3Z3eBJ8Of8i13X/DIsaIaWimK38pnIbd/jkLf3q",
       "plainPasswordForDemo": "Candidate@2026",
       "role": "CANDIDATE",
       "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
@@ -871,7 +871,7 @@
     {
       "_id": "doc_72423cd33a5dd21f",
       "createdAt": "2026-09-04T01:14:50.371Z",
-      "updatedAt": "2026-09-08T20:04:26.550Z",
+      "updatedAt": "2026-09-16T19:55:33.664Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_job_staff_ai",
       "candidateId": "doc_08f6825f7b58afff",
@@ -1017,13 +1017,28 @@
           "fromStage": "Shortlisted",
           "toStage": "Shortlisted",
           "changedAt": "2026-09-08T20:04:26.550Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-09-16T19:41:41.185Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-09-16T19:52:43.990Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-09-16T19:55:33.664Z"
         }
       ],
       "$push": {
         "stageHistory": {
           "fromStage": "Shortlisted",
           "toStage": "Shortlisted",
-          "changedAt": "2026-09-08T20:04:26.550Z"
+          "changedAt": "2026-09-16T19:55:33.664Z"
         }
       }
     },
@@ -1234,7 +1249,7 @@
     {
       "_id": "doc_c918633ad98a1aaf",
       "createdAt": "2026-09-04T01:18:54.571Z",
-      "updatedAt": "2026-09-08T17:08:52.886Z",
+      "updatedAt": "2026-09-16T19:46:07.895Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_0f198cbfd83a55cc",
       "candidateId": "doc_5cb92a700e026e3b",
@@ -1275,13 +1290,26 @@
           "fromStage": "Offer",
           "toStage": "Hired",
           "changedAt": "2026-09-08T17:08:52.886Z"
+        },
+        {
+          "fromStage": "Hired",
+          "toStage": "Interview",
+          "changedById": "usr_recruiter_01",
+          "changedAt": "2026-09-16T19:45:50.917Z"
+        },
+        {
+          "fromStage": "Interview",
+          "toStage": "Hired",
+          "changedById": "usr_recruiter_01",
+          "changedAt": "2026-09-16T19:46:07.894Z"
         }
       ],
       "$push": {
         "stageHistory": {
-          "fromStage": "Offer",
+          "fromStage": "Interview",
           "toStage": "Hired",
-          "changedAt": "2026-09-08T17:08:52.886Z"
+          "changedById": "usr_recruiter_01",
+          "changedAt": "2026-09-16T19:46:07.894Z"
         }
       }
     },
@@ -1503,6 +1531,32 @@
       "status": "COMPLETED",
       "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_536c72ad490efe17_1788865218541.mp4",
       "completedAt": "2026-09-08T11:00:18.543Z"
+    },
+    {
+      "_id": "doc_642906b5cefe367e",
+      "createdAt": "2026-09-16T19:55:00.325Z",
+      "updatedAt": "2026-09-16T19:55:00.325Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_42d065f3573a92bf",
+      "candidateName": "Emily Zhao",
+      "roundName": "Round 2: Full-Stack Systems & API Design",
+      "interviewerName": "Elena Rostova (Principal AI Architect)",
+      "scheduledAt": "2026-09-18T19:55:00.325Z",
+      "meetingUrl": "https://meet.google.com/ats-ck3h-ku1",
+      "status": "SCHEDULED"
+    },
+    {
+      "_id": "doc_7516a6c9c2b82aad",
+      "createdAt": "2026-09-16T19:55:10.024Z",
+      "updatedAt": "2026-09-16T19:55:10.024Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_5cb92a700e026e3b",
+      "candidateName": "Devon Zhao",
+      "roundName": "Round 2: Full-Stack Systems & API Design",
+      "interviewerName": "Elena Rostova (Principal AI Architect)",
+      "scheduledAt": "2026-09-18T19:55:10.022Z",
+      "meetingUrl": "https://meet.google.com/ats-256s-3ne",
+      "status": "SCHEDULED"
     }
   ],
   "scorecards": [
@@ -1547,7 +1601,7 @@
     {
       "_id": "doc_offer_jordan_miller",
       "createdAt": "2026-09-07T14:30:00.000Z",
-      "updatedAt": "2026-09-07T14:30:00.000Z",
+      "updatedAt": "2026-09-16T19:55:00.318Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "applicationId": "doc_72423cd33a5dd21f",
       "candidateId": "doc_08f6825f7b58afff",
@@ -1561,7 +1615,10 @@
       "approvalStatus": "APPROVED",
       "candidateDecision": "SENT",
       "signedDocumentUrl": null,
-      "sentAt": "2026-09-07T14:30:00.000Z"
+      "sentAt": "2026-09-07T14:30:00.000Z",
+      "signedOffBy": "Alex Morgan",
+      "signedOffAt": "2026-09-16T19:55:00.317Z",
+      "managerNotes": "Approved via AI Assistant automation."
     },
     {
       "_id": "doc_offer_maya_patel",

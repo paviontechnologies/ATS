@@ -298,6 +298,34 @@ async function runAllTests() {
     assert.ok(job.jobId, 'Queue job should have an ID');
   });
 
+  // Test 18: Autonomous AI Recruitment Assistant & Action Engine
+  await test('Autonomous AI Recruitment Assistant & Action Engine', async () => {
+    const { runAssistant } = await import('../src/services/aiAssistantService.js');
+    const { executeAtsTool } = await import('../src/services/assistantTools.js');
+
+    const ctx = {
+      orgId: 'doc_a71bf70ad6ed56ce',
+      userId: 'usr_recruiter_01',
+      role: 'RECRUITER',
+      userName: 'Alex Morgan'
+    };
+
+    // 1. Proactive guidance tool
+    const proactive = await executeAtsTool('get_proactive_guidance', {}, ctx);
+    assert.strictEqual(proactive.ok, true, 'Proactive guidance should succeed');
+    assert.ok(Array.isArray(proactive.data.whatToDo), 'Should contain whatToDo list');
+    assert.ok(Array.isArray(proactive.data.whatNotToDo), 'Should contain whatNotToDo list');
+
+    // 2. Chat agent with real action execution
+    const chatResult = await runAssistant([
+      { role: 'user', content: 'Analyze pipeline and tell me what to do and what NOT to do today' }
+    ], ctx, 'Alex Morgan');
+
+    assert.ok(chatResult.reply.includes('What To Do Right Now'), 'Reply should include What To Do');
+    assert.ok(chatResult.reply.includes('What NOT To Do'), 'Reply should include What NOT To Do');
+    assert.ok(chatResult.actions.length >= 1, 'Should execute action tools');
+  });
+
   console.log('\n===============================================');
   console.log(`🏁 TEST RESULTS: ${passed} PASSED | ${failed} FAILED`);
   console.log('===============================================');
@@ -305,7 +333,7 @@ async function runAllTests() {
   if (failed > 0) {
     process.exit(1);
   } else {
-    console.log('🎉 ALL 17 ENTERPRISE ATS SUBSYSTEMS FULLY FUNCTIONAL AND VERIFIED!\n');
+    console.log(`🎉 ALL ${passed} ENTERPRISE ATS SUBSYSTEMS FULLY FUNCTIONAL AND VERIFIED!\n`);
     process.exit(0);
   }
 }
@@ -314,3 +342,4 @@ runAllTests().catch(err => {
   console.error('Fatal test error:', err);
   process.exit(1);
 });
+

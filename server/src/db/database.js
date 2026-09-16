@@ -298,5 +298,6 @@ export const Scorecards = dbManager.getCollection('scorecards');
 export const Offers = dbManager.getCollection('offers');
 export const TalentPools = dbManager.getCollection('talentPools');
 export const Communications = dbManager.getCollection('communications');
+export const Tasks = dbManager.getCollection('tasks');
 export const AuditLogs = dbManager.getCollection('auditLogs');
 export const Departments = dbManager.getCollection('departments');

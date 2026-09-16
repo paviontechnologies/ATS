@@ -3601,3 +3601,351 @@ function showToast(message, type = 'info') {
     setTimeout(() => toast.remove(), 300);
   }, 3500);
 }
+
+/* ================= AUTONOMOUS AI ASSISTANT WIDGET CONTROLLER ================= */
+
+let aiAssistantHistory = [];
+let aiAssistantLoading = false;
+
+function escapeAssistantHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function formatAssistantMarkdown(text) {
+  if (!text) return '';
+  let escaped = escapeAssistantHtml(text);
+
+  // Format code blocks
+  escaped = escaped.replace(/`([^`]+)`/g, '<code class="bg-slate-100 text-indigo-700 px-1 py-0.5 rounded font-mono text-[11px]">$1</code>');
+
+  // Format bold
+  escaped = escaped.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
+
+  // Split into lines to format bullet points nicely
+  const lines = escaped.split('\n');
+  let inList = false;
+  const result = [];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('• ') || trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+      const itemText = trimmed.substring(2);
+      if (!inList) {
+        result.push('<ul class="list-disc pl-4 space-y-1 my-1">');
+        inList = true;
+      }
+      result.push(`<li>${itemText}</li>`);
+    } else {
+      if (inList) {
+        result.push('</ul>');
+        inList = false;
+      }
+      if (trimmed === '') {
+        result.push('<div class="h-1.5"></div>');
+      } else {
+        result.push(`<p>${line}</p>`);
+      }
+    }
+  }
+  if (inList) {
+    result.push('</ul>');
+  }
+  return result.join('');
+}
+
+function prettyTool(name) {
+  if (!name) return 'ATS Action';
+  const map = {
+    get_proactive_guidance: 'Proactive Guidance',
+    search_candidates: 'Candidate Search',
+    get_candidate_dossier: 'Dossier 360°',
+    screen_and_score_candidate: 'Candidate Scoring',
+    move_candidate_stage: 'Stage Transition',
+    schedule_interview: 'Interview Scheduler',
+    sign_off_offer: 'Executive Sign-Off',
+    draft_candidate_outreach: 'Outreach Generator',
+    create_recruitment_task: 'Task Assignment',
+    get_pipeline_summary: 'Pipeline Telemetry',
+    generate_job_requisition: 'Requisition Studio'
+  };
+  return map[name] || name.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function toggleAIAssistantWidget(forceState) {
+  const panel = document.getElementById('aiAssistantWidgetPanel');
+  const launcher = document.getElementById('aiAssistantLauncherBtn');
+  if (!panel) return;
+
+  const isHidden = panel.classList.contains('hidden');
+  const shouldOpen = forceState !== undefined ? Boolean(forceState) : isHidden;
+
+  if (shouldOpen) {
+    panel.classList.remove('hidden');
+    if (launcher) launcher.classList.add('hidden');
+    if (window.lucide) lucide.createIcons();
+    const input = document.getElementById('aiAssistantInput');
+    if (input) setTimeout(() => input.focus(), 150);
+    const container = document.getElementById('aiAssistantMessagesContainer');
+    if (container) container.scrollTop = container.scrollHeight;
+  } else {
+    panel.classList.add('hidden');
+    if (launcher) launcher.classList.remove('hidden');
+  }
+}
+
+function clearAIAssistantChat() {
+  aiAssistantHistory = [];
+  const container = document.getElementById('aiAssistantMessagesContainer');
+  if (!container) return;
+
+  container.innerHTML = `
+    <div id="aiAssistantEmptyState" class="space-y-3.5">
+      <div class="text-center py-4 px-2">
+        <div class="w-12 h-12 bg-indigo-100 text-indigo-700 rounded-2xl flex items-center justify-center mx-auto mb-2.5 shadow-xs">
+          <i data-lucide="sparkles" class="w-6 h-6"></i>
+        </div>
+        <p class="text-sm font-bold text-slate-900">How can I assist your hiring today?</p>
+        <p class="text-[11px] text-slate-500 mt-1 max-w-xs mx-auto leading-relaxed">
+          I can screen candidates, execute offer sign-offs, schedule interview loops, and advise you on <strong>what to do and what NOT to do</strong> across your pipeline.
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="sendAIAssistantMessage('Analyze my pipeline and tell me what to do and what NOT to do today')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+          <span class="flex items-center space-x-2">
+            <span class="text-base">💡</span>
+            <span class="font-medium">What should I do today? (Analyze pipeline & alerts)</span>
+          </span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+        </button>
+
+        <button onclick="sendAIAssistantMessage('Score candidate Jordan Miller and review fit score')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+          <span class="flex items-center space-x-2">
+            <span class="text-base">🎯</span>
+            <span class="font-medium">Score Jordan Miller & inspect 96% AI match</span>
+          </span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+        </button>
+
+        <button onclick="sendAIAssistantMessage('Approve and sign off offer package for Jordan Miller')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+          <span class="flex items-center space-x-2">
+            <span class="text-base">📝</span>
+            <span class="font-medium">Execute executive sign-off for Jordan Miller ($165k)</span>
+          </span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+        </button>
+
+        <button onclick="sendAIAssistantMessage('Schedule Round 2 interview for Devon Zhao with Elena Rostova')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+          <span class="flex items-center space-x-2">
+            <span class="text-base">📅</span>
+            <span class="font-medium">Schedule interview round for Devon Zhao</span>
+          </span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+        </button>
+
+        <button onclick="sendAIAssistantMessage('Show full pipeline summary, bottlenecks, and velocity')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+          <span class="flex items-center space-x-2">
+            <span class="text-base">📊</span>
+            <span class="font-medium">Pipeline velocity & stage drop-off analysis</span>
+          </span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+        </button>
+      </div>
+    </div>
+  `;
+  if (window.lucide) lucide.createIcons();
+}
+
+function handleAssistantActionClick(link) {
+  if (!link) return;
+  try {
+    if (link.startsWith('/candidates/')) {
+      const candidateId = link.replace('/candidates/', '').trim();
+      switchTab('candidates');
+      if (typeof window.openCandidateDossier === 'function') {
+        window.openCandidateDossier(candidateId);
+      }
+      showToast(`Navigated to Candidate Dossier (${candidateId})`, 'info');
+    } else if (link.startsWith('/pipeline')) {
+      switchTab('pipeline');
+      showToast('Navigated to Kanban Pipeline', 'info');
+    } else if (link.startsWith('/offers')) {
+      switchTab('offers');
+      showToast('Navigated to Offers & E-Sign Hub', 'info');
+    } else if (link.startsWith('/interviews')) {
+      switchTab('interviews');
+      showToast('Navigated to Interviews & Scorecards', 'info');
+    } else if (link.startsWith('/requisitions') || link.startsWith('/jobs')) {
+      switchTab('jobs');
+      showToast('Navigated to Job Requisitions', 'info');
+    } else if (link.startsWith('/analytics')) {
+      switchTab('analytics');
+      showToast('Navigated to Analytics & Funnel', 'info');
+    } else if (link.startsWith('/dashboard')) {
+      switchTab('dashboard');
+      showToast('Navigated to Dashboard', 'info');
+    } else {
+      showToast(`Navigated to ${link}`, 'info');
+    }
+  } catch (e) {
+    console.error('Action navigation error:', e);
+  }
+}
+
+function submitAIAssistantInput() {
+  const input = document.getElementById('aiAssistantInput');
+  if (!input) return;
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  input.style.height = 'auto';
+  sendAIAssistantMessage(text);
+}
+
+async function sendAIAssistantMessage(text) {
+  if (!text || aiAssistantLoading) return;
+
+  toggleAIAssistantWidget(true);
+  const container = document.getElementById('aiAssistantMessagesContainer');
+  const emptyState = document.getElementById('aiAssistantEmptyState');
+  if (emptyState) emptyState.remove();
+
+  // 1. User Message Bubble
+  aiAssistantHistory.push({ role: 'user', content: text });
+
+  const userDiv = document.createElement('div');
+  userDiv.className = 'flex justify-end';
+  userDiv.innerHTML = `
+    <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-3 rounded-2xl rounded-tr-xs max-w-[85%] text-xs shadow-xs leading-relaxed">
+      ${escapeAssistantHtml(text)}
+    </div>
+  `;
+  container.appendChild(userDiv);
+
+  // 2. Loading State Indicator
+  const loadingDiv = document.createElement('div');
+  loadingDiv.id = 'aiAssistantLoadingIndicator';
+  loadingDiv.className = 'flex justify-start items-center space-x-2';
+  loadingDiv.innerHTML = `
+    <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 flex-shrink-0">
+      <i data-lucide="sparkles" class="w-3.5 h-3.5 animate-spin"></i>
+    </div>
+    <div class="bg-white border border-slate-200 text-slate-500 px-3 py-2 rounded-2xl rounded-tl-xs text-xs shadow-xs flex items-center space-x-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+      <span class="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse" style="animation-delay: 150ms"></span>
+      <span class="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse" style="animation-delay: 300ms"></span>
+      <span class="text-[11px] text-slate-400 ml-1">Analyzing ATS & executing actions...</span>
+    </div>
+  `;
+  container.appendChild(loadingDiv);
+  if (window.lucide) lucide.createIcons();
+  container.scrollTop = container.scrollHeight;
+
+  aiAssistantLoading = true;
+  const sendBtn = document.getElementById('aiAssistantSendBtn');
+  if (sendBtn) sendBtn.disabled = true;
+
+  try {
+    const res = await fetch('/api/v1/assistant/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: text,
+        history: aiAssistantHistory.slice(0, -1).map(m => ({ role: m.role, content: m.content })),
+        context: {
+          currentTab: typeof currentTab !== 'undefined' ? currentTab : 'dashboard',
+          currentTenantId: 'tenant_enterprise_main'
+        }
+      })
+    });
+
+    const data = await res.json();
+    loadingDiv.remove();
+
+    if (!res.ok || !data.success) {
+      throw new Error(data.error || 'AI Assistant request failed');
+    }
+
+    const assistantContent = data.message || 'Action executed successfully.';
+    const actions = data.actions || [];
+    aiAssistantHistory.push({ role: 'assistant', content: assistantContent, actions });
+
+    // 3. Render Action Chips (matching the user's provided AssistantWidget)
+    let actionsHtml = '';
+    if (actions.length > 0) {
+      actionsHtml = `
+        <div class="mt-2.5 space-y-1.5 pt-2 border-t border-slate-100">
+          ${actions.map(action => `
+            <div class="flex items-center justify-between text-xs bg-slate-50 rounded-lg p-2 border border-slate-200 shadow-2xs">
+              <div class="flex items-center space-x-2 min-w-0 flex-1">
+                ${action.executed ? '<i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i>' : '<i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-500 flex-shrink-0"></i>'}
+                <span class="font-bold text-slate-800 text-[11px] shrink-0">${escapeAssistantHtml(prettyTool(action.toolName || (action.type === 'action' ? 'Action' : 'Alert')))}</span>
+                <span class="text-slate-500 text-[11px] truncate">${escapeAssistantHtml(action.summary || action.title || '')}</span>
+              </div>
+              ${action.link ? `<button onclick="handleAssistantActionClick('${escapeAssistantHtml(action.link)}')" class="ml-2 text-[10px] font-bold text-indigo-600 hover:text-indigo-800 bg-white hover:bg-indigo-50 border border-slate-200 rounded px-2 py-0.5 transition shrink-0 cursor-pointer shadow-2xs">Open ↗</button>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    const assistantDiv = document.createElement('div');
+    assistantDiv.className = 'flex justify-start items-start space-x-2';
+    assistantDiv.innerHTML = `
+      <div class="w-6 h-6 rounded-full bg-indigo-100 border border-indigo-200 flex items-center justify-center text-indigo-700 flex-shrink-0 mt-0.5 shadow-2xs">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+      </div>
+      <div class="bg-white border border-slate-200/90 text-slate-800 p-3 rounded-2xl rounded-tl-xs max-w-[88%] text-xs shadow-xs leading-relaxed">
+        <div class="prose prose-xs text-slate-800">${formatAssistantMarkdown(assistantContent)}</div>
+        ${actionsHtml}
+      </div>
+    `;
+    container.appendChild(assistantDiv);
+    if (window.lucide) lucide.createIcons();
+    container.scrollTop = container.scrollHeight;
+
+    // Refresh UI boards if tool mutated pipeline or offers
+    if (actions.some(a => a.toolName === 'sign_off_offer' || a.toolName === 'move_candidate_stage')) {
+      if (typeof loadDashboard === 'function') loadDashboard();
+      if (typeof loadCandidates === 'function') loadCandidates();
+      if (typeof initPipelineView === 'function') initPipelineView();
+      if (typeof loadOffers === 'function') loadOffers();
+    }
+
+  } catch (err) {
+    console.error('AI Assistant Error:', err);
+    loadingDiv.remove();
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'flex justify-start items-start space-x-2';
+    errorDiv.innerHTML = `
+      <div class="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+      </div>
+      <div class="bg-rose-50 border border-rose-200 text-rose-800 p-3 rounded-2xl rounded-tl-xs max-w-[88%] text-xs shadow-xs leading-relaxed">
+        <p class="font-bold">Assistant Error</p>
+        <p class="mt-1">${escapeAssistantHtml(err.message || 'Unable to complete request. Please try again.')}</p>
+      </div>
+    `;
+    container.appendChild(errorDiv);
+    if (window.lucide) lucide.createIcons();
+    container.scrollTop = container.scrollHeight;
+  } finally {
+    aiAssistantLoading = false;
+    if (sendBtn) sendBtn.disabled = false;
+  }
+}
+
+// Window globals
+window.toggleAIAssistantWidget = toggleAIAssistantWidget;
+window.clearAIAssistantChat = clearAIAssistantChat;
+window.submitAIAssistantInput = submitAIAssistantInput;
+window.sendAIAssistantMessage = sendAIAssistantMessage;
+window.handleAssistantActionClick = handleAssistantActionClick;
+window.prettyTool = prettyTool;
+

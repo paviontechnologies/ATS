@@ -189,7 +189,7 @@
       <!-- Right Controls -->
       <div class="flex items-center space-x-3">
         <!-- AI Copilot Trigger Button -->
-        <button onclick="toggleCopilot()" class="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-sm font-semibold transition shadow-sm cursor-pointer">
+        <button onclick="toggleAIAssistantWidget()" class="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-sm font-semibold transition shadow-sm cursor-pointer">
           <i data-lucide="sparkles" class="w-4 h-4 text-indigo-600"></i>
           <span>AI Copilot</span>
         </button>
@@ -5021,10 +5021,128 @@
   </div>
 
 
+  <!-- ================= FLOATING AI ASSISTANT LAUNCHER ================= -->
+  <button id="aiAssistantLauncherBtn" onclick="toggleAIAssistantWidget()" aria-label="Open AI Recruitment Assistant" class="fixed bottom-6 right-6 z-50 flex items-center space-x-2.5 px-4 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer border border-indigo-400/40">
+    <div class="relative flex items-center justify-center">
+      <i data-lucide="sparkles" class="w-5 h-5 text-amber-300 animate-pulse"></i>
+    </div>
+    <span class="text-sm font-semibold tracking-wide">Ask AI Assistant</span>
+    <span class="px-2 py-0.5 text-[10px] font-extrabold bg-white/20 rounded-full uppercase tracking-wider">Autonomous</span>
+  </button>
+
+  <!-- ================= AUTONOMOUS AI ASSISTANT WIDGET ================= -->
+  <div id="aiAssistantWidgetPanel" class="fixed bottom-6 right-6 z-50 hidden w-[calc(100vw-3rem)] sm:w-[430px] h-[640px] max-h-[calc(100vh-4rem)] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-4 py-3.5 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white flex-shrink-0 border-b border-indigo-900/50">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-8 h-8 bg-indigo-600/60 border border-indigo-400/40 rounded-xl flex items-center justify-center text-amber-300 shadow-sm">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-1.5">
+            <p class="font-bold text-sm leading-none text-white">AI Recruitment Assistant</p>
+            <span class="px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[9px] font-bold rounded">LIVE</span>
+          </div>
+          <p class="text-[11px] text-indigo-300 mt-0.5">Executes actions & tells what to do / what not to do</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-1">
+        <button onclick="clearAIAssistantChat()" class="text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition cursor-pointer" title="Clear Chat History">
+          <i data-lucide="trash-2" class="w-4 h-4"></i>
+        </button>
+        <button onclick="toggleAIAssistantWidget(false)" class="text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition cursor-pointer" title="Close Assistant">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages Container -->
+    <div id="aiAssistantMessagesContainer" class="flex-1 overflow-y-auto p-4 space-y-3.5 text-xs custom-scrollbar bg-slate-50/70">
+      <!-- Default suggestions when empty -->
+      <div id="aiAssistantEmptyState" class="space-y-3.5">
+        <div class="text-center py-4 px-2">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-700 rounded-2xl flex items-center justify-center mx-auto mb-2.5 shadow-xs">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <p class="text-sm font-bold text-slate-900">How can I assist your hiring today?</p>
+          <p class="text-[11px] text-slate-500 mt-1 max-w-xs mx-auto leading-relaxed">
+            I can screen candidates, execute offer sign-offs, schedule interview loops, and advise you on <strong>what to do and what NOT to do</strong> across your pipeline.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <button onclick="sendAIAssistantMessage('Analyze my pipeline and tell me what to do and what NOT to do today')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+            <span class="flex items-center space-x-2">
+              <span class="text-base">💡</span>
+              <span class="font-medium">What should I do today? (Analyze pipeline & alerts)</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+          </button>
+
+          <button onclick="sendAIAssistantMessage('Score candidate Jordan Miller and review fit score')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+            <span class="flex items-center space-x-2">
+              <span class="text-base">🎯</span>
+              <span class="font-medium">Score Jordan Miller & inspect 96% AI match</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+          </button>
+
+          <button onclick="sendAIAssistantMessage('Approve and sign off offer package for Jordan Miller')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+            <span class="flex items-center space-x-2">
+              <span class="text-base">📝</span>
+              <span class="font-medium">Execute executive sign-off for Jordan Miller ($165k)</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+          </button>
+
+          <button onclick="sendAIAssistantMessage('Schedule Round 2 interview for Devon Zhao with Elena Rostova')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+            <span class="flex items-center space-x-2">
+              <span class="text-base">📅</span>
+              <span class="font-medium">Schedule interview round for Devon Zhao</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+          </button>
+
+          <button onclick="sendAIAssistantMessage('Show full pipeline summary, bottlenecks, and velocity')" class="w-full text-left p-2.5 bg-white hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-300 rounded-xl text-xs text-slate-700 hover:text-indigo-900 transition flex items-center justify-between group shadow-xs cursor-pointer">
+            <span class="flex items-center space-x-2">
+              <span class="text-base">📊</span>
+              <span class="font-medium">Pipeline velocity & stage drop-off analysis</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Composer Footer -->
+    <div class="p-3 border-t border-slate-200 bg-white flex-shrink-0">
+      <div class="flex items-end space-x-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-100 transition">
+        <textarea
+          id="aiAssistantInput"
+          rows="1"
+          placeholder="Ask AI, or tell it what action to execute..."
+          class="flex-1 bg-transparent text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none resize-none max-h-24 py-1"
+          onkeydown="if(event.key==='Enter' && !event.shiftKey){ event.preventDefault(); submitAIAssistantInput(); }"
+        ></textarea>
+        <button
+          id="aiAssistantSendBtn"
+          onclick="submitAIAssistantInput()"
+          class="flex-shrink-0 w-7 h-7 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 text-white rounded-lg flex items-center justify-center transition cursor-pointer shadow-xs"
+        >
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+      <div class="flex items-center justify-between text-[10px] text-slate-400 mt-1.5 px-1">
+        <span>Autonomous ATS Action Engine Active</span>
+        <span class="font-semibold text-indigo-600">Claude Haiku 4.5 Synced</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
 
   <!-- Main Client Application Logic -->
-  <script src="/app.js?v=4.3"></script>
+  <script src="/app.js?v=4.4"></script>
 </body>
 </html>
