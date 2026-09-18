@@ -293,9 +293,16 @@ export const ATS_TOOL_HANDLERS = {
     const candidate = await resolveCandidate(tenantId, input.candidateId, input.candidateName);
     if (!candidate) return { ok: false, summary: 'Candidate not found for screening.' };
 
-    const job = input.jobTitle
-      ? await Jobs.findOne({ tenantId, title: { $regex: input.jobTitle, $options: 'i' } })
-      : await Jobs.findOne({ tenantId, status: 'PUBLISHED' });
+    let job = null;
+    if (input.jobTitle) {
+      job = await Jobs.findOne({ tenantId, title: { $regex: input.jobTitle, $options: 'i' } })
+        || await Jobs.findOne({ title: { $regex: input.jobTitle, $options: 'i' } });
+    }
+    if (!job) {
+      job = await Jobs.findOne({ tenantId, status: 'PUBLISHED' })
+        || await Jobs.findOne({ status: 'PUBLISHED' })
+        || await Jobs.findOne({});
+    }
 
     if (!job) return { ok: false, summary: 'No relevant job requisition found to evaluate against.' };
 
@@ -320,7 +327,8 @@ export const ATS_TOOL_HANDLERS = {
     const candidate = await resolveCandidate(tenantId, input.candidateId, input.candidateName);
     if (!candidate) return { ok: false, summary: `Candidate "${input.candidateName || input.candidateId}" not found.` };
 
-    const app = await Applications.findOne({ candidateId: candidate._id, tenantId });
+    const app = await Applications.findOne({ candidateId: candidate._id, tenantId })
+      || await Applications.findOne({ candidateId: candidate._id });
     if (!app) return { ok: false, summary: `No active application record found for ${candidate.firstName} ${candidate.lastName}.` };
 
     const fromStage = app.stageId;

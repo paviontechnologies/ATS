@@ -3852,24 +3852,46 @@ async function sendAIAssistantMessage(text) {
   if (sendBtn) sendBtn.disabled = true;
 
   try {
-    const res = await fetch('/api/v1/assistant/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        message: text,
-        history: aiAssistantHistory.slice(0, -1).map(m => ({ role: m.role, content: m.content })),
-        context: {
-          currentTab: typeof currentTab !== 'undefined' ? currentTab : 'dashboard',
-          currentTenantId: 'tenant_enterprise_main'
-        }
-      })
+    const headers = {
+      'Content-Type': 'application/json',
+      ...(authToken ? { Authorization: `Bearer ${authToken}` } : {})
+    };
+
+    const payload = JSON.stringify({
+      message: text,
+      history: aiAssistantHistory.slice(0, -1).map(m => ({ role: m.role, content: m.content })),
+      context: {
+        currentTab: typeof currentTab !== 'undefined' ? currentTab : 'dashboard',
+        currentTenantId: 'tenant_enterprise_main'
+      }
     });
 
-    const data = await res.json();
+    let res;
+    let data;
+
+    // Use direct API_BASE (Port 5000 with CORS) to avoid proxy hops
+    const primaryUrl = (typeof API_BASE !== 'undefined' && API_BASE) ? `${API_BASE}/assistant/chat` : '/api/v1/assistant/chat';
+    try {
+      res = await fetch(primaryUrl, {
+        method: 'POST',
+        headers,
+        body: payload
+      });
+      data = await res.json();
+    } catch (netErr) {
+      console.warn('Primary fetch to', primaryUrl, 'failed, trying relative path:', netErr.message);
+      res = await fetch('/api/v1/assistant/chat', {
+        method: 'POST',
+        headers,
+        body: payload
+      });
+      data = await res.json();
+    }
+
     loadingDiv.remove();
 
     if (!res.ok || !data.success) {
-      throw new Error(data.error || 'AI Assistant request failed');
+      throw new Error(data.error || data.message || 'AI Assistant request failed');
     }
 
     const assistantContent = data.message || 'Action executed successfully.';
