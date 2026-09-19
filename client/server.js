@@ -13,8 +13,8 @@ const ADMIN_API_URL = process.env.ADMIN_API_URL || 'http://127.0.0.1:5001';
 
 const publicDir = path.resolve(__dirname, 'public');
 
-// Robust HTTP forwarder / proxy helper
-function proxyRequest(targetBaseUrl, req, res) {
+// Robust HTTP forwarder / proxy helper with auto-retry
+function proxyRequest(targetBaseUrl, req, res, retry = true) {
   try {
     const targetUrl = new URL(`${targetBaseUrl}${req.originalUrl.replace(/^\/admin-api/, '/api')}`);
     const bodyData = (['POST', 'PUT', 'PATCH'].includes(req.method) && req.body && Object.keys(req.body).length > 0)
@@ -56,7 +56,14 @@ function proxyRequest(targetBaseUrl, req, res) {
     });
 
     proxyReq.on('error', (err) => {
-      console.error('[PROXY ERROR]', err.message);
+      console.error('[PROXY ERROR]', err.message, 'on', targetUrl.toString());
+      if (retry && (err.code === 'ECONNREFUSED' || err.code === 'EPERM')) {
+        const altUrl = targetBaseUrl.includes('127.0.0.1')
+          ? targetBaseUrl.replace('127.0.0.1', 'localhost')
+          : targetBaseUrl.replace('localhost', '127.0.0.1');
+        console.log(`[PROXY RETRY] Retrying on alternate target: ${altUrl}`);
+        return proxyRequest(altUrl, req, res, false);
+      }
       if (!res.headersSent) {
         res.status(502).json({
           error: 'Gateway / Proxy Error',
@@ -77,6 +84,17 @@ function proxyRequest(targetBaseUrl, req, res) {
     });
   }
 }
+
+// Request Logger
+app.use((req, res, next) => {
+  const start = Date.now();
+  res.on('finish', () => {
+    if (!req.originalUrl.includes('.')) {
+      console.log(`[FRONTEND (3001)] ${req.method} ${req.originalUrl} ${res.statusCode} - ${Date.now() - start}ms`);
+    }
+  });
+  next();
+});
 
 app.use(express.json({ limit: '20mb' }));
 app.use(express.urlencoded({ extended: true }));

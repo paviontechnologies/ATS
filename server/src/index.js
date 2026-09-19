@@ -115,13 +115,25 @@ const clientDist = path.resolve(__dirname, '../../client/dist');
 const clientPublic = path.resolve(__dirname, '../../client/public');
 
 if (fs.existsSync(clientDist)) {
-  app.use(express.static(clientDist));
+  app.use(express.static(clientDist, {
+    etag: false,
+    maxAge: 0,
+    setHeaders: (res) => {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+  }));
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
     res.sendFile(path.join(clientDist, 'index.html'));
   });
 } else if (fs.existsSync(clientPublic)) {
-  app.use(express.static(clientPublic));
+  app.use(express.static(clientPublic, {
+    etag: false,
+    maxAge: 0,
+    setHeaders: (res) => {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+  }));
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
     res.sendFile(path.join(clientPublic, 'index.html'));

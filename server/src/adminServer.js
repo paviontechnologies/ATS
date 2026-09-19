@@ -98,6 +98,7 @@ function renderAdminSwaggerHtml() {
 }
 
 // Docs endpoints
+app.get('/', (req, res) => res.redirect('/api/v1/docs'));
 app.get('/api/v1/swagger.json', (req, res) => res.json(adminSwaggerSpec));
 app.get('/api/v1/docs', (req, res) => {
   res.setHeader('Content-Type', 'text/html');
