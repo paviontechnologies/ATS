@@ -1,0 +1,6 @@
+name = "enterprise-ats"
+compatibility_date = "2024-09-23"
+
+[assets]
+directory = "./client/public"
+not_found_handling = "single-page-application"
