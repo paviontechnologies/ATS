@@ -2,6 +2,7 @@ import express from 'express';
 import { Offers, Applications, Candidates, Jobs } from '../db/database.js';
 import { authenticate } from '../middleware/auth.js';
 import { auditAction } from '../middleware/audit.js';
+import { WorkflowService } from '../services/workflowService.js';
 
 const router = express.Router();
 
@@ -103,6 +104,21 @@ router.post('/:id/accept', authenticate, auditAction('OFFER_ACCEPTED', 'Offer'),
     });
 
     console.log(`🎉 [OFFER ACCEPTED] Candidate hired for offer ${offer._id}! Dispatched HRIS payload.`);
+
+    // Trigger Autopilot automated onboarding into Deel EOR & RazorpayX Payroll
+    try {
+      const candidate = await Candidates.findById(offer.candidateId);
+      await WorkflowService.handleEvent('OFFER_ACCEPTED', {
+        tenantId: offer.tenantId,
+        candidateId: offer.candidateId,
+        applicationId: offer.applicationId,
+        candidateName: candidate ? `${candidate.firstName} ${candidate.lastName}` : 'Candidate',
+        candidateEmail: candidate ? candidate.email : '',
+        jobTitle: offer.jobTitle
+      });
+    } catch (wfErr) {
+      console.error('Autopilot offer event error:', wfErr.message);
+    }
 
     res.json({ message: 'Offer accepted successfully. Candidate status updated to Hired.' });
   } catch (err) {

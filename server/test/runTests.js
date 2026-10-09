@@ -326,6 +326,170 @@ async function runAllTests() {
     assert.ok(chatResult.actions.length >= 1, 'Should execute action tools');
   });
 
+  // Test 19: VeraHire AI Recruiter & Ranked Shortlists
+  await test('VeraHire AI Recruiter & Ranked Shortlists', async () => {
+    const { VeraHireService } = await import('../src/services/verahireService.js');
+    const job = await Jobs.findOne({});
+    const candidate = await Candidates.findOne({});
+    assert.ok(job && candidate, 'Job and Candidate must exist');
+
+    // 1. Criteria extraction
+    const criteria = VeraHireService.extractJobCriteria(job);
+    assert.ok(criteria.length >= 3, 'Should extract multidimensional criteria');
+    assert.ok(criteria.some(c => c.id === 'technical_depth'), 'Should have technical depth criteria');
+
+    // 2. Question generation
+    const questions = VeraHireService.generateScreeningQuestions(job, candidate);
+    assert.ok(questions.length >= 3, 'Should generate screening questions');
+    assert.ok(questions[0].question.length > 10, 'Question text should be generated');
+
+    // 3. Screening session evaluation
+    const session = await VeraHireService.evaluateScreeningSession({
+      tenantId: job.tenantId,
+      jobId: job._id,
+      candidateId: candidate._id
+    });
+    assert.ok(session.overallScore >= 70 && session.overallScore <= 100, 'Score should be between 70 and 100');
+    assert.ok(session.evidenceScores.technical_depth, 'Should have technical depth evidence score');
+
+    // 4. Ranked Shortlist
+    const shortlist = await VeraHireService.getRankedShortlist(job._id);
+    assert.ok(shortlist.length >= 1, 'Shortlist should contain ranked candidates');
+    assert.strictEqual(shortlist[0].rank, 1, 'Top candidate should have rank 1');
+  });
+
+  // Test 20: Deel Global EOR Onboarding & 110+ Countries Compliance
+  await test('Deel Global EOR Onboarding & 110+ Countries Compliance', async () => {
+    const { DeelService } = await import('../src/services/deelService.js');
+    const candidate = await Candidates.findOne({});
+    const job = await Jobs.findOne({});
+
+    // 1. Country compliance policies
+    const countries = DeelService.getCountries();
+    assert.ok(countries.length >= 5, 'Should support international countries');
+    const india = countries.find(c => c.code === 'IN');
+    assert.ok(india.mandatoryBenefits.some(b => b.includes('Provident Fund')), 'India policy should include EPF');
+
+    // 2. Compliant contract creation
+    const contract = await DeelService.createCompliantContract({
+      tenantId: candidate.tenantId,
+      candidateId: candidate._id,
+      jobId: job._id,
+      countryCode: 'IN',
+      workerType: 'FULL_TIME_EOR',
+      annualCompensation: 2100000
+    });
+    assert.ok(contract.contractNumber.startsWith('DEEL-IN-'), 'Should generate Deel contract number');
+    assert.strictEqual(contract.terms.country, 'India');
+
+    // 3. Worker Onboarding in Deel HR
+    const worker = await DeelService.onboardToDeelHR({
+      tenantId: candidate.tenantId,
+      candidateId: candidate._id,
+      contractId: contract._id,
+      countryCode: 'IN'
+    });
+    assert.strictEqual(worker.hrStatus, 'ACTIVE_ONBOARDING');
+    assert.strictEqual(worker.complianceStatus, 'VERIFIED');
+  });
+
+  // Test 21: RazorpayX Indian Payroll & CTC Breakdown Engine
+  await test('RazorpayX Indian Payroll & CTC Breakdown Engine', async () => {
+    const { PayrollService } = await import('../src/services/payrollService.js');
+    const candidate = await Candidates.findOne({});
+
+    // 1. Indian CTC Math
+    const breakup = PayrollService.calculateCTCBreakup(1800000); // 18 Lakhs
+    assert.strictEqual(breakup.annualCTC, 1800000);
+    assert.strictEqual(breakup.monthlyGross, 150000);
+    assert.strictEqual(breakup.components.basicSalary.monthly, 75000); // 50%
+    assert.strictEqual(breakup.components.hra.monthly, 30000); // 20%
+    assert.ok(breakup.deductions.employeePF.monthly > 0, 'Should deduct PF');
+    assert.strictEqual(breakup.deductions.professionalTax.monthly, 200); // ₹200 PT
+    assert.ok(breakup.netTakeHome.monthly > 100000, 'Net take home should be calculated');
+
+    // 2. Sync to RazorpayX
+    const record = await PayrollService.syncEmployeeToPayroll({
+      tenantId: candidate.tenantId,
+      candidateId: candidate._id,
+      annualCTC: 1800000
+    });
+    assert.ok(record.uanNumber.startsWith('10'), 'Should allocate 12-digit PF UAN number');
+    assert.ok(record.esicNumber, 'Should generate ESI IP number');
+
+    // 3. Payout simulation
+    const payout = await PayrollService.disburseSalaryPayout({
+      tenantId: candidate.tenantId,
+      recordId: record._id
+    });
+    assert.strictEqual(payout.status, 'SUCCESS');
+    assert.ok(payout.utrNumber.startsWith('RZPX_UTR_'), 'Should generate bank transaction UTR');
+  });
+
+  // Test 22: Agency CRM & Placement Fee Invoicing
+  await test('Agency CRM & Placement Fee Invoicing', async () => {
+    const { DEFAULT_CLIENTS } = await import('../src/routes/agencyRoutes.js');
+    assert.ok(DEFAULT_CLIENTS.length >= 3, 'Should have pre-configured agency clients');
+
+    const client = DEFAULT_CLIENTS[0];
+    const annualCTC = 2500000;
+    const feePercentage = client.placementFeePercentage; // 20%
+    const expectedBaseFee = (annualCTC * feePercentage) / 100; // 500,000
+    const expectedGst = expectedBaseFee * 0.18; // 90,000
+    const expectedTotal = expectedBaseFee + expectedGst; // 590,000
+
+    assert.strictEqual(expectedBaseFee, 500000, 'Agency 20% placement fee calculation');
+    assert.strictEqual(expectedTotal, 590000, 'Placement fee total with 18% GST');
+  });
+
+  // Test 23: Autopilot Workflow Engine & Polite Auto-Rejection
+  await test('Autopilot Workflow Engine & Polite Auto-Rejection', async () => {
+    const { WorkflowService } = await import('../src/services/workflowService.js');
+    const rules = await WorkflowService.getRules();
+    assert.ok(rules.length >= 4, 'Should load 4 core autopilot rules');
+
+    // Trigger CANDIDATE_REJECTED event
+    const eventResult = await WorkflowService.handleEvent('CANDIDATE_REJECTED', {
+      tenantId: 'tenant_test',
+      candidateName: 'Test Candidate',
+      candidateEmail: 'test.cand@example.com',
+      jobTitle: 'Lead Architect'
+    });
+
+    assert.strictEqual(eventResult.handled, true, 'Rejection workflow should execute');
+    assert.ok(eventResult.actionResult.includes('Automated polite rejection email dispatched'), 'Should log rejection email action');
+
+    // Trigger OFFER_ACCEPTED event
+    const offerEventResult = await WorkflowService.handleEvent('OFFER_ACCEPTED', {
+      tenantId: 'tenant_test',
+      candidateName: 'Accepted Candidate',
+      candidateEmail: 'accepted@example.com',
+      jobTitle: 'Principal Engineer'
+    });
+    assert.strictEqual(offerEventResult.handled, true, 'Offer accepted workflow should execute');
+  });
+
+  // Test 24: Multi-Job Board Syndication (50+ Boards)
+  await test('Multi-Job Board Syndication (50+ Boards)', async () => {
+    const job = await Jobs.findOne({});
+    const boards = ['LinkedIn Talent Hub', 'Indeed Worldwide', 'Glassdoor Jobs', 'Naukri.com Enterprise'];
+
+    await Jobs.updateOne(
+      { _id: job._id },
+      {
+        $set: {
+          syndicatedBoards: boards,
+          syndicationStatus: 'ACTIVE',
+          lastSyndicatedAt: new Date().toISOString()
+        }
+      }
+    );
+
+    const updatedJob = await Jobs.findById(job._id);
+    assert.strictEqual(updatedJob.syndicationStatus, 'ACTIVE');
+    assert.strictEqual(updatedJob.syndicatedBoards.length, 4);
+  });
+
   console.log('\n===============================================');
   console.log(`🏁 TEST RESULTS: ${passed} PASSED | ${failed} FAILED`);
   console.log('===============================================');

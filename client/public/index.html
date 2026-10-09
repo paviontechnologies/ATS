@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enterprise ATS | Next-Gen AI Recruitment Operating System</title>
+  <title>Pavion Technologies | Enterprise AI ATS & Recruitment Operating System</title>
+  <link rel="icon" type="image/png" href="/logo-icon.png" />
+  <link rel="shortcut icon" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/logo-icon.png" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter -->
@@ -114,76 +117,42 @@
 </head>
 <body class="text-slate-800 flex flex-col min-h-screen">
 
-  <!-- ================= MICROSERVICES FLEET TELEMETRY BANNER ================= -->
-  <aside aria-label="System Microservices Status" class="bg-slate-950 text-slate-200 border-b border-slate-800 text-xs px-4 sm:px-6 lg:px-8 py-2">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      <!-- Left: Active Port Badges -->
-      <div class="flex items-center space-x-3 flex-wrap text-xs">
-        <span class="font-bold tracking-wider text-slate-400 uppercase text-[11px] flex items-center space-x-1.5">
-          <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-400"></i>
-          <span>Architecture:</span>
-        </span>
-        <!-- Frontend Port -->
-        <span class="inline-flex items-center space-x-1.5 bg-slate-900 border border-emerald-500/30 text-emerald-300 px-2.5 py-0.5 rounded-full font-mono font-medium shadow-xs">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Frontend: <strong class="text-emerald-200">3001</strong></span>
-        </span>
-        <!-- Core API Port -->
-        <a href="http://localhost:5000/api/v1/docs" target="_blank" title="Open Core API Swagger Docs" class="inline-flex items-center space-x-1.5 bg-slate-900 hover:bg-slate-800 border border-cyan-500/30 text-cyan-300 px-2.5 py-0.5 rounded-full font-mono font-medium transition shadow-xs">
-          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-          <span>Core API: <strong class="text-cyan-200">5000</strong> <span class="text-[10px] text-cyan-400">docs↗</span></span>
-        </a>
-        <!-- Admin API Port -->
-        <a href="http://localhost:5001/api/v1/docs" target="_blank" title="Open Admin API Swagger Docs" class="inline-flex items-center space-x-1.5 bg-slate-900 hover:bg-slate-800 border border-purple-500/30 text-purple-300 px-2.5 py-0.5 rounded-full font-mono font-medium transition shadow-xs">
-          <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-          <span>Admin API: <strong class="text-purple-200">5001</strong> <span class="text-[10px] text-purple-400">docs↗</span></span>
-        </a>
-        <!-- Relational MySQL Engine -->
-        <span class="inline-flex items-center space-x-1.5 bg-slate-900 border border-amber-500/30 text-amber-300 px-2.5 py-0.5 rounded-full font-mono font-medium shadow-xs">
-          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-          <span>DB: <strong class="text-amber-200">MySQL Engine</strong></span>
-        </span>
-      </div>
-
-      <!-- Right: Active Session Indicator & Switch Account -->
-      <div class="flex items-center space-x-2">
-        <span class="text-slate-400 text-xs flex items-center space-x-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Session:</span>
-        </span>
-        <span id="telemetryUserSession" class="text-xs font-semibold text-white bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">
-          Alex Morgan (Recruiter)
-        </span>
-        <button onclick="openLoginModal()" id="telemetryLoginBtn" class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center space-x-1 transition" title="Switch Account / Sign In">
-          <i data-lucide="log-in" class="w-3.5 h-3.5 text-slate-400"></i>
-          <span>Switch Account</span>
-        </button>
-      </div>
-    </div>
-  </aside>
-
   <!-- ================= TOP NAVIGATION BAR ================= -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand & Tenant Logo -->
       <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold shadow-md shadow-blue-500/20">
-          <i data-lucide="layers" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <div class="flex items-center space-x-2">
-            <span class="font-extrabold text-lg text-slate-900 tracking-tight">TechCorp</span>
-            <span class="text-xs uppercase px-2 py-0.5 rounded-full font-bold bg-blue-100 text-blue-700 tracking-wide">Enterprise ATS</span>
-          </div>
-          <p class="text-xs text-slate-500 font-medium">Global AI Recruitment Operating System</p>
-        </div>
+        <a href="javascript:void(0)" onclick="switchTab('dashboard')" class="flex items-center space-x-2.5 group cursor-pointer select-none" title="Pavion Technologies - Enterprise ATS">
+          <img src="/logo.png" alt="Pavion Technologies Pvt. Ltd." class="h-9 sm:h-10 w-auto object-contain transition duration-150 transform group-hover:scale-[1.01]" />
+          <span class="hidden xl:inline-block text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full font-bold bg-blue-100 text-blue-700 tracking-wide border border-blue-200/60">ATS OS</span>
+        </a>
       </div>
 
-      <!-- Center Live Connection Badge -->
-      <div class="hidden md:flex items-center space-x-2 bg-emerald-50 text-emerald-700 border border-emerald-200/80 px-3 py-1 rounded-full text-xs font-semibold">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span id="socketStatusText">WebSocket Real-Time Sync Active</span>
+      <!-- Center Controls: Odoo Modular App Switcher & ATS Mode Selector -->
+      <div class="hidden lg:flex items-center space-x-3">
+        <!-- Odoo 9-dots Modular Apps Button -->
+        <button onclick="openAppLauncherModal()" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition shadow-2xs border border-slate-200 cursor-pointer" title="Odoo-Style Modular ERP App Suite">
+          <i data-lucide="layout-grid" class="w-4 h-4 text-indigo-600"></i>
+          <span>Apps</span>
+        </button>
+
+        <!-- ATS Archetype Mode Selector -->
+        <div class="flex items-center space-x-1.5 bg-slate-100/90 border border-slate-200/80 px-2 py-1 rounded-lg text-xs font-semibold">
+          <span class="text-slate-500 text-[10px] font-bold uppercase tracking-wider">Mode:</span>
+          <select id="atsModeSelector" onchange="setAtsMode(this.value)" class="bg-white border border-slate-200 rounded px-2 py-0.5 text-xs text-slate-800 font-bold focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer">
+            <option value="CORPORATE">🏢 Corporate In-House ATS</option>
+            <option value="AGENCY">🤝 Staffing Agency & CRM</option>
+            <option value="ENTERPRISE_HRMS">🌐 Enterprise HRMS Suite</option>
+            <option value="AI_FIRST">⚡ AI-First High Volume</option>
+          </select>
+        </div>
+
+        <!-- Center Live Connection Badge -->
+        <div class="flex items-center space-x-2 bg-emerald-50 text-emerald-700 border border-emerald-200/80 px-3 py-1 rounded-full text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="socketStatusText">Real-Time Sync</span>
+        </div>
       </div>
 
       <!-- Right Controls -->
@@ -221,42 +190,62 @@
 
     <!-- Sub Navigation Tabs -->
     <div class="bg-slate-50 border-t border-slate-200 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto flex space-x-1 sm:space-x-4 overflow-x-auto py-2 custom-scrollbar text-sm font-semibold">
-        <button onclick="switchTab('dashboard')" id="tab-dashboard" class="tab-btn px-3 py-1.5 rounded-md text-blue-600 bg-blue-50 flex items-center space-x-2">
+      <div class="max-w-7xl mx-auto flex space-x-1 sm:space-x-2 overflow-x-auto py-2 custom-scrollbar text-sm font-semibold">
+        <button onclick="switchTab('dashboard')" id="tab-dashboard" class="tab-btn px-3 py-1.5 rounded-md text-blue-600 bg-blue-50 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
           <span>Dashboard</span>
         </button>
-        <button onclick="switchTab('jobs')" id="tab-jobs" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
+        <button onclick="switchTab('jobs')" id="tab-jobs" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="briefcase" class="w-4 h-4"></i>
           <span>Job Requisitions</span>
         </button>
-        <button onclick="switchTab('pipeline')" id="tab-pipeline" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
+        <button onclick="switchTab('pipeline')" id="tab-pipeline" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="trello" class="w-4 h-4"></i>
           <span>Kanban Pipeline</span>
         </button>
-        <button onclick="switchTab('candidates')" id="tab-candidates" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
+        <button onclick="switchTab('verahire')" id="tab-verahire" class="tab-btn px-3 py-1.5 rounded-md text-purple-700 hover:text-purple-900 hover:bg-purple-50 flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="bot" class="w-4 h-4 text-purple-600"></i>
+          <span>VeraHire AI Recruiter</span>
+        </button>
+        <button onclick="switchTab('deel')" id="tab-deel" class="tab-btn px-3 py-1.5 rounded-md text-emerald-700 hover:text-emerald-900 hover:bg-emerald-50 flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="globe" class="w-4 h-4 text-emerald-600"></i>
+          <span>Deel Global HR</span>
+        </button>
+        <button onclick="switchTab('payroll')" id="tab-payroll" class="tab-btn px-3 py-1.5 rounded-md text-blue-700 hover:text-blue-900 hover:bg-blue-50 flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="receipt" class="w-4 h-4 text-blue-600"></i>
+          <span>RazorpayX Payroll</span>
+        </button>
+        <button onclick="switchTab('agency')" id="tab-agency" class="tab-btn px-3 py-1.5 rounded-md text-amber-700 hover:text-amber-900 hover:bg-amber-50 flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="building-2" class="w-4 h-4 text-amber-600"></i>
+          <span>Agency CRM</span>
+        </button>
+        <button onclick="switchTab('workflows')" id="tab-workflows" class="tab-btn px-3 py-1.5 rounded-md text-rose-700 hover:text-rose-900 hover:bg-rose-50 flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="zap" class="w-4 h-4 text-rose-600"></i>
+          <span>Autopilot</span>
+        </button>
+        <button onclick="switchTab('candidates')" id="tab-candidates" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="users" class="w-4 h-4"></i>
-          <span>Candidate 360°</span>
+          <span>Candidates</span>
         </button>
-        <button onclick="switchTab('interviews')" id="tab-interviews" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
+        <button onclick="switchTab('interviews')" id="tab-interviews" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="calendar" class="w-4 h-4"></i>
-          <span>Interviews & Scorecards</span>
+          <span>Interviews</span>
         </button>
-        <button onclick="switchTab('offers')" id="tab-offers" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
+        <button onclick="switchTab('offers')" id="tab-offers" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="file-check" class="w-4 h-4"></i>
-          <span>Offers & E-Sign</span>
+          <span>Offers</span>
         </button>
-        <button onclick="switchTab('analytics')" id="tab-analytics" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
+        <button onclick="switchTab('analytics')" id="tab-analytics" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
-          <span>Analytics & Funnel</span>
+          <span>Analytics</span>
         </button>
-        <button onclick="switchTab('careers')" id="tab-careers" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
-          <i data-lucide="globe" class="w-4 h-4"></i>
-          <span>Public Career Site</span>
+        <button onclick="switchTab('careers')" id="tab-careers" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="globe-2" class="w-4 h-4"></i>
+          <span>Career Site</span>
         </button>
-        <button onclick="switchTab('admin')" id="tab-admin" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-2">
+        <button onclick="switchTab('admin')" id="tab-admin" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="shield" class="w-4 h-4"></i>
-          <span>Admin & Audit</span>
+          <span>Admin</span>
         </button>
       </div>
     </div>
@@ -553,9 +542,12 @@
       <!-- Branded Career Portal Hero -->
       <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-8 sm:p-12 shadow-lg text-center relative overflow-hidden">
         <div class="relative z-10 max-w-2xl mx-auto space-y-4">
-          <div class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold tracking-wide uppercase border border-blue-400/30">Careers at TechCorp</div>
-          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Build the Future of Enterprise Technology</h1>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">We are hiring exceptional software engineers, AI researchers, and technical leaders to transform modern recruiting.</p>
+          <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 text-blue-200 text-xs font-semibold tracking-wide uppercase border border-white/20 backdrop-blur-xs">
+            <img src="/logo-icon.png" alt="Pavion" class="w-4 h-4 object-contain brightness-125" />
+            <span>Careers at Pavion Technologies</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Build the Future with Pavion Technologies</h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">Join Pavion Technologies Pvt. Ltd. We are hiring exceptional software engineers, AI researchers, and technical leaders to shape next-generation enterprise technology.</p>
         </div>
       </div>
 
@@ -674,11 +666,11 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           <div>
             <label class="block text-xs font-semibold text-slate-500 mb-1">Company Legal Name</label>
-            <input type="text" value="TechCorp Global Solutions" disabled class="w-full px-3 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-700" />
+            <input type="text" value="Pavion Technologies Pvt. Ltd." disabled class="w-full px-3 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-700 font-medium" />
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-500 mb-1">Custom Subdomain</label>
-            <input type="text" value="techcorp.ats.io" disabled class="w-full px-3 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-700" />
+            <input type="text" value="pavion.ats.io" disabled class="w-full px-3 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-700 font-medium" />
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-500 mb-1">Data Retention Window</label>
@@ -709,6 +701,377 @@
             </thead>
             <tbody id="auditLogsBody" class="divide-y divide-slate-100 font-mono text-slate-700">
               <!-- Injected via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 10. VERAHIRE AI RECRUITER VIEW ================= -->
+    <div id="view-verahire" class="view-panel hidden space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-purple-100 text-purple-800 flex items-center space-x-1">
+              <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+              <span>VeraHire AI Recruiter Engine</span>
+            </span>
+            <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-full flex items-center space-x-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Autonomous Screening Online</span>
+            </span>
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900 tracking-tight">First-Round AI Voice Screening & Ranked Shortlist</h1>
+          <p class="text-sm text-slate-500">Autonomous 15-45 minute voice screening, criteria evaluation against JD, and evidence-based candidate rankings (94%, 89%, 86%, 81%).</p>
+        </div>
+        <div class="flex items-center space-x-2.5">
+          <button onclick="openVeraHireVoiceModal()" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold rounded-lg shadow-sm text-sm flex items-center space-x-2 transition cursor-pointer">
+            <i data-lucide="mic" class="w-4 h-4"></i>
+            <span>Simulate AI Voice Screening</span>
+          </button>
+          <button onclick="loadVeraHire()" class="px-3.5 py-2 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold rounded-lg text-sm flex items-center space-x-1.5 shadow-xs transition cursor-pointer">
+            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+            <span>Refresh Rankings</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- VeraHire KPI Metric Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+          <div class="text-xs font-bold text-slate-500 uppercase">AI Screenings Conducted</div>
+          <div class="text-2xl font-black text-purple-700 font-mono mt-1" id="vhMetricsTotal">28</div>
+          <p class="text-xs text-slate-500 mt-0.5">100% voice & criteria evaluated</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+          <div class="text-xs font-bold text-slate-500 uppercase">Top Shortlist Tier (&gt;85%)</div>
+          <div class="text-2xl font-black text-emerald-600 font-mono mt-1" id="vhMetricsTopTier">12</div>
+          <p class="text-xs text-slate-500 mt-0.5">High confidence candidates</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+          <div class="text-xs font-bold text-slate-500 uppercase">Average Voice Duration</div>
+          <div class="text-2xl font-black text-indigo-600 font-mono mt-1">18.4 min</div>
+          <p class="text-xs text-slate-500 mt-0.5">Per candidate conversational turn</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+          <div class="text-xs font-bold text-slate-500 uppercase">Recruiter Time Saved</div>
+          <div class="text-2xl font-black text-blue-600 font-mono mt-1">91.4%</div>
+          <p class="text-xs text-slate-500 mt-0.5">Zero manual screening calls</p>
+        </div>
+      </div>
+
+      <!-- Ranked Shortlist Table -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="p-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-slate-50/70">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="award" class="w-5 h-5 text-purple-600"></i>
+            <h2 class="font-bold text-slate-900 text-sm">VeraHire Evidence-Based Ranked Shortlist</h2>
+            <span class="text-xs text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full font-mono font-semibold" id="vhShortlistCount">4 Candidates</span>
+          </div>
+          <div class="text-xs text-slate-500 flex items-center space-x-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span>Ranked by AI Evidence & Speech Rubrics</span>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+              <tr>
+                <th class="p-3.5 w-14 text-center">Rank</th>
+                <th class="p-3.5">Candidate</th>
+                <th class="p-3.5">Target Job Requisition</th>
+                <th class="p-3.5">VeraHire Score</th>
+                <th class="p-3.5">Evidence Breakdown</th>
+                <th class="p-3.5">Recommendation</th>
+                <th class="p-3.5 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="verahireRankingsBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Dynamically injected -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 11. DEEL GLOBAL HR & EOR VIEW ================= -->
+    <div id="view-deel" class="view-panel hidden space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-emerald-100 text-emerald-800 flex items-center space-x-1">
+              <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+              <span>Deel Global Employment Platform</span>
+            </span>
+            <span class="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded-full">110+ Countries EOR</span>
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Deel Global HR, EOR & Onboarding Suite</h1>
+          <p class="text-sm text-slate-500">Hire employees and contractors worldwide without creating local legal entities. Auto-generate compliant contracts and flow worker records into Global HR & Payroll.</p>
+        </div>
+        <div class="flex items-center space-x-2.5">
+          <button onclick="openDeelOnboardModal()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow-sm text-sm flex items-center space-x-2 transition cursor-pointer">
+            <i data-lucide="user-plus" class="w-4 h-4"></i>
+            <span>Onboard with Deel EOR</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Country Compliance Explorer Cards -->
+      <div>
+        <h2 class="text-sm font-bold text-slate-900 mb-3 flex items-center space-x-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+          <span>Global Employment & Compliance Directory (110+ Countries Supported)</span>
+        </h2>
+        <div id="deelCountriesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <!-- Dynamically Injected -->
+        </div>
+      </div>
+
+      <!-- Active Global Workers Table -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="p-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-slate-50/70">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="users" class="w-5 h-5 text-emerald-600"></i>
+            <h2 class="font-bold text-slate-900 text-sm">Active International Workers (Deel HR Synchronized)</h2>
+          </div>
+          <span class="text-xs text-slate-500 font-mono">100% Tax & EOR Compliant</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+              <tr>
+                <th class="p-3.5">Worker ID</th>
+                <th class="p-3.5">Employee Name</th>
+                <th class="p-3.5">Country / Entity</th>
+                <th class="p-3.5">Contract Type</th>
+                <th class="p-3.5">Statutory Benefits</th>
+                <th class="p-3.5">Compliance Status</th>
+                <th class="p-3.5">Global Payroll</th>
+                <th class="p-3.5 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="deelWorkersBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Dynamically injected -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 12. RAZORPAYX PAYROLL & COMPLIANCE VIEW ================= -->
+    <div id="view-payroll" class="view-panel hidden space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-blue-100 text-blue-800 flex items-center space-x-1">
+              <i data-lucide="receipt" class="w-3.5 h-3.5"></i>
+              <span>RazorpayX Payroll Operating System</span>
+            </span>
+            <span class="text-xs text-indigo-600 font-bold bg-indigo-50 px-2 py-0.5 rounded-full">Indian Statutory Compliance</span>
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900 tracking-tight">RazorpayX Payroll, CTC Breakdown & Direct Payouts</h1>
+          <p class="text-sm text-slate-500">Automate Indian salary breakup (Basic 50%, HRA 20%, EPF 12%, ESI, PT, TDS), 1-click hire-to-payroll sync, and direct bank transfer salary disbursement.</p>
+        </div>
+        <div class="flex items-center space-x-2.5">
+          <button onclick="runBatchSalaryDisbursement()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-sm text-sm flex items-center space-x-2 transition cursor-pointer">
+            <i data-lucide="zap" class="w-4 h-4"></i>
+            <span>Disburse Monthly Payroll via RazorpayX</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive CTC Breakdown Calculator Card -->
+      <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-6 rounded-2xl shadow-md border border-blue-900/40">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Interactive Calculator</span>
+            <h2 class="text-xl font-bold text-white tracking-tight">Indian CTC Structure & In-Hand Salary Engine</h2>
+          </div>
+          <div class="flex items-center space-x-2">
+            <label class="text-xs font-semibold text-slate-300">Annual CTC (₹):</label>
+            <input type="number" id="calcAnnualCtcInput" value="1800000" step="50000" class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-white font-mono text-sm font-bold w-40 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <button onclick="recalculateCtcBreakup()" class="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition cursor-pointer">Calculate</button>
+          </div>
+        </div>
+
+        <div id="ctcBreakdownGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Synced Payroll Employees Table -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="p-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-slate-50/70">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="users" class="w-5 h-5 text-blue-600"></i>
+            <h2 class="font-bold text-slate-900 text-sm">Active Employees on RazorpayX Payroll</h2>
+          </div>
+          <span class="text-xs text-slate-500 font-mono">Auto-Synced from ATS Accepted Offers</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+              <tr>
+                <th class="p-3.5">Employee</th>
+                <th class="p-3.5">Designation</th>
+                <th class="p-3.5">Annual CTC</th>
+                <th class="p-3.5">Net In-Hand (Mo)</th>
+                <th class="p-3.5">PF UAN (12-digit)</th>
+                <th class="p-3.5">ESI IP / PAN</th>
+                <th class="p-3.5">Last Payout UTR</th>
+                <th class="p-3.5 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="payrollEmployeesBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Dynamically injected -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 13. AGENCY CRM & INVOICING VIEW ================= -->
+    <div id="view-agency" class="view-panel hidden space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-amber-100 text-amber-800 flex items-center space-x-1">
+              <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
+              <span>Staffing Agency & Headhunting CRM</span>
+            </span>
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Client Portals, Submissions & Placement Fee Invoicing</h1>
+          <p class="text-sm text-slate-500">Manage client accounts, track candidate submissions, calculate placement fees (15–25% CTC), and issue automated invoices.</p>
+        </div>
+        <div class="flex items-center space-x-2.5">
+          <button onclick="openAgencyInvoiceModal()" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg shadow-sm text-sm flex items-center space-x-2 transition cursor-pointer">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>Generate Placement Invoice</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Agency Client Accounts Cards -->
+      <div>
+        <h2 class="text-sm font-bold text-slate-900 mb-3 flex items-center space-x-1.5">
+          <i data-lucide="briefcase" class="w-4 h-4 text-amber-600"></i>
+          <span>Client Company CRM Directory</span>
+        </h2>
+        <div id="agencyClientsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Dynamically Injected -->
+        </div>
+      </div>
+
+      <!-- Candidate Submissions to Clients Table -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
+          <h2 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+            <i data-lucide="send" class="w-4 h-4 text-amber-600"></i>
+            <span>Candidate Submissions to Client Companies</span>
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Duplicate Submission Shield Active</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+              <tr>
+                <th class="p-3.5">Candidate</th>
+                <th class="p-3.5">Target Client</th>
+                <th class="p-3.5">Role</th>
+                <th class="p-3.5">Expected CTC</th>
+                <th class="p-3.5">Status</th>
+                <th class="p-3.5">Submitted On</th>
+                <th class="p-3.5 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="agencySubmissionsBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Dynamically injected -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Placement Invoices Ledger -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
+          <h2 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+            <i data-lucide="file-text" class="w-4 h-4 text-amber-600"></i>
+            <span>Agency Placement Invoices Ledger</span>
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">18% GST / VAT Tax Inclusive</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+              <tr>
+                <th class="p-3.5">Invoice #</th>
+                <th class="p-3.5">Client Company</th>
+                <th class="p-3.5">Placed Candidate</th>
+                <th class="p-3.5">CTC & Fee %</th>
+                <th class="p-3.5">Base Fee</th>
+                <th class="p-3.5">Total (inc. GST)</th>
+                <th class="p-3.5">Status</th>
+                <th class="p-3.5 text-right">Due Date</th>
+              </tr>
+            </thead>
+            <tbody id="agencyInvoicesBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Dynamically injected -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 14. AUTOPILOT WORKFLOWS VIEW ================= -->
+    <div id="view-workflows" class="view-panel hidden space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-rose-100 text-rose-800 flex items-center space-x-1">
+              <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+              <span>Autopilot Workflow Automation Center</span>
+            </span>
+            <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-full">Background Worker Online</span>
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Zero-Touch Automated Recruitment Triggers</h1>
+          <p class="text-sm text-slate-500">Eliminate manual recruiter communication. Automatically dispatch polite rejection emails, VeraHire AI voice screenings, and global EOR/payroll provisioning on status changes.</p>
+        </div>
+        <div class="flex items-center space-x-2.5">
+          <button onclick="simulateAutopilotEvent('CANDIDATE_REJECTED')" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-lg shadow-sm text-sm flex items-center space-x-2 transition cursor-pointer">
+            <i data-lucide="play" class="w-4 h-4"></i>
+            <span>Test Polite Auto-Rejection</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Autopilot Rules Grid -->
+      <div id="workflowsRulesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Dynamically injected -->
+      </div>
+
+      <!-- Real-time Autopilot Execution Stream Table -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
+          <h2 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+            <i data-lucide="activity" class="w-4 h-4 text-rose-600"></i>
+            <span>Autopilot Real-Time Execution Audit Stream</span>
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">SOC-2 Forensic Logged</span>
+        </div>
+        <div class="overflow-x-auto max-h-96 custom-scrollbar">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-slate-50 sticky top-0 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+              <tr>
+                <th class="p-3.5">Executed At</th>
+                <th class="p-3.5">Rule Name</th>
+                <th class="p-3.5">Trigger Event</th>
+                <th class="p-3.5">Candidate / Role</th>
+                <th class="p-3.5">Action Executed</th>
+                <th class="p-3.5">Status</th>
+              </tr>
+            </thead>
+            <tbody id="workflowLogsBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Dynamically injected -->
             </tbody>
           </table>
         </div>
@@ -778,6 +1141,342 @@
 
       <div class="p-6 overflow-y-auto space-y-6 custom-scrollbar text-sm" id="modalCandidateBody">
         <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ODOO-STYLE MODULAR APP LAUNCHER MODAL ================= -->
+  <div id="appLauncherModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl p-6 space-y-4 border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+            <i data-lucide="layout-grid" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Enterprise Operating Apps Suite</h3>
+            <p class="text-xs text-slate-500">Modular business platform: ATS + AI Recruiter + Global EOR + Payroll + CRM</p>
+          </div>
+        </div>
+        <button onclick="closeModal('appLauncherModal')" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- 8-Apps Modular Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
+        <div onclick="switchTab('pipeline'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="trello" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Recruitment ATS</div>
+          <div class="text-[10px] text-slate-500">Kanban & CRM</div>
+        </div>
+
+        <div onclick="switchTab('verahire'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-purple-400 hover:bg-purple-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">VeraHire AI</div>
+          <div class="text-[10px] text-slate-500">Voice Screening</div>
+        </div>
+
+        <div onclick="switchTab('deel'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Deel Global HR</div>
+          <div class="text-[10px] text-slate-500">110+ Countries EOR</div>
+        </div>
+
+        <div onclick="switchTab('payroll'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="receipt" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">RazorpayX Payroll</div>
+          <div class="text-[10px] text-slate-500">Indian Compliance</div>
+        </div>
+
+        <div onclick="switchTab('agency'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-amber-400 hover:bg-amber-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="building-2" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Agency CRM</div>
+          <div class="text-[10px] text-slate-500">Clients & Invoices</div>
+        </div>
+
+        <div onclick="switchTab('workflows'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-rose-400 hover:bg-rose-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Autopilot</div>
+          <div class="text-[10px] text-slate-500">Auto Rejection</div>
+        </div>
+
+        <div onclick="switchTab('analytics'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-cyan-400 hover:bg-cyan-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">BI Analytics</div>
+          <div class="text-[10px] text-slate-500">Funnel & Velocity</div>
+        </div>
+
+        <div onclick="switchTab('careers'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="globe-2" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Career Portal</div>
+          <div class="text-[10px] text-slate-500">Branded Site</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MULTI-JOB BOARD SYNDICATION MODAL ================= -->
+  <div id="multiJobBoardModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl p-6 space-y-4 border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="share-2" class="w-5 h-5 text-blue-600"></i>
+          <h3 class="text-base font-bold text-slate-900">1-Click Multi-Job Board Syndication</h3>
+        </div>
+        <button onclick="closeModal('multiJobBoardModal')" class="p-1 text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Post this job requisition simultaneously to 50+ global job boards and aggregators with automated tracking.</p>
+
+      <div class="space-y-2.5 max-h-60 overflow-y-auto custom-scrollbar p-1">
+        <label class="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+          <div class="flex items-center space-x-2.5">
+            <input type="checkbox" checked class="syndicate-board-chk rounded text-blue-600" value="LinkedIn Talent Hub" />
+            <span class="text-xs font-bold text-slate-800">LinkedIn Talent Hub</span>
+          </div>
+          <span class="text-[10px] font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Primary</span>
+        </label>
+        <label class="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+          <div class="flex items-center space-x-2.5">
+            <input type="checkbox" checked class="syndicate-board-chk rounded text-blue-600" value="Indeed Worldwide" />
+            <span class="text-xs font-bold text-slate-800">Indeed Worldwide</span>
+          </div>
+          <span class="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">High Traffic</span>
+        </label>
+        <label class="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+          <div class="flex items-center space-x-2.5">
+            <input type="checkbox" checked class="syndicate-board-chk rounded text-blue-600" value="Glassdoor Jobs" />
+            <span class="text-xs font-bold text-slate-800">Glassdoor Jobs</span>
+          </div>
+          <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Branded</span>
+        </label>
+        <label class="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+          <div class="flex items-center space-x-2.5">
+            <input type="checkbox" checked class="syndicate-board-chk rounded text-blue-600" value="ZipRecruiter Fast-Apply" />
+            <span class="text-xs font-bold text-slate-800">ZipRecruiter Fast-Apply</span>
+          </div>
+          <span class="text-[10px] font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded">Aggregator</span>
+        </label>
+        <label class="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+          <div class="flex items-center space-x-2.5">
+            <input type="checkbox" checked class="syndicate-board-chk rounded text-blue-600" value="Naukri.com Enterprise" />
+            <span class="text-xs font-bold text-slate-800">Naukri.com Enterprise (India)</span>
+          </div>
+          <span class="text-[10px] font-bold text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded">India Prime</span>
+        </label>
+        <label class="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+          <div class="flex items-center space-x-2.5">
+            <input type="checkbox" checked class="syndicate-board-chk rounded text-blue-600" value="Google for Jobs API" />
+            <span class="text-xs font-bold text-slate-800">Google for Jobs (SEO Schema)</span>
+          </div>
+          <span class="text-[10px] font-bold text-teal-700 bg-teal-100 px-2 py-0.5 rounded">Organic</span>
+        </label>
+      </div>
+
+      <div class="flex justify-end space-x-3 pt-2 border-t border-slate-100">
+        <button onclick="closeModal('multiJobBoardModal')" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
+        <button onclick="submitJobSyndication()" id="submitSyndicationBtn" class="px-4 py-2 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm flex items-center space-x-1.5 cursor-pointer">
+          <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+          <span>Publish to Selected Boards</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DEEL EOR ONBOARDING MODAL ================= -->
+  <div id="deelOnboardModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl p-6 space-y-4 border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="globe" class="w-5 h-5 text-emerald-600"></i>
+          <h3 class="text-base font-bold text-slate-900">Deel Global EOR Onboarding Wizard</h3>
+        </div>
+        <button onclick="closeModal('deelOnboardModal')" class="p-1 text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Generate legally compliant international employment contracts and auto-flow worker details into Deel Global HR.</p>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Select Candidate</label>
+          <select id="deelCandidateSelect" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg bg-white font-medium">
+            <!-- Dynamically populated -->
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Employment Country (110+ Supported)</label>
+          <select id="deelCountrySelect" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg bg-white font-medium">
+            <option value="IN">🇮🇳 India (Deel India Pvt Ltd - INR)</option>
+            <option value="US">🇺🇸 United States (Deel US Inc - USD)</option>
+            <option value="GB">🇬🇧 United Kingdom (Deel UK Operations Ltd - GBP)</option>
+            <option value="DE">🇩🇪 Germany (Deel Germany GmbH - EUR)</option>
+            <option value="AE">🇦🇪 United Arab Emirates (Deel Middle East FZ-LLC - AED)</option>
+            <option value="SG">🇸🇬 Singapore (Deel Singapore Pte Ltd - SGD)</option>
+            <option value="CA">🇨🇦 Canada (Deel Canada Corp - CAD)</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Worker Engagement Type</label>
+            <select id="deelWorkerTypeSelect" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg bg-white font-medium">
+              <option value="FULL_TIME_EOR">Full-Time Employee (EOR)</option>
+              <option value="INDEPENDENT_CONTRACTOR">Independent Contractor</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Annual Compensation</label>
+            <input type="number" id="deelAnnualSalaryInput" value="1800000" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg font-mono font-bold" />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end space-x-3 pt-2 border-t border-slate-100">
+        <button onclick="closeModal('deelOnboardModal')" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
+        <button onclick="submitDeelOnboarding()" id="submitDeelOnboardBtn" class="px-4 py-2 text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-sm flex items-center space-x-1.5 cursor-pointer">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i>
+          <span>Create Contract & Sync to Deel HR</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= AGENCY INVOICE MODAL ================= -->
+  <div id="agencyInvoiceModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl p-6 space-y-4 border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="file-text" class="w-5 h-5 text-amber-600"></i>
+          <h3 class="text-base font-bold text-slate-900">Generate Placement Fee Invoice</h3>
+        </div>
+        <button onclick="closeModal('agencyInvoiceModal')" class="p-1 text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Calculate contingency/placement fee based on placed candidate's first-year CTC with standard 18% GST.</p>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Client Company</label>
+          <select id="agencyClientSelect" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg bg-white font-medium">
+            <option value="Nexus Cloud Technologies">Nexus Cloud Technologies (20% Fee)</option>
+            <option value="FinVanguard Global">FinVanguard Global (22% Fee)</option>
+            <option value="OmniHealth AI">OmniHealth AI (25% Fee)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Placed Candidate Name</label>
+          <input type="text" id="agencyCandidateNameInput" placeholder="e.g. Vikram Mehta" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Annual CTC (₹)</label>
+            <input type="number" id="agencyCtcInput" value="2400000" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg font-mono font-bold" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Placement Fee %</label>
+            <input type="number" id="agencyFeePctInput" value="20" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg font-mono font-bold" />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end space-x-3 pt-2 border-t border-slate-100">
+        <button onclick="closeModal('agencyInvoiceModal')" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
+        <button onclick="submitAgencyInvoice()" id="submitAgencyInvoiceBtn" class="px-4 py-2 text-xs font-semibold bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow-sm flex items-center space-x-1.5 cursor-pointer">
+          <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+          <span>Issue Placement Invoice</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= VERAHIRE AI VOICE SCREENING STUDIO MODAL ================= -->
+  <div id="verahireVoiceModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl p-6 space-y-4 border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center text-white">
+            <i data-lucide="mic" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900">VeraHire Autonomous AI Voice Screening Studio</h3>
+            <p class="text-xs text-slate-500">Autonomous conversational interview simulator & speech evidence analysis</p>
+          </div>
+        </div>
+        <button onclick="closeModal('verahireVoiceModal')" class="p-1 text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Live Voice Studio Interface -->
+      <div class="bg-slate-900 text-white p-5 rounded-xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+            <span class="text-xs font-mono text-slate-300">AI VOICE BOT: ACTIVE</span>
+          </div>
+          <span class="text-xs text-purple-400 font-mono">VeraHire v3.2 Engine</span>
+        </div>
+
+        <!-- Simulated Audio Waveform -->
+        <div class="h-14 flex items-center justify-center space-x-1.5 bg-slate-950/70 rounded-lg p-2">
+          <div class="w-1.5 bg-purple-500 h-4 animate-bounce"></div>
+          <div class="w-1.5 bg-purple-400 h-8 animate-bounce delay-75"></div>
+          <div class="w-1.5 bg-purple-500 h-12 animate-bounce delay-100"></div>
+          <div class="w-1.5 bg-indigo-400 h-6 animate-bounce delay-150"></div>
+          <div class="w-1.5 bg-indigo-500 h-10 animate-bounce delay-200"></div>
+          <div class="w-1.5 bg-purple-400 h-14 animate-bounce delay-100"></div>
+          <div class="w-1.5 bg-purple-500 h-8 animate-bounce delay-75"></div>
+          <div class="w-1.5 bg-indigo-400 h-5 animate-bounce"></div>
+        </div>
+
+        <!-- Question Prompter -->
+        <div class="bg-white/5 border border-white/10 rounded-lg p-3 space-y-1.5">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-purple-400">Current AI Question</div>
+          <div id="vhStudioQuestionText" class="text-sm font-medium text-slate-100">"Tell me about a time you handled a difficult customer escalation or critical production outage under high pressure."</div>
+          <button onclick="speakCurrentQuestion()" class="text-xs text-purple-300 hover:text-white flex items-center space-x-1 pt-1 cursor-pointer">
+            <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            <span>🔊 Listen to Question (Text-To-Speech)</span>
+          </button>
+        </div>
+
+        <!-- Candidate Speech Input Area -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span>Candidate Verbal Answer (Simulated or Spoken)</span>
+            <button onclick="simulateCandidateAnswerSample()" class="text-purple-400 hover:underline cursor-pointer">Insert Sample Answer</button>
+          </div>
+          <textarea id="vhStudioAnswerText" rows="3" class="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-purple-400" placeholder="Type or simulate candidate spoken response..."></textarea>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center pt-2 border-t border-slate-100">
+        <div class="text-xs text-slate-500">Autonomous Rubric: Tech Depth, System Design, Communication, Problem Solving</div>
+        <div class="flex space-x-2">
+          <button onclick="closeModal('verahireVoiceModal')" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
+          <button onclick="evaluateVoiceScreeningSession()" id="submitVoiceScreenBtn" class="px-4 py-2 text-xs font-semibold bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-sm flex items-center space-x-1.5 cursor-pointer">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Score & Rank Candidate</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1016,10 +1715,10 @@
 
       <!-- Header with Logo -->
       <div class="text-center space-y-2">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25 mb-1">
-          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        <div class="inline-flex items-center justify-center p-2 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm mb-1">
+          <img src="/logo-icon.png" alt="Pavion Technologies" class="w-12 h-12 object-contain" />
         </div>
-        <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">Enterprise ATS Sign In</h3>
+        <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">Pavion Technologies Sign In</h3>
         <p class="text-xs text-slate-500 max-w-xs mx-auto">
           Enter your email address and password to sign into your specific account and role workspace.
         </p>
@@ -1460,7 +2159,7 @@
 
       <div>
         <span class="text-[11px] font-bold text-indigo-600 uppercase tracking-wider">Lobby & Waiting Room</span>
-        <h3 class="text-lg font-bold text-slate-900 mt-1">TechCorp Global Hiring Studio</h3>
+        <h3 class="text-lg font-bold text-slate-900 mt-1">Pavion Technologies Hiring Studio</h3>
         <p class="text-xs text-slate-500 mt-1" id="lobbyRoleTitle">Senior AI / NLP Engineer • System Design Round</p>
       </div>
 

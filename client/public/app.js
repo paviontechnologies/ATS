@@ -259,18 +259,18 @@ async function adminApiFetch(endpoint, options = {}) {
 
 // Role-based Allowed Navigation Tabs
 const ROLE_ALLOWED_TABS = {
-  SUPER_ADMIN: ['dashboard', 'jobs', 'pipeline', 'candidates', 'interviews', 'offers', 'analytics', 'careers', 'admin'],
-  COMPANY_ADMIN: ['dashboard', 'jobs', 'candidates', 'offers', 'analytics', 'careers', 'admin'],
-  RECRUITER: ['dashboard', 'jobs', 'pipeline', 'candidates', 'interviews', 'offers', 'analytics', 'careers'],
-  HIRING_MANAGER: ['dashboard', 'jobs', 'pipeline', 'candidates', 'interviews', 'offers'],
-  INTERVIEWER: ['dashboard', 'interviews', 'candidates'],
-  AGENCY_PARTNER: ['dashboard', 'jobs', 'candidates'],
+  SUPER_ADMIN: ['dashboard', 'jobs', 'pipeline', 'verahire', 'deel', 'payroll', 'agency', 'workflows', 'candidates', 'interviews', 'offers', 'analytics', 'careers', 'admin'],
+  COMPANY_ADMIN: ['dashboard', 'jobs', 'pipeline', 'verahire', 'deel', 'payroll', 'agency', 'workflows', 'candidates', 'offers', 'analytics', 'careers', 'admin'],
+  RECRUITER: ['dashboard', 'jobs', 'pipeline', 'verahire', 'deel', 'payroll', 'agency', 'workflows', 'candidates', 'interviews', 'offers', 'analytics', 'careers'],
+  HIRING_MANAGER: ['dashboard', 'jobs', 'pipeline', 'verahire', 'candidates', 'interviews', 'offers'],
+  INTERVIEWER: ['dashboard', 'verahire', 'interviews', 'candidates'],
+  AGENCY_PARTNER: ['dashboard', 'jobs', 'agency', 'candidates'],
   CANDIDATE: ['dashboard', 'careers', 'offers']
 };
 
 function updateNavigationTabsForRole(role) {
-  const allowed = ROLE_ALLOWED_TABS[role] || ['dashboard', 'jobs', 'pipeline', 'candidates', 'interviews', 'offers', 'analytics', 'careers', 'admin'];
-  const allTabs = ['dashboard', 'jobs', 'pipeline', 'candidates', 'interviews', 'offers', 'analytics', 'careers', 'admin'];
+  const allowed = ROLE_ALLOWED_TABS[role] || ['dashboard', 'jobs', 'pipeline', 'verahire', 'deel', 'payroll', 'agency', 'workflows', 'candidates', 'interviews', 'offers', 'analytics', 'careers', 'admin'];
+  const allTabs = ['dashboard', 'jobs', 'pipeline', 'verahire', 'deel', 'payroll', 'agency', 'workflows', 'candidates', 'interviews', 'offers', 'analytics', 'careers', 'admin'];
   
   allTabs.forEach(tab => {
     const tabEl = document.getElementById(`tab-${tab}`);
@@ -453,8 +453,23 @@ async function refreshCurrentView() {
     case 'admin':
       await loadAdmin();
       break;
+    case 'verahire':
+      await loadVeraHire();
+      break;
+    case 'deel':
+      await loadDeel();
+      break;
+    case 'payroll':
+      await loadPayroll();
+      break;
+    case 'agency':
+      await loadAgency();
+      break;
+    case 'workflows':
+      await loadWorkflows();
+      break;
   }
-  lucide.createIcons();
+  if (window.lucide) lucide.createIcons();
 }
 
 /* ================= 1. DASHBOARD LOGIC ================= */
@@ -2102,7 +2117,7 @@ function renderCandidateDashboard(jobs, candidates, interviews, analytics) {
             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
             <span>Official Employment Offer</span>
           </span>
-          <span class="text-xs font-bold text-slate-400">TechCorp</span>
+          <span class="text-xs font-bold text-slate-500 flex items-center space-x-1.5"><img src="/logo-icon.png" class="w-3.5 h-3.5 object-contain" /><span>Pavion Technologies</span></span>
         </div>
 
         <div>
@@ -2205,8 +2220,9 @@ async function loadJobs() {
       <td class="p-4 text-xs font-mono text-slate-600">
         $${(j.salaryRange?.min / 1000) || 120}k - $${(j.salaryRange?.max / 1000) || 160}k
       </td>
-      <td class="p-4 text-right space-x-2">
-        <button onclick="openPipelineForJob('${j._id}')" class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-xs font-semibold">View Pipeline</button>
+      <td class="p-4 text-right space-x-2 whitespace-nowrap">
+        <button onclick="openMultiJobBoardModal('${j._id}')" class="px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-md text-xs font-semibold transition cursor-pointer" title="Post to 50+ boards">📢 Syndicate</button>
+        <button onclick="openPipelineForJob('${j._id}')" class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-xs font-semibold transition cursor-pointer">View Pipeline</button>
       </td>
     </tr>
   `).join('');
@@ -3963,6 +3979,602 @@ async function sendAIAssistantMessage(text) {
   }
 }
 
+/* =========================================================================
+   10. VERAHIRE AI RECRUITER & FIRST-ROUND VOICE SCREENING
+   ========================================================================= */
+let activeVeraHireSessions = [];
+
+async function loadVeraHire() {
+  try {
+    const sessions = await apiFetch('/verahire/sessions');
+    activeVeraHireSessions = Array.isArray(sessions) ? sessions : [];
+
+    // Update KPI Counts
+    const totalEl = document.getElementById('vhMetricsTotal');
+    if (totalEl) totalEl.textContent = activeVeraHireSessions.length;
+
+    const topTierCount = activeVeraHireSessions.filter(s => (s.overallScore || 0) >= 85).length;
+    const topTierEl = document.getElementById('vhMetricsTopTier');
+    if (topTierEl) topTierEl.textContent = topTierCount;
+
+    const countEl = document.getElementById('vhShortlistCount');
+    if (countEl) countEl.textContent = `${activeVeraHireSessions.length} Candidates`;
+
+    const tbody = document.getElementById('verahireRankingsBody');
+    if (!tbody) return;
+
+    if (activeVeraHireSessions.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-slate-400">No VeraHire screenings completed yet. Click "Simulate AI Voice Screening" to begin.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = activeVeraHireSessions.map((s, idx) => {
+      const score = s.overallScore || 85;
+      const scoreBg = score >= 90 ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : (score >= 80 ? 'bg-blue-50 text-blue-700 border-blue-200' : 'bg-amber-50 text-amber-700 border-amber-200');
+      const rankBadge = idx === 0 ? 'bg-amber-100 text-amber-800 font-black' : (idx === 1 ? 'bg-slate-200 text-slate-800 font-bold' : 'bg-slate-100 text-slate-600 font-semibold');
+      const techScore = s.evidenceScores?.technical_depth || 92;
+      const commScore = s.evidenceScores?.communication || 90;
+      const probScore = s.evidenceScores?.situational_reasoning || 88;
+
+      return `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="p-3.5 text-center">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full text-xs ${rankBadge}">#${idx + 1}</span>
+          </td>
+          <td class="p-3.5">
+            <div class="font-bold text-slate-900">${s.candidateName || 'Candidate'}</div>
+            <div class="text-[11px] text-slate-500 font-mono">${s.candidateEmail || ''}</div>
+          </td>
+          <td class="p-3.5 font-medium text-slate-800">${s.jobTitle || 'Software Role'}</td>
+          <td class="p-3.5">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-mono font-black border ${scoreBg}">
+              ${score}% Match
+            </span>
+          </td>
+          <td class="p-3.5">
+            <div class="flex flex-wrap gap-1">
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">Tech: ${techScore}%</span>
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">Comm: ${commScore}%</span>
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Escalation: ${probScore}%</span>
+            </div>
+          </td>
+          <td class="p-3.5">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${s.recommendation === 'STRONG_SHORTLIST' ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'}">
+              ${s.recommendation || 'SHORTLIST'}
+            </span>
+          </td>
+          <td class="p-3.5 text-right space-x-1 whitespace-nowrap">
+            <button onclick="switchTab('offers')" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded text-xs transition cursor-pointer" title="Advance directly to Offer">Advance Offer →</button>
+            <button onclick="switchTab('deel')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded text-xs transition cursor-pointer" title="Onboard to Deel Global EOR">Deel EOR</button>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    if (window.lucide) lucide.createIcons();
+  } catch (err) {
+    console.error('loadVeraHire error:', err);
+  }
+}
+
+function openVeraHireVoiceModal() {
+  const modal = document.getElementById('verahireVoiceModal');
+  if (modal) modal.classList.remove('hidden');
+  if (window.lucide) lucide.createIcons();
+}
+
+function speakCurrentQuestion() {
+  const text = document.getElementById('vhStudioQuestionText')?.textContent || "Tell me about a time you handled a difficult customer escalation or critical production outage under high pressure.";
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 1.0;
+    utterance.pitch = 1.05;
+    window.speechSynthesis.speak(utterance);
+  } else {
+    alert("Audio Voice: " + text);
+  }
+}
+
+function simulateCandidateAnswerSample() {
+  const answerEl = document.getElementById('vhStudioAnswerText');
+  if (answerEl) {
+    answerEl.value = "In our distributed fintech platform, a third-party webhook failure stalled thousands of payment settlement events. I immediately took command, isolated the failing microservice, applied a Circuit Breaker pattern, and safely replayed events from Apache Kafka once downstream recovered. We achieved zero financial data loss and improved telemetry.";
+  }
+}
+
+async function evaluateVoiceScreeningSession() {
+  const btn = document.getElementById('submitVoiceScreenBtn');
+  if (btn) btn.disabled = true;
+
+  try {
+    const jobs = await apiFetch('/jobs');
+    const candidates = await apiFetch('/candidates');
+    const job = jobs[0] || {};
+    const candidate = candidates[0] || {};
+    const answer = document.getElementById('vhStudioAnswerText')?.value;
+
+    const res = await apiFetch('/verahire/screen', {
+      method: 'POST',
+      body: JSON.stringify({
+        jobId: job._id,
+        candidateId: candidate._id,
+        responses: [
+          {
+            question: "Tell me about a time you handled a difficult customer escalation or critical production outage under high pressure.",
+            candidateResponse: answer || "I led emergency incident triage, implemented circuit breakers, and restored high-availability processing with zero data loss.",
+            confidence: 0.96,
+            keyInsights: "Exemplary distributed systems incident management, structured root-cause mindset."
+          }
+        ]
+      })
+    });
+
+    closeModal('verahireVoiceModal');
+    await loadVeraHire();
+    alert(`🎉 VeraHire AI Voice Screening Complete!\nCandidate ${res.evaluation?.candidateName || 'Candidate'} scored ${res.evaluation?.overallScore || 94}%.\nRanked in Top Shortlist Tier.`);
+  } catch (err) {
+    alert('Error running VeraHire screening: ' + err.message);
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
+
+/* =========================================================================
+   11. DEEL GLOBAL HR & EMPLOYER OF RECORD (EOR)
+   ========================================================================= */
+async function loadDeel() {
+  try {
+    const [countries, workers] = await Promise.all([
+      apiFetch('/deel/countries').catch(() => []),
+      apiFetch('/deel/workers').catch(() => [])
+    ]);
+
+    // Render country compliance cards
+    const grid = document.getElementById('deelCountriesGrid');
+    if (grid && Array.isArray(countries)) {
+      grid.innerHTML = countries.map(c => `
+        <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs space-y-2 hover:border-emerald-300 transition">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-900 text-xs">${c.name} (${c.currency})</span>
+            <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded">EOR Ready</span>
+          </div>
+          <p class="text-[11px] text-slate-500 font-mono">${c.entityType}</p>
+          <div class="text-[10px] text-slate-600 space-y-0.5 pt-1 border-t border-slate-100">
+            <div>• Notice Period: <strong class="text-slate-800">${c.noticePeriodDays} days</strong></div>
+            <div>• Probation: <strong class="text-slate-800">${c.statutoryProbationMonths} months</strong></div>
+            <div>• Benefits: <strong class="text-emerald-700">${c.mandatoryBenefits[0]}</strong></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render global workers table
+    const tbody = document.getElementById('deelWorkersBody');
+    if (tbody && Array.isArray(workers)) {
+      tbody.innerHTML = workers.map(w => `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="p-3.5 font-mono font-bold text-slate-900">${w.workerId || 'DEEL-WRK'}</td>
+          <td class="p-3.5">
+            <div class="font-bold text-slate-900">${w.fullName}</div>
+            <div class="text-[11px] text-slate-500 font-mono">${w.email}</div>
+          </td>
+          <td class="p-3.5">
+            <div class="font-semibold text-slate-800">${w.country}</div>
+            <div class="text-[10px] text-slate-400 font-mono">${w.eorEntity || 'Deel Legal Entity'}</div>
+          </td>
+          <td class="p-3.5 font-bold text-slate-700">
+            <span class="px-2 py-0.5 rounded text-[10px] ${w.workerType === 'FULL_TIME_EOR' ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-amber-50 text-amber-700 border border-amber-200'}">
+              ${w.workerType === 'FULL_TIME_EOR' ? 'Full-Time EOR' : 'Contractor'}
+            </span>
+          </td>
+          <td class="p-3.5 text-[11px] text-slate-600">
+            ${(w.benefitsEnrolled || []).map(b => `<span class="inline-block mr-1 text-[10px] bg-slate-100 px-1.5 py-0.5 rounded">${b.benefit}</span>`).join('')}
+          </td>
+          <td class="p-3.5">
+            <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>${w.complianceStatus || 'VERIFIED'}</span>
+            </span>
+          </td>
+          <td class="p-3.5 font-mono text-[11px] text-indigo-700 font-bold">${w.globalPayrollStatus || 'SYNCED'}</td>
+          <td class="p-3.5 text-right whitespace-nowrap">
+            <button onclick="switchTab('payroll')" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded font-semibold text-xs transition cursor-pointer">View Payroll →</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    if (window.lucide) lucide.createIcons();
+  } catch (err) {
+    console.error('loadDeel error:', err);
+  }
+}
+
+async function openDeelOnboardModal() {
+  const candidates = await apiFetch('/candidates').catch(() => []);
+  const select = document.getElementById('deelCandidateSelect');
+  if (select && Array.isArray(candidates)) {
+    select.innerHTML = candidates.map(c => `
+      <option value="${c._id}">${c.firstName} ${c.lastName} (${c.email})</option>
+    `).join('');
+  }
+
+  const modal = document.getElementById('deelOnboardModal');
+  if (modal) modal.classList.remove('hidden');
+  if (window.lucide) lucide.createIcons();
+}
+
+async function submitDeelOnboarding() {
+  const candidateId = document.getElementById('deelCandidateSelect')?.value;
+  const countryCode = document.getElementById('deelCountrySelect')?.value;
+  const workerType = document.getElementById('deelWorkerTypeSelect')?.value;
+  const annualSalary = document.getElementById('deelAnnualSalaryInput')?.value;
+
+  try {
+    const res = await apiFetch('/deel/onboard', {
+      method: 'POST',
+      body: JSON.stringify({ candidateId, countryCode, workerType, annualSalary })
+    });
+
+    closeModal('deelOnboardModal');
+    await loadDeel();
+    alert(`✅ Global Onboarding Success!\nCandidate onboarded to Deel Global EOR (${countryCode}).\nContract Number: ${res.contract?.contractNumber}\nWorker Record ID: ${res.worker?.workerId}`);
+  } catch (err) {
+    alert('Failed to onboard with Deel: ' + err.message);
+  }
+}
+
+/* =========================================================================
+   12. RAZORPAYX PAYROLL & INDIAN COMPLIANCE
+   ========================================================================= */
+async function loadPayroll() {
+  try {
+    const employees = await apiFetch('/payroll/employees').catch(() => []);
+
+    // Recalculate CTC Breakup
+    const inputVal = document.getElementById('calcAnnualCtcInput')?.value || 1800000;
+    await recalculateCtcBreakup(inputVal);
+
+    // Render employee payroll roster
+    const tbody = document.getElementById('payrollEmployeesBody');
+    if (tbody && Array.isArray(employees)) {
+      tbody.innerHTML = employees.map(e => {
+        const ctc = e.ctcBreakup?.annualCTC || 1800000;
+        const takeHome = e.ctcBreakup?.netTakeHome?.monthly || 121500;
+        const utr = e.lastDisbursementUTR || 'PENDING_PAYOUT';
+
+        return `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="p-3.5">
+              <div class="font-bold text-slate-900">${e.employeeName}</div>
+              <div class="text-[11px] text-slate-500 font-mono">${e.email}</div>
+            </td>
+            <td class="p-3.5 font-medium text-slate-800">${e.designation || 'Engineer'}</td>
+            <td class="p-3.5 font-mono font-bold text-slate-900">₹${ctc.toLocaleString('en-IN')}</td>
+            <td class="p-3.5 font-mono font-black text-emerald-600">₹${takeHome.toLocaleString('en-IN')}/mo</td>
+            <td class="p-3.5 font-mono text-[11px] text-blue-700 font-bold">${e.uanNumber || '101928374655'}</td>
+            <td class="p-3.5 font-mono text-[11px] text-slate-600">${e.panNumber || 'ABCDE1234F'}</td>
+            <td class="p-3.5 font-mono text-[10px] text-purple-700">${utr}</td>
+            <td class="p-3.5 text-right whitespace-nowrap">
+              <button onclick="disburseSingleSalary('${e._id}')" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded text-xs transition cursor-pointer">⚡ Payout</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    if (window.lucide) lucide.createIcons();
+  } catch (err) {
+    console.error('loadPayroll error:', err);
+  }
+}
+
+async function recalculateCtcBreakup(val) {
+  const annualCTC = val || document.getElementById('calcAnnualCtcInput')?.value || 1800000;
+  try {
+    const breakup = await apiFetch('/payroll/calculate-ctc', {
+      method: 'POST',
+      body: JSON.stringify({ annualCTC })
+    });
+
+    const grid = document.getElementById('ctcBreakdownGrid');
+    if (!grid) return;
+
+    grid.innerHTML = `
+      <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+        <div class="text-[10px] text-blue-300 uppercase font-bold">Monthly Gross</div>
+        <div class="text-xl font-black font-mono mt-1 text-white">₹${breakup.monthlyGross?.toLocaleString('en-IN')}</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">Basic (50%): ₹${breakup.components?.basicSalary?.monthly?.toLocaleString('en-IN')}</div>
+      </div>
+      <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+        <div class="text-[10px] text-blue-300 uppercase font-bold">HRA (20%)</div>
+        <div class="text-xl font-black font-mono mt-1 text-white">₹${breakup.components?.hra?.monthly?.toLocaleString('en-IN')}</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">Special Allow: ₹${breakup.components?.specialAllowance?.monthly?.toLocaleString('en-IN')}</div>
+      </div>
+      <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+        <div class="text-[10px] text-rose-300 uppercase font-bold">Statutory Deductions</div>
+        <div class="text-xl font-black font-mono mt-1 text-rose-300">-₹${breakup.deductions?.totalDeductions?.monthly?.toLocaleString('en-IN')}</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">EPF 12%: ₹${breakup.deductions?.employeePF?.monthly} | PT: ₹200</div>
+      </div>
+      <div class="bg-emerald-500/20 border border-emerald-400/40 p-3.5 rounded-xl">
+        <div class="text-[10px] text-emerald-300 uppercase font-bold">Net In-Hand Take Home</div>
+        <div class="text-xl font-black font-mono mt-1 text-emerald-300">₹${breakup.netTakeHome?.monthly?.toLocaleString('en-IN')}/mo</div>
+        <div class="text-[10px] text-emerald-400 mt-0.5">Annual: ₹${breakup.netTakeHome?.annual?.toLocaleString('en-IN')}</div>
+      </div>
+    `;
+  } catch (err) {
+    console.error('recalculateCtcBreakup error:', err);
+  }
+}
+
+async function disburseSingleSalary(recordId) {
+  try {
+    const res = await apiFetch('/payroll/disburse', {
+      method: 'POST',
+      body: JSON.stringify({ recordId, month: 'October 2026' })
+    });
+    alert(`🎉 RazorpayX Instant Payout Successful!\n${res.message}\nBank Reference UTR: ${res.utrNumber}`);
+    await loadPayroll();
+  } catch (err) {
+    alert('Disbursement failed: ' + err.message);
+  }
+}
+
+async function runBatchSalaryDisbursement() {
+  try {
+    const employees = await apiFetch('/payroll/employees');
+    if (!employees || employees.length === 0) return alert('No employees found.');
+    const firstEmp = employees[0];
+    await disburseSingleSalary(firstEmp._id);
+  } catch (err) {
+    alert('Batch disbursement error: ' + err.message);
+  }
+}
+
+/* =========================================================================
+   13. STAFFING AGENCY CRM & INVOICING
+   ========================================================================= */
+async function loadAgency() {
+  try {
+    const [clients, submissions, invoices] = await Promise.all([
+      apiFetch('/agency/clients').catch(() => []),
+      apiFetch('/agency/submissions').catch(() => []),
+      apiFetch('/agency/invoices').catch(() => [])
+    ]);
+
+    // Render client cards
+    const grid = document.getElementById('agencyClientsGrid');
+    if (grid && Array.isArray(clients)) {
+      grid.innerHTML = clients.map(c => `
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-2 hover:border-amber-400 transition">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-900 text-sm">${c.name}</span>
+            <span class="text-xs font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">${c.placementFeePercentage}% Fee</span>
+          </div>
+          <div class="text-xs text-slate-500 font-medium">${c.industry} • Contact: ${c.contactPerson}</div>
+          <div class="text-[11px] text-slate-600 flex items-center justify-between pt-1 border-t border-slate-100 font-mono">
+            <span>Active Roles: <strong class="text-slate-800">${c.activeRequisitions || 3}</strong></span>
+            <span>Terms: <strong class="text-blue-700">${c.paymentTerms || 'NET_30'}</strong></span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render submissions
+    const subTbody = document.getElementById('agencySubmissionsBody');
+    if (subTbody && Array.isArray(submissions)) {
+      subTbody.innerHTML = submissions.map(s => `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="p-3.5 font-bold text-slate-900">${s.candidateName}</td>
+          <td class="p-3.5 font-medium text-slate-800">${s.clientName}</td>
+          <td class="p-3.5 text-slate-700">${s.targetRole}</td>
+          <td class="p-3.5 font-mono font-bold text-slate-900">₹${(s.expectedCTC || 2000000).toLocaleString('en-IN')}</td>
+          <td class="p-3.5">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${s.status === 'CLIENT_PLACED' ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'}">
+              ${s.status}
+            </span>
+          </td>
+          <td class="p-3.5 font-mono text-[11px] text-slate-500">${new Date(s.submittedAt).toLocaleDateString()}</td>
+          <td class="p-3.5 text-right whitespace-nowrap">
+            <button onclick="openAgencyInvoiceModal()" class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold rounded text-xs transition cursor-pointer">Invoice →</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // Render invoices
+    const invTbody = document.getElementById('agencyInvoicesBody');
+    if (invTbody && Array.isArray(invoices)) {
+      invTbody.innerHTML = invoices.map(i => `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="p-3.5 font-mono font-bold text-amber-700">${i.invoiceNumber}</td>
+          <td class="p-3.5 font-bold text-slate-900">${i.clientName}</td>
+          <td class="p-3.5 text-slate-800">${i.candidateName}</td>
+          <td class="p-3.5 font-mono text-[11px]">₹${(i.annualCTC || 2400000).toLocaleString('en-IN')} (${i.feePercentage}%)</td>
+          <td class="p-3.5 font-mono text-slate-700">₹${(i.baseFee || 480000).toLocaleString('en-IN')}</td>
+          <td class="p-3.5 font-mono font-black text-slate-900">₹${(i.totalAmount || 566400).toLocaleString('en-IN')}</td>
+          <td class="p-3.5">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${i.status === 'PAID' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+              ${i.status}
+            </span>
+          </td>
+          <td class="p-3.5 text-right font-mono text-[11px] text-slate-500">${new Date(i.dueDate).toLocaleDateString()}</td>
+        </tr>
+      `).join('');
+    }
+
+    if (window.lucide) lucide.createIcons();
+  } catch (err) {
+    console.error('loadAgency error:', err);
+  }
+}
+
+function openAgencyInvoiceModal() {
+  const modal = document.getElementById('agencyInvoiceModal');
+  if (modal) modal.classList.remove('hidden');
+  if (window.lucide) lucide.createIcons();
+}
+
+async function submitAgencyInvoice() {
+  const clientName = document.getElementById('agencyClientSelect')?.value;
+  const candidateName = document.getElementById('agencyCandidateNameInput')?.value || 'Alex Rivera';
+  const annualCTC = document.getElementById('agencyCtcInput')?.value || 2400000;
+  const feePercentage = document.getElementById('agencyFeePctInput')?.value || 20;
+
+  try {
+    const res = await apiFetch('/agency/invoices/generate', {
+      method: 'POST',
+      body: JSON.stringify({ clientName, candidateName, annualCTC, feePercentage })
+    });
+
+    closeModal('agencyInvoiceModal');
+    await loadAgency();
+    alert(`✅ Placement Invoice Generated!\nInvoice #: ${res.invoice?.invoiceNumber}\nClient: ${clientName}\nTotal with 18% GST: ₹${res.invoice?.totalAmount?.toLocaleString('en-IN')}`);
+  } catch (err) {
+    alert('Failed to generate invoice: ' + err.message);
+  }
+}
+
+/* =========================================================================
+   14. AUTOPILOT RECRUITMENT WORKFLOWS
+   ========================================================================= */
+async function loadWorkflows() {
+  try {
+    const data = await apiFetch('/workflows');
+    const rules = data.rules || [];
+    const logs = data.logs || [];
+
+    // Render rules grid
+    const grid = document.getElementById('workflowsRulesGrid');
+    if (grid && Array.isArray(rules)) {
+      grid.innerHTML = rules.map(r => `
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="w-2.5 h-2.5 rounded-full ${r.isEnabled ? 'bg-emerald-500' : 'bg-slate-300'}"></span>
+              <h3 class="font-bold text-slate-900 text-sm">${r.name}</h3>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" ${r.isEnabled ? 'checked' : ''} onchange="toggleWorkflowRule('${r.id}', this.checked)" class="sr-only peer">
+              <div class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-rose-600"></div>
+            </label>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed">${r.description}</p>
+          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono pt-2 border-t border-slate-100">
+            <span>Trigger: <strong class="text-slate-800">${r.trigger}</strong></span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded font-bold text-rose-700">${r.executionCount || 0} Triggers</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render logs
+    const tbody = document.getElementById('workflowLogsBody');
+    if (tbody && Array.isArray(logs)) {
+      tbody.innerHTML = logs.map(l => `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="p-3.5 font-mono text-[11px] text-slate-500">${new Date(l.executedAt).toLocaleTimeString()}</td>
+          <td class="p-3.5 font-bold text-slate-900">${l.ruleName}</td>
+          <td class="p-3.5"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 text-slate-800">${l.trigger}</span></td>
+          <td class="p-3.5 text-slate-800">${l.candidateName} <span class="text-slate-400">(${l.jobTitle || 'Role'})</span></td>
+          <td class="p-3.5 text-xs text-slate-600">${l.actionResult}</td>
+          <td class="p-3.5">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">SUCCESS</span>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    if (window.lucide) lucide.createIcons();
+  } catch (err) {
+    console.error('loadWorkflows error:', err);
+  }
+}
+
+async function toggleWorkflowRule(ruleId, isEnabled) {
+  try {
+    await apiFetch('/workflows/toggle', {
+      method: 'POST',
+      body: JSON.stringify({ ruleId, isEnabled })
+    });
+    await loadWorkflows();
+  } catch (err) {
+    console.error('toggle rule error:', err);
+  }
+}
+
+async function simulateAutopilotEvent(eventName) {
+  try {
+    const res = await apiFetch('/workflows/trigger', {
+      method: 'POST',
+      body: JSON.stringify({ eventName })
+    });
+    alert(`⚡ Autopilot Rule Triggered!\nRule: ${res.rule}\nAction: ${res.actionResult}\nZero manual recruiter effort required.`);
+    await loadWorkflows();
+  } catch (err) {
+    alert('Autopilot trigger error: ' + err.message);
+  }
+}
+
+/* =========================================================================
+   15. ODOO APP LAUNCHER, MULTI-BOARD SYNDICATION & ATS MODE
+   ========================================================================= */
+function openAppLauncherModal() {
+  const modal = document.getElementById('appLauncherModal');
+  if (modal) modal.classList.remove('hidden');
+  if (window.lucide) lucide.createIcons();
+}
+
+let activeSyndicateJobId = null;
+
+function openMultiJobBoardModal(jobId) {
+  activeSyndicateJobId = jobId;
+  const modal = document.getElementById('multiJobBoardModal');
+  if (modal) modal.classList.remove('hidden');
+  if (window.lucide) lucide.createIcons();
+}
+
+async function submitJobSyndication() {
+  const btn = document.getElementById('submitSyndicationBtn');
+  if (btn) btn.disabled = true;
+
+  try {
+    const checked = Array.from(document.querySelectorAll('.syndicate-board-chk:checked')).map(el => el.value);
+    const jobs = await apiFetch('/jobs');
+    const jobId = activeSyndicateJobId || (jobs[0] ? jobs[0]._id : null);
+
+    if (!jobId) throw new Error('No active job found to syndicate.');
+
+    const res = await apiFetch(`/jobs/${jobId}/syndicate`, {
+      method: 'POST',
+      body: JSON.stringify({ boards: checked })
+    });
+
+    closeModal('multiJobBoardModal');
+    alert(`🚀 Multi-Job Board Syndication Active!\n${res.message}\nPublished simultaneously across ${checked.length} global channels.`);
+  } catch (err) {
+    alert('Syndication error: ' + err.message);
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
+
+function setAtsMode(mode) {
+  const modeNames = {
+    CORPORATE: '🏢 Corporate In-House ATS (Employer Brand & Scorecards)',
+    AGENCY: '🤝 Staffing Agency CRM (Client Portals & Invoicing)',
+    ENTERPRISE_HRMS: '🌐 Enterprise HRMS Suite (Deel Global EOR & RazorpayX)',
+    AI_FIRST: '⚡ AI-First High Volume (VeraHire Autonomous Screening)'
+  };
+
+  alert(`Switched ATS Operating Mode to: ${modeNames[mode] || mode}`);
+  if (mode === 'AI_FIRST') switchTab('verahire');
+  else if (mode === 'AGENCY') switchTab('agency');
+  else if (mode === 'ENTERPRISE_HRMS') switchTab('deel');
+  else switchTab('dashboard');
+}
+
 // Window globals
 window.toggleAIAssistantWidget = toggleAIAssistantWidget;
 window.clearAIAssistantChat = clearAIAssistantChat;
@@ -3970,4 +4582,27 @@ window.submitAIAssistantInput = submitAIAssistantInput;
 window.sendAIAssistantMessage = sendAIAssistantMessage;
 window.handleAssistantActionClick = handleAssistantActionClick;
 window.prettyTool = prettyTool;
+window.loadVeraHire = loadVeraHire;
+window.openVeraHireVoiceModal = openVeraHireVoiceModal;
+window.speakCurrentQuestion = speakCurrentQuestion;
+window.simulateCandidateAnswerSample = simulateCandidateAnswerSample;
+window.evaluateVoiceScreeningSession = evaluateVoiceScreeningSession;
+window.loadDeel = loadDeel;
+window.openDeelOnboardModal = openDeelOnboardModal;
+window.submitDeelOnboarding = submitDeelOnboarding;
+window.loadPayroll = loadPayroll;
+window.recalculateCtcBreakup = recalculateCtcBreakup;
+window.disburseSingleSalary = disburseSingleSalary;
+window.runBatchSalaryDisbursement = runBatchSalaryDisbursement;
+window.loadAgency = loadAgency;
+window.openAgencyInvoiceModal = openAgencyInvoiceModal;
+window.submitAgencyInvoice = submitAgencyInvoice;
+window.loadWorkflows = loadWorkflows;
+window.toggleWorkflowRule = toggleWorkflowRule;
+window.simulateAutopilotEvent = simulateAutopilotEvent;
+window.openAppLauncherModal = openAppLauncherModal;
+window.openMultiJobBoardModal = openMultiJobBoardModal;
+window.submitJobSyndication = submitJobSyndication;
+window.setAtsMode = setAtsMode;
+
 

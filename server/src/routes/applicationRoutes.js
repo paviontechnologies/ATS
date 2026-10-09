@@ -2,6 +2,7 @@ import express from 'express';
 import { Applications, Candidates, Jobs } from '../db/database.js';
 import { authenticate } from '../middleware/auth.js';
 import { AIService } from '../services/aiService.js';
+import { WorkflowService } from '../services/workflowService.js';
 import { auditAction } from '../middleware/audit.js';
 
 const router = express.Router();
@@ -72,6 +73,28 @@ router.patch('/:id/move-stage', authenticate, auditAction('STAGE_MOVED', 'Applic
     };
 
     const result = await Applications.updateById(application._id, updateDoc);
+
+    // Trigger Autopilot automated workflows
+    try {
+      const cand = await Candidates.findById(application.candidateId);
+      const job = await Jobs.findById(application.jobId);
+      const payload = {
+        tenantId: req.user.tenantId,
+        candidateId: application.candidateId,
+        applicationId: application._id,
+        candidateName: cand ? `${cand.firstName} ${cand.lastName}` : 'Candidate',
+        candidateEmail: cand ? cand.email : '',
+        jobTitle: job ? job.title : 'Software Role'
+      };
+
+      if (stageId === 'Rejected') {
+        WorkflowService.handleEvent('CANDIDATE_REJECTED', payload);
+      } else if (stageId === 'Interview') {
+        WorkflowService.handleEvent('STAGE_MOVED_INTERVIEW', payload);
+      }
+    } catch (workflowErr) {
+      console.error('Autopilot trigger error:', workflowErr.message);
+    }
 
     // Notify connected clients via Socket if available
     const io = req.app.get('io');

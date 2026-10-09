@@ -22,6 +22,11 @@ import aiRoutes from './routes/aiRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import careerRoutes from './routes/careerRoutes.js';
 import assistantRoutes from './routes/assistantRoutes.js';
+import verahireRoutes from './routes/verahireRoutes.js';
+import deelRoutes from './routes/deelRoutes.js';
+import payrollRoutes from './routes/payrollRoutes.js';
+import agencyRoutes from './routes/agencyRoutes.js';
+import workflowRoutes from './routes/workflowRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -96,6 +101,11 @@ app.use('/api/v1/ai', aiRoutes);
 app.use('/api/v1/admin', adminRoutes);
 app.use('/api/v1/careers', careerRoutes);
 app.use('/api/v1/assistant', assistantRoutes);
+app.use('/api/v1/verahire', verahireRoutes);
+app.use('/api/v1/deel', deelRoutes);
+app.use('/api/v1/payroll', payrollRoutes);
+app.use('/api/v1/agency', agencyRoutes);
+app.use('/api/v1/workflows', workflowRoutes);
 
 // Socket.IO event handler
 io.on('connection', (socket) => {
