@@ -1,10 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "enterprise-ats",
+  "name": "ats",
   "main": "worker.js",
   "compatibility_date": "2024-09-23",
   "assets": {
-    "directory": "./client/public",
+    "directory": "./public",
     "binding": "ASSETS",
     "run_worker_first": true,
     "not_found_handling": "single-page-application"
