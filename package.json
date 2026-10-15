@@ -13,7 +13,7 @@
     "seed": "node server/src/seed.js",
     "test": "node server/test/runTests.js",
     "build": "echo 'Build complete - static assets ready in client/public'",
-    "deploy": "wrangler deploy",
+    "deploy": "wrangler deploy --assets ./client/public",
     "ai": "cd ai-service && python3 -m uvicorn app.main:app --reload --port 8000"
   },
   "keywords": [
