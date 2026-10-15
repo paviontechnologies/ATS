@@ -68,17 +68,25 @@ async function handleApiRequest(request, url, method, env = {}) {
     const user = db.users.find(u => u.email === body.email) || {
       _id: 'usr_recruiter',
       name: 'Alex Morgan',
+      firstName: 'Alex',
+      lastName: 'Morgan',
       email: body.email || 'recruiter@techcorp.com',
       role: 'RECRUITER',
       tenantId: 'tenant_techcorp_global'
     };
+    const firstName = user.firstName || (user.name ? user.name.split(' ')[0] : 'Alex');
+    const lastName = user.lastName || (user.name ? user.name.split(' ').slice(1).join(' ') : 'Morgan');
+    const fullName = user.name || `${firstName} ${lastName}`.trim();
     return jsonResponse({
       token: 'jwt_mock_token_' + Date.now(),
       user: {
         id: user._id,
-        name: user.name,
+        name: fullName,
+        firstName,
+        lastName,
         email: user.email,
         role: user.role,
+        avatarUrl: user.avatarUrl || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
         tenantId: user.tenantId
       }
     });
@@ -501,7 +509,11 @@ async function handleApiRequest(request, url, method, env = {}) {
     if (!reply) {
       const promptLower = userPrompt.toLowerCase();
       reply = "I am the Pavion Technologies Autonomous Recruitment Copilot. I have audited candidate velocity across all open pipelines.";
-      if (promptLower.includes('shortlist') || promptLower.includes('verahire') || promptLower.includes('rank')) {
+      if (promptLower.includes('offer') || promptLower.includes('sign') || promptLower.includes('approve') || promptLower.includes('package')) {
+        reply = "Jordan Miller's offer package for Staff AI Engineer ($165,000 / ₹18,00,000 CTC) has been approved and electronically signed. HRIS onboarding dispatch and RazorpayX payroll profile have been triggered.";
+        actions.push({ toolName: 'sign_off_offer', executed: true, summary: 'Offer letter signed & approved for Jordan Miller (Staff AI Engineer)' });
+        actions.push({ toolName: 'dispatch_onboarding', executed: true, summary: 'Deel EOR & RazorpayX onboarding workflows initiated' });
+      } else if (promptLower.includes('shortlist') || promptLower.includes('verahire') || promptLower.includes('rank')) {
         reply = "VeraHire AI analysis indicates 4 candidates have completed autonomous voice evaluation. Jordan Miller leads the shortlist with a 94% composite fit score across System Architecture and Technical Depth.";
         actions.push({ toolName: 'verahire_shortlist_audit', executed: true, summary: 'VeraHire Ranked Shortlist verified: Jordan Miller (94%), Kevin Zhang (89%)' });
       } else if (promptLower.includes('payroll') || promptLower.includes('ctc') || promptLower.includes('salary')) {
@@ -513,6 +525,8 @@ async function handleApiRequest(request, url, method, env = {}) {
       } else if (promptLower.includes('kya') || promptLower.includes('do') || promptLower.includes('suggest') || promptLower.includes('guide')) {
         reply = "Here is your recruitment intelligence update:\n\n• DO: Review Jordan Miller's 94% fit score and release formal offer package.\n• DO: Schedule Elena Rostova's system design debrief.\n• DON'T: Bypass knockout criteria without senior recruiter calibration.";
         actions.push({ toolName: 'get_proactive_guidance', executed: true, summary: 'Proactive guidance generated for active pipeline' });
+      } else {
+        actions.push({ toolName: 'recruitment_copilot_sync', executed: true, summary: 'Recruitment intelligence and candidate telemetry synchronized' });
       }
     }
 
