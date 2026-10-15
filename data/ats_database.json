@@ -22,12 +22,12 @@
     {
       "_id": "doc_b9fa6d4f1a344f56",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-10-09T17:56:20.518Z",
+      "updatedAt": "2026-10-15T15:59:50.483Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Sarah",
       "lastName": "Connor",
       "email": "admin@techcorp.com",
-      "passwordHash": "$2a$10$t1C5PuPP935x3etVO7OID./tB7wHSE3MnCSIeyJ0v21rkh6Pgx4eC",
+      "passwordHash": "$2a$10$CQWHVBjrHN3B4KCIec.51ecCe2cyw0rmLR2NSOfxJbEOo6fi3fVM6",
       "role": "COMPANY_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -36,12 +36,12 @@
     {
       "_id": "doc_a9289f33c4f52c25",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-10-09T17:56:20.610Z",
+      "updatedAt": "2026-10-15T15:59:50.573Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Alex",
       "lastName": "Morgan",
       "email": "recruiter@techcorp.com",
-      "passwordHash": "$2a$10$v.qt41x7W5t63Wr13fhGAurSl1pIBrJH6vCsjGbD1WfPKQQKyhwJW",
+      "passwordHash": "$2a$10$d/o2NHrtZ0w1LyDxaUZmRuyd6Wk8s/6YDeAXnrfIDpGvHMkbXhB32",
       "role": "RECRUITER",
       "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -50,12 +50,12 @@
     {
       "_id": "doc_493030e468962233",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-10-09T17:56:20.707Z",
+      "updatedAt": "2026-10-15T15:59:50.660Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "David",
       "lastName": "Chen",
       "email": "manager@techcorp.com",
-      "passwordHash": "$2a$10$d/9Og1EPhs86.tsP15/k8OycZLk3gFk.wSZ89NthxmSL7crLFRVLG",
+      "passwordHash": "$2a$10$jwRv0lEmJ/.Hr.OrADr0U.hG0CxfuOb6KyWtQJlqNHX1ZovQq4cJy",
       "role": "HIRING_MANAGER",
       "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -64,12 +64,12 @@
     {
       "_id": "doc_f498dda4a79ee504",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-10-09T17:56:20.804Z",
+      "updatedAt": "2026-10-15T15:59:50.749Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Elena",
       "lastName": "Rostova",
       "email": "interviewer@techcorp.com",
-      "passwordHash": "$2a$10$8Lwi0jDbg.I9M3BcWzrkq.k31IZat/RaLYiV4bnH/.xtlVb.syQnS",
+      "passwordHash": "$2a$10$hJ7R4h4VX8DDf5.1QP2Oy.hSyW8hpIj8MHkl/XN4phZzRBd9wghSa",
       "role": "INTERVIEWER",
       "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -78,12 +78,12 @@
     {
       "_id": "doc_967ecfc04dba1a83",
       "createdAt": "2026-09-04T16:29:48.945Z",
-      "updatedAt": "2026-10-09T17:56:20.422Z",
+      "updatedAt": "2026-10-15T15:59:50.388Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Marcus",
       "lastName": "Vance",
       "email": "superadmin@enterprise-ats.io",
-      "passwordHash": "$2a$10$tT1LdvkWaXTgn73TTe9zOe1cJ7DEfOxD8t3y94J7QJ4FDknq0q3JS",
+      "passwordHash": "$2a$10$suX3W3AGlRtyBauTsnV7Q.XD1VZ93OT9Xnc2Z5Xj4br5Rsp1wM02y",
       "plainPasswordForDemo": "SuperAdmin@2026",
       "role": "SUPER_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
@@ -92,12 +92,12 @@
     {
       "_id": "doc_7d5d39e5a28156a8",
       "createdAt": "2026-09-04T16:29:49.377Z",
-      "updatedAt": "2026-10-09T17:56:20.895Z",
+      "updatedAt": "2026-10-15T15:59:50.840Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jessica",
       "lastName": "Reed",
       "email": "agency@apexrecruiting.com",
-      "passwordHash": "$2a$10$7D9KQYkXQNlmqMXmZIGOCevdtA0u8P9eC.jz4yGs0TNRFeyBCMPKC",
+      "passwordHash": "$2a$10$YbvhFyiu06IFcLUek1qYoefVBr5hDMJVV4oiGqbFcMGskUzH7L4ke",
       "plainPasswordForDemo": "Agency@2026",
       "role": "AGENCY_PARTNER",
       "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
@@ -106,12 +106,12 @@
     {
       "_id": "doc_f567a421a517e5e8",
       "createdAt": "2026-09-04T16:29:49.463Z",
-      "updatedAt": "2026-10-09T17:56:20.990Z",
+      "updatedAt": "2026-10-15T15:59:50.938Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jordan",
       "lastName": "Miller",
       "email": "candidate@example.com",
-      "passwordHash": "$2a$10$kaTCugyJJYzBCrErVJs58eaY935ukj6LhovrYDK0GlKb63fxgqgPS",
+      "passwordHash": "$2a$10$abvZsAbVG99w7QrRKK2B0.UN6o9e89mncEc8MYZup7li/V43QpKs6",
       "plainPasswordForDemo": "Candidate@2026",
       "role": "CANDIDATE",
       "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
@@ -122,7 +122,7 @@
     {
       "_id": "doc_bbe4c6051f27d640",
       "createdAt": "2026-09-04T01:14:50.364Z",
-      "updatedAt": "2026-10-09T17:56:21.474Z",
+      "updatedAt": "2026-10-15T15:59:51.612Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "title": "Senior Full-Stack Engineer (React / Node.js)",
       "departmentId": "Engineering",
@@ -183,7 +183,7 @@
         "Naukri.com Enterprise"
       ],
       "syndicationStatus": "ACTIVE",
-      "lastSyndicatedAt": "2026-10-09T17:56:21.474Z"
+      "lastSyndicatedAt": "2026-10-15T15:59:51.611Z"
     },
     {
       "_id": "doc_6a5aa65d2c82138f",
@@ -879,7 +879,7 @@
     {
       "_id": "doc_72423cd33a5dd21f",
       "createdAt": "2026-09-04T01:14:50.371Z",
-      "updatedAt": "2026-10-09T17:56:21.051Z",
+      "updatedAt": "2026-10-15T15:59:50.994Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_job_staff_ai",
       "candidateId": "doc_08f6825f7b58afff",
@@ -1110,13 +1110,18 @@
           "fromStage": "Shortlisted",
           "toStage": "Shortlisted",
           "changedAt": "2026-10-09T17:56:21.051Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-10-15T15:59:50.994Z"
         }
       ],
       "$push": {
         "stageHistory": {
           "fromStage": "Shortlisted",
           "toStage": "Shortlisted",
-          "changedAt": "2026-10-09T17:56:21.051Z"
+          "changedAt": "2026-10-15T15:59:50.994Z"
         }
       }
     },
@@ -2226,7 +2231,7 @@
     {
       "_id": "doc_3088a4d36cbbc9f0",
       "createdAt": "2026-10-01T18:05:59.688Z",
-      "updatedAt": "2026-10-09T17:56:21.289Z",
+      "updatedAt": "2026-10-15T15:59:51.300Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_bbe4c6051f27d640",
       "jobTitle": "Senior Full-Stack Engineer (React / Node.js)",
@@ -2239,8 +2244,8 @@
       "evidenceScores": {
         "technical_depth": 99,
         "system_design": 98,
-        "communication": 90,
-        "situational_reasoning": 95
+        "communication": 94,
+        "situational_reasoning": 92
       },
       "criteria": [
         {
@@ -2302,10 +2307,10 @@
       ],
       "speechConfidence": 0.94,
       "voiceDurationMinutes": 18,
-      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1791568581289.wav",
+      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1792079991300.wav",
       "recommendation": "STRONG_SHORTLIST",
       "keyEvidenceSummary": "Jordan scored 96/100 in autonomous voice screening. Highly articulate on distributed system tradeoffs, scored 99% in technical depth, and demonstrated high-pressure incident mitigation.",
-      "completedAt": "2026-10-09T17:56:21.289Z"
+      "completedAt": "2026-10-15T15:59:51.300Z"
     }
   ],
   "deelContracts": [
@@ -2740,17 +2745,53 @@
         ]
       },
       "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-581294.pdf"
+    },
+    {
+      "_id": "doc_ca14b464a199c82a",
+      "createdAt": "2026-10-15T15:59:51.305Z",
+      "updatedAt": "2026-10-15T15:59:51.305Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_bbe4c6051f27d640",
+      "contractNumber": "DEEL-IN-991305",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-991305",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Senior Full-Stack Engineer (React / Node.js)",
+        "annualSalary": 2100000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-991305.pdf"
     }
   ],
   "deelWorkers": [
     {
       "_id": "doc_ce5963bdc3218b91",
       "createdAt": "2026-10-01T18:05:59.693Z",
-      "updatedAt": "2026-10-09T17:56:21.300Z",
+      "updatedAt": "2026-10-15T15:59:51.308Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
-      "workerId": "DEEL-WRK-581300",
+      "workerId": "DEEL-WRK-991308",
       "candidateId": "doc_08f6825f7b58afff",
-      "contractId": "doc_e142c7ce5ee3f297",
+      "contractId": "doc_ca14b464a199c82a",
       "fullName": "Jordan Miller",
       "email": "jordan.miller@example.com",
       "phone": "+1 (415) 555-0142",
@@ -2791,11 +2832,11 @@
       "globalPayrollStatus": "SYNCED_READY",
       "bankDetails": {
         "accountHolder": "Jordan Miller",
-        "ibanOrAccount": "ACCT-3341572655",
+        "ibanOrAccount": "ACCT-7164656983",
         "swiftOrIfsc": "HDFC0001234",
         "payoutCurrency": "INR"
       },
-      "onboardedAt": "2026-10-09T17:56:21.300Z"
+      "onboardedAt": "2026-10-15T15:59:51.308Z"
     },
     {
       "_id": "doc_091ec2ce8676c6c8",
@@ -2909,8 +2950,8 @@
   "payrollRecords": [
     {
       "_id": "doc_6f3125d22fdc7262",
-      "createdAt": "2026-10-09T17:56:21.306Z",
-      "updatedAt": "2026-10-09T17:56:21.309Z",
+      "createdAt": "2026-10-15T15:59:51.312Z",
+      "updatedAt": "2026-10-15T15:59:51.314Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "candidateId": "doc_08f6825f7b58afff",
       "employeeName": "Jordan Miller",
@@ -2918,8 +2959,8 @@
       "phone": "+1 (415) 555-0142",
       "designation": "Full Stack Engineer",
       "panNumber": "ABCDE1234F",
-      "uanNumber": "103307294035",
-      "esicNumber": "3100796142",
+      "uanNumber": "104563629544",
+      "esicNumber": "3100899556",
       "ctcBreakup": {
         "annualCTC": 1800000,
         "currency": "INR",
@@ -2999,13 +3040,13 @@
       "paymentMethod": "RAZORPAYX_DIRECT_BANK_TRANSFER",
       "bankDetails": {
         "accountHolder": "Jordan Miller",
-        "accountNumber": "910252868684",
+        "accountNumber": "910272358497",
         "ifscCode": "HDFC0001234",
         "bankName": "HDFC Bank Ltd"
       },
       "payrollStatus": "ACTIVE",
-      "lastDisbursementDate": "2026-10-09T17:56:21.309Z",
-      "lastDisbursementUTR": "RZPX_UTR_1791568581309_2658"
+      "lastDisbursementDate": "2026-10-15T15:59:51.314Z",
+      "lastDisbursementUTR": "RZPX_UTR_1792079991314_8090"
     },
     {
       "_id": "doc_a8d84f13a5cfd5a2",
@@ -3273,20 +3314,35 @@
       "status": "PROCESSED_SUCCESS",
       "bankRef": "910252868684",
       "disbursedAt": "2026-10-09T17:56:21.311Z"
+    },
+    {
+      "_id": "doc_d342a2734af4e65a",
+      "createdAt": "2026-10-15T15:59:51.316Z",
+      "updatedAt": "2026-10-15T15:59:51.316Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792079991314_8090",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910272358497",
+      "disbursedAt": "2026-10-15T15:59:51.315Z"
     }
   ],
   "workflows": [
     {
       "_id": "doc_a8f54f2f0629368c",
       "createdAt": "2026-10-01T18:06:00.022Z",
-      "updatedAt": "2026-10-09T17:56:21.469Z",
+      "updatedAt": "2026-10-15T15:59:51.606Z",
       "id": "rule_auto_reject_email",
       "name": "Polite Auto-Rejection Email",
       "trigger": "CANDIDATE_REJECTED",
       "description": "When candidate status is set to Rejected, automatically dispatch a polite, brand-safe Thank You email.",
       "isEnabled": true,
-      "executionCount": 35,
-      "lastTriggeredAt": "2026-10-09T17:56:21.469Z"
+      "executionCount": 36,
+      "lastTriggeredAt": "2026-10-15T15:59:51.606Z"
     },
     {
       "_id": "doc_6b2e16ce648f9ac3",
@@ -3313,14 +3369,14 @@
     {
       "_id": "doc_4cae31809c61dd49",
       "createdAt": "2026-10-01T18:06:00.026Z",
-      "updatedAt": "2026-10-09T17:56:21.472Z",
+      "updatedAt": "2026-10-15T15:59:51.610Z",
       "id": "rule_offer_accepted_onboarding",
       "name": "Auto-Provision Deel HR & RazorpayX Payroll",
       "trigger": "OFFER_ACCEPTED",
       "description": "Upon offer acceptance, automatically generate global EOR contracts and seed payroll record in RazorpayX.",
       "isEnabled": true,
-      "executionCount": 24,
-      "lastTriggeredAt": "2026-10-09T17:56:21.472Z"
+      "executionCount": 25,
+      "lastTriggeredAt": "2026-10-15T15:59:51.610Z"
     }
   ],
   "autopilotLogs": [
@@ -3758,6 +3814,36 @@
       "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
       "status": "SUCCESS",
       "executedAt": "2026-10-09T17:56:21.470Z"
+    },
+    {
+      "_id": "doc_85ecedfb211228f7",
+      "createdAt": "2026-10-15T15:59:51.605Z",
+      "updatedAt": "2026-10-15T15:59:51.605Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_auto_reject_email",
+      "ruleName": "Polite Auto-Rejection Email",
+      "trigger": "CANDIDATE_REJECTED",
+      "candidateName": "Test Candidate",
+      "candidateEmail": "test.cand@example.com",
+      "jobTitle": "Lead Architect",
+      "actionResult": "Automated polite rejection email dispatched to test.cand@example.com for role Lead Architect. Rejection template rendered with zero recruiter manual effort.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-15T15:59:51.604Z"
+    },
+    {
+      "_id": "doc_1f004e2a902ec09a",
+      "createdAt": "2026-10-15T15:59:51.608Z",
+      "updatedAt": "2026-10-15T15:59:51.608Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Accepted Candidate",
+      "candidateEmail": "accepted@example.com",
+      "jobTitle": "Principal Engineer",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-15T15:59:51.608Z"
     }
   ],
   "agencyClients": [

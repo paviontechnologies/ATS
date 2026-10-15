@@ -1,22 +1,25 @@
 import { ATS_TOOL_DEFINITIONS, executeAtsTool } from './assistantTools.js';
 import { Candidates } from '../db/database.js';
 
-const getApiKey = () => process.env.ANTHROPIC_API_KEY || '';
-export const hasApiKey = () => getApiKey().trim().length > 10;
+const getOpenAIKey = () => process.env.OPENAI_API_KEY || '';
+const getAnthropicKey = () => process.env.ANTHROPIC_API_KEY || '';
+
+export const hasApiKey = () => getOpenAIKey().trim().length > 10 || getAnthropicKey().trim().length > 10;
 
 let anthropicClient = null;
-const getClient = async () => {
+const getAnthropicClient = async () => {
   if (!anthropicClient) {
     const { default: Anthropic } = await import('@anthropic-ai/sdk');
-    anthropicClient = new Anthropic({ apiKey: getApiKey() });
+    anthropicClient = new Anthropic({ apiKey: getAnthropicKey() });
   }
   return anthropicClient;
 };
 
-const MODEL = 'claude-haiku-4-5-20251001';
+const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+const ANTHROPIC_MODEL = 'claude-haiku-4-5-20251001';
 const MAX_TURNS = 6;
 
-const systemPrompt = (userName) => `You are the autonomous AI Recruitment Operating System Assistant for TechCorp Enterprise ATS. You assist ${userName} by managing candidates, pipelines, interview loops, and offer sign-offs.
+const systemPrompt = (userName) => `You are the autonomous AI Recruitment Operating System Assistant for Pavion Technologies Enterprise ATS. You assist ${userName} by managing candidates, pipelines, interview loops, and offer sign-offs.
 
 Your primary missions are:
 1. TAKE CONCRETE ACTION: When the user asks you to screen, score, move stages, schedule interviews, or sign off offers, execute the appropriate tool immediately.
@@ -29,68 +32,176 @@ Your primary missions are:
  * Main Assistant Turn Handler
  */
 export async function runAssistant(history, ctx, userName = 'Recruiter') {
-  if (!hasApiKey()) {
-    // High-Agency Deterministic ATS Agent Fallback (No API key required)
-    return await runDeterministicAtsAgent(history, ctx, userName);
+  // 1. Try OpenAI if key is available
+  const openAiKey = getOpenAIKey();
+  if (openAiKey && openAiKey.length > 10) {
+    try {
+      return await runOpenAIAssistant(history, ctx, userName, openAiKey);
+    } catch (err) {
+      console.warn('OpenAI API call fallback, executing local ATS AI agent:', err.message);
+    }
   }
 
-  try {
-    const client = await getClient();
-    const trimmed = history.slice(-12);
-    const messages = trimmed.map(m => ({ role: m.role, content: m.content }));
-    const actions = [];
+  // 2. Try Anthropic if key is available
+  const anthropicKey = getAnthropicKey();
+  if (anthropicKey && anthropicKey.length > 10) {
+    try {
+      return await runAnthropicAssistant(history, ctx, userName);
+    } catch (err) {
+      console.warn('Anthropic API call fallback, executing local ATS AI agent:', err.message);
+    }
+  }
 
-    for (let turn = 0; turn < MAX_TURNS; turn++) {
-      const response = await client.messages.create({
-        model: MODEL,
-        max_tokens: 1500,
-        system: systemPrompt(userName),
-        tools: ATS_TOOL_DEFINITIONS,
-        messages
-      });
+  // 3. High-Agency Deterministic ATS Agent Fallback (No external API needed)
+  return await runDeterministicAtsAgent(history, ctx, userName);
+}
 
-      if (response.stop_reason === 'tool_use') {
-        messages.push({ role: 'assistant', content: response.content });
+/**
+ * OpenAI GPT-4o-mini Assistant with native Tool Calling
+ */
+async function runOpenAIAssistant(history, ctx, userName, apiKey) {
+  const openAiTools = ATS_TOOL_DEFINITIONS.map(t => ({
+    type: 'function',
+    function: {
+      name: t.name,
+      description: t.description,
+      parameters: t.input_schema
+    }
+  }));
 
-        const toolResults = [];
-        for (const block of response.content) {
-          if (block.type !== 'tool_use') continue;
-          const result = await executeAtsTool(block.name, block.input, ctx);
-          actions.push({
-            tool: block.name,
-            ok: result.ok,
-            summary: result.summary,
-            link: result.link
-          });
-          toolResults.push({
-            type: 'tool_result',
-            tool_use_id: block.id,
-            content: JSON.stringify({ ok: result.ok, summary: result.summary, data: result.data ?? null }),
-            is_error: !result.ok
-          });
-        }
+  const messages = [
+    { role: 'system', content: systemPrompt(userName) },
+    ...history.slice(-10).map(m => ({
+      role: m.role === 'assistant' ? 'assistant' : 'user',
+      content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content)
+    }))
+  ];
 
-        messages.push({ role: 'user', content: toolResults });
-        continue;
-      }
+  const actions = [];
 
-      const text = response.content
-        .filter(b => b.type === 'text')
-        .map(b => b.text)
-        .join('\n')
-        .trim();
+  for (let turn = 0; turn < MAX_TURNS; turn++) {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: OPENAI_MODEL,
+        messages,
+        tools: openAiTools,
+        tool_choice: 'auto',
+        temperature: 0.7,
+        max_tokens: 800
+      })
+    });
 
-      return { reply: text || 'Action completed successfully.', actions };
+    const data = await res.json();
+    if (data.error) {
+      throw new Error(data.error.message || 'OpenAI API error');
     }
 
-    return {
-      reply: "I've completed several actions, but reached the turn limit. Would you like me to proceed with the next specific step?",
-      actions
-    };
-  } catch (err) {
-    console.warn('Anthropic API call fallback, executing local ATS AI agent:', err.message);
-    return await runDeterministicAtsAgent(history, ctx, userName);
+    const choice = data.choices && data.choices[0];
+    if (!choice || !choice.message) {
+      throw new Error('Invalid response from OpenAI API');
+    }
+
+    const msg = choice.message;
+    messages.push(msg);
+
+    // If OpenAI requests tool calls
+    if (msg.tool_calls && msg.tool_calls.length > 0) {
+      for (const tc of msg.tool_calls) {
+        let inputArgs = {};
+        try {
+          inputArgs = JSON.parse(tc.function.arguments || '{}');
+        } catch (e) {
+          inputArgs = {};
+        }
+
+        const result = await executeAtsTool(tc.function.name, inputArgs, ctx);
+        actions.push({
+          tool: tc.function.name,
+          ok: result.ok,
+          summary: result.summary,
+          link: result.link
+        });
+
+        messages.push({
+          role: 'tool',
+          tool_call_id: tc.id,
+          content: JSON.stringify({ ok: result.ok, summary: result.summary, data: result.data ?? null })
+        });
+      }
+      continue;
+    }
+
+    const text = (msg.content || '').trim();
+    return { reply: text || 'Action completed successfully.', actions };
   }
+
+  return {
+    reply: "I've completed several actions, but reached the turn limit. Would you like me to proceed with the next specific step?",
+    actions
+  };
+}
+
+/**
+ * Anthropic Assistant Handler
+ */
+async function runAnthropicAssistant(history, ctx, userName) {
+  const client = await getAnthropicClient();
+  const trimmed = history.slice(-12);
+  const messages = trimmed.map(m => ({ role: m.role, content: m.content }));
+  const actions = [];
+
+  for (let turn = 0; turn < MAX_TURNS; turn++) {
+    const response = await client.messages.create({
+      model: ANTHROPIC_MODEL,
+      max_tokens: 1500,
+      system: systemPrompt(userName),
+      tools: ATS_TOOL_DEFINITIONS,
+      messages
+    });
+
+    if (response.stop_reason === 'tool_use') {
+      messages.push({ role: 'assistant', content: response.content });
+
+      const toolResults = [];
+      for (const block of response.content) {
+        if (block.type !== 'tool_use') continue;
+        const result = await executeAtsTool(block.name, block.input, ctx);
+        actions.push({
+          tool: block.name,
+          ok: result.ok,
+          summary: result.summary,
+          link: result.link
+        });
+        toolResults.push({
+          type: 'tool_result',
+          tool_use_id: block.id,
+          content: JSON.stringify({ ok: result.ok, summary: result.summary, data: result.data ?? null }),
+          is_error: !result.ok
+        });
+      }
+
+      messages.push({ role: 'user', content: toolResults });
+      continue;
+    }
+
+    const text = response.content
+      .filter(b => b.type === 'text')
+      .map(b => b.text)
+      .join('\n')
+      .trim();
+
+    return { reply: text || 'Action completed successfully.', actions };
+  }
+
+  return {
+    reply: "I've completed several actions, but reached the turn limit. Would you like me to proceed with the next specific step?",
+    actions
+  };
 }
 
 async function extractCandidateName(text) {
