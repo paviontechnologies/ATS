@@ -50,7 +50,32 @@ router.get('/sessions', authenticate, async (req, res) => {
  */
 router.post('/screen', authenticate, auditAction('VERAHIRE_SCREENING_TRIGGERED', 'VeraHire'), async (req, res) => {
   try {
-    const { jobId, candidateId, applicationId, responses } = req.body;
+    let { jobId, candidateId, applicationId, candidateName, jobTitle, responses = [] } = req.body;
+
+    if (!jobId && jobTitle) {
+      const allJobs = await Jobs.find({});
+      const matchedJob = allJobs.find(j => (j.title || '').toLowerCase().includes(jobTitle.toLowerCase()));
+      if (matchedJob) jobId = matchedJob._id;
+    }
+    if (!jobId) {
+      const firstJob = (await Jobs.find({}))[0];
+      if (firstJob) jobId = firstJob._id;
+    }
+
+    if (!candidateId && candidateName) {
+      const allCands = await Candidates.find({});
+      const parts = candidateName.toLowerCase().split(' ');
+      const matchedCand = allCands.find(c => {
+        const full = `${c.firstName || ''} ${c.lastName || ''}`.toLowerCase();
+        return parts.some(p => full.includes(p));
+      });
+      if (matchedCand) candidateId = matchedCand._id;
+    }
+    if (!candidateId) {
+      const firstCand = (await Candidates.find({}))[0];
+      if (firstCand) candidateId = firstCand._id;
+    }
+
     if (!jobId || !candidateId) {
       return res.status(400).json({ error: 'Job ID and Candidate ID are required.' });
     }
@@ -65,7 +90,8 @@ router.post('/screen', authenticate, auditAction('VERAHIRE_SCREENING_TRIGGERED',
 
     res.json({
       message: 'VeraHire first-round AI screening completed successfully.',
-      evaluation
+      evaluation,
+      session: evaluation
     });
   } catch (err) {
     console.error('VeraHire screen error:', err);

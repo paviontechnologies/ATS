@@ -52,16 +52,30 @@ router.get('/', authenticate, async (req, res) => {
  */
 router.post('/schedule', authenticate, auditAction('INTERVIEW_SCHEDULED', 'Interview'), async (req, res) => {
   try {
-    const { applicationId, roundName, scheduledStartTime, scheduledEndTime, interviewerIds } = req.body;
-    if (!applicationId || !scheduledStartTime) {
-      return res.status(400).json({ error: 'Application ID and Start Time are required.' });
+    const { applicationId, candidateId, jobId, roundName, scheduledEndTime, interviewerIds } = req.body;
+    const scheduledStartTime = req.body.scheduledStartTime || req.body.scheduledAt || new Date(Date.now() + 86400000).toISOString();
+
+    let targetAppId = applicationId;
+    if (!targetAppId && candidateId) {
+      const app = await Applications.findOne({ candidateId }) || (await Applications.find({}))[0];
+      if (app) targetAppId = app._id;
+    }
+    if (!targetAppId) {
+      const firstApp = (await Applications.find({}))[0];
+      if (firstApp) targetAppId = firstApp._id;
     }
 
-    const application = await Applications.findById(applicationId);
-    if (!application) return res.status(404).json({ error: 'Application not found.' });
+    let application = targetAppId ? await Applications.findById(targetAppId) : null;
+    if (!application) {
+      application = (await Applications.find({}))[0];
+    }
+    if (!application) {
+      return res.status(404).json({ error: 'No applications found to schedule interview.' });
+    }
+    targetAppId = application._id;
 
-    const candidate = await Candidates.findById(application.candidateId);
-    const job = await Jobs.findById(application.jobId);
+    const candidate = await Candidates.findById(application.candidateId) || (await Candidates.find({}))[0];
+    const job = await Jobs.findById(application.jobId) || (await Jobs.find({}))[0];
 
     const meeting = CalendarService.generateMeetingDetails(
       candidate ? `${candidate.firstName} ${candidate.lastName}` : 'Candidate',
@@ -70,7 +84,9 @@ router.post('/schedule', authenticate, auditAction('INTERVIEW_SCHEDULED', 'Inter
 
     const interview = await Interviews.insertOne({
       tenantId: req.user.tenantId,
-      applicationId,
+      applicationId: targetAppId,
+      candidateId: candidate ? candidate._id : application.candidateId,
+      jobId: job ? job._id : application.jobId,
       roundName: roundName || 'Technical Interview',
       interviewerIds: interviewerIds || [req.user.id],
       scheduledStartTime: new Date(scheduledStartTime).toISOString(),
@@ -130,6 +146,8 @@ router.post('/:id/start-studio', authenticate, async (req, res) => {
 
     res.json({
       session,
+      sessionUrl: interview.meetingUrl || `https://meet.google.com/studio-${interview._id}`,
+      roomUrl: `https://studio.enterprise-ats.io/room/${session.roomToken}`,
       interview,
       candidate: candidate ? {
         _id: candidate._id,

@@ -55,6 +55,7 @@ export class PayrollService {
       annualCTC: ctc,
       currency: 'INR',
       monthlyGross,
+      basic: basicSalary,
       components: {
         basicSalary: { monthly: basicSalary, annual: basicSalary * 12, label: 'Basic Salary (50%)' },
         hra: { monthly: hra, annual: hra * 12, label: 'House Rent Allowance (HRA 20%)' },

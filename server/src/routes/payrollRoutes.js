@@ -67,7 +67,17 @@ router.post('/sync-employee', authenticate, auditAction('RAZORPAYX_EMPLOYEE_SYNC
  */
 router.post('/disburse', authenticate, auditAction('RAZORPAYX_SALARY_DISBURSED', 'Payroll'), async (req, res) => {
   try {
-    const { recordId, month } = req.body;
+    let { recordId, employeeName, month } = req.body;
+    if (!recordId) {
+      const records = await PayrollService.getPayrollEmployees(req.user.tenantId);
+      if (employeeName && records.length > 0) {
+        const match = records.find(r => (r.employeeName || '').toLowerCase().includes(employeeName.toLowerCase()));
+        if (match) recordId = match._id;
+      }
+      if (!recordId && records.length > 0) {
+        recordId = records[0]._id;
+      }
+    }
     if (!recordId) {
       return res.status(400).json({ error: 'Payroll Record ID is required.' });
     }

@@ -445,6 +445,8 @@ async function runAllTests() {
   // Test 23: Autopilot Workflow Engine & Polite Auto-Rejection
   await test('Autopilot Workflow Engine & Polite Auto-Rejection', async () => {
     const { WorkflowService } = await import('../src/services/workflowService.js');
+    await WorkflowService.toggleRule('rule_auto_reject_email', true);
+    await WorkflowService.toggleRule('rule_offer_accepted_onboarding', true);
     const rules = await WorkflowService.getRules();
     assert.ok(rules.length >= 4, 'Should load 4 core autopilot rules');
 

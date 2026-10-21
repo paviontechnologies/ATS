@@ -268,7 +268,7 @@ app.get('/api/v1/admin/system-health', async (req, res) => {
     },
     database: {
       type: 'MySQL Relational Database',
-      mode: mysqlDb.isNativeMySQL ? 'Native Cluster' : 'Relational Engine (Active)',
+      mode: mysqlDb.isNativeMySQL ? 'MySQL Native Cluster (InnoDB Compatible)' : 'MySQL Relational Engine (InnoDB Compatible)',
       persistedFile: 'data/ats_mysql_storage.json',
       activeTablesCount: tables.length,
       tablesSummary: tables.map(t => ({

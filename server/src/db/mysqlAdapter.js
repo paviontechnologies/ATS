@@ -69,11 +69,63 @@ export class MySQLAdapter {
       if (fs.existsSync(SQL_STORAGE_PATH)) {
         try {
           const raw = fs.readFileSync(SQL_STORAGE_PATH, 'utf-8');
-          this.storage = JSON.parse(raw);
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            this.storage = { ...this.storage, ...parsed };
+          }
         } catch (e) {
-          this.storage = {};
+          // ignore
         }
       }
+
+      // Prepopulate relational engine tables from ats_database.json if empty
+      const mainDbPath = path.resolve(__dirname, '../../../data/ats_database.json');
+      if (fs.existsSync(mainDbPath)) {
+        try {
+          const mainRaw = fs.readFileSync(mainDbPath, 'utf-8');
+          const mainDb = JSON.parse(mainRaw);
+          const keyMapping = {
+            companies: 'companies',
+            users: 'users',
+            jobs: 'jobs',
+            candidates: 'candidates',
+            applications: 'applications',
+            interviews: 'interviews',
+            scorecards: 'scorecards',
+            offers: 'offers',
+            audit_logs: 'auditLogs',
+            talent_pools: 'talentPools',
+            communications: 'communications'
+          };
+          for (const [table, dbKey] of Object.entries(keyMapping)) {
+            if (!this.storage[table] || this.storage[table].length === 0) {
+              if (mainDb[dbKey] && Array.isArray(mainDb[dbKey])) {
+                this.storage[table] = [...mainDb[dbKey]];
+              }
+            }
+          }
+          if (!this.storage.roles || this.storage.roles.length === 0) {
+            this.storage.roles = [
+              { id: 'role_superadmin', name: 'SUPER_ADMIN' },
+              { id: 'role_admin', name: 'COMPANY_ADMIN' },
+              { id: 'role_recruiter', name: 'RECRUITER' },
+              { id: 'role_manager', name: 'HIRING_MANAGER' },
+              { id: 'role_interviewer', name: 'INTERVIEWER' },
+              { id: 'role_agency', name: 'AGENCY_PARTNER' },
+              { id: 'role_candidate', name: 'CANDIDATE' }
+            ];
+          }
+          if (!this.storage.subscriptions || this.storage.subscriptions.length === 0) {
+            this.storage.subscriptions = [
+              { id: 'sub_enterprise', plan: 'ENTERPRISE_UNLIMITED', status: 'ACTIVE', maxSeats: 500 }
+            ];
+          }
+          this.save();
+        } catch (e) {
+          logger.warn(`Failed to prepopulate MySQL relational storage: ${e.message}`);
+        }
+      }
+
       logger.info(`💾 Relational MySQL Storage initialized at: ${SQL_STORAGE_PATH}`);
     }
 
