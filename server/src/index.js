@@ -88,6 +88,14 @@ app.get('/health', (req, res) => {
   });
 });
 
+// Rewrite requests from /api/* without /v1 to /api/v1/*
+app.use((req, res, next) => {
+  if (req.url.startsWith('/api/') && !req.url.startsWith('/api/v1/')) {
+    req.url = req.url.replace(/^\/api\//, '/api/v1/');
+  }
+  next();
+});
+
 // API Routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/jobs', jobRoutes);
