@@ -27,6 +27,7 @@ import deelRoutes from './routes/deelRoutes.js';
 import payrollRoutes from './routes/payrollRoutes.js';
 import agencyRoutes from './routes/agencyRoutes.js';
 import workflowRoutes from './routes/workflowRoutes.js';
+import jobBoardRoutes from './routes/jobBoardRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -114,6 +115,7 @@ app.use('/api/v1/deel', deelRoutes);
 app.use('/api/v1/payroll', payrollRoutes);
 app.use('/api/v1/agency', agencyRoutes);
 app.use('/api/v1/workflows', workflowRoutes);
+app.use('/api/v1/job-boards', jobBoardRoutes);
 
 // Socket.IO event handler
 io.on('connection', (socket) => {

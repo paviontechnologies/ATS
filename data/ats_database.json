@@ -22,12 +22,12 @@
     {
       "_id": "doc_b9fa6d4f1a344f56",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-10-21T15:43:53.563Z",
+      "updatedAt": "2026-10-22T20:11:56.953Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Sarah",
       "lastName": "Connor",
       "email": "admin@techcorp.com",
-      "passwordHash": "$2a$10$zMFyNrUBCbbK6I37xdZP1./n6mCbkaVXeBb6XDV3uDfGB39V8rTbC",
+      "passwordHash": "$2a$10$jsqFwu1Ko0dSkvtdkDGmaes0KypGkRnMkVQ/s/hmea3Jrp07/Q26O",
       "role": "COMPANY_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -36,12 +36,12 @@
     {
       "_id": "doc_a9289f33c4f52c25",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-10-21T15:43:53.650Z",
+      "updatedAt": "2026-10-22T20:11:57.042Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Alex",
       "lastName": "Morgan",
       "email": "recruiter@techcorp.com",
-      "passwordHash": "$2a$10$WrggLy0ywsv8wFleThLgMeE5hMSLbNW63SUno34V8dDF.0Z1smkaa",
+      "passwordHash": "$2a$10$xBJZs1a9sG3A.m.ZhlXsKeV6nIGA9Yd8bI4mLQlvIMOUsDgur0gOe",
       "role": "RECRUITER",
       "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -50,12 +50,12 @@
     {
       "_id": "doc_493030e468962233",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-10-21T15:43:53.741Z",
+      "updatedAt": "2026-10-22T20:11:57.129Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "David",
       "lastName": "Chen",
       "email": "manager@techcorp.com",
-      "passwordHash": "$2a$10$2AtLBxfXcCs/R7fpcCS6Fup6ztQVQGnsja222gZ6GBzdBySz0jxgW",
+      "passwordHash": "$2a$10$WBdV699/Qh7qGb0HwXDb8.fZGBsThMtFjkLjfsouO1V.nWINF11jG",
       "role": "HIRING_MANAGER",
       "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -64,12 +64,12 @@
     {
       "_id": "doc_f498dda4a79ee504",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-10-21T15:43:53.829Z",
+      "updatedAt": "2026-10-22T20:11:57.226Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Elena",
       "lastName": "Rostova",
       "email": "interviewer@techcorp.com",
-      "passwordHash": "$2a$10$RIHoIfQZp1o1Dvg1nfUpy.9sDgBYZJOAeKATPYXyNEJrZr1I4BE7a",
+      "passwordHash": "$2a$10$LBkQDpHufdt/W5oF6fBeWeA0tGGmqLDYbdcJ9g2ZFIlfff8SuXJc6",
       "role": "INTERVIEWER",
       "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -78,12 +78,12 @@
     {
       "_id": "doc_967ecfc04dba1a83",
       "createdAt": "2026-09-04T16:29:48.945Z",
-      "updatedAt": "2026-10-21T15:43:53.475Z",
+      "updatedAt": "2026-10-22T20:11:56.858Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Marcus",
       "lastName": "Vance",
       "email": "superadmin@enterprise-ats.io",
-      "passwordHash": "$2a$10$hP/9R0JI4ucUeWjR4NvfVOBpM8Ptc/iBnT8z7BPniGXFsW8ADfm1O",
+      "passwordHash": "$2a$10$43tMRwVg5ni7BamPBxrb9OJa2dcX4tbtZTkHVa1vMq3.xb3VeR.ay",
       "plainPasswordForDemo": "SuperAdmin@2026",
       "role": "SUPER_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
@@ -92,12 +92,12 @@
     {
       "_id": "doc_7d5d39e5a28156a8",
       "createdAt": "2026-09-04T16:29:49.377Z",
-      "updatedAt": "2026-10-21T15:43:53.920Z",
+      "updatedAt": "2026-10-22T20:11:57.318Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jessica",
       "lastName": "Reed",
       "email": "agency@apexrecruiting.com",
-      "passwordHash": "$2a$10$riQAmhaBe3XO/s.IGgwXhuAdyCqad5NXCUZJNAp4olyKWTkSXHAbS",
+      "passwordHash": "$2a$10$5k1h6jIf2RIRaV8QYNFfB.1QCsv06oDCK8hxblbowJKsn57NixgUS",
       "plainPasswordForDemo": "Agency@2026",
       "role": "AGENCY_PARTNER",
       "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
@@ -106,12 +106,12 @@
     {
       "_id": "doc_f567a421a517e5e8",
       "createdAt": "2026-09-04T16:29:49.463Z",
-      "updatedAt": "2026-10-21T15:43:54.007Z",
+      "updatedAt": "2026-10-22T20:11:57.407Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jordan",
       "lastName": "Miller",
       "email": "candidate@example.com",
-      "passwordHash": "$2a$10$MBOe7Az7s1LUPp0Y8bMute3TrKEzxuMtG8TOJIB5lEzIfDKFqIGDK",
+      "passwordHash": "$2a$10$FG4HGS2U4HBZaU3lhp1bZuX7s1m4qJhRmu824L.ZaOzinEcXnqUOy",
       "plainPasswordForDemo": "Candidate@2026",
       "role": "CANDIDATE",
       "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
@@ -758,6 +758,179 @@
       ],
       "status": "PUBLISHED",
       "publishedAt": "2026-10-21T15:47:20.600Z"
+    },
+    {
+      "_id": "doc_7ba6bb15f83e573b",
+      "createdAt": "2026-10-21T15:58:25.194Z",
+      "updatedAt": "2026-10-21T15:58:25.194Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Senior Distributed Systems Architect",
+      "departmentId": "Engineering",
+      "locationId": "San Francisco, CA (Remote)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_a9289f33c4f52c25",
+      "recruiterId": "doc_a9289f33c4f52c25",
+      "salaryRange": {
+        "min": 140000,
+        "max": 180000,
+        "currency": "USD"
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "distributed-systems",
+        "go",
+        "kubernetes"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>Lead our distributed computing infrastructure</p>",
+      "knockoutQuestions": [
+        {
+          "questionText": "Do you have 5+ years experience in distributed systems?",
+          "correctValue": true
+        }
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-21T15:58:25.194Z"
+    },
+    {
+      "_id": "doc_994496efaa7c82d4",
+      "createdAt": "2026-10-22T20:12:54.399Z",
+      "updatedAt": "2026-10-22T20:12:54.399Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Senior Distributed Systems Architect",
+      "departmentId": "Engineering",
+      "locationId": "San Francisco, CA (Remote)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_a9289f33c4f52c25",
+      "recruiterId": "doc_a9289f33c4f52c25",
+      "salaryRange": {
+        "min": 140000,
+        "max": 180000,
+        "currency": "USD"
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "distributed-systems",
+        "go",
+        "kubernetes"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>Lead our distributed computing infrastructure</p>",
+      "knockoutQuestions": [
+        {
+          "questionText": "Do you have 5+ years experience in distributed systems?",
+          "correctValue": true
+        }
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-22T20:12:54.399Z"
+    },
+    {
+      "_id": "doc_f6d8ec2b1f0d49d5",
+      "createdAt": "2026-10-22T20:14:14.689Z",
+      "updatedAt": "2026-10-22T20:14:14.689Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Fullstack (Cloud & Distributed Systems)",
+      "department": "Engineering",
+      "type": "FULL_TIME",
+      "location": {
+        "city": "Bangalore, India",
+        "country": "India",
+        "isRemote": false
+      },
+      "salaryRange": {
+        "min": 1500000,
+        "max": 3000000,
+        "currency": "INR"
+      },
+      "minExperienceYears": 48,
+      "requiredSkills": [
+        "React",
+        "Node.js",
+        "AWS",
+        "Microservices",
+        "Docker"
+      ],
+      "descriptionHtml": "<p><strong>Imported from Naukri.com Enterprise (Cognizant Digital Solutions)</strong></p><p>Key Requirements: Looking for an experienced Fullstack responsible for architecting scalable cloud backends, API design, and mentoring engineers.</p>",
+      "knockoutQuestions": [
+        {
+          "id": "ko_1",
+          "questionText": "Do you have at least 48 years of relevant experience in React?",
+          "expectedAnswer": true,
+          "isKnockout": true
+        }
+      ],
+      "stages": [
+        {
+          "id": "Applied",
+          "name": "Applied",
+          "order": 1
+        },
+        {
+          "id": "Screening",
+          "name": "Screening",
+          "order": 2
+        },
+        {
+          "id": "Shortlisted",
+          "name": "Shortlisted",
+          "order": 3
+        },
+        {
+          "id": "Interview",
+          "name": "Technical Interview",
+          "order": 4
+        },
+        {
+          "id": "Offer",
+          "name": "Executive Offer",
+          "order": 5
+        },
+        {
+          "id": "Hired",
+          "name": "Hired",
+          "order": 6
+        },
+        {
+          "id": "Rejected",
+          "name": "Archived",
+          "order": 7
+        }
+      ],
+      "status": "PUBLISHED",
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Company Career Portal"
+      ],
+      "importedFrom": {
+        "board": "Naukri.com Enterprise",
+        "originalUrl": "https://www.naukri.com/fullstack-jobs",
+        "company": "Cognizant Digital Solutions",
+        "importedAt": "2026-10-22T20:14:14.689Z"
+      },
+      "createdBy": "doc_a9289f33c4f52c25"
     }
   ],
   "candidates": [
@@ -1288,13 +1461,91 @@
       "tags": [
         "Inbound Applicant"
       ]
+    },
+    {
+      "_id": "doc_d01c94a4e1f25df5",
+      "createdAt": "2026-10-21T15:58:25.486Z",
+      "updatedAt": "2026-10-21T15:58:25.486Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "firstName": "Samantha",
+      "lastName": "Ray",
+      "email": "samantha.ray.1792598305481@example.com",
+      "phone": "+1 (555) 234-5678",
+      "linkedinUrl": "https://linkedin.com/in/candidate-applicant",
+      "githubUrl": "https://github.com/candidate",
+      "skills": [
+        "distributed systems"
+      ],
+      "totalExperienceYears": 3.5,
+      "education": [
+        {
+          "institution": "State University",
+          "degree": "Bachelor of Science",
+          "fieldOfStudy": "Computer Science",
+          "graduationYear": 2020
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Acme Technologies",
+          "title": "Software Engineer",
+          "startDate": "2021-06-01",
+          "endDate": "Present",
+          "isCurrent": true,
+          "description": "Designed and deployed scalable microservices and user interfaces."
+        }
+      ],
+      "summary": "Senior software architect with 8 years distributed systems and Go experience...",
+      "source": "CAREER_PAGE",
+      "tags": [
+        "Inbound Applicant"
+      ]
+    },
+    {
+      "_id": "doc_c3a0c2ce44ca4073",
+      "createdAt": "2026-10-22T20:12:54.874Z",
+      "updatedAt": "2026-10-22T20:12:54.874Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "firstName": "Samantha",
+      "lastName": "Ray",
+      "email": "samantha.ray.1792699974834@example.com",
+      "phone": "+1 (555) 234-5678",
+      "linkedinUrl": "https://linkedin.com/in/candidate-applicant",
+      "githubUrl": "https://github.com/candidate",
+      "skills": [
+        "distributed systems"
+      ],
+      "totalExperienceYears": 3.5,
+      "education": [
+        {
+          "institution": "State University",
+          "degree": "Bachelor of Science",
+          "fieldOfStudy": "Computer Science",
+          "graduationYear": 2020
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Acme Technologies",
+          "title": "Software Engineer",
+          "startDate": "2021-06-01",
+          "endDate": "Present",
+          "isCurrent": true,
+          "description": "Designed and deployed scalable microservices and user interfaces."
+        }
+      ],
+      "summary": "Senior software architect with 8 years distributed systems and Go experience...",
+      "source": "CAREER_PAGE",
+      "tags": [
+        "Inbound Applicant"
+      ]
     }
   ],
   "applications": [
     {
       "_id": "doc_72423cd33a5dd21f",
       "createdAt": "2026-09-04T01:14:50.371Z",
-      "updatedAt": "2026-10-21T15:47:20.626Z",
+      "updatedAt": "2026-10-22T20:12:54.436Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_job_staff_ai",
       "candidateId": "doc_08f6825f7b58afff",
@@ -1563,6 +1814,18 @@
           "toStage": "Interview",
           "changedById": "doc_a9289f33c4f52c25",
           "changedAt": "2026-10-21T15:47:20.626Z"
+        },
+        {
+          "fromStage": "Interview",
+          "toStage": "Interview",
+          "changedById": "doc_a9289f33c4f52c25",
+          "changedAt": "2026-10-21T15:58:25.225Z"
+        },
+        {
+          "fromStage": "Interview",
+          "toStage": "Interview",
+          "changedById": "doc_a9289f33c4f52c25",
+          "changedAt": "2026-10-22T20:12:54.436Z"
         }
       ],
       "$push": {
@@ -1570,7 +1833,7 @@
           "fromStage": "Interview",
           "toStage": "Interview",
           "changedById": "doc_a9289f33c4f52c25",
-          "changedAt": "2026-10-21T15:47:20.626Z"
+          "changedAt": "2026-10-22T20:12:54.436Z"
         }
       }
     },
@@ -2290,12 +2553,12 @@
     {
       "_id": "doc_2f871764ff750d21",
       "createdAt": "2026-10-21T15:47:20.974Z",
-      "updatedAt": "2026-10-21T15:47:20.974Z",
+      "updatedAt": "2026-10-21T15:58:25.340Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_9b4ed10bbebd6f1b",
       "candidateId": "doc_0356fed2c34bf75b",
-      "stageId": "Applied",
-      "status": "ACTIVE",
+      "stageId": "Hired",
+      "status": "HIRED",
       "rejectionReason": null,
       "knockoutAnswers": [
         {
@@ -2327,6 +2590,126 @@
           "fromStage": "None",
           "toStage": "Applied",
           "changedAt": "2026-10-21T15:47:20.974Z"
+        },
+        {
+          "fromStage": "Applied",
+          "toStage": "Offer",
+          "changedAt": "2026-10-21T15:58:25.327Z"
+        },
+        {
+          "fromStage": "Offer",
+          "toStage": "Hired",
+          "changedAt": "2026-10-21T15:58:25.340Z"
+        }
+      ],
+      "$push": {
+        "stageHistory": {
+          "fromStage": "Offer",
+          "toStage": "Hired",
+          "changedAt": "2026-10-21T15:58:25.340Z"
+        }
+      }
+    },
+    {
+      "_id": "doc_359f86761dc511be",
+      "createdAt": "2026-10-21T15:58:25.490Z",
+      "updatedAt": "2026-10-22T20:12:54.619Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_281e5946cd55fc21",
+      "candidateId": "doc_d01c94a4e1f25df5",
+      "stageId": "Hired",
+      "status": "HIRED",
+      "rejectionReason": null,
+      "knockoutAnswers": [
+        {
+          "questionText": "Do you have 5+ years experience in distributed systems?",
+          "answer": null,
+          "passed": true
+        }
+      ],
+      "aiMatchScore": {
+        "overallScore": 54,
+        "skillsScore": 0,
+        "experienceScore": 87,
+        "educationScore": 90,
+        "semanticScore": 95,
+        "matchingSkills": [],
+        "missingSkills": [
+          "distributed-systems",
+          "go",
+          "kubernetes",
+          "typescript",
+          "docker"
+        ],
+        "recommendation": "Requires Further Evaluation",
+        "explanation": "Lower match score due to gaps in primary required competencies (distributed-systems, go, kubernetes) or lower verified years of seniority (3.5 yrs vs 3 yrs target).",
+        "calculatedAt": "2026-10-21T15:58:25.490Z"
+      },
+      "stageHistory": [
+        {
+          "fromStage": "None",
+          "toStage": "Applied",
+          "changedAt": "2026-10-21T15:58:25.490Z"
+        },
+        {
+          "fromStage": "Applied",
+          "toStage": "Offer",
+          "changedAt": "2026-10-22T20:12:54.598Z"
+        },
+        {
+          "fromStage": "Offer",
+          "toStage": "Hired",
+          "changedAt": "2026-10-22T20:12:54.619Z"
+        }
+      ],
+      "$push": {
+        "stageHistory": {
+          "fromStage": "Offer",
+          "toStage": "Hired",
+          "changedAt": "2026-10-22T20:12:54.619Z"
+        }
+      }
+    },
+    {
+      "_id": "doc_3d0b14b49e74cb2a",
+      "createdAt": "2026-10-22T20:12:54.880Z",
+      "updatedAt": "2026-10-22T20:12:54.880Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_7ba6bb15f83e573b",
+      "candidateId": "doc_c3a0c2ce44ca4073",
+      "stageId": "Applied",
+      "status": "ACTIVE",
+      "rejectionReason": null,
+      "knockoutAnswers": [
+        {
+          "questionText": "Do you have 5+ years experience in distributed systems?",
+          "answer": null,
+          "passed": true
+        }
+      ],
+      "aiMatchScore": {
+        "overallScore": 54,
+        "skillsScore": 0,
+        "experienceScore": 87,
+        "educationScore": 90,
+        "semanticScore": 95,
+        "matchingSkills": [],
+        "missingSkills": [
+          "distributed-systems",
+          "go",
+          "kubernetes",
+          "typescript",
+          "docker"
+        ],
+        "recommendation": "Requires Further Evaluation",
+        "explanation": "Lower match score due to gaps in primary required competencies (distributed-systems, go, kubernetes) or lower verified years of seniority (3.5 yrs vs 3 yrs target).",
+        "calculatedAt": "2026-10-22T20:12:54.880Z"
+      },
+      "stageHistory": [
+        {
+          "fromStage": "None",
+          "toStage": "Applied",
+          "changedAt": "2026-10-22T20:12:54.880Z"
         }
       ]
     }
@@ -2462,6 +2845,46 @@
       "status": "COMPLETED",
       "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_73eba24c7f23911d_1792597640692.mp4",
       "completedAt": "2026-10-21T15:47:20.699Z"
+    },
+    {
+      "_id": "doc_9766977f6c7c1135",
+      "createdAt": "2026-10-21T15:58:25.258Z",
+      "updatedAt": "2026-10-21T15:58:25.288Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "applicationId": "doc_72423cd33a5dd21f",
+      "candidateId": "doc_08f6825f7b58afff",
+      "jobId": "doc_job_staff_ai",
+      "roundName": "System Architecture Bar Raiser",
+      "interviewerIds": [
+        "doc_a9289f33c4f52c25"
+      ],
+      "scheduledStartTime": "2026-10-22T15:58:25.252Z",
+      "scheduledEndTime": "2026-10-22T16:43:25.252Z",
+      "meetingUrl": "https://meet.google.com/meet-59c9a3b8-cf1d879c",
+      "calendarEventId": "cal_evt_729c780ded9248f2",
+      "status": "COMPLETED",
+      "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_9766977f6c7c1135_1792598305281.mp4",
+      "completedAt": "2026-10-21T15:58:25.287Z"
+    },
+    {
+      "_id": "doc_07dc385447c3752a",
+      "createdAt": "2026-10-22T20:12:54.500Z",
+      "updatedAt": "2026-10-22T20:12:54.530Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "applicationId": "doc_72423cd33a5dd21f",
+      "candidateId": "doc_08f6825f7b58afff",
+      "jobId": "doc_job_staff_ai",
+      "roundName": "System Architecture Bar Raiser",
+      "interviewerIds": [
+        "doc_a9289f33c4f52c25"
+      ],
+      "scheduledStartTime": "2026-10-23T20:12:54.495Z",
+      "scheduledEndTime": "2026-10-23T20:57:54.495Z",
+      "meetingUrl": "https://meet.google.com/meet-20ee5453-48791562",
+      "calendarEventId": "cal_evt_b5f059fa8093c860",
+      "status": "COMPLETED",
+      "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_07dc385447c3752a_1792699974522.mp4",
+      "completedAt": "2026-10-22T20:12:54.530Z"
     }
   ],
   "scorecards": [
@@ -2593,13 +3016,75 @@
       "isSubmitted": true,
       "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_73eba24c7f23911d_1792597640692.mp4",
       "submittedAt": "2026-10-21T15:47:20.716Z"
+    },
+    {
+      "_id": "doc_8b6ad54d9e468516",
+      "createdAt": "2026-10-21T15:58:25.285Z",
+      "updatedAt": "2026-10-21T15:58:25.304Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "interviewId": "doc_9766977f6c7c1135",
+      "interviewerId": "doc_a9289f33c4f52c25",
+      "interviewerName": "Alex Morgan",
+      "criteriaRatings": [
+        {
+          "name": "technicalSkills",
+          "score": 5,
+          "feedback": "Evaluated"
+        },
+        {
+          "name": "communication",
+          "score": 4,
+          "feedback": "Evaluated"
+        },
+        {
+          "name": "cultureFit",
+          "score": 5,
+          "feedback": "Evaluated"
+        }
+      ],
+      "overallRecommendation": "STRONG_HIRE",
+      "privateNotes": "Exceptional system architecture understanding.",
+      "isSubmitted": true,
+      "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_9766977f6c7c1135_1792598305281.mp4",
+      "submittedAt": "2026-10-21T15:58:25.304Z"
+    },
+    {
+      "_id": "doc_d2a7625542d20a17",
+      "createdAt": "2026-10-22T20:12:54.526Z",
+      "updatedAt": "2026-10-22T20:12:54.551Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "interviewId": "doc_07dc385447c3752a",
+      "interviewerId": "doc_a9289f33c4f52c25",
+      "interviewerName": "Alex Morgan",
+      "criteriaRatings": [
+        {
+          "name": "technicalSkills",
+          "score": 5,
+          "feedback": "Evaluated"
+        },
+        {
+          "name": "communication",
+          "score": 4,
+          "feedback": "Evaluated"
+        },
+        {
+          "name": "cultureFit",
+          "score": 5,
+          "feedback": "Evaluated"
+        }
+      ],
+      "overallRecommendation": "STRONG_HIRE",
+      "privateNotes": "Exceptional system architecture understanding.",
+      "isSubmitted": true,
+      "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_07dc385447c3752a_1792699974522.mp4",
+      "submittedAt": "2026-10-22T20:12:54.550Z"
     }
   ],
   "offers": [
     {
       "_id": "doc_offer_jordan_miller",
       "createdAt": "2026-09-07T14:30:00.000Z",
-      "updatedAt": "2026-10-21T15:47:20.999Z",
+      "updatedAt": "2026-10-22T20:12:54.899Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "applicationId": "doc_72423cd33a5dd21f",
       "candidateId": "doc_08f6825f7b58afff",
@@ -2615,7 +3100,7 @@
       "signedDocumentUrl": null,
       "sentAt": "2026-09-07T14:30:00.000Z",
       "signedOffBy": "Recruiter",
-      "signedOffAt": "2026-10-21T15:47:20.999Z",
+      "signedOffAt": "2026-10-22T20:12:54.899Z",
       "managerNotes": "Approved via AI Assistant automation."
     },
     {
@@ -2820,6 +3305,50 @@
       "sentAt": "2026-10-21T15:47:20.731Z",
       "eSignSignatureId": "sig_1792597640747_candidate",
       "signedAt": "2026-10-21T15:47:20.747Z"
+    },
+    {
+      "_id": "doc_1d3012f54efe67df",
+      "createdAt": "2026-10-21T15:58:25.324Z",
+      "updatedAt": "2026-10-21T15:58:25.337Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "applicationId": "doc_2f871764ff750d21",
+      "candidateId": "doc_0356fed2c34bf75b",
+      "jobTitle": "Senior Distributed Systems Architect",
+      "baseSalary": 165000,
+      "currency": "USD",
+      "variableBonus": 0,
+      "equityShares": 25000,
+      "equity": "25,000 RSUs",
+      "targetStartDate": "2026-11-04T15:58:25.320Z",
+      "expirationDate": "2026-10-28T15:58:25.324Z",
+      "approvalStatus": "APPROVED",
+      "candidateDecision": "ACCEPTED",
+      "signedDocumentUrl": null,
+      "sentAt": "2026-10-21T15:58:25.324Z",
+      "eSignSignatureId": "sig_1792598305337_candidate",
+      "signedAt": "2026-10-21T15:58:25.337Z"
+    },
+    {
+      "_id": "doc_d93ef5f3535d2f16",
+      "createdAt": "2026-10-22T20:12:54.592Z",
+      "updatedAt": "2026-10-22T20:12:54.613Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "applicationId": "doc_359f86761dc511be",
+      "candidateId": "doc_d01c94a4e1f25df5",
+      "jobTitle": "Senior Distributed Systems Architect",
+      "baseSalary": 165000,
+      "currency": "USD",
+      "variableBonus": 0,
+      "equityShares": 25000,
+      "equity": "25,000 RSUs",
+      "targetStartDate": "2026-11-05T20:12:54.587Z",
+      "expirationDate": "2026-10-29T20:12:54.591Z",
+      "approvalStatus": "APPROVED",
+      "candidateDecision": "ACCEPTED",
+      "signedDocumentUrl": null,
+      "sentAt": "2026-10-22T20:12:54.591Z",
+      "eSignSignatureId": "sig_1792699974613_candidate",
+      "signedAt": "2026-10-22T20:12:54.613Z"
     }
   ],
   "talentPools": [],
@@ -3051,6 +3580,122 @@
       },
       "status": "DELIVERED",
       "sentAt": "2026-10-21T15:47:20.702Z"
+    },
+    {
+      "_id": "doc_3b2e2a2b1b6f3d73",
+      "createdAt": "2026-10-21T15:58:25.292Z",
+      "updatedAt": "2026-10-21T15:58:25.292Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "recipientEmail": "RAHUL.bajediyal@gmail.com",
+      "direction": "OUTBOUND",
+      "channel": "EMAIL",
+      "type": "INTERVIEW_EVALUATION_REPORT",
+      "subject": "[ATS EVALUATION] Live Video Interview Report: Jordan Miller - Staff AI Engineer (Autonomous Agents & Inference) (System Architecture Bar Raiser)",
+      "body": "================================================================================\nENTERPRISE ATS: AUTOMATED INTERVIEW EVALUATION & RECORDING REPORT\n================================================================================\nGenerated for Master Administrator: RAHUL.bajediyal@gmail.com\nDispatch Timestamp: 2026-10-21T15:58:25.292Z\n\n1. CANDIDATE & REQUISITION DETAILS\n--------------------------------------------------------------------------------\nCandidate Name     : Jordan Miller\nCandidate Email    : jordan.miller@example.com\nPosition Applied   : Staff AI Engineer (Autonomous Agents & Inference)\nInterview Round    : System Architecture Bar Raiser\nInterviewer        : Alex Morgan\nSession Duration   : 45 Minutes\n\n2. EVALUATION & SCORECARD RATINGS (1 - 5 STARS)\n--------------------------------------------------------------------------------\n• Technical Depth: ★★★★★ (5/5) - Strong conceptual mastery of backend architectures and cloud patterns.\n• System Architecture: ★★★★☆ (4/5) - Solid grasp of concurrency, event-driven pipelines, and caching.\n• Articulation & Communication: ★★★★★ (5/5) - Clear, concise, and structured communication style.\n• Culture & Leadership: ★★★★★ (5/5) - Demonstrated proactive ownership and team mentorship skills.\n\nFinal Recommendation: YES\nInterviewer Notes   : Strong candidate. Recommended to move forward to offer stage.\n\n3. CLOUD RECORDING & ARCHIVE ACCESS\n--------------------------------------------------------------------------------\nEncrypted Recording Link : https://vault.enterprise-ats.io/recordings/int_doc_9766977f6c7c1135_1792598305281.mp4\nStorage Protocol         : AES-256 Cloud Object Vault (Expiring Token Link)\n\n4. TIMESTAMPED BOOKMARKS\n--------------------------------------------------------------------------------\n• [03:15] Technical problem solving & architecture overview\n• [15:40] Live coding & data structure optimization\n• [32:10] System design, scalability, and microservices discussion\n\n5. BACKUP AUDIO TRANSCRIPT EXCERPT\n--------------------------------------------------------------------------------\n[00:02] Alex Morgan: Hello Jordan Miller, welcome to the System Architecture Bar Raiser round.\n[00:10] Jordan Miller: Thank you, glad to be here and excited to discuss the role.\n[01:00] Alex Morgan: Could you walk me through your experience with large-scale distributed systems?\n[01:25] Jordan Miller: In my recent role, I led the migration of monolithic microservices to an event-driven Kafka architecture.\n[12:40] Alex Morgan: Excellent explanation. How did you handle partition rebalancing and data consistency?\n[13:10] Jordan Miller: We implemented idempotency keys, dead-letter queues, and exactly-once processing semantics.\n\n================================================================================\nConfidential Recruitment Document - Enterprise ATS Automated Alert Subsystem\nDispatched to Master Recruiter / Admin: RAHUL.bajediyal@gmail.com\n================================================================================",
+      "metadata": {
+        "candidateName": "Jordan Miller",
+        "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+        "roundName": "System Architecture Bar Raiser",
+        "overallRecommendation": "YES",
+        "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_9766977f6c7c1135_1792598305281.mp4",
+        "criteriaRatings": [
+          {
+            "name": "Technical Depth",
+            "score": 5,
+            "feedback": "Strong conceptual mastery of backend architectures and cloud patterns."
+          },
+          {
+            "name": "System Architecture",
+            "score": 4,
+            "feedback": "Solid grasp of concurrency, event-driven pipelines, and caching."
+          },
+          {
+            "name": "Articulation & Communication",
+            "score": 5,
+            "feedback": "Clear, concise, and structured communication style."
+          },
+          {
+            "name": "Culture & Leadership",
+            "score": 5,
+            "feedback": "Demonstrated proactive ownership and team mentorship skills."
+          }
+        ],
+        "bookmarks": [
+          {
+            "timestamp": "03:15",
+            "note": "Technical problem solving & architecture overview"
+          },
+          {
+            "timestamp": "15:40",
+            "note": "Live coding & data structure optimization"
+          },
+          {
+            "timestamp": "32:10",
+            "note": "System design, scalability, and microservices discussion"
+          }
+        ]
+      },
+      "status": "DELIVERED",
+      "sentAt": "2026-10-21T15:58:25.292Z"
+    },
+    {
+      "_id": "doc_e6e84c856c91b130",
+      "createdAt": "2026-10-22T20:12:54.534Z",
+      "updatedAt": "2026-10-22T20:12:54.534Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "recipientEmail": "RAHUL.bajediyal@gmail.com",
+      "direction": "OUTBOUND",
+      "channel": "EMAIL",
+      "type": "INTERVIEW_EVALUATION_REPORT",
+      "subject": "[ATS EVALUATION] Live Video Interview Report: Jordan Miller - Staff AI Engineer (Autonomous Agents & Inference) (System Architecture Bar Raiser)",
+      "body": "================================================================================\nENTERPRISE ATS: AUTOMATED INTERVIEW EVALUATION & RECORDING REPORT\n================================================================================\nGenerated for Master Administrator: RAHUL.bajediyal@gmail.com\nDispatch Timestamp: 2026-10-22T20:12:54.534Z\n\n1. CANDIDATE & REQUISITION DETAILS\n--------------------------------------------------------------------------------\nCandidate Name     : Jordan Miller\nCandidate Email    : jordan.miller@example.com\nPosition Applied   : Staff AI Engineer (Autonomous Agents & Inference)\nInterview Round    : System Architecture Bar Raiser\nInterviewer        : Alex Morgan\nSession Duration   : 45 Minutes\n\n2. EVALUATION & SCORECARD RATINGS (1 - 5 STARS)\n--------------------------------------------------------------------------------\n• Technical Depth: ★★★★★ (5/5) - Strong conceptual mastery of backend architectures and cloud patterns.\n• System Architecture: ★★★★☆ (4/5) - Solid grasp of concurrency, event-driven pipelines, and caching.\n• Articulation & Communication: ★★★★★ (5/5) - Clear, concise, and structured communication style.\n• Culture & Leadership: ★★★★★ (5/5) - Demonstrated proactive ownership and team mentorship skills.\n\nFinal Recommendation: YES\nInterviewer Notes   : Strong candidate. Recommended to move forward to offer stage.\n\n3. CLOUD RECORDING & ARCHIVE ACCESS\n--------------------------------------------------------------------------------\nEncrypted Recording Link : https://vault.enterprise-ats.io/recordings/int_doc_07dc385447c3752a_1792699974522.mp4\nStorage Protocol         : AES-256 Cloud Object Vault (Expiring Token Link)\n\n4. TIMESTAMPED BOOKMARKS\n--------------------------------------------------------------------------------\n• [03:15] Technical problem solving & architecture overview\n• [15:40] Live coding & data structure optimization\n• [32:10] System design, scalability, and microservices discussion\n\n5. BACKUP AUDIO TRANSCRIPT EXCERPT\n--------------------------------------------------------------------------------\n[00:02] Alex Morgan: Hello Jordan Miller, welcome to the System Architecture Bar Raiser round.\n[00:10] Jordan Miller: Thank you, glad to be here and excited to discuss the role.\n[01:00] Alex Morgan: Could you walk me through your experience with large-scale distributed systems?\n[01:25] Jordan Miller: In my recent role, I led the migration of monolithic microservices to an event-driven Kafka architecture.\n[12:40] Alex Morgan: Excellent explanation. How did you handle partition rebalancing and data consistency?\n[13:10] Jordan Miller: We implemented idempotency keys, dead-letter queues, and exactly-once processing semantics.\n\n================================================================================\nConfidential Recruitment Document - Enterprise ATS Automated Alert Subsystem\nDispatched to Master Recruiter / Admin: RAHUL.bajediyal@gmail.com\n================================================================================",
+      "metadata": {
+        "candidateName": "Jordan Miller",
+        "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+        "roundName": "System Architecture Bar Raiser",
+        "overallRecommendation": "YES",
+        "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_07dc385447c3752a_1792699974522.mp4",
+        "criteriaRatings": [
+          {
+            "name": "Technical Depth",
+            "score": 5,
+            "feedback": "Strong conceptual mastery of backend architectures and cloud patterns."
+          },
+          {
+            "name": "System Architecture",
+            "score": 4,
+            "feedback": "Solid grasp of concurrency, event-driven pipelines, and caching."
+          },
+          {
+            "name": "Articulation & Communication",
+            "score": 5,
+            "feedback": "Clear, concise, and structured communication style."
+          },
+          {
+            "name": "Culture & Leadership",
+            "score": 5,
+            "feedback": "Demonstrated proactive ownership and team mentorship skills."
+          }
+        ],
+        "bookmarks": [
+          {
+            "timestamp": "03:15",
+            "note": "Technical problem solving & architecture overview"
+          },
+          {
+            "timestamp": "15:40",
+            "note": "Live coding & data structure optimization"
+          },
+          {
+            "timestamp": "32:10",
+            "note": "System design, scalability, and microservices discussion"
+          }
+        ]
+      },
+      "status": "DELIVERED",
+      "sentAt": "2026-10-22T20:12:54.534Z"
     }
   ],
   "auditLogs": [
@@ -4023,6 +4668,441 @@
       "userAgent": "node",
       "method": "POST",
       "path": "/api/v1/workflows/trigger"
+    },
+    {
+      "_id": "doc_c958a0c97dbfe609",
+      "createdAt": "2026-10-21T15:58:25.197Z",
+      "updatedAt": "2026-10-21T15:58:25.197Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_50dc190bcc43f792",
+      "createdAt": "2026-10-21T15:58:25.228Z",
+      "updatedAt": "2026-10-21T15:58:25.228Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "STAGE_MOVED",
+      "resourceType": "Application",
+      "resourceId": "doc_72423cd33a5dd21f",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "PATCH",
+      "path": "/api/v1/applications/doc_72423cd33a5dd21f/move-stage"
+    },
+    {
+      "_id": "doc_9075c4ce138897c2",
+      "createdAt": "2026-10-21T15:58:25.262Z",
+      "updatedAt": "2026-10-21T15:58:25.262Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "INTERVIEW_SCHEDULED",
+      "resourceType": "Interview",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/interviews/schedule"
+    },
+    {
+      "_id": "doc_7660c197880762f6",
+      "createdAt": "2026-10-21T15:58:25.295Z",
+      "updatedAt": "2026-10-21T15:58:25.295Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "VIDEO_INTERVIEW_COMPLETED",
+      "resourceType": "Interview",
+      "resourceId": "doc_9766977f6c7c1135",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/interviews/doc_9766977f6c7c1135/complete-studio"
+    },
+    {
+      "_id": "doc_0c0385162ff2a66e",
+      "createdAt": "2026-10-21T15:58:25.308Z",
+      "updatedAt": "2026-10-21T15:58:25.308Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "SCORECARD_SUBMITTED",
+      "resourceType": "Scorecard",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/scorecards"
+    },
+    {
+      "_id": "doc_82339c671eca797a",
+      "createdAt": "2026-10-21T15:58:25.330Z",
+      "updatedAt": "2026-10-21T15:58:25.330Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "OFFER_CREATED",
+      "resourceType": "Offer",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers"
+    },
+    {
+      "_id": "doc_459eafbbf056ea7c",
+      "createdAt": "2026-10-21T15:58:25.361Z",
+      "updatedAt": "2026-10-21T15:58:25.361Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "OFFER_ACCEPTED",
+      "resourceType": "Offer",
+      "resourceId": "doc_1d3012f54efe67df",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers/doc_1d3012f54efe67df/accept"
+    },
+    {
+      "_id": "doc_a65fe1fe57841fa1",
+      "createdAt": "2026-10-21T15:58:25.375Z",
+      "updatedAt": "2026-10-21T15:58:25.375Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "VERAHIRE_SCREENING_TRIGGERED",
+      "resourceType": "VeraHire",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/verahire/screen"
+    },
+    {
+      "_id": "doc_bc0f908be73f87d4",
+      "createdAt": "2026-10-21T15:58:25.401Z",
+      "updatedAt": "2026-10-21T15:58:25.401Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "DEEL_EOR_ONBOARD",
+      "resourceType": "Deel",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/deel/onboard"
+    },
+    {
+      "_id": "doc_da0c64c103d94ba1",
+      "createdAt": "2026-10-21T15:58:25.419Z",
+      "updatedAt": "2026-10-21T15:58:25.419Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "RAZORPAYX_SALARY_DISBURSED",
+      "resourceType": "Payroll",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/payroll/disburse"
+    },
+    {
+      "_id": "doc_593c9311ed56d71e",
+      "createdAt": "2026-10-21T15:58:25.438Z",
+      "updatedAt": "2026-10-21T15:58:25.438Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "AGENCY_INVOICE_GENERATED",
+      "resourceType": "Agency",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/agency/invoices/generate"
+    },
+    {
+      "_id": "doc_5b038ca6616129b6",
+      "createdAt": "2026-10-21T15:58:25.457Z",
+      "updatedAt": "2026-10-21T15:58:25.457Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_RULE_TOGGLED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/toggle"
+    },
+    {
+      "_id": "doc_1e7bbead8a23f63c",
+      "createdAt": "2026-10-21T15:58:25.466Z",
+      "updatedAt": "2026-10-21T15:58:25.466Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_RULE_TOGGLED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/toggle"
+    },
+    {
+      "_id": "doc_7efbb552134fa5a2",
+      "createdAt": "2026-10-21T15:58:25.472Z",
+      "updatedAt": "2026-10-21T15:58:25.472Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_TRIGGERED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/trigger"
+    },
+    {
+      "_id": "doc_2a835f2814fb7b63",
+      "createdAt": "2026-10-22T20:12:54.403Z",
+      "updatedAt": "2026-10-22T20:12:54.404Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_16cb5f8b67970306",
+      "createdAt": "2026-10-22T20:12:54.442Z",
+      "updatedAt": "2026-10-22T20:12:54.442Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "STAGE_MOVED",
+      "resourceType": "Application",
+      "resourceId": "doc_72423cd33a5dd21f",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "PATCH",
+      "path": "/api/v1/applications/doc_72423cd33a5dd21f/move-stage"
+    },
+    {
+      "_id": "doc_ed7e11a4555ea259",
+      "createdAt": "2026-10-22T20:12:54.504Z",
+      "updatedAt": "2026-10-22T20:12:54.504Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "INTERVIEW_SCHEDULED",
+      "resourceType": "Interview",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/interviews/schedule"
+    },
+    {
+      "_id": "doc_551655642ea7c487",
+      "createdAt": "2026-10-22T20:12:54.537Z",
+      "updatedAt": "2026-10-22T20:12:54.537Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "VIDEO_INTERVIEW_COMPLETED",
+      "resourceType": "Interview",
+      "resourceId": "doc_07dc385447c3752a",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/interviews/doc_07dc385447c3752a/complete-studio"
+    },
+    {
+      "_id": "doc_1f2f3106c0c97fbf",
+      "createdAt": "2026-10-22T20:12:54.555Z",
+      "updatedAt": "2026-10-22T20:12:54.555Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "SCORECARD_SUBMITTED",
+      "resourceType": "Scorecard",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/scorecards"
+    },
+    {
+      "_id": "doc_67eb0b59bc9767eb",
+      "createdAt": "2026-10-22T20:12:54.602Z",
+      "updatedAt": "2026-10-22T20:12:54.602Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "OFFER_CREATED",
+      "resourceType": "Offer",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers"
+    },
+    {
+      "_id": "doc_60e3bc425727f010",
+      "createdAt": "2026-10-22T20:12:54.643Z",
+      "updatedAt": "2026-10-22T20:12:54.643Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "OFFER_ACCEPTED",
+      "resourceType": "Offer",
+      "resourceId": "doc_d93ef5f3535d2f16",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers/doc_d93ef5f3535d2f16/accept"
+    },
+    {
+      "_id": "doc_e6695f7b7042de0d",
+      "createdAt": "2026-10-22T20:12:54.667Z",
+      "updatedAt": "2026-10-22T20:12:54.667Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "VERAHIRE_SCREENING_TRIGGERED",
+      "resourceType": "VeraHire",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/verahire/screen"
+    },
+    {
+      "_id": "doc_2dc946cda57ccca0",
+      "createdAt": "2026-10-22T20:12:54.712Z",
+      "updatedAt": "2026-10-22T20:12:54.712Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "DEEL_EOR_ONBOARD",
+      "resourceType": "Deel",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/deel/onboard"
+    },
+    {
+      "_id": "doc_1e3783fe2cc2eef5",
+      "createdAt": "2026-10-22T20:12:54.745Z",
+      "updatedAt": "2026-10-22T20:12:54.745Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "RAZORPAYX_SALARY_DISBURSED",
+      "resourceType": "Payroll",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/payroll/disburse"
+    },
+    {
+      "_id": "doc_609113b45c0d57dc",
+      "createdAt": "2026-10-22T20:12:54.771Z",
+      "updatedAt": "2026-10-22T20:12:54.771Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "AGENCY_INVOICE_GENERATED",
+      "resourceType": "Agency",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/agency/invoices/generate"
+    },
+    {
+      "_id": "doc_bfc1b66fc26e054e",
+      "createdAt": "2026-10-22T20:12:54.795Z",
+      "updatedAt": "2026-10-22T20:12:54.795Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_RULE_TOGGLED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/toggle"
+    },
+    {
+      "_id": "doc_eee6ce4735686076",
+      "createdAt": "2026-10-22T20:12:54.808Z",
+      "updatedAt": "2026-10-22T20:12:54.808Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_RULE_TOGGLED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/toggle"
+    },
+    {
+      "_id": "doc_b8e0f0ff9c4ff766",
+      "createdAt": "2026-10-22T20:12:54.818Z",
+      "updatedAt": "2026-10-22T20:12:54.818Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_TRIGGERED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/trigger"
+    },
+    {
+      "_id": "doc_20132c1b08ef424c",
+      "createdAt": "2026-10-22T20:14:14.698Z",
+      "updatedAt": "2026-10-22T20:14:14.698Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "JOB_IMPORTED_FROM_BOARD",
+      "resourceType": "JobBoard",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/job-boards/import"
     }
   ],
   "departments": [],
@@ -4296,6 +5376,132 @@
       ],
       "durationMinutes": 45,
       "endedAt": "2026-10-21T15:47:20.692Z"
+    },
+    {
+      "_id": "doc_671f29514f82843b",
+      "createdAt": "2026-10-21T15:58:25.270Z",
+      "updatedAt": "2026-10-21T15:58:25.281Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "interviewId": "doc_9766977f6c7c1135",
+      "applicationId": "doc_72423cd33a5dd21f",
+      "candidateId": "doc_08f6825f7b58afff",
+      "roomToken": "room_doc_9766977f6c7c1135_1792598305270",
+      "recordingStatus": "COMPLETED",
+      "recordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_9766977f6c7c1135_1792598305281.mp4",
+      "startedAt": "2026-10-21T15:58:25.270Z",
+      "candidateConsentGiven": false,
+      "hardwareCheckPassed": false,
+      "bookmarks": [
+        {
+          "timestamp": "03:15",
+          "note": "Technical problem solving & architecture overview"
+        },
+        {
+          "timestamp": "15:40",
+          "note": "Live coding & data structure optimization"
+        },
+        {
+          "timestamp": "32:10",
+          "note": "System design, scalability, and microservices discussion"
+        }
+      ],
+      "transcript": [
+        {
+          "speaker": "Alex Morgan",
+          "time": "00:02",
+          "text": "Hello Jordan Miller, welcome to the System Architecture Bar Raiser round."
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "00:10",
+          "text": "Thank you, glad to be here and excited to discuss the role."
+        },
+        {
+          "speaker": "Alex Morgan",
+          "time": "01:00",
+          "text": "Could you walk me through your experience with large-scale distributed systems?"
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "01:25",
+          "text": "In my recent role, I led the migration of monolithic microservices to an event-driven Kafka architecture."
+        },
+        {
+          "speaker": "Alex Morgan",
+          "time": "12:40",
+          "text": "Excellent explanation. How did you handle partition rebalancing and data consistency?"
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "13:10",
+          "text": "We implemented idempotency keys, dead-letter queues, and exactly-once processing semantics."
+        }
+      ],
+      "durationMinutes": 45,
+      "endedAt": "2026-10-21T15:58:25.281Z"
+    },
+    {
+      "_id": "doc_2ff92a859a491122",
+      "createdAt": "2026-10-22T20:12:54.514Z",
+      "updatedAt": "2026-10-22T20:12:54.522Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "interviewId": "doc_07dc385447c3752a",
+      "applicationId": "doc_72423cd33a5dd21f",
+      "candidateId": "doc_08f6825f7b58afff",
+      "roomToken": "room_doc_07dc385447c3752a_1792699974514",
+      "recordingStatus": "COMPLETED",
+      "recordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_07dc385447c3752a_1792699974522.mp4",
+      "startedAt": "2026-10-22T20:12:54.514Z",
+      "candidateConsentGiven": false,
+      "hardwareCheckPassed": false,
+      "bookmarks": [
+        {
+          "timestamp": "03:15",
+          "note": "Technical problem solving & architecture overview"
+        },
+        {
+          "timestamp": "15:40",
+          "note": "Live coding & data structure optimization"
+        },
+        {
+          "timestamp": "32:10",
+          "note": "System design, scalability, and microservices discussion"
+        }
+      ],
+      "transcript": [
+        {
+          "speaker": "Alex Morgan",
+          "time": "00:02",
+          "text": "Hello Jordan Miller, welcome to the System Architecture Bar Raiser round."
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "00:10",
+          "text": "Thank you, glad to be here and excited to discuss the role."
+        },
+        {
+          "speaker": "Alex Morgan",
+          "time": "01:00",
+          "text": "Could you walk me through your experience with large-scale distributed systems?"
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "01:25",
+          "text": "In my recent role, I led the migration of monolithic microservices to an event-driven Kafka architecture."
+        },
+        {
+          "speaker": "Alex Morgan",
+          "time": "12:40",
+          "text": "Excellent explanation. How did you handle partition rebalancing and data consistency?"
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "13:10",
+          "text": "We implemented idempotency keys, dead-letter queues, and exactly-once processing semantics."
+        }
+      ],
+      "durationMinutes": 45,
+      "endedAt": "2026-10-22T20:12:54.522Z"
     }
   ],
   "verahireInterviews": [
@@ -4470,7 +5676,7 @@
     {
       "_id": "doc_4c78b0a23b400cd5",
       "createdAt": "2026-10-21T15:20:14.986Z",
-      "updatedAt": "2026-10-21T15:47:20.783Z",
+      "updatedAt": "2026-10-22T20:12:54.663Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_job_staff_ai",
       "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
@@ -4483,8 +5689,8 @@
       "evidenceScores": {
         "technical_depth": 76,
         "system_design": 83,
-        "communication": 95,
-        "situational_reasoning": 95
+        "communication": 93,
+        "situational_reasoning": 93
       },
       "criteria": [
         {
@@ -4546,10 +5752,10 @@
       ],
       "speechConfidence": 0.94,
       "voiceDurationMinutes": 18,
-      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1792597640783.wav",
+      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1792699974663.wav",
       "recommendation": "STRONG_SHORTLIST",
       "keyEvidenceSummary": "Jordan scored 85/100 in autonomous voice screening. Highly articulate on distributed system tradeoffs, scored 76% in technical depth, and demonstrated high-pressure incident mitigation.",
-      "completedAt": "2026-10-21T15:47:20.783Z"
+      "completedAt": "2026-10-22T20:12:54.663Z"
     }
   ],
   "deelContracts": [
@@ -5236,17 +6442,89 @@
         ]
       },
       "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-640821.pdf"
+    },
+    {
+      "_id": "doc_dd1882ebc7931cd5",
+      "createdAt": "2026-10-21T15:58:25.394Z",
+      "updatedAt": "2026-10-21T15:58:25.394Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_job_staff_ai",
+      "contractNumber": "DEEL-IN-305394",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-305394",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+        "annualSalary": 1800000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-305394.pdf"
+    },
+    {
+      "_id": "doc_378759e376289b61",
+      "createdAt": "2026-10-22T20:12:54.701Z",
+      "updatedAt": "2026-10-22T20:12:54.701Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_job_staff_ai",
+      "contractNumber": "DEEL-IN-974701",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-974701",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+        "annualSalary": 1800000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-974701.pdf"
     }
   ],
   "deelWorkers": [
     {
       "_id": "doc_ce5963bdc3218b91",
       "createdAt": "2026-10-01T18:05:59.693Z",
-      "updatedAt": "2026-10-21T15:47:20.826Z",
+      "updatedAt": "2026-10-22T20:12:54.706Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
-      "workerId": "DEEL-WRK-640826",
+      "workerId": "DEEL-WRK-974706",
       "candidateId": "doc_08f6825f7b58afff",
-      "contractId": "doc_323c3bc742ca619e",
+      "contractId": "doc_378759e376289b61",
       "fullName": "Jordan Miller",
       "email": "jordan.miller@example.com",
       "phone": "+1 (415) 555-0142",
@@ -5287,11 +6565,11 @@
       "globalPayrollStatus": "SYNCED_READY",
       "bankDetails": {
         "accountHolder": "Jordan Miller",
-        "ibanOrAccount": "ACCT-7041032746",
+        "ibanOrAccount": "ACCT-3930924149",
         "swiftOrIfsc": "HDFC0001234",
         "payoutCurrency": "INR"
       },
-      "onboardedAt": "2026-10-21T15:47:20.826Z"
+      "onboardedAt": "2026-10-22T20:12:54.706Z"
     },
     {
       "_id": "doc_091ec2ce8676c6c8",
@@ -5562,13 +6840,121 @@
         "payoutCurrency": "INR"
       },
       "onboardedAt": "2026-10-21T15:47:20.754Z"
+    },
+    {
+      "_id": "doc_8b98f08a1feed128",
+      "createdAt": "2026-10-21T15:58:25.343Z",
+      "updatedAt": "2026-10-21T15:58:25.343Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "workerId": "DEEL-WRK-305343",
+      "candidateId": "doc_0356fed2c34bf75b",
+      "contractId": null,
+      "fullName": "Samantha Ray",
+      "email": "samantha.ray.1792597640959@example.com",
+      "phone": "+1 (555) 234-5678",
+      "country": "India",
+      "countryCode": "IN",
+      "workerType": "FULL_TIME_EOR",
+      "eorEntity": "Deel India Pvt Ltd (EOR)",
+      "hrStatus": "ACTIVE_ONBOARDING",
+      "complianceStatus": "VERIFIED",
+      "taxDocumentsCollected": [
+        {
+          "docName": "PAN Verification",
+          "status": "COLLECTED"
+        },
+        {
+          "docName": "Form 16 / TDS Slabs",
+          "status": "COLLECTED"
+        },
+        {
+          "docName": "Aadhaar / UAN Registration",
+          "status": "COLLECTED"
+        }
+      ],
+      "benefitsEnrolled": [
+        {
+          "benefit": "Provident Fund (EPF 12%)",
+          "status": "ACTIVE"
+        },
+        {
+          "benefit": "Gratuity Act",
+          "status": "ACTIVE"
+        },
+        {
+          "benefit": "Medical Insurance (ESI/Group Cover)",
+          "status": "ACTIVE"
+        }
+      ],
+      "globalPayrollStatus": "SYNCED_READY",
+      "bankDetails": {
+        "accountHolder": "Samantha Ray",
+        "ibanOrAccount": "ACCT-5723467641",
+        "swiftOrIfsc": "HDFC0001234",
+        "payoutCurrency": "INR"
+      },
+      "onboardedAt": "2026-10-21T15:58:25.343Z"
+    },
+    {
+      "_id": "doc_b9a64f59673ddeb7",
+      "createdAt": "2026-10-22T20:12:54.624Z",
+      "updatedAt": "2026-10-22T20:12:54.624Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "workerId": "DEEL-WRK-974624",
+      "candidateId": "doc_d01c94a4e1f25df5",
+      "contractId": null,
+      "fullName": "Samantha Ray",
+      "email": "samantha.ray.1792598305481@example.com",
+      "phone": "+1 (555) 234-5678",
+      "country": "India",
+      "countryCode": "IN",
+      "workerType": "FULL_TIME_EOR",
+      "eorEntity": "Deel India Pvt Ltd (EOR)",
+      "hrStatus": "ACTIVE_ONBOARDING",
+      "complianceStatus": "VERIFIED",
+      "taxDocumentsCollected": [
+        {
+          "docName": "PAN Verification",
+          "status": "COLLECTED"
+        },
+        {
+          "docName": "Form 16 / TDS Slabs",
+          "status": "COLLECTED"
+        },
+        {
+          "docName": "Aadhaar / UAN Registration",
+          "status": "COLLECTED"
+        }
+      ],
+      "benefitsEnrolled": [
+        {
+          "benefit": "Provident Fund (EPF 12%)",
+          "status": "ACTIVE"
+        },
+        {
+          "benefit": "Gratuity Act",
+          "status": "ACTIVE"
+        },
+        {
+          "benefit": "Medical Insurance (ESI/Group Cover)",
+          "status": "ACTIVE"
+        }
+      ],
+      "globalPayrollStatus": "SYNCED_READY",
+      "bankDetails": {
+        "accountHolder": "Samantha Ray",
+        "ibanOrAccount": "ACCT-3412262997",
+        "swiftOrIfsc": "HDFC0001234",
+        "payoutCurrency": "INR"
+      },
+      "onboardedAt": "2026-10-22T20:12:54.624Z"
     }
   ],
   "payrollRecords": [
     {
       "_id": "doc_6f3125d22fdc7262",
       "createdAt": "2026-10-21T14:21:23.658Z",
-      "updatedAt": "2026-10-21T15:47:20.849Z",
+      "updatedAt": "2026-10-22T20:12:54.729Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "candidateId": "doc_08f6825f7b58afff",
       "employeeName": "Jordan Miller",
@@ -5662,8 +7048,8 @@
         "bankName": "HDFC Bank Ltd"
       },
       "payrollStatus": "ACTIVE",
-      "lastDisbursementDate": "2026-10-21T15:47:20.849Z",
-      "lastDisbursementUTR": "RZPX_UTR_1792597640849_8797"
+      "lastDisbursementDate": "2026-10-22T20:12:54.729Z",
+      "lastDisbursementUTR": "RZPX_UTR_1792699974729_9300"
     },
     {
       "_id": "doc_a8d84f13a5cfd5a2",
@@ -6067,6 +7453,208 @@
       "payrollStatus": "ACTIVE",
       "lastDisbursementDate": null,
       "lastDisbursementUTR": null
+    },
+    {
+      "_id": "doc_1c416304a32feb5e",
+      "createdAt": "2026-10-21T15:58:25.347Z",
+      "updatedAt": "2026-10-21T15:58:25.347Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_0356fed2c34bf75b",
+      "employeeName": "Samantha Ray",
+      "email": "samantha.ray.1792597640959@example.com",
+      "phone": "+1 (555) 234-5678",
+      "designation": "Full Stack Engineer",
+      "panNumber": "ABCDE1234F",
+      "uanNumber": "107822851585",
+      "esicNumber": "3100390488",
+      "ctcBreakup": {
+        "annualCTC": 1800000,
+        "currency": "INR",
+        "monthlyGross": 150000,
+        "basic": 75000,
+        "components": {
+          "basicSalary": {
+            "monthly": 75000,
+            "annual": 900000,
+            "label": "Basic Salary (50%)"
+          },
+          "hra": {
+            "monthly": 30000,
+            "annual": 360000,
+            "label": "House Rent Allowance (HRA 20%)"
+          },
+          "specialAllowance": {
+            "monthly": 45000,
+            "annual": 540000,
+            "label": "Special Allowance"
+          }
+        },
+        "deductions": {
+          "employeePF": {
+            "monthly": 1800,
+            "annual": 21600,
+            "label": "Provident Fund (EPF 12%)"
+          },
+          "employeeESI": {
+            "monthly": 0,
+            "annual": 0,
+            "label": "Employee State Insurance (ESI)"
+          },
+          "professionalTax": {
+            "monthly": 200,
+            "annual": 2400,
+            "label": "Professional Tax (PT)"
+          },
+          "tds": {
+            "monthly": 20000,
+            "annual": 240000,
+            "label": "TDS (Income Tax Slabs)"
+          },
+          "totalDeductions": {
+            "monthly": 22000,
+            "annual": 264000
+          }
+        },
+        "employerContributions": {
+          "employerPF": {
+            "monthly": 1800,
+            "annual": 21600,
+            "label": "Employer PF Contribution"
+          },
+          "employerESI": {
+            "monthly": 0,
+            "annual": 0,
+            "label": "Employer ESI Contribution"
+          },
+          "gratuity": {
+            "monthly": 3607,
+            "annual": 43284,
+            "label": "Gratuity Provision (4.81%)"
+          }
+        },
+        "netTakeHome": {
+          "monthly": 128000,
+          "annual": 1536000,
+          "label": "Net In-Hand Take Home Pay"
+        },
+        "complianceBadges": [
+          "EPF Act 1952 Compliant",
+          "ESIC Act 1948 Compliant",
+          "TDS Section 192 Compliant",
+          "Payment of Gratuity Act 1972"
+        ]
+      },
+      "paymentMethod": "RAZORPAYX_DIRECT_BANK_TRANSFER",
+      "bankDetails": {
+        "accountHolder": "Samantha Ray",
+        "accountNumber": "910217468230",
+        "ifscCode": "HDFC0001234",
+        "bankName": "HDFC Bank Ltd"
+      },
+      "payrollStatus": "ACTIVE",
+      "lastDisbursementDate": null,
+      "lastDisbursementUTR": null
+    },
+    {
+      "_id": "doc_a2383c2911e7e518",
+      "createdAt": "2026-10-22T20:12:54.631Z",
+      "updatedAt": "2026-10-22T20:12:54.631Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_d01c94a4e1f25df5",
+      "employeeName": "Samantha Ray",
+      "email": "samantha.ray.1792598305481@example.com",
+      "phone": "+1 (555) 234-5678",
+      "designation": "Full Stack Engineer",
+      "panNumber": "ABCDE1234F",
+      "uanNumber": "103662241784",
+      "esicNumber": "3100160770",
+      "ctcBreakup": {
+        "annualCTC": 1800000,
+        "currency": "INR",
+        "monthlyGross": 150000,
+        "basic": 75000,
+        "components": {
+          "basicSalary": {
+            "monthly": 75000,
+            "annual": 900000,
+            "label": "Basic Salary (50%)"
+          },
+          "hra": {
+            "monthly": 30000,
+            "annual": 360000,
+            "label": "House Rent Allowance (HRA 20%)"
+          },
+          "specialAllowance": {
+            "monthly": 45000,
+            "annual": 540000,
+            "label": "Special Allowance"
+          }
+        },
+        "deductions": {
+          "employeePF": {
+            "monthly": 1800,
+            "annual": 21600,
+            "label": "Provident Fund (EPF 12%)"
+          },
+          "employeeESI": {
+            "monthly": 0,
+            "annual": 0,
+            "label": "Employee State Insurance (ESI)"
+          },
+          "professionalTax": {
+            "monthly": 200,
+            "annual": 2400,
+            "label": "Professional Tax (PT)"
+          },
+          "tds": {
+            "monthly": 20000,
+            "annual": 240000,
+            "label": "TDS (Income Tax Slabs)"
+          },
+          "totalDeductions": {
+            "monthly": 22000,
+            "annual": 264000
+          }
+        },
+        "employerContributions": {
+          "employerPF": {
+            "monthly": 1800,
+            "annual": 21600,
+            "label": "Employer PF Contribution"
+          },
+          "employerESI": {
+            "monthly": 0,
+            "annual": 0,
+            "label": "Employer ESI Contribution"
+          },
+          "gratuity": {
+            "monthly": 3607,
+            "annual": 43284,
+            "label": "Gratuity Provision (4.81%)"
+          }
+        },
+        "netTakeHome": {
+          "monthly": 128000,
+          "annual": 1536000,
+          "label": "Net In-Hand Take Home Pay"
+        },
+        "complianceBadges": [
+          "EPF Act 1952 Compliant",
+          "ESIC Act 1948 Compliant",
+          "TDS Section 192 Compliant",
+          "Payment of Gratuity Act 1972"
+        ]
+      },
+      "paymentMethod": "RAZORPAYX_DIRECT_BANK_TRANSFER",
+      "bankDetails": {
+        "accountHolder": "Samantha Ray",
+        "accountNumber": "910287497038",
+        "ifscCode": "HDFC0001234",
+        "bankName": "HDFC Bank Ltd"
+      },
+      "payrollStatus": "ACTIVE",
+      "lastDisbursementDate": null,
+      "lastDisbursementUTR": null
     }
   ],
   "payrollPayouts": [
@@ -6354,13 +7942,43 @@
       "status": "PROCESSED_SUCCESS",
       "bankRef": "910228838900",
       "disbursedAt": "2026-10-21T15:47:20.853Z"
+    },
+    {
+      "_id": "doc_8996cabf66166d66",
+      "createdAt": "2026-10-21T15:58:25.416Z",
+      "updatedAt": "2026-10-21T15:58:25.416Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792598305413_1895",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910228838900",
+      "disbursedAt": "2026-10-21T15:58:25.416Z"
+    },
+    {
+      "_id": "doc_f6ef0a87ad0deae4",
+      "createdAt": "2026-10-22T20:12:54.733Z",
+      "updatedAt": "2026-10-22T20:12:54.733Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792699974729_9300",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910228838900",
+      "disbursedAt": "2026-10-22T20:12:54.733Z"
     }
   ],
   "workflows": [
     {
       "_id": "doc_a8f54f2f0629368c",
       "createdAt": "2026-10-01T18:06:00.022Z",
-      "updatedAt": "2026-10-21T15:47:20.927Z",
+      "updatedAt": "2026-10-22T20:12:54.804Z",
       "id": "rule_auto_reject_email",
       "name": "Polite Auto-Rejection Email",
       "trigger": "CANDIDATE_REJECTED",
@@ -6383,26 +8001,26 @@
     {
       "_id": "doc_95b4d81c353e516c",
       "createdAt": "2026-10-01T18:06:00.025Z",
-      "updatedAt": "2026-10-21T15:47:20.639Z",
+      "updatedAt": "2026-10-22T20:12:54.452Z",
       "id": "rule_auto_interview_scheduling",
       "name": "Auto-Send Self-Scheduling Link",
       "trigger": "STAGE_MOVED_INTERVIEW",
       "description": "When candidate is advanced to Interview stage, send calendar link for instant slot self-selection.",
       "isEnabled": true,
-      "executionCount": 34,
-      "lastTriggeredAt": "2026-10-21T15:47:20.639Z"
+      "executionCount": 36,
+      "lastTriggeredAt": "2026-10-22T20:12:54.452Z"
     },
     {
       "_id": "doc_4cae31809c61dd49",
       "createdAt": "2026-10-01T18:06:00.026Z",
-      "updatedAt": "2026-10-21T15:47:20.764Z",
+      "updatedAt": "2026-10-22T20:12:54.638Z",
       "id": "rule_offer_accepted_onboarding",
       "name": "Auto-Provision Deel HR & RazorpayX Payroll",
       "trigger": "OFFER_ACCEPTED",
       "description": "Upon offer acceptance, automatically generate global EOR contracts and seed payroll record in RazorpayX.",
       "isEnabled": true,
-      "executionCount": 31,
-      "lastTriggeredAt": "2026-10-21T15:47:20.764Z"
+      "executionCount": 33,
+      "lastTriggeredAt": "2026-10-22T20:12:54.638Z"
     }
   ],
   "autopilotLogs": [
@@ -7050,6 +8668,66 @@
       "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
       "status": "SUCCESS",
       "executedAt": "2026-10-21T15:47:20.760Z"
+    },
+    {
+      "_id": "doc_f7a23b82c70013a6",
+      "createdAt": "2026-10-21T15:58:25.234Z",
+      "updatedAt": "2026-10-21T15:58:25.234Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "ruleId": "rule_auto_interview_scheduling",
+      "ruleName": "Auto-Send Self-Scheduling Link",
+      "trigger": "STAGE_MOVED_INTERVIEW",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+      "actionResult": "Generated Google Meet self-scheduling calendar link and dispatched to jordan.miller@example.com.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-21T15:58:25.234Z"
+    },
+    {
+      "_id": "doc_ddc80be5f8eed2f0",
+      "createdAt": "2026-10-21T15:58:25.350Z",
+      "updatedAt": "2026-10-21T15:58:25.350Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Samantha Ray",
+      "candidateEmail": "samantha.ray.1792597640959@example.com",
+      "jobTitle": "Senior Distributed Systems Architect",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-21T15:58:25.350Z"
+    },
+    {
+      "_id": "doc_ad2aa4c474743dd8",
+      "createdAt": "2026-10-22T20:12:54.447Z",
+      "updatedAt": "2026-10-22T20:12:54.447Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "ruleId": "rule_auto_interview_scheduling",
+      "ruleName": "Auto-Send Self-Scheduling Link",
+      "trigger": "STAGE_MOVED_INTERVIEW",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+      "actionResult": "Generated Google Meet self-scheduling calendar link and dispatched to jordan.miller@example.com.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-22T20:12:54.446Z"
+    },
+    {
+      "_id": "doc_89360d221b9ec75b",
+      "createdAt": "2026-10-22T20:12:54.635Z",
+      "updatedAt": "2026-10-22T20:12:54.635Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Samantha Ray",
+      "candidateEmail": "samantha.ray.1792598305481@example.com",
+      "jobTitle": "Senior Distributed Systems Architect",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-22T20:12:54.635Z"
     }
   ],
   "agencyClients": [
@@ -7240,6 +8918,42 @@
       "status": "ISSUED",
       "dueDate": "2026-11-20T15:47:20.888Z",
       "issuedAt": "2026-10-21T15:47:20.888Z"
+    },
+    {
+      "_id": "doc_529ecc5330929713",
+      "createdAt": "2026-10-21T15:58:25.435Z",
+      "updatedAt": "2026-10-21T15:58:25.435Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "invoiceNumber": "INV-AGY-305435",
+      "clientName": "Nexus Cloud Technologies",
+      "candidateName": "Jordan Miller",
+      "annualCTC": 2400000,
+      "feePercentage": 20,
+      "baseFee": 480000,
+      "taxAmount": 86400,
+      "totalAmount": 566400,
+      "currency": "INR",
+      "status": "ISSUED",
+      "dueDate": "2026-11-20T15:58:25.435Z",
+      "issuedAt": "2026-10-21T15:58:25.435Z"
+    },
+    {
+      "_id": "doc_41c649fd04e62484",
+      "createdAt": "2026-10-22T20:12:54.767Z",
+      "updatedAt": "2026-10-22T20:12:54.767Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "invoiceNumber": "INV-AGY-974767",
+      "clientName": "Nexus Cloud Technologies",
+      "candidateName": "Jordan Miller",
+      "annualCTC": 2400000,
+      "feePercentage": 20,
+      "baseFee": 480000,
+      "taxAmount": 86400,
+      "totalAmount": 566400,
+      "currency": "INR",
+      "status": "ISSUED",
+      "dueDate": "2026-11-21T20:12:54.767Z",
+      "issuedAt": "2026-10-22T20:12:54.767Z"
     }
   ],
   "agencySubmissions": [

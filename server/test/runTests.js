@@ -492,6 +492,59 @@ async function runAllTests() {
     assert.strictEqual(updatedJob.syndicatedBoards.length, 4);
   });
 
+  // Test 25: Two-Way Job Board Integration (Naukri, Indeed, Monster, Dice)
+  await test('Two-Way Job Board Integration (Naukri, Indeed, Monster, Dice)', async () => {
+    const { JobBoardService } = await import('../src/services/jobBoardService.js');
+    
+    // 1. Test Credentials & API Connectivity
+    const creds = await JobBoardService.getCredentials('tenant_test');
+    assert.ok(creds.boards.naukri && creds.boards.indeed && creds.boards.monster && creds.boards.dice);
+    
+    const pingResult = await JobBoardService.testConnection('naukri');
+    assert.strictEqual(pingResult.status, 'CONNECTED');
+    assert.ok(pingResult.latencyMs > 0);
+
+    // 2. Test Multi-Board Cross-Posting
+    const postResult = await JobBoardService.postJobToBoards({
+      tenantId: 'tenant_test',
+      title: 'Senior Staff AI & Cloud Architect',
+      department: 'Engineering',
+      location: 'Bangalore, India',
+      experienceYears: '5 - 9 Years',
+      skills: ['Distributed Systems', 'Python', 'React', 'Kubernetes'],
+      salaryRange: '₹30,00,000 - ₹50,00,000 P.A.',
+      selectedBoards: ['naukri', 'indeed', 'monster', 'dice']
+    });
+
+    assert.ok(postResult.posting && postResult.posting._id);
+    assert.strictEqual(postResult.boardResults.length, 4);
+    assert.ok(postResult.boardResults.every(b => b.status === 'PUBLISHED' && b.liveUrl));
+
+    // 3. Test Cross-Board Search
+    const searchResult = await JobBoardService.searchJobsAcrossBoards({
+      query: 'Full Stack Developer',
+      location: 'Bangalore',
+      boards: ['naukri', 'indeed', 'monster', 'dice']
+    });
+    assert.ok(searchResult.jobs.length >= 4);
+    const foundBoards = searchResult.jobs.map(j => j.boardKey);
+    assert.ok(foundBoards.includes('naukri'));
+    assert.ok(foundBoards.includes('indeed'));
+    assert.ok(foundBoards.includes('monster'));
+    assert.ok(foundBoards.includes('dice'));
+
+    // 4. Test 1-Click Import into ATS Requisitions
+    const extJob = searchResult.jobs[0];
+    const importResult = await JobBoardService.importJobToATS({
+      externalJob: extJob,
+      tenantId: 'tenant_test',
+      userId: 'usr_test'
+    });
+    assert.ok(importResult.job && importResult.job._id);
+    assert.strictEqual(importResult.job.status, 'PUBLISHED');
+    assert.ok(importResult.job.importedFrom && importResult.job.importedFrom.board);
+  });
+
   console.log('\n===============================================');
   console.log(`🏁 TEST RESULTS: ${passed} PASSED | ${failed} FAILED`);
   console.log('===============================================');

@@ -223,6 +223,10 @@
           <i data-lucide="zap" class="w-4 h-4 text-rose-600"></i>
           <span>Autopilot</span>
         </button>
+        <button onclick="switchTab('jobboards')" id="tab-jobboards" class="tab-btn px-3 py-1.5 rounded-md text-amber-700 hover:text-amber-900 hover:bg-amber-50 flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="share-2" class="w-4 h-4 text-amber-600"></i>
+          <span>Job Boards Hub (Naukri, Indeed, Monster, Dice)</span>
+        </button>
         <button onclick="switchTab('candidates')" id="tab-candidates" class="tab-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 whitespace-nowrap">
           <i data-lucide="users" class="w-4 h-4"></i>
           <span>Candidates</span>
@@ -1078,6 +1082,203 @@
       </div>
     </div>
 
+
+    <!-- ================= 15. JOB BOARDS HUB (NAUKRI, INDEED, MONSTER, DICE) VIEW ================= -->
+    <div id="view-jobboards" class="view-panel hidden space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-1.5">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-amber-100 text-amber-800 flex items-center space-x-1">
+              <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+              <span>Global Multi-Board Syndication & Search Engine</span>
+            </span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-100 text-blue-700">Naukri.com</span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-indigo-100 text-indigo-700">Indeed</span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-purple-100 text-purple-700">Monster (Foundit)</span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-700">Dice Tech</span>
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Two-Way Job Board Integration Hub</h1>
+          <p class="text-sm text-slate-500">Post requirement to Naukri, Indeed, Monster, and Dice with 1-click syndication, or find & import active talent market jobs directly into your ATS pipeline.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button onclick="openJobBoardCredentialsModal()" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-lg text-sm flex items-center space-x-2 transition border border-slate-300 cursor-pointer">
+            <i data-lucide="key" class="w-4 h-4 text-amber-600"></i>
+            <span>API Keys Vault</span>
+          </button>
+          <button onclick="openPostRequirementModal()" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg shadow-sm text-sm flex items-center space-x-2 transition cursor-pointer">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Post Requirement to 4 Boards</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Connected Boards</div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-1">4 Active</div>
+            <div class="text-[11px] text-emerald-600 font-medium mt-0.5">● Naukri, Indeed, Monster, Dice</div>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+            <i data-lucide="globe" class="w-5 h-5"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Live Syndications</div>
+            <div id="jbStatPostingsCount" class="text-2xl font-extrabold text-blue-600 mt-1">12 Requisitions</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Across 4 major networks</div>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Combined Reach</div>
+            <div class="text-2xl font-extrabold text-purple-600 mt-1">120M+</div>
+            <div class="text-[11px] text-purple-600 font-medium mt-0.5">Active Tech Talent Pool</div>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Direct Applicants</div>
+            <div id="jbStatApplicantsCount" class="text-2xl font-extrabold text-emerald-600 mt-1">48 Received</div>
+            <div class="text-[11px] text-emerald-600 font-medium mt-0.5">Synced into ATS Pipeline</div>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+            <i data-lucide="user-check" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Dual Panel: Tabs for (1) Find Jobs & (2) Postings Ledger -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="border-b border-slate-200 bg-slate-50 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center space-x-2">
+            <button onclick="switchJobBoardSubTab('search')" id="jbSubTab-search" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-xs border border-slate-200 flex items-center space-x-1.5">
+              <i data-lucide="search" class="w-3.5 h-3.5 text-amber-600"></i>
+              <span>Find Jobs Across Portals (Naukri, Indeed, Monster, Dice)</span>
+            </button>
+            <button onclick="switchJobBoardSubTab('postings')" id="jbSubTab-postings" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5">
+              <i data-lucide="list" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>Live Cross-Posted Requirements</span>
+            </button>
+          </div>
+          <div class="text-xs text-slate-500 font-mono">
+            API Sync Status: <span class="text-emerald-600 font-bold">● Free Sandbox Active</span>
+          </div>
+        </div>
+
+        <!-- PANEL 1: SEARCH JOBS ACROSS BOARDS -->
+        <div id="jbPanel-search" class="p-5 space-y-5">
+          <!-- Search Form -->
+          <div class="bg-slate-50/70 p-4 rounded-xl border border-slate-200">
+            <form id="jobBoardSearchForm" onsubmit="handleJobBoardSearchSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+                <div class="md:col-span-6">
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Role, Title, or Skills</label>
+                  <div class="relative">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-3"></i>
+                    <input type="text" id="jbSearchQuery" value="Full Stack Developer" placeholder="e.g. Full Stack Developer, React, Staff AI Engineer..." class="w-full pl-9 pr-3 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500" />
+                  </div>
+                </div>
+
+                <div class="md:col-span-4">
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Target Location</label>
+                  <div class="relative">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-slate-400 absolute left-3 top-3"></i>
+                    <input type="text" id="jbSearchLocation" value="Bangalore, India" placeholder="e.g. Bangalore, Remote, Delhi NCR, Mumbai..." class="w-full pl-9 pr-3 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500" />
+                  </div>
+                </div>
+
+                <div class="md:col-span-2 flex items-end">
+                  <button type="submit" id="jbSearchBtn" class="w-full py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg text-sm shadow-xs transition flex items-center justify-center space-x-1.5 cursor-pointer">
+                    <i data-lucide="search" class="w-4 h-4"></i>
+                    <span>Search 4 Boards</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Board Filter Toggles -->
+              <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-200">
+                <span class="text-xs font-bold text-slate-500 uppercase mr-1">Query Boards:</span>
+                <label class="inline-flex items-center space-x-1.5 text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs cursor-pointer">
+                  <input type="checkbox" checked value="naukri" class="jb-board-filter-chk rounded text-blue-600" />
+                  <span class="font-bold text-blue-800">Naukri.com</span>
+                </label>
+                <label class="inline-flex items-center space-x-1.5 text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs cursor-pointer">
+                  <input type="checkbox" checked value="indeed" class="jb-board-filter-chk rounded text-indigo-600" />
+                  <span class="font-bold text-indigo-800">Indeed Worldwide</span>
+                </label>
+                <label class="inline-flex items-center space-x-1.5 text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs cursor-pointer">
+                  <input type="checkbox" checked value="monster" class="jb-board-filter-chk rounded text-purple-600" />
+                  <span class="font-bold text-purple-800">Monster (Foundit)</span>
+                </label>
+                <label class="inline-flex items-center space-x-1.5 text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs cursor-pointer">
+                  <input type="checkbox" checked value="dice" class="jb-board-filter-chk rounded text-rose-600" />
+                  <span class="font-bold text-rose-800">Dice Tech Jobs</span>
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Search Results Header & Counter -->
+          <div class="flex items-center justify-between">
+            <div id="jbSearchResultsSummary" class="text-xs font-bold text-slate-700">
+              Showing active jobs across Naukri, Indeed, Monster, and Dice
+            </div>
+            <div class="text-xs text-slate-500">
+              Click <span class="font-bold text-emerald-700">"Import to ATS"</span> to create an active requisition in your pipeline.
+            </div>
+          </div>
+
+          <!-- Results Grid Container -->
+          <div id="jbSearchResultsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- PANEL 2: POSTINGS LEDGER -->
+        <div id="jbPanel-postings" class="p-5 hidden space-y-4">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">Active Cross-Board Job Postings</h3>
+              <p class="text-xs text-slate-500">Track all requisitions syndicated to Naukri, Indeed, Monster, and Dice.</p>
+            </div>
+            <button onclick="openPostRequirementModal()" class="px-3 py-1.5 bg-amber-600 text-white rounded-lg text-xs font-bold hover:bg-amber-700">
+              + Post New Requirement
+            </button>
+          </div>
+
+          <div class="overflow-x-auto border border-slate-200 rounded-lg">
+            <table class="w-full text-left text-xs divide-y divide-slate-200">
+              <thead class="bg-slate-50 font-bold text-slate-600 uppercase">
+                <tr>
+                  <th class="p-3">Requirement Title</th>
+                  <th class="p-3">Department & Location</th>
+                  <th class="p-3">Syndicated Portals</th>
+                  <th class="p-3">Performance (Views / Clicks / Apps)</th>
+                  <th class="p-3">Status</th>
+                  <th class="p-3">Date Posted</th>
+                </tr>
+              </thead>
+              <tbody id="jbPostingsTableBody" class="divide-y divide-slate-100 text-slate-700">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- ================= AI RECRUITMENT COPILOT DRAWER ================= -->
@@ -1122,6 +1323,223 @@
   </div>
 
   <!-- ================= MODALS ================= -->
+
+  <!-- POST REQUIREMENT TO 4 JOB BOARDS MODAL -->
+  <div id="postJobBoardModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-gradient-to-r from-amber-50 to-orange-50">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
+            <i data-lucide="share-2" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Post Requirement to Job Boards</h3>
+            <p class="text-xs text-slate-500">Cross-publish requisition across Naukri, Indeed, Monster, and Dice simultaneously.</p>
+          </div>
+        </div>
+        <button onclick="closeModal('postJobBoardModal')" class="p-1.5 hover:bg-slate-200 rounded-lg text-slate-500 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="postJobBoardForm" onsubmit="handlePostJobBoardSubmit(event)" class="p-6 overflow-y-auto space-y-4 custom-scrollbar text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Requirement / Role Title *</label>
+          <input type="text" id="postJbTitle" required placeholder="e.g. Senior Staff AI Engineer / Lead React Developer" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Department</label>
+            <input type="text" id="postJbDept" value="Engineering" placeholder="e.g. Core Engineering" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500" />
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Target Location</label>
+            <input type="text" id="postJbLocation" value="Bangalore, India (Hybrid)" placeholder="e.g. Bangalore, Remote, Mumbai..." class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Experience Level</label>
+            <input type="text" id="postJbExp" value="4 - 8 Years" placeholder="e.g. 4 - 8 Years" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500" />
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Annual CTC / Salary Range</label>
+            <input type="text" id="postJbSalary" value="₹24,00,000 - ₹38,00,000 P.A." placeholder="e.g. ₹20,00,000 - ₹35,00,000 P.A." class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Key Skills (Comma separated)</label>
+          <input type="text" id="postJbSkills" value="React, Node.js, AWS, Kubernetes, Distributed Systems" placeholder="e.g. React, Node.js, Python, AWS" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500" />
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Role Description / Scope</label>
+          <textarea id="postJbDescription" rows="3" placeholder="Describe the core expectations, tech stack responsibilities, and team impact..." class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500">We are seeking an experienced technical professional with strong problem-solving skills to lead modern distributed microservices and scale our high-throughput platform.</textarea>
+        </div>
+
+        <!-- Target Portals Selection -->
+        <div class="bg-amber-50/70 p-3.5 rounded-xl border border-amber-200">
+          <label class="block font-bold text-amber-900 uppercase mb-2">Publish To Portals (API Handshake):</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <label class="flex items-center space-x-2 bg-white p-2 rounded-lg border border-amber-200 cursor-pointer text-xs">
+              <input type="checkbox" checked value="naukri" class="post-jb-portal-chk rounded text-blue-600" />
+              <span class="font-bold text-blue-800">Naukri.com</span>
+            </label>
+            <label class="flex items-center space-x-2 bg-white p-2 rounded-lg border border-amber-200 cursor-pointer text-xs">
+              <input type="checkbox" checked value="indeed" class="post-jb-portal-chk rounded text-indigo-600" />
+              <span class="font-bold text-indigo-800">Indeed</span>
+            </label>
+            <label class="flex items-center space-x-2 bg-white p-2 rounded-lg border border-amber-200 cursor-pointer text-xs">
+              <input type="checkbox" checked value="monster" class="post-jb-portal-chk rounded text-purple-600" />
+              <span class="font-bold text-purple-800">Monster</span>
+            </label>
+            <label class="flex items-center space-x-2 bg-white p-2 rounded-lg border border-amber-200 cursor-pointer text-xs">
+              <input type="checkbox" checked value="dice" class="post-jb-portal-chk rounded text-rose-600" />
+              <span class="font-bold text-rose-800">Dice Tech</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 flex items-center justify-end space-x-2">
+          <button type="button" onclick="closeModal('postJobBoardModal')" class="px-4 py-2 border border-slate-300 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 cursor-pointer">
+            Cancel
+          </button>
+          <button type="submit" id="postJbSubmitBtn" class="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-bold shadow-xs flex items-center space-x-1.5 transition cursor-pointer">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Syndicate & Post to Boards</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- API KEYS & INTEGRATIONS VAULT MODAL -->
+  <div id="jobBoardCredentialsModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-900 text-white">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-xs">
+            <i data-lucide="key" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold">Job Board API Credentials Vault</h3>
+            <p class="text-xs text-slate-300">Free developer sandbox keys are active. You can paste custom production keys anytime.</p>
+          </div>
+        </div>
+        <button onclick="closeModal('jobBoardCredentialsModal')" class="p-1.5 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-white cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-4 custom-scrollbar text-xs">
+        <!-- Naukri Credentials -->
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-800 font-bold rounded text-[10px]">NAUKRI.COM ENTERPRISE</span>
+              <span id="naukriStatusBadge" class="text-emerald-700 font-bold text-[10px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">● CONNECTED</span>
+            </div>
+            <button onclick="testBoardConnection('naukri')" class="px-2.5 py-1 bg-white hover:bg-blue-50 text-blue-700 border border-blue-200 rounded text-[11px] font-bold transition cursor-pointer">
+              Test Connection
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">API Key / Token</label>
+              <input type="password" id="credNaukriKey" value="NAUKRI_FREE_DEV_SANDBOX_KEY_2026" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Client ID / Employer ID</label>
+              <input type="text" id="credNaukriClient" value="naukri_client_free_9921" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Indeed Credentials -->
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 font-bold rounded text-[10px]">INDEED WORLDWIDE</span>
+              <span id="indeedStatusBadge" class="text-emerald-700 font-bold text-[10px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">● CONNECTED</span>
+            </div>
+            <button onclick="testBoardConnection('indeed')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 text-indigo-700 border border-indigo-200 rounded text-[11px] font-bold transition cursor-pointer">
+              Test Connection
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Publisher Key / API Token</label>
+              <input type="password" id="credIndeedKey" value="INDEED_FREE_PUBLISHER_KEY_88410" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Publisher ID</label>
+              <input type="text" id="credIndeedPublisher" value="pub_indeed_free_88410" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Monster / Foundit Credentials -->
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-800 font-bold rounded text-[10px]">MONSTER (FOUNDIT)</span>
+              <span id="monsterStatusBadge" class="text-emerald-700 font-bold text-[10px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">● CONNECTED</span>
+            </div>
+            <button onclick="testBoardConnection('monster')" class="px-2.5 py-1 bg-white hover:bg-purple-50 text-purple-700 border border-purple-200 rounded text-[11px] font-bold transition cursor-pointer">
+              Test Connection
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Partner API Key</label>
+              <input type="password" id="credMonsterKey" value="MONSTER_FOUNDIT_FREE_API_773" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Partner ID</label>
+              <input type="text" id="credMonsterPartner" value="monster_partner_free_773" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Dice Tech Credentials -->
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 bg-rose-100 text-rose-800 font-bold rounded text-[10px]">DICE TECH JOBS</span>
+              <span id="diceStatusBadge" class="text-emerald-700 font-bold text-[10px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">● CONNECTED</span>
+            </div>
+            <button onclick="testBoardConnection('dice')" class="px-2.5 py-1 bg-white hover:bg-rose-50 text-rose-700 border border-rose-200 rounded text-[11px] font-bold transition cursor-pointer">
+              Test Connection
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Developer REST Key</label>
+              <input type="password" id="credDiceKey" value="DICE_REST_PUBLIC_API_V1" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Developer ID</label>
+              <input type="text" id="credDiceDev" value="dice_dev_free_tech_5510" class="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded font-mono" />
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 flex items-center justify-end space-x-2">
+          <button type="button" onclick="closeModal('jobBoardCredentialsModal')" class="px-4 py-2 border border-slate-300 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 cursor-pointer">
+            Close
+          </button>
+          <button type="button" onclick="saveJobBoardCredentials()" class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-bold shadow-xs flex items-center space-x-1.5 transition cursor-pointer">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Save & Encrypt Credentials</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- 1. CANDIDATE 360° DOSSIER MODAL -->
   <div id="candidateModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
