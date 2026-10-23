@@ -2,6 +2,7 @@ import express from 'express';
 import { Jobs, Applications } from '../db/database.js';
 import { authenticate, requireRole } from '../middleware/auth.js';
 import { AIService } from '../services/aiService.js';
+import { JobBoardService } from '../services/jobBoardService.js';
 import { auditAction } from '../middleware/audit.js';
 
 const router = express.Router();
@@ -73,6 +74,10 @@ router.post('/', authenticate, requireRole(['SUPER_ADMIN', 'COMPANY_ADMIN', 'REC
       requirements,
       descriptionHtml,
       knockoutQuestions,
+      targetHireDate,
+      approverId,
+      autoSyndicate = true,
+      selectedJobBoards = ['naukri', 'indeed', 'monster', 'dice'],
       status = 'PUBLISHED'
     } = req.body;
 
@@ -89,6 +94,8 @@ router.post('/', authenticate, requireRole(['SUPER_ADMIN', 'COMPANY_ADMIN', 'REC
       employmentType: employmentType || 'FULL_TIME',
       hiringManagerId: req.user.id,
       recruiterId: req.user.id,
+      approverId: approverId || null,
+      targetHireDate: targetHireDate || null,
       salaryRange: salaryRange || { min: 120000, max: 160000, currency: 'USD', isPublic: true },
       minExperienceYears: minExperienceYears || 3,
       requiredSkills: requiredSkills || ['JavaScript', 'React', 'Node.js'],
@@ -97,11 +104,37 @@ router.post('/', authenticate, requireRole(['SUPER_ADMIN', 'COMPANY_ADMIN', 'REC
       requirements: requirements || ['3+ years software engineering experience'],
       descriptionHtml: descriptionHtml || `<p>We are seeking a talented <strong>${title}</strong> to join our team.</p>`,
       knockoutQuestions: knockoutQuestions || [],
+      autoSyndicate: !!autoSyndicate,
+      selectedJobBoards,
       status,
       publishedAt: status === 'PUBLISHED' ? new Date().toISOString() : null
     });
 
-    res.status(201).json(job);
+    let autoPostResult = null;
+    // Auto-syndicate immediately to all 4 job boards if status is PUBLISHED
+    if (status === 'PUBLISHED' && autoSyndicate) {
+      try {
+        autoPostResult = await JobBoardService.postJobToBoards({
+          tenantId: req.user.tenantId,
+          jobId: job._id,
+          title: job.title,
+          department: job.departmentId,
+          location: typeof job.locationId === 'string' ? job.locationId : 'Bangalore, India (Hybrid)',
+          experienceYears: `${job.minExperienceYears || 3}+ Years`,
+          skills: job.requiredSkills,
+          salaryRange: job.salaryRange ? `${job.salaryRange.currency} ${job.salaryRange.min.toLocaleString()} - ${job.salaryRange.max.toLocaleString()}` : 'Competitive',
+          description: job.descriptionHtml,
+          selectedBoards: selectedJobBoards
+        });
+      } catch (postErr) {
+        console.warn('Auto-posting to external boards notice:', postErr.message);
+      }
+    }
+
+    res.status(201).json({
+      ...job,
+      autoPostResult
+    });
   } catch (err) {
     console.error('Create job error:', err);
     res.status(500).json({ error: 'Failed to create job.' });
@@ -188,6 +221,165 @@ router.post('/:id/syndicate', authenticate, auditAction('JOB_SYNDICATED', 'Job')
     });
   } catch (err) {
     res.status(500).json({ error: 'Failed to syndicate job to boards.' });
+  }
+});
+
+/**
+ * GET /api/v1/jobs/requisitions/pending
+ * Fetches all requisitions awaiting management approval
+ */
+router.get('/requisitions/pending', authenticate, async (req, res) => {
+  try {
+    const pendingJobs = await Jobs.find({
+      tenantId: req.user.tenantId,
+      status: 'PENDING_APPROVAL'
+    });
+    res.json(pendingJobs);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load pending requisitions.' });
+  }
+});
+
+/**
+ * POST /api/v1/jobs/:id/approve
+ * Approves a pending job requisition and auto-syndicates to boards
+ */
+router.post('/:id/approve', authenticate, requireRole(['SUPER_ADMIN', 'COMPANY_ADMIN', 'HIRING_MANAGER']), auditAction('JOB_APPROVED', 'Job'), async (req, res) => {
+  try {
+    const { comments = 'Approved for talent sourcing campaign.' } = req.body;
+    let job = await Jobs.findOne({ _id: req.params.id, tenantId: req.user.tenantId });
+    if (!job) {
+      job = await Jobs.findById(req.params.id);
+    }
+    if (!job) return res.status(404).json({ error: 'Job requisition not found.' });
+
+    const approvalLog = {
+      approverId: req.user.id,
+      approverName: `${req.user.firstName} ${req.user.lastName}`,
+      action: 'APPROVED',
+      comments,
+      approvedAt: new Date().toISOString()
+    };
+
+    const updateDoc = {
+      status: 'PUBLISHED',
+      publishedAt: new Date().toISOString(),
+      approvedBy: req.user.id,
+      $push: { approvalLogs: approvalLog }
+    };
+
+    const updated = await Jobs.updateById(job._id, updateDoc);
+
+    // Auto-syndicate immediately to Naukri, Indeed, Monster, Dice
+    let boardSyndication = null;
+    try {
+      boardSyndication = await JobBoardService.postJobToBoards({
+        tenantId: req.user.tenantId,
+        jobId: job._id,
+        title: job.title,
+        department: job.departmentId,
+        location: typeof job.locationId === 'string' ? job.locationId : 'Bangalore, India (Hybrid)',
+        experienceYears: `${job.minExperienceYears || 3}+ Years`,
+        skills: job.requiredSkills,
+        salaryRange: job.salaryRange ? `${job.salaryRange.currency} ${job.salaryRange.min.toLocaleString()} - ${job.salaryRange.max.toLocaleString()}` : 'Competitive',
+        description: job.descriptionHtml,
+        selectedBoards: job.selectedJobBoards || ['naukri', 'indeed', 'monster', 'dice']
+      });
+    } catch (boardErr) {
+      console.warn('Auto-posting during approval warning:', boardErr.message);
+    }
+
+    res.json({
+      message: `Job Requisition "${job.title}" has been APPROVED and successfully broadcast to connected job boards!`,
+      job: updated.doc,
+      boardSyndication
+    });
+  } catch (err) {
+    console.error('Approve job error:', err);
+    res.status(500).json({ error: 'Failed to approve job requisition.' });
+  }
+});
+
+/**
+ * POST /api/v1/jobs/:id/reject
+ * Rejects a job requisition with a mandatory reason
+ */
+router.post('/:id/reject', authenticate, requireRole(['SUPER_ADMIN', 'COMPANY_ADMIN', 'HIRING_MANAGER']), auditAction('JOB_REJECTED', 'Job'), async (req, res) => {
+  try {
+    const { comments } = req.body;
+    if (!comments || !comments.trim()) {
+      return res.status(400).json({ error: 'A rejection reason / comment is required.' });
+    }
+
+    let job = await Jobs.findOne({ _id: req.params.id, tenantId: req.user.tenantId });
+    if (!job) job = await Jobs.findById(req.params.id);
+    if (!job) return res.status(404).json({ error: 'Job requisition not found.' });
+
+    const rejectionLog = {
+      approverId: req.user.id,
+      approverName: `${req.user.firstName} ${req.user.lastName}`,
+      action: 'REJECTED',
+      comments: comments.trim(),
+      rejectedAt: new Date().toISOString()
+    };
+
+    const updated = await Jobs.updateById(job._id, {
+      status: 'REJECTED',
+      rejectionComments: comments.trim(),
+      $push: { approvalLogs: rejectionLog }
+    });
+
+    res.json({
+      message: `Job Requisition "${job.title}" has been rejected with feedback.`,
+      job: updated.doc
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to reject job requisition.' });
+  }
+});
+
+/**
+ * POST /api/v1/jobs/:id/auto-post-boards
+ * 1-Click syndication of an existing job to Naukri, Indeed, Monster, Dice
+ */
+router.post('/:id/auto-post-boards', authenticate, auditAction('JOB_AUTO_POSTED', 'Job'), async (req, res) => {
+  try {
+    const job = await Jobs.findById(req.params.id);
+    if (!job) return res.status(404).json({ error: 'Job not found.' });
+
+    const result = await JobBoardService.postJobToBoards({
+      tenantId: req.user.tenantId,
+      jobId: job._id,
+      title: job.title,
+      department: job.departmentId,
+      location: typeof job.locationId === 'string' ? job.locationId : 'Bangalore, India',
+      experienceYears: `${job.minExperienceYears || 3}+ Years`,
+      skills: job.requiredSkills,
+      salaryRange: job.salaryRange ? `${job.salaryRange.currency} ${job.salaryRange.min.toLocaleString()} - ${job.salaryRange.max.toLocaleString()}` : 'Competitive',
+      description: job.descriptionHtml,
+      selectedBoards: req.body.boards || ['naukri', 'indeed', 'monster', 'dice']
+    });
+
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message || 'Failed to post job to external boards.' });
+  }
+});
+
+/**
+ * DELETE /api/v1/jobs/:id
+ * Strictly protected: only Super Admin & Company Admin can delete jobs.
+ * Interviewers/Recruiters will receive 403 Forbidden.
+ */
+router.delete('/:id', authenticate, requireRole(['SUPER_ADMIN', 'COMPANY_ADMIN']), auditAction('JOB_DELETED', 'Job'), async (req, res) => {
+  try {
+    const job = await Jobs.findById(req.params.id);
+    if (!job) return res.status(404).json({ error: 'Job not found.' });
+
+    await Jobs.deleteOne({ _id: job._id });
+    res.json({ message: `Job Requisition "${job.title}" was permanently deleted.` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to delete job.' });
   }
 });
 

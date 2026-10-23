@@ -327,7 +327,21 @@
         </button>
       </div>
 
-      <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+      <!-- Sub-Tabs for Active vs Pending Approvals -->
+      <div class="flex items-center space-x-2 border-b border-slate-200 pb-1">
+        <button onclick="switchJobViewSubTab('active')" id="jobSubTab-active" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 border border-slate-300 shadow-2xs flex items-center space-x-1.5 cursor-pointer">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5 text-blue-600"></i>
+          <span>Active Requisitions</span>
+        </button>
+        <button onclick="switchJobViewSubTab('pending')" id="jobSubTab-pending" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5 cursor-pointer">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span>Approval Workflow</span>
+          <span id="pendingApprovalsBadge" class="ml-1 px-1.5 py-0.2 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-800">0</span>
+        </button>
+      </div>
+
+      <!-- ACTIVE REQUISITIONS TABLE PANEL -->
+      <div id="jobPanel-active" class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse text-sm">
             <thead>
@@ -341,6 +355,33 @@
               </tr>
             </thead>
             <tbody id="jobsTableBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Injected via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PENDING APPROVALS REQUISITIONS PANEL -->
+      <div id="jobPanel-pending" class="hidden bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="p-4 bg-amber-50/50 border-b border-amber-100 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-600"></i>
+            <span class="text-xs font-bold text-amber-900">Requisitions Awaiting Director / HR Sign-Off</span>
+          </div>
+          <span class="text-[11px] text-amber-700 font-medium">Approving a requisition triggers automated multi-board broadcasting.</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold text-xs uppercase tracking-wider">
+                <th class="p-4">Requested Requisition</th>
+                <th class="p-4">Department & Location</th>
+                <th class="p-4">Proposed Compensation</th>
+                <th class="p-4">Designated Approver</th>
+                <th class="p-4 text-right">Approval Decision</th>
+              </tr>
+            </thead>
+            <tbody id="pendingJobsTableBody" class="divide-y divide-slate-100 text-slate-700">
               <!-- Injected via JS -->
             </tbody>
           </table>
@@ -416,6 +457,28 @@
           <option value="5">5+ Years</option>
           <option value="7">7+ Years</option>
         </select>
+        <button type="button" onclick="saveSearchAlert()" class="px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer" title="Save this search to receive automatic candidate digests">
+          <i data-lucide="bell" class="w-3.5 h-3.5"></i>
+          <span>Save Search Alert</span>
+        </button>
+      </div>
+
+      <!-- Bulk Actions Toolbar -->
+      <div id="bulkActionsToolbar" class="hidden p-3 bg-indigo-50 border border-indigo-200 rounded-xl flex items-center justify-between">
+        <div class="flex items-center space-x-2 text-xs font-bold text-indigo-900">
+          <i data-lucide="check-square" class="w-4 h-4 text-indigo-600"></i>
+          <span id="bulkSelectedCount">0 candidates selected</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button type="button" onclick="openBulkEmailModal()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-xs">
+            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+            <span>Bulk Email</span>
+          </button>
+          <button type="button" onclick="openBulkStatusModal()" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-xs">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>Bulk Status</span>
+          </button>
+        </div>
       </div>
 
       <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
@@ -423,12 +486,16 @@
           <table class="w-full text-left border-collapse text-sm">
             <thead>
               <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold text-xs uppercase tracking-wider">
+                <th class="p-4 w-10 text-center">
+                  <input type="checkbox" id="selectAllCandidatesCheckbox" onchange="toggleSelectAllCandidates(this.checked)" class="rounded text-indigo-600 cursor-pointer" />
+                </th>
                 <th class="p-4">Candidate Name</th>
                 <th class="p-4">Contact Info</th>
                 <th class="p-4">Experience</th>
                 <th class="p-4">Skills Highlight</th>
+                <th class="p-4">AI Score</th>
                 <th class="p-4">Source</th>
-                <th class="p-4 text-right">Dossier</th>
+                <th class="p-4 text-right">Actions</th>
               </tr>
             </thead>
             <tbody id="candidatesTableBody" class="divide-y divide-slate-100 text-slate-700">
@@ -494,6 +561,10 @@
           <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Executive Recruitment BI & Funnel Analytics</h1>
           <p class="text-sm text-slate-500">Recruitment velocity, stage drop-off conversion rates, and sourcing channel ROI.</p>
         </div>
+        <button type="button" onclick="exportAnalyticsReport('csv')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow-xs text-xs flex items-center space-x-2 transition cursor-pointer">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Export CSV Report</span>
+        </button>
       </div>
 
       <!-- Funnel Stage Progression Bars -->
@@ -1899,46 +1970,123 @@
     </div>
   </div>
 
-  <!-- 2. AI REQUISITION CREATION MODAL -->
-  <div id="aiJobModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl p-6 space-y-4 border border-slate-200">
-      <div class="flex items-center justify-between">
-        <h3 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
+  <!-- 2. AI REQUISITION CREATION & MULTI-POSTING MODAL -->
+  <div id="aiJobModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl p-6 space-y-4 border border-slate-200 my-6 max-h-[92vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b pb-3 border-slate-100">
+        <h3 class="text-base font-bold text-slate-900 flex items-center space-x-2">
           <i data-lucide="sparkles" class="w-5 h-5 text-blue-600"></i>
-          <span>Create Job Requisition with AI</span>
+          <span>Create Job Requisition & Auto Multi-Post</span>
         </h3>
-        <button onclick="closeModal('aiJobModal')" class="p-1 text-slate-400 hover:text-slate-600">
+        <button onclick="closeModal('aiJobModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
-      <p class="text-xs text-slate-500">Describe the role you need in plain English. Our Python AI engine will automatically generate the job description, required competencies, and knockout screening questions.</p>
+      <p class="text-xs text-slate-500">Create an opening with custom qualifications, set approvers, and automatically syndicate to <strong>Naukri, Indeed, Monster, and Dice</strong> upon approval.</p>
       
-      <div class="space-y-3">
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Role Title</label>
-          <input type="text" id="aiJobTitle" placeholder="e.g. Senior Frontend Engineer" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500" />
+      <div class="space-y-3.5 text-xs">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+          <div class="md:col-span-8">
+            <label class="block font-semibold text-slate-700 mb-1">Role Title <span class="text-rose-500">*</span></label>
+            <input type="text" id="aiJobTitle" placeholder="e.g. Senior Distributed Systems Architect" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+          <div class="md:col-span-4">
+            <label class="block font-semibold text-slate-700 mb-1">Department</label>
+            <select id="aiJobDept" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 bg-white text-xs font-semibold">
+              <option value="Engineering">Engineering</option>
+              <option value="AI & Data Intelligence">AI & Data Intelligence</option>
+              <option value="Product & Design">Product & Design</option>
+              <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+              <option value="Security & Compliance">Security & Compliance</option>
+            </select>
+          </div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Target Location</label>
+            <input type="text" id="aiJobLocation" value="Bangalore, India (Hybrid)" placeholder="e.g. Bangalore, India" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Experience Required (Years)</label>
+            <input type="number" id="aiJobMinExp" value="4" min="0" max="25" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Target Hire Date</label>
+            <input type="date" id="aiJobTargetDate" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Salary Range Min (INR / USD)</label>
+            <input type="number" id="aiJobSalaryMin" value="1800000" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Salary Range Max (INR / USD)</label>
+            <input type="number" id="aiJobSalaryMax" value="3200000" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+        </div>
+
         <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Department</label>
-          <select id="aiJobDept" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 bg-white">
-            <option value="Engineering">Engineering</option>
-            <option value="AI & Data Intelligence">AI & Data Intelligence</option>
-            <option value="Product & Design">Product & Design</option>
-            <option value="Infrastructure">Infrastructure</option>
+          <label class="block font-semibold text-slate-700 mb-1">Designated Approver (Hiring Manager / Director)</label>
+          <select id="aiJobApprover" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 bg-white text-xs font-semibold">
+            <option value="usr_manager">David Chen — Engineering Director (manager@techcorp.com)</option>
+            <option value="usr_admin">Sarah Connor — VP Talent & People (admin@techcorp.com)</option>
+            <option value="usr_superadmin">Marcus Vance — Super Administrator (superadmin@enterprise-ats.io)</option>
           </select>
         </div>
+
         <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Brief Description / Requirements</label>
-          <textarea id="aiJobPrompt" rows="3" placeholder="Need a senior engineer with 5 years experience in React, Next.js, and performance optimization to lead our core product team." class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <label class="block font-semibold text-slate-700 mb-1">Job Description & Responsibilities (AI Enriched)</label>
+          <textarea id="aiJobPrompt" rows="3" placeholder="Lead architecture for microservices, mentor engineers, and design scalable cloud data pipelines." class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <!-- Auto-Post Syndication Options -->
+        <div class="p-3 bg-amber-50/70 rounded-xl border border-amber-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-amber-950 flex items-center space-x-1.5">
+              <i data-lucide="radio" class="w-4 h-4 text-amber-600"></i>
+              <span>Multi-Channel Auto-Post Engine</span>
+            </span>
+            <span class="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">Automatic Upload</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-[11px]">
+            <label class="flex items-center space-x-1.5 font-bold text-blue-800 bg-white px-2 py-1.5 rounded-lg border border-slate-200 cursor-pointer">
+              <input type="checkbox" id="autoPostNaukri" checked class="rounded text-blue-600" />
+              <span>Naukri.com</span>
+            </label>
+            <label class="flex items-center space-x-1.5 font-bold text-indigo-800 bg-white px-2 py-1.5 rounded-lg border border-slate-200 cursor-pointer">
+              <input type="checkbox" id="autoPostIndeed" checked class="rounded text-indigo-600" />
+              <span>Indeed</span>
+            </label>
+            <label class="flex items-center space-x-1.5 font-bold text-purple-800 bg-white px-2 py-1.5 rounded-lg border border-slate-200 cursor-pointer">
+              <input type="checkbox" id="autoPostMonster" checked class="rounded text-purple-600" />
+              <span>Monster</span>
+            </label>
+            <label class="flex items-center space-x-1.5 font-bold text-rose-800 bg-white px-2 py-1.5 rounded-lg border border-slate-200 cursor-pointer">
+              <input type="checkbox" id="autoPostDice" checked class="rounded text-rose-600" />
+              <span>Dice Tech</span>
+            </label>
+          </div>
+          <p class="text-[10px] text-amber-800">Upon approval/publish, this requisition will automatically upload with unique tracking URLs (?source=naukri, ?source=indeed, etc.).</p>
         </div>
       </div>
 
-      <div class="flex justify-end space-x-3 pt-2">
-        <button onclick="closeModal('aiJobModal')" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
-        <button onclick="submitAIJobCreation()" id="aiJobSubmitBtn" class="px-4 py-2 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm flex items-center space-x-1">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          <span>Generate & Publish Requisition</span>
-        </button>
+      <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-100">
+        <button onclick="closeModal('aiJobModal')" class="px-3.5 py-2 text-xs font-semibold text-slate-500 hover:bg-slate-100 rounded-lg cursor-pointer">Cancel</button>
+        <div class="flex items-center space-x-2">
+          <button onclick="submitJobWithStatus('DRAFT')" class="px-3 py-2 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition cursor-pointer">
+            Save as Draft
+          </button>
+          <button onclick="submitJobWithStatus('PENDING_APPROVAL')" class="px-3.5 py-2 text-xs font-bold text-amber-800 bg-amber-100 hover:bg-amber-200 rounded-lg transition cursor-pointer">
+            Submit for Approval
+          </button>
+          <button onclick="submitJobWithStatus('PUBLISHED')" id="aiJobSubmitBtn" class="px-4 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm flex items-center space-x-1.5 transition cursor-pointer">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>Publish & Auto-Post</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2122,7 +2270,7 @@
     </div>
   </div>
 
-  <!-- ================= SINGLE AUTHENTIC LOGIN MODAL ================= -->
+  <!-- ================= SINGLE AUTHENTIC LOGIN & SIGNUP MODAL ================= -->
   <div id="singleLoginModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl p-7 space-y-5 border border-slate-200 relative my-8">
       
@@ -2136,10 +2284,48 @@
         <div class="inline-flex items-center justify-center p-2 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm mb-1">
           <img src="/logo-icon.png" alt="Pavion Technologies" class="w-12 h-12 object-contain" />
         </div>
-        <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">Pavion Technologies Sign In</h3>
-        <p class="text-xs text-slate-500 max-w-xs mx-auto">
-          Enter your email address and password to sign into your specific account and role workspace.
+        <h3 class="text-xl font-extrabold text-slate-900 tracking-tight" id="authModalTitle">Sign In to Pavion ATS</h3>
+        <p class="text-xs text-slate-500 max-w-xs mx-auto" id="authModalSubtitle">
+          Enter your credentials or choose Single Sign-On (SSO) to access your recruitment cockpit.
         </p>
+      </div>
+
+      <!-- Auth Switcher Tabs (Sign In vs Sign Up) -->
+      <div class="flex items-center p-1 bg-slate-100 rounded-xl">
+        <button type="button" id="authTabSignIn" onclick="switchAuthTab('signin')" class="flex-1 py-1.5 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-xs transition">
+          Sign In
+        </button>
+        <button type="button" id="authTabSignUp" onclick="switchAuthTab('signup')" class="flex-1 py-1.5 text-xs font-bold rounded-lg text-slate-500 hover:text-slate-900 transition">
+          New Registration
+        </button>
+      </div>
+
+      <!-- Single Sign-On (SSO) Buttons -->
+      <div id="ssoButtonGroup" class="space-y-2">
+        <button type="button" onclick="handleSSOLogin('google')" class="w-full py-2.5 px-3 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold text-slate-700 shadow-2xs flex items-center justify-center space-x-2.5 transition cursor-pointer">
+          <svg class="w-4 h-4" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span>Sign in with Google Workspace</span>
+        </button>
+        <button type="button" onclick="handleSSOLogin('microsoft')" class="w-full py-2.5 px-3 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold text-slate-700 shadow-2xs flex items-center justify-center space-x-2.5 transition cursor-pointer">
+          <svg class="w-4 h-4" viewBox="0 0 23 23">
+            <path fill="#f35325" d="M1 1h10v10H1z"/>
+            <path fill="#81bc06" d="M12 1h10v10H12z"/>
+            <path fill="#05a6f0" d="M1 12h10v10H1z"/>
+            <path fill="#ffba08" d="M12 12h10v10H12z"/>
+          </svg>
+          <span>Sign in with Microsoft 365 (SSO)</span>
+        </button>
+      </div>
+
+      <div class="relative flex py-1 items-center">
+        <div class="flex-grow border-t border-slate-200"></div>
+        <span class="flex-shrink mx-3 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Or continue with email</span>
+        <div class="flex-grow border-t border-slate-200"></div>
       </div>
 
       <!-- Error Alert Box -->
@@ -2148,8 +2334,8 @@
         <span id="singleLoginErrorText">Invalid credentials. Please verify your email and password.</span>
       </div>
 
-      <!-- Login Form -->
-      <form onsubmit="handleSingleLogin(event)" class="space-y-4 text-xs">
+      <!-- 1. SIGN IN FORM -->
+      <form id="authFormSignIn" onsubmit="handleSingleLogin(event)" class="space-y-4 text-xs">
         <div>
           <label class="block font-semibold text-slate-700 mb-1.5">Email Address</label>
           <div class="relative">
@@ -2169,7 +2355,7 @@
         <div>
           <div class="flex items-center justify-between mb-1.5">
             <label class="block font-semibold text-slate-700">Password</label>
-            <span class="text-[11px] text-slate-400">Secure Database Auth</span>
+            <a href="javascript:void(0)" onclick="openForgotPasswordModal()" class="text-[11px] font-bold text-blue-600 hover:text-blue-700 hover:underline">Forgot password?</a>
           </div>
           <div class="relative">
             <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -2204,6 +2390,46 @@
         </button>
       </form>
 
+      <!-- 2. SIGN UP FORM -->
+      <form id="authFormSignUp" onsubmit="handleSignUp(event)" class="space-y-3.5 text-xs hidden">
+        <div class="grid grid-cols-2 gap-2.5">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">First Name</label>
+            <input id="signUpFirstName" type="text" required placeholder="John" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Last Name</label>
+            <input id="signUpLastName" type="text" placeholder="Doe" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Company Email</label>
+          <input id="signUpEmail" type="email" required placeholder="john.doe@company.com" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Create Password</label>
+          <div class="relative">
+            <input id="signUpPassword" type="password" required placeholder="Min 8 characters" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+            <button type="button" onclick="togglePasswordVisibility('signUpPassword')" class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 cursor-pointer">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Select Assigned Role</label>
+          <select id="signUpRole" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs font-semibold text-slate-700 cursor-pointer">
+            <option value="RECRUITER">Recruiter (Pipeline, Job Postings, Emails)</option>
+            <option value="HIRING_MANAGER">Hiring Manager (Requisitions, Review, Approvals)</option>
+            <option value="COMPANY_ADMIN">Company Administrator (Full Control)</option>
+            <option value="INTERVIEWER">Interviewer (Scorecards & Feedback Only)</option>
+          </select>
+        </div>
+        <button type="submit" id="signUpSubmitBtn" class="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-md text-xs transition flex items-center justify-center space-x-2 cursor-pointer">
+          <i data-lucide="user-plus" class="w-4 h-4"></i>
+          <span>Create Enterprise Account</span>
+        </button>
+      </form>
+
       <!-- Pre-fill Convenience Selector (Discreet Demo Helper) -->
       <div class="pt-3 border-t border-slate-100 flex flex-col space-y-1.5 text-xs">
         <div class="flex items-center justify-between">
@@ -2228,6 +2454,344 @@
 
     </div>
   </div>
+
+  <!-- ================= FORGOT PASSWORD MODAL ================= -->
+  <div id="forgotPasswordModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+          <i data-lucide="key-round" class="w-5 h-5 text-blue-600"></i>
+          <span>Reset Password</span>
+        </h3>
+        <button onclick="closeModal('forgotPasswordModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Enter your registered email address. We will dispatch a secure 15-minute tokenized password reset link.</p>
+      <form onsubmit="handleForgotPasswordSubmit(event)" class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
+          <input type="email" id="forgotPassEmail" required placeholder="name@company.com" class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div class="flex justify-end space-x-2 pt-2">
+          <button type="button" onclick="closeModal('forgotPasswordModal')" class="px-3.5 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">Cancel</button>
+          <button type="submit" id="forgotPassSubmitBtn" class="px-4 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-xs cursor-pointer">Send Reset Link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= ADD NEW TEAM MEMBER MODAL ================= -->
+  <div id="addNewUserModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+          <i data-lucide="user-plus" class="w-5 h-5 text-purple-600"></i>
+          <span>Add New Team Member</span>
+        </h3>
+        <button onclick="closeModal('addNewUserModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Invite a team member and assign explicit role-based permissions (RBAC) across your recruitment pipeline.</p>
+      <form onsubmit="handleAddNewUserSubmit(event)" class="space-y-3 text-xs">
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">First Name</label>
+            <input type="text" id="newMemberFirstName" required placeholder="Elena" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-purple-500" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Last Name</label>
+            <input type="text" id="newMemberLastName" placeholder="Rostova" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-purple-500" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Email Address</label>
+          <input type="email" id="newMemberEmail" required placeholder="elena@company.com" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-purple-500" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Role & Authority</label>
+          <select id="newMemberRole" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-purple-500 font-semibold bg-white cursor-pointer">
+            <option value="RECRUITER">Recruiter — Candidate Pipeline, Job Posting, Email Communication</option>
+            <option value="HIRING_MANAGER">Hiring Manager — Job Requisitions, Resume Review, Final Approval</option>
+            <option value="COMPANY_ADMIN">Company Administrator — Full Access (Settings, Billing, Deletion)</option>
+            <option value="INTERVIEWER">Interviewer — Scorecards & Interview Feedback Only (Read-Only)</option>
+          </select>
+        </div>
+        <div class="flex justify-end space-x-2 pt-2 border-t border-slate-100">
+          <button type="button" onclick="closeModal('addNewUserModal')" class="px-3.5 py-2 font-semibold text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">Cancel</button>
+          <button type="submit" id="addNewUserSubmitBtn" class="px-4 py-2 font-bold bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-xs cursor-pointer">Save Roles & Permissions</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= ROLES & PERMISSIONS MATRIX MODAL ================= -->
+  <div id="rolesPermissionsModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+          <i data-lucide="shield-check" class="w-5 h-5 text-indigo-600"></i>
+          <span>Enterprise Role-Based Access Control (RBAC) Matrix</span>
+        </h3>
+        <button onclick="closeModal('rolesPermissionsModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Strict permission boundaries enforced at the API gateway layer. Unauthorized attempts will receive an HTTP 403 Forbidden rejection.</p>
+      <div class="space-y-3 text-xs" id="rbacMatrixContainer">
+        <div class="p-3.5 rounded-xl border border-purple-200 bg-purple-50/50 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-purple-900 text-sm">Company Admin</span>
+            <span class="px-2 py-0.5 rounded-full font-extrabold bg-purple-200 text-purple-800 text-[10px]">Full Access</span>
+          </div>
+          <p class="text-slate-600">Settings, Billing, User Invitation, Requisition Deletion, and Global Candidate Access.</p>
+        </div>
+        <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/50 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-blue-900 text-sm">Recruiter</span>
+            <span class="px-2 py-0.5 rounded-full font-extrabold bg-blue-200 text-blue-800 text-[10px]">Pipeline & Sourcing</span>
+          </div>
+          <p class="text-slate-600">Candidate Pipeline, 4-Board Job Posting (Naukri, Indeed, Monster, Dice), Email Communications, and Resume Ingestion.</p>
+        </div>
+        <div class="p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/50 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-emerald-900 text-sm">Hiring Manager</span>
+            <span class="px-2 py-0.5 rounded-full font-extrabold bg-emerald-200 text-emerald-800 text-[10px]">Requisition & Approval</span>
+          </div>
+          <p class="text-slate-600">Job Requisition Requests, Candidate Review, Requisition Approvals, Offer Creation, and Final Hiring Decisions.</p>
+        </div>
+        <div class="p-3.5 rounded-xl border border-amber-200 bg-amber-50/50 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-amber-900 text-sm">Interviewer</span>
+            <span class="px-2 py-0.5 rounded-full font-extrabold bg-amber-200 text-amber-800 text-[10px]">Scorecards Only</span>
+          </div>
+          <p class="text-slate-600">Assigned Candidate Profiles, Video Interview Studio, Blind 1-5 Star Evaluations. Cannot delete or alter jobs.</p>
+        </div>
+      </div>
+      <div class="flex justify-end pt-2 border-t border-slate-100">
+        <button onclick="closeModal('rolesPermissionsModal')" class="px-4 py-2 font-bold bg-slate-900 text-white rounded-lg text-xs cursor-pointer">Close Matrix</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= REJECT REQUISITION MODAL ================= -->
+  <div id="rejectRequisitionModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-rose-700 text-base flex items-center space-x-2">
+          <i data-lucide="alert-octagon" class="w-5 h-5 text-rose-600"></i>
+          <span>Reject Job Requisition</span>
+        </h3>
+        <button onclick="closeModal('rejectRequisitionModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Provide mandatory feedback explaining why this opening cannot be approved at this time.</p>
+      <form onsubmit="handleRejectRequisitionSubmit(event)" class="space-y-3 text-xs">
+        <input type="hidden" id="rejectRequisitionJobId" />
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Rejection Reason / Comments <span class="text-rose-600">*</span></label>
+          <textarea id="rejectRequisitionComments" required rows="3" placeholder="e.g. Budget headcount allocation for Q3 is on hold. Please revise salary band or target Q4." class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-rose-500 text-xs"></textarea>
+        </div>
+        <div class="flex justify-end space-x-2 pt-2 border-t border-slate-100">
+          <button type="button" onclick="closeModal('rejectRequisitionModal')" class="px-3.5 py-2 font-semibold text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">Cancel</button>
+          <button type="submit" id="rejectRequisitionSubmitBtn" class="px-4 py-2 font-bold bg-rose-600 hover:bg-rose-700 text-white rounded-lg shadow-xs cursor-pointer">Confirm Rejection</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= AI MATCH INSIGHTS MODAL ================= -->
+  <div id="aiMatchInsightsModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b pb-3 border-slate-100">
+        <div>
+          <span class="text-[10px] font-black uppercase text-indigo-600 tracking-wider">Explainable AI Scoring</span>
+          <h3 class="text-base font-bold text-slate-900" id="insightsCandName">Candidate Insights</h3>
+        </div>
+        <button onclick="closeModal('aiMatchInsightsModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="flex items-center space-x-4 p-4 rounded-xl bg-indigo-50/60 border border-indigo-100">
+        <div class="w-16 h-16 rounded-full bg-white border-4 border-indigo-600 flex flex-col items-center justify-center shadow-xs">
+          <span class="text-lg font-black text-indigo-700" id="insightsScoreVal">92%</span>
+          <span class="text-[8px] font-bold text-indigo-400 uppercase">Match</span>
+        </div>
+        <div class="space-y-0.5">
+          <div class="text-sm font-bold text-slate-900" id="insightsPercentile">Top 5% of candidate pool</div>
+          <div class="text-xs text-slate-500" id="insightsJobTitle">Target Role: Software Engineer</div>
+          <div class="text-[11px] text-emerald-700 font-semibold" id="insightsExpFit">● Experience requirement verified</div>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <div class="font-bold text-slate-700 mb-1.5 flex items-center space-x-1.5">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+            <span>Matched Required Competencies</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="insightsMatchedSkills">
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-md font-semibold text-[11px]">React</span>
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-md font-semibold text-[11px]">Node.js</span>
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-md font-semibold text-[11px]">AWS</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-slate-700 mb-1.5 flex items-center space-x-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4 text-amber-600"></i>
+            <span>Missing / Optional Competencies</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="insightsMissingSkills">
+            <span class="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md text-[11px]">Kafka Streaming</span>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="font-bold text-slate-800 mb-1">AI Recommendation Rationale</div>
+          <p class="text-slate-600 leading-relaxed text-[11px]" id="insightsRationale">
+            High confidence match. Candidate possesses strong foundational experience aligning directly with core microservice architecture and front-end state management.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-end pt-2 border-t border-slate-100">
+        <button onclick="closeModal('aiMatchInsightsModal')" class="px-4 py-2 font-bold bg-slate-900 text-white rounded-lg text-xs cursor-pointer">Close Insights</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BULK EMAIL CAMPAIGN MODAL ================= -->
+  <div id="bulkEmailModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+          <i data-lucide="mail" class="w-5 h-5 text-blue-600"></i>
+          <span>Send Bulk Communication</span>
+        </h3>
+        <button onclick="closeModal('bulkEmailModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Dispatch personalized recruitment updates to all selected candidates at once.</p>
+      <form onsubmit="handleBulkEmailSubmit(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Recipients</label>
+          <div id="bulkEmailRecipientsCount" class="font-bold text-blue-600 text-xs">0 candidates selected</div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Email Subject</label>
+          <input type="text" id="bulkEmailSubject" required value="Exciting Opportunity Update from Pavion Technologies" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Message Content</label>
+          <textarea id="bulkEmailBody" rows="4" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-xs font-sans">Dear Candidate,
+
+We reviewed your profile for our open positions and were impressed by your background. We would love to discuss potential opportunities with our engineering team.
+
+Best regards,
+Talent Acquisition Team
+Pavion Technologies</textarea>
+        </div>
+        <div class="flex justify-end space-x-2 pt-2 border-t border-slate-100">
+          <button type="button" onclick="closeModal('bulkEmailModal')" class="px-3.5 py-2 font-semibold text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">Cancel</button>
+          <button type="submit" id="bulkEmailSubmitBtn" class="px-4 py-2 font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-xs cursor-pointer">Dispatch Campaign</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= BULK STATUS CHANGE MODAL ================= -->
+  <div id="bulkStatusModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+          <i data-lucide="layers" class="w-5 h-5 text-indigo-600"></i>
+          <span>Bulk Stage Transition</span>
+        </h3>
+        <button onclick="closeModal('bulkStatusModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Advance or update pipeline stages for all selected candidates simultaneously.</p>
+      <form onsubmit="handleBulkStatusSubmit(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Selected Applicants</label>
+          <div id="bulkStatusCount" class="font-bold text-indigo-600 text-xs">0 applicants selected</div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Target Kanban Stage</label>
+          <select id="bulkTargetStage" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 font-semibold bg-white cursor-pointer">
+            <option value="Screening">Screening (Resume Evaluation)</option>
+            <option value="Shortlisted">Shortlisted (VeraHire Qualified)</option>
+            <option value="Interview">Technical Interview Round</option>
+            <option value="Offer">Executive Offer Package</option>
+            <option value="Hired">Hired (Onboard to HRIS)</option>
+            <option value="Rejected">Rejected (Auto-Rejection Alert)</option>
+          </select>
+        </div>
+        <div class="flex justify-end space-x-2 pt-2 border-t border-slate-100">
+          <button type="button" onclick="closeModal('bulkStatusModal')" class="px-3.5 py-2 font-semibold text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">Cancel</button>
+          <button type="submit" id="bulkStatusSubmitBtn" class="px-4 py-2 font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-xs cursor-pointer">Update Stages</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= CREATE AUTOMATION RULE MODAL ================= -->
+  <div id="createRuleModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl p-6 space-y-4 border border-slate-200 relative">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+          <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i>
+          <span>If-Then Automation Rule Builder</span>
+        </h3>
+        <button onclick="closeModal('createRuleModal')" class="p-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500">Construct event-driven triggers with execution delay to safeguard employer branding.</p>
+      <form onsubmit="handleCreateRuleSubmit(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Rule Name</label>
+          <input type="text" id="ruleNameInput" required placeholder="e.g. 24h Polite Candidate Rejection" class="w-full px-3 py-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-amber-500 text-xs" />
+        </div>
+        <div class="p-3 bg-amber-50/60 rounded-xl border border-amber-200 space-y-2.5">
+          <div>
+            <label class="block font-bold text-amber-900 mb-1">1. IF Event Occurs:</label>
+            <select id="ruleTriggerSelect" class="w-full px-3 py-1.5 bg-white border border-amber-300 rounded-lg text-xs font-semibold cursor-pointer">
+              <option value="CANDIDATE_REJECTED">Candidate is moved to Rejected stage</option>
+              <option value="STAGE_MOVED_INTERVIEW">Candidate is moved to Interview stage</option>
+              <option value="KNOCKOUT_PASSED">Applicant passes all Knockout questions</option>
+              <option value="OFFER_ACCEPTED">Candidate digitally signs Offer Letter</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-amber-900 mb-1">2. THEN Action to Execute:</label>
+            <select id="ruleActionSelect" class="w-full px-3 py-1.5 bg-white border border-amber-300 rounded-lg text-xs font-semibold cursor-pointer">
+              <option value="SEND_EMAIL">Send Automated Personalized Email</option>
+              <option value="PROVISION_PAYROLL">Provision Deel HR & RazorpayX Payroll</option>
+              <option value="SEND_CALENDAR">Auto-Send Google Meet Slot Selector</option>
+              <option value="TRIGGER_VERAHIRE">Trigger VeraHire Autonomous AI Screening</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-amber-900 mb-1">3. DELAY BY (Hours):</label>
+            <input type="number" id="ruleDelayHours" value="24" min="0" max="72" class="w-24 px-3 py-1.5 bg-white border border-amber-300 rounded-lg text-xs font-semibold" />
+            <span class="text-[10px] text-slate-500 ml-2">(Preserves authentic human touch)</span>
+          </div>
+        </div>
+        <div class="flex justify-end space-x-2 pt-2 border-t border-slate-100">
+          <button type="button" onclick="closeModal('createRuleModal')" class="px-3.5 py-2 font-semibold text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">Cancel</button>
+          <button type="submit" id="createRuleSubmitBtn" class="px-4 py-2 font-bold bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow-xs cursor-pointer">Activate Rule</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
 
   <!-- ================= 9. LIVE VIDEO INTERVIEW & RECORDING STUDIO ================= -->
   <div id="videoInterviewStudioModal" class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-2 sm:p-4">

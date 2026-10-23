@@ -54,4 +54,42 @@ router.post('/trigger', authenticate, auditAction('WORKFLOW_TRIGGERED', 'Workflo
   }
 });
 
+/**
+ * POST /api/v1/workflows/rules
+ * Creates a custom If-Then automation rule with optional delayed execution
+ */
+router.post('/rules', authenticate, auditAction('WORKFLOW_RULE_CREATED', 'Workflow'), async (req, res) => {
+  try {
+    const name = req.body.name;
+    const triggerEvent = req.body.triggerEvent || req.body.trigger;
+    const actionType = req.body.actionType || req.body.action;
+    const delayHours = req.body.delayHours !== undefined ? req.body.delayHours : 24;
+    const description = req.body.description;
+
+    if (!name || !triggerEvent || !actionType) {
+      return res.status(400).json({ error: 'Rule name, trigger event, and action type are required.' });
+    }
+
+    const newRule = {
+      id: `rule_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
+      name,
+      trigger: triggerEvent,
+      actionType,
+      delayHours: parseInt(delayHours) || 24,
+      description: description || `IF ${triggerEvent} THEN execute ${actionType} (Delayed by ${delayHours}h).`,
+      isEnabled: true,
+      executionCount: 0,
+      createdAt: new Date().toISOString()
+    };
+
+    const created = await WorkflowService.createRule(newRule);
+    res.status(201).json({
+      message: `Automation rule "${name}" created successfully and is now active.`,
+      rule: created || newRule
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to create automation rule.' });
+  }
+});
+
 export default router;

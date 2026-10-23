@@ -22,12 +22,12 @@
     {
       "_id": "doc_b9fa6d4f1a344f56",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-10-22T20:11:56.953Z",
+      "updatedAt": "2026-10-23T13:23:36.010Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Sarah",
       "lastName": "Connor",
       "email": "admin@techcorp.com",
-      "passwordHash": "$2a$10$jsqFwu1Ko0dSkvtdkDGmaes0KypGkRnMkVQ/s/hmea3Jrp07/Q26O",
+      "passwordHash": "$2a$10$EHdl0S7MKENqzLXMBuqElewSPZ4jS364vQj5yuvOgBIhJTNZPcIYi",
       "role": "COMPANY_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -36,12 +36,12 @@
     {
       "_id": "doc_a9289f33c4f52c25",
       "createdAt": "2026-09-04T01:14:50.361Z",
-      "updatedAt": "2026-10-22T20:11:57.042Z",
+      "updatedAt": "2026-10-23T13:23:36.245Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Alex",
       "lastName": "Morgan",
       "email": "recruiter@techcorp.com",
-      "passwordHash": "$2a$10$xBJZs1a9sG3A.m.ZhlXsKeV6nIGA9Yd8bI4mLQlvIMOUsDgur0gOe",
+      "passwordHash": "$2a$10$4u1qDXZ1xcTnRNUw0v6a6OrynulivAq3Y4kr6AM21lGjZ.F0RANy6",
       "role": "RECRUITER",
       "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -50,12 +50,12 @@
     {
       "_id": "doc_493030e468962233",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-10-22T20:11:57.129Z",
+      "updatedAt": "2026-10-23T13:23:36.360Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "David",
       "lastName": "Chen",
       "email": "manager@techcorp.com",
-      "passwordHash": "$2a$10$WBdV699/Qh7qGb0HwXDb8.fZGBsThMtFjkLjfsouO1V.nWINF11jG",
+      "passwordHash": "$2a$10$Dcpo8xXoI1nH5MxawNz0x.dHO/paXiPs5J7gdTD4iOEAP/GYj8Lmu",
       "role": "HIRING_MANAGER",
       "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -64,12 +64,12 @@
     {
       "_id": "doc_f498dda4a79ee504",
       "createdAt": "2026-09-04T01:14:50.363Z",
-      "updatedAt": "2026-10-22T20:11:57.226Z",
+      "updatedAt": "2026-10-23T13:23:36.453Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Elena",
       "lastName": "Rostova",
       "email": "interviewer@techcorp.com",
-      "passwordHash": "$2a$10$LBkQDpHufdt/W5oF6fBeWeA0tGGmqLDYbdcJ9g2ZFIlfff8SuXJc6",
+      "passwordHash": "$2a$10$9ryv6rKsNW9V.RJSNCQTTe.85EE/UtqX3igfB.i9R2smt/g4MO5ym",
       "role": "INTERVIEWER",
       "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
       "isActive": true,
@@ -78,12 +78,12 @@
     {
       "_id": "doc_967ecfc04dba1a83",
       "createdAt": "2026-09-04T16:29:48.945Z",
-      "updatedAt": "2026-10-22T20:11:56.858Z",
+      "updatedAt": "2026-10-23T13:23:35.878Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Marcus",
       "lastName": "Vance",
       "email": "superadmin@enterprise-ats.io",
-      "passwordHash": "$2a$10$43tMRwVg5ni7BamPBxrb9OJa2dcX4tbtZTkHVa1vMq3.xb3VeR.ay",
+      "passwordHash": "$2a$10$vLMiKdSTnusO2ml/CTdbF.chqSl2pOtEjYiFDm1cWu5ZipSVOQZDG",
       "plainPasswordForDemo": "SuperAdmin@2026",
       "role": "SUPER_ADMIN",
       "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
@@ -92,12 +92,12 @@
     {
       "_id": "doc_7d5d39e5a28156a8",
       "createdAt": "2026-09-04T16:29:49.377Z",
-      "updatedAt": "2026-10-22T20:11:57.318Z",
+      "updatedAt": "2026-10-23T13:23:36.558Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jessica",
       "lastName": "Reed",
       "email": "agency@apexrecruiting.com",
-      "passwordHash": "$2a$10$5k1h6jIf2RIRaV8QYNFfB.1QCsv06oDCK8hxblbowJKsn57NixgUS",
+      "passwordHash": "$2a$10$jRJZE.IuiECQmSSpINRvHurOBorOdlTGJcEubzZKPIsWu3qbp1b0.",
       "plainPasswordForDemo": "Agency@2026",
       "role": "AGENCY_PARTNER",
       "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
@@ -106,23 +106,190 @@
     {
       "_id": "doc_f567a421a517e5e8",
       "createdAt": "2026-09-04T16:29:49.463Z",
-      "updatedAt": "2026-10-22T20:11:57.407Z",
+      "updatedAt": "2026-10-23T13:23:36.654Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "firstName": "Jordan",
       "lastName": "Miller",
       "email": "candidate@example.com",
-      "passwordHash": "$2a$10$FG4HGS2U4HBZaU3lhp1bZuX7s1m4qJhRmu824L.ZaOzinEcXnqUOy",
+      "passwordHash": "$2a$10$rn7HtCBd.VDdefflxDq1BOjg7H.GUrwYZKHCZZ9hUgG75NIhs1sv6",
       "plainPasswordForDemo": "Candidate@2026",
       "role": "CANDIDATE",
       "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
       "isActive": true
+    },
+    {
+      "_id": "doc_58e8f62151d0fb88",
+      "createdAt": "2026-10-23T13:10:10.928Z",
+      "updatedAt": "2026-10-23T13:10:10.928Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761010700@techcorp.com",
+      "passwordHash": "$2a$10$DD.dS/T11A.nuTQY/z54Zue9xvk5N.vVW4gv10ehGHsjvCp0YhHxe",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_c3c582fa7bbec86d",
+      "createdAt": "2026-10-23T13:10:10.960Z",
+      "updatedAt": "2026-10-23T13:10:10.960Z",
+      "firstName": "Google",
+      "lastName": "Recruiter",
+      "email": "sso.recruiter@techcorp.com",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "ssoProvider": "GOOGLE",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_3a790e35e20e980d",
+      "createdAt": "2026-10-23T13:10:34.988Z",
+      "updatedAt": "2026-10-23T13:10:34.988Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761034702@techcorp.com",
+      "passwordHash": "$2a$10$WitIz4xGbWdZxznUx.cAHONlwdOYuvHZIQU4W1cMFQgGURUOwq3Yy",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_9f9ae652aefdd1a5",
+      "createdAt": "2026-10-23T13:11:37.243Z",
+      "updatedAt": "2026-10-23T13:11:37.243Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761096956@techcorp.com",
+      "passwordHash": "$2a$10$7MRP3usyPQ7YBiYo4aFf2O13whfhtSkaezr9yP02pc777ti1XoEAG",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_966c0dca9a55ab01",
+      "createdAt": "2026-10-23T13:12:20.619Z",
+      "updatedAt": "2026-10-23T13:12:20.619Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761140325@techcorp.com",
+      "passwordHash": "$2a$10$WmtcdWkrm5Z/Ve4qy8hu2eV690P91r.Oo0Gd04/Zr.xTPm3t4tlMe",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_aa927aa3374a01a3",
+      "createdAt": "2026-10-23T13:13:55.263Z",
+      "updatedAt": "2026-10-23T13:13:55.263Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761234964@techcorp.com",
+      "passwordHash": "$2a$10$ckwfivwLx9S2L.m.uZUZKeEx9pD4MNWOvZyaqbbeNCFRDsaqpqnqG",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_4f9034804bf88036",
+      "createdAt": "2026-10-23T13:16:07.485Z",
+      "updatedAt": "2026-10-23T13:16:07.485Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761367262@techcorp.com",
+      "passwordHash": "$2a$10$66hXftOK4UPbxQ3irYvYOuwjMKh0GtwwOYcWeE5q1SQcTd4UId0LO",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_f05d3bc437063a19",
+      "createdAt": "2026-10-23T13:18:09.537Z",
+      "updatedAt": "2026-10-23T13:18:09.537Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761489239@techcorp.com",
+      "passwordHash": "$2a$10$94jgYPQRbM4WIQXNcVtkbeolhng7eHyYIvZXpz3LR7I/z40L.pUKe",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_0fb361d68f52fe0e",
+      "createdAt": "2026-10-23T13:19:49.425Z",
+      "updatedAt": "2026-10-23T13:19:49.425Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761589141@techcorp.com",
+      "passwordHash": "$2a$10$b0gsVWykBijbIBLwQBGk5..bfbJeVuYmhDWj6hvYsp/9EkR1NhtM2",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_132e024bb83b832d",
+      "createdAt": "2026-10-23T13:22:06.545Z",
+      "updatedAt": "2026-10-23T13:22:06.545Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761726370@techcorp.com",
+      "passwordHash": "$2a$10$gp2NXLHbHaTkpv9pimrlNeTGbfggB6YcO/jNO0G4n5DOlmpMfsxMq",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_432707d38cb448d8",
+      "createdAt": "2026-10-23T13:22:42.458Z",
+      "updatedAt": "2026-10-23T13:22:42.458Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761762257@techcorp.com",
+      "passwordHash": "$2a$10$EaX79Pbp7ADHNG9e9F3vLOnQFl8F4Z1pmCf53GmnCaSj4hcoNdIhG",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "_id": "doc_ed1d8413899faa70",
+      "createdAt": "2026-10-23T13:25:25.354Z",
+      "updatedAt": "2026-10-23T13:25:25.354Z",
+      "firstName": "Rohit",
+      "lastName": "Verma",
+      "email": "test_hr_1792761925072@techcorp.com",
+      "passwordHash": "$2a$10$BYhU7gB1XVuVqUlgftQLROPbEiEh0B8s6QR.9iX1mIqhyv5u8oPQW",
+      "plainPasswordForDemo": "Password@2026",
+      "role": "RECRUITER",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "isActive": true,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     }
   ],
   "jobs": [
     {
       "_id": "doc_bbe4c6051f27d640",
       "createdAt": "2026-09-04T01:14:50.364Z",
-      "updatedAt": "2026-10-21T14:21:23.956Z",
+      "updatedAt": "2026-10-23T12:56:05.022Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "title": "Senior Full-Stack Engineer (React / Node.js)",
       "departmentId": "Engineering",
@@ -183,7 +350,7 @@
         "Naukri.com Enterprise"
       ],
       "syndicationStatus": "ACTIVE",
-      "lastSyndicatedAt": "2026-10-21T14:21:23.956Z"
+      "lastSyndicatedAt": "2026-10-23T12:56:05.022Z"
     },
     {
       "_id": "doc_6a5aa65d2c82138f",
@@ -931,6 +1098,1304 @@
         "importedAt": "2026-10-22T20:14:14.689Z"
       },
       "createdBy": "doc_a9289f33c4f52c25"
+    },
+    {
+      "_id": "doc_88962bc8d90bef22",
+      "createdAt": "2026-10-23T12:54:14.435Z",
+      "updatedAt": "2026-10-23T12:54:14.435Z",
+      "tenantId": "tenant_test",
+      "title": "Full Stack Developer (Cloud & Distributed Systems)",
+      "department": "Engineering",
+      "type": "FULL_TIME",
+      "location": {
+        "city": "Bangalore",
+        "country": "India",
+        "isRemote": false
+      },
+      "salaryRange": {
+        "min": 1500000,
+        "max": 3000000,
+        "currency": "INR"
+      },
+      "minExperienceYears": 48,
+      "requiredSkills": [
+        "React",
+        "Node.js",
+        "AWS",
+        "Microservices",
+        "Docker"
+      ],
+      "descriptionHtml": "<p><strong>Imported from Naukri.com Enterprise (Cognizant Digital Solutions)</strong></p><p>Key Requirements: Looking for an experienced Full Stack Developer responsible for architecting scalable cloud backends, API design, and mentoring engineers.</p>",
+      "knockoutQuestions": [
+        {
+          "id": "ko_1",
+          "questionText": "Do you have at least 48 years of relevant experience in React?",
+          "expectedAnswer": true,
+          "isKnockout": true
+        }
+      ],
+      "stages": [
+        {
+          "id": "Applied",
+          "name": "Applied",
+          "order": 1
+        },
+        {
+          "id": "Screening",
+          "name": "Screening",
+          "order": 2
+        },
+        {
+          "id": "Shortlisted",
+          "name": "Shortlisted",
+          "order": 3
+        },
+        {
+          "id": "Interview",
+          "name": "Technical Interview",
+          "order": 4
+        },
+        {
+          "id": "Offer",
+          "name": "Executive Offer",
+          "order": 5
+        },
+        {
+          "id": "Hired",
+          "name": "Hired",
+          "order": 6
+        },
+        {
+          "id": "Rejected",
+          "name": "Archived",
+          "order": 7
+        }
+      ],
+      "status": "PUBLISHED",
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Company Career Portal"
+      ],
+      "importedFrom": {
+        "board": "Naukri.com Enterprise",
+        "originalUrl": "https://www.naukri.com/full-stack-developer-jobs",
+        "company": "Cognizant Digital Solutions",
+        "importedAt": "2026-10-23T12:54:14.435Z"
+      },
+      "createdBy": "usr_test"
+    },
+    {
+      "_id": "doc_9912b057a14f39a2",
+      "createdAt": "2026-10-23T12:54:50.690Z",
+      "updatedAt": "2026-10-23T12:54:50.690Z",
+      "tenantId": "tenant_test",
+      "title": "Full Stack Developer (Cloud & Distributed Systems)",
+      "department": "Engineering",
+      "type": "FULL_TIME",
+      "location": {
+        "city": "Bangalore",
+        "country": "India",
+        "isRemote": false
+      },
+      "salaryRange": {
+        "min": 1500000,
+        "max": 3000000,
+        "currency": "INR"
+      },
+      "minExperienceYears": 48,
+      "requiredSkills": [
+        "React",
+        "Node.js",
+        "AWS",
+        "Microservices",
+        "Docker"
+      ],
+      "descriptionHtml": "<p><strong>Imported from Naukri.com Enterprise (Cognizant Digital Solutions)</strong></p><p>Key Requirements: Looking for an experienced Full Stack Developer responsible for architecting scalable cloud backends, API design, and mentoring engineers.</p>",
+      "knockoutQuestions": [
+        {
+          "id": "ko_1",
+          "questionText": "Do you have at least 48 years of relevant experience in React?",
+          "expectedAnswer": true,
+          "isKnockout": true
+        }
+      ],
+      "stages": [
+        {
+          "id": "Applied",
+          "name": "Applied",
+          "order": 1
+        },
+        {
+          "id": "Screening",
+          "name": "Screening",
+          "order": 2
+        },
+        {
+          "id": "Shortlisted",
+          "name": "Shortlisted",
+          "order": 3
+        },
+        {
+          "id": "Interview",
+          "name": "Technical Interview",
+          "order": 4
+        },
+        {
+          "id": "Offer",
+          "name": "Executive Offer",
+          "order": 5
+        },
+        {
+          "id": "Hired",
+          "name": "Hired",
+          "order": 6
+        },
+        {
+          "id": "Rejected",
+          "name": "Archived",
+          "order": 7
+        }
+      ],
+      "status": "PUBLISHED",
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Company Career Portal"
+      ],
+      "importedFrom": {
+        "board": "Naukri.com Enterprise",
+        "originalUrl": "https://www.naukri.com/full-stack-developer-jobs",
+        "company": "Cognizant Digital Solutions",
+        "importedAt": "2026-10-23T12:54:50.690Z"
+      },
+      "createdBy": "usr_test"
+    },
+    {
+      "_id": "doc_49a9b4740fff291b",
+      "createdAt": "2026-10-23T12:54:50.694Z",
+      "updatedAt": "2026-10-23T12:54:50.694Z",
+      "companyId": "comp_default",
+      "title": "Principal Cloud Platform Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "status": "PENDING_APPROVAL",
+      "targetHireDate": "2026-12-01",
+      "approverId": "usr_manager",
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ]
+    },
+    {
+      "_id": "doc_86084aac77d55a0a",
+      "createdAt": "2026-10-23T12:55:36.486Z",
+      "updatedAt": "2026-10-23T12:55:36.486Z",
+      "tenantId": "tenant_test",
+      "title": "Full Stack Developer (Cloud & Distributed Systems)",
+      "department": "Engineering",
+      "type": "FULL_TIME",
+      "location": {
+        "city": "Bangalore",
+        "country": "India",
+        "isRemote": false
+      },
+      "salaryRange": {
+        "min": 1500000,
+        "max": 3000000,
+        "currency": "INR"
+      },
+      "minExperienceYears": 48,
+      "requiredSkills": [
+        "React",
+        "Node.js",
+        "AWS",
+        "Microservices",
+        "Docker"
+      ],
+      "descriptionHtml": "<p><strong>Imported from Naukri.com Enterprise (Cognizant Digital Solutions)</strong></p><p>Key Requirements: Looking for an experienced Full Stack Developer responsible for architecting scalable cloud backends, API design, and mentoring engineers.</p>",
+      "knockoutQuestions": [
+        {
+          "id": "ko_1",
+          "questionText": "Do you have at least 48 years of relevant experience in React?",
+          "expectedAnswer": true,
+          "isKnockout": true
+        }
+      ],
+      "stages": [
+        {
+          "id": "Applied",
+          "name": "Applied",
+          "order": 1
+        },
+        {
+          "id": "Screening",
+          "name": "Screening",
+          "order": 2
+        },
+        {
+          "id": "Shortlisted",
+          "name": "Shortlisted",
+          "order": 3
+        },
+        {
+          "id": "Interview",
+          "name": "Technical Interview",
+          "order": 4
+        },
+        {
+          "id": "Offer",
+          "name": "Executive Offer",
+          "order": 5
+        },
+        {
+          "id": "Hired",
+          "name": "Hired",
+          "order": 6
+        },
+        {
+          "id": "Rejected",
+          "name": "Archived",
+          "order": 7
+        }
+      ],
+      "status": "PUBLISHED",
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Company Career Portal"
+      ],
+      "importedFrom": {
+        "board": "Naukri.com Enterprise",
+        "originalUrl": "https://www.naukri.com/full-stack-developer-jobs",
+        "company": "Cognizant Digital Solutions",
+        "importedAt": "2026-10-23T12:55:36.486Z"
+      },
+      "createdBy": "usr_test"
+    },
+    {
+      "_id": "doc_523f00a16523fd34",
+      "createdAt": "2026-10-23T12:55:36.491Z",
+      "updatedAt": "2026-10-23T12:55:36.495Z",
+      "companyId": "comp_default",
+      "title": "Principal Cloud Platform Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "status": "PUBLISHED",
+      "targetHireDate": "2026-12-01",
+      "approverId": "usr_manager",
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "approvalStatus": "APPROVED",
+      "approvedAt": "2026-10-23T12:55:36.495Z"
+    },
+    {
+      "_id": "doc_6088fa7cca4174ef",
+      "createdAt": "2026-10-23T12:56:05.034Z",
+      "updatedAt": "2026-10-23T12:56:05.034Z",
+      "tenantId": "tenant_test",
+      "title": "Full Stack Developer (Cloud & Distributed Systems)",
+      "department": "Engineering",
+      "type": "FULL_TIME",
+      "location": {
+        "city": "Bangalore",
+        "country": "India",
+        "isRemote": false
+      },
+      "salaryRange": {
+        "min": 1500000,
+        "max": 3000000,
+        "currency": "INR"
+      },
+      "minExperienceYears": 48,
+      "requiredSkills": [
+        "React",
+        "Node.js",
+        "AWS",
+        "Microservices",
+        "Docker"
+      ],
+      "descriptionHtml": "<p><strong>Imported from Naukri.com Enterprise (Cognizant Digital Solutions)</strong></p><p>Key Requirements: Looking for an experienced Full Stack Developer responsible for architecting scalable cloud backends, API design, and mentoring engineers.</p>",
+      "knockoutQuestions": [
+        {
+          "id": "ko_1",
+          "questionText": "Do you have at least 48 years of relevant experience in React?",
+          "expectedAnswer": true,
+          "isKnockout": true
+        }
+      ],
+      "stages": [
+        {
+          "id": "Applied",
+          "name": "Applied",
+          "order": 1
+        },
+        {
+          "id": "Screening",
+          "name": "Screening",
+          "order": 2
+        },
+        {
+          "id": "Shortlisted",
+          "name": "Shortlisted",
+          "order": 3
+        },
+        {
+          "id": "Interview",
+          "name": "Technical Interview",
+          "order": 4
+        },
+        {
+          "id": "Offer",
+          "name": "Executive Offer",
+          "order": 5
+        },
+        {
+          "id": "Hired",
+          "name": "Hired",
+          "order": 6
+        },
+        {
+          "id": "Rejected",
+          "name": "Archived",
+          "order": 7
+        }
+      ],
+      "status": "PUBLISHED",
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Company Career Portal"
+      ],
+      "importedFrom": {
+        "board": "Naukri.com Enterprise",
+        "originalUrl": "https://www.naukri.com/full-stack-developer-jobs",
+        "company": "Cognizant Digital Solutions",
+        "importedAt": "2026-10-23T12:56:05.034Z"
+      },
+      "createdBy": "usr_test"
+    },
+    {
+      "_id": "doc_fee2a22b9b075ba3",
+      "createdAt": "2026-10-23T12:56:05.038Z",
+      "updatedAt": "2026-10-23T12:56:05.043Z",
+      "companyId": "comp_default",
+      "title": "Principal Cloud Platform Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "status": "PUBLISHED",
+      "targetHireDate": "2026-12-01",
+      "approverId": "usr_manager",
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "approvalStatus": "APPROVED",
+      "approvedAt": "2026-10-23T12:56:05.043Z"
+    },
+    {
+      "_id": "doc_859a730daf921a40",
+      "createdAt": "2026-10-23T13:09:34.002Z",
+      "updatedAt": "2026-10-23T13:09:34.046Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Senior Distributed Systems Architect",
+      "departmentId": "Engineering",
+      "locationId": "San Francisco, CA (Remote)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_a9289f33c4f52c25",
+      "recruiterId": "doc_a9289f33c4f52c25",
+      "approverId": null,
+      "targetHireDate": null,
+      "salaryRange": {
+        "min": 140000,
+        "max": 180000,
+        "currency": "USD"
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "distributed-systems",
+        "go",
+        "kubernetes"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>Lead our distributed computing infrastructure</p>",
+      "knockoutQuestions": [
+        {
+          "questionText": "Do you have 5+ years experience in distributed systems?",
+          "correctValue": true
+        }
+      ],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:09:34.001Z",
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:09:34.041Z"
+    },
+    {
+      "_id": "doc_7bbdb936658b9b85",
+      "createdAt": "2026-10-23T13:10:10.987Z",
+      "updatedAt": "2026-10-23T13:10:11.055Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_58e8f62151d0fb88",
+      "recruiterId": "doc_58e8f62151d0fb88",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:10:11.038Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:10:11.038Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:10:11.038Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:10:11.044Z"
+    },
+    {
+      "_id": "doc_9ed12fcae5111ca6",
+      "createdAt": "2026-10-23T13:10:35.083Z",
+      "updatedAt": "2026-10-23T13:10:35.147Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_3a790e35e20e980d",
+      "recruiterId": "doc_3a790e35e20e980d",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:10:35.134Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:10:35.134Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:10:35.134Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:10:35.141Z"
+    },
+    {
+      "_id": "doc_794f3a67eb1c5d8e",
+      "createdAt": "2026-10-23T13:11:37.354Z",
+      "updatedAt": "2026-10-23T13:11:37.403Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_9f9ae652aefdd1a5",
+      "recruiterId": "doc_9f9ae652aefdd1a5",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:11:37.390Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:11:37.390Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:11:37.390Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:11:37.397Z"
+    },
+    {
+      "_id": "doc_09eea7236b6bcafe",
+      "createdAt": "2026-10-23T13:12:20.722Z",
+      "updatedAt": "2026-10-23T13:12:20.811Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_966c0dca9a55ab01",
+      "recruiterId": "doc_966c0dca9a55ab01",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:12:20.762Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:12:20.762Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:12:20.762Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:12:20.806Z"
+    },
+    {
+      "_id": "doc_74e759128d7cc349",
+      "createdAt": "2026-10-23T13:13:55.367Z",
+      "updatedAt": "2026-10-23T13:13:55.426Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_aa927aa3374a01a3",
+      "recruiterId": "doc_aa927aa3374a01a3",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:13:55.406Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:13:55.406Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:13:55.406Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:13:55.412Z"
+    },
+    {
+      "_id": "doc_f3a2ac13719779e7",
+      "createdAt": "2026-10-23T13:16:07.552Z",
+      "updatedAt": "2026-10-23T13:16:07.614Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_4f9034804bf88036",
+      "recruiterId": "doc_4f9034804bf88036",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:16:07.575Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:16:07.575Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:16:07.575Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:16:07.608Z"
+    },
+    {
+      "_id": "doc_27097bc33e7edae8",
+      "createdAt": "2026-10-23T13:18:09.629Z",
+      "updatedAt": "2026-10-23T13:18:09.786Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_f05d3bc437063a19",
+      "recruiterId": "doc_f05d3bc437063a19",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:18:09.754Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:18:09.754Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:18:09.754Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:18:09.768Z"
+    },
+    {
+      "_id": "doc_784a1c51c5520ffd",
+      "createdAt": "2026-10-23T13:19:49.498Z",
+      "updatedAt": "2026-10-23T13:19:49.637Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_0fb361d68f52fe0e",
+      "recruiterId": "doc_0fb361d68f52fe0e",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:19:49.532Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:19:49.532Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:19:49.532Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:19:49.629Z"
+    },
+    {
+      "_id": "doc_64874669321ac8ed",
+      "createdAt": "2026-10-23T13:22:06.595Z",
+      "updatedAt": "2026-10-23T13:22:06.670Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_132e024bb83b832d",
+      "recruiterId": "doc_132e024bb83b832d",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:22:06.622Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:22:06.622Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:22:06.622Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:22:06.664Z"
+    },
+    {
+      "_id": "doc_40b0a9f8c7b52054",
+      "createdAt": "2026-10-23T13:22:42.505Z",
+      "updatedAt": "2026-10-23T13:22:42.550Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_432707d38cb448d8",
+      "recruiterId": "doc_432707d38cb448d8",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:22:42.536Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:22:42.536Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:22:42.536Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:22:42.544Z"
+    },
+    {
+      "_id": "doc_bbdeb91fb7d56fe7",
+      "createdAt": "2026-10-23T13:25:25.397Z",
+      "updatedAt": "2026-10-23T13:25:25.458Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "title": "Staff Distributed Systems Engineer",
+      "departmentId": "Engineering",
+      "locationId": "Bangalore, India (Hybrid)",
+      "workplaceType": "HYBRID",
+      "employmentType": "FULL_TIME",
+      "hiringManagerId": "doc_ed1d8413899faa70",
+      "recruiterId": "doc_ed1d8413899faa70",
+      "approverId": "usr_manager",
+      "targetHireDate": "2026-12-15",
+      "salaryRange": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "isPublic": true
+      },
+      "minExperienceYears": 3,
+      "requiredSkills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "preferredSkills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "responsibilities": [
+        "Build scalable features",
+        "Collaborate with team"
+      ],
+      "requirements": [
+        "3+ years software engineering experience"
+      ],
+      "descriptionHtml": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "knockoutQuestions": [],
+      "autoSyndicate": true,
+      "selectedJobBoards": [
+        "naukri",
+        "indeed",
+        "monster",
+        "dice"
+      ],
+      "status": "PUBLISHED",
+      "publishedAt": "2026-10-23T13:25:25.418Z",
+      "approvedBy": "doc_493030e468962233",
+      "$push": {
+        "approvalLogs": {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:25:25.418Z"
+        }
+      },
+      "approvalLogs": [
+        {
+          "approverId": "doc_493030e468962233",
+          "approverName": "David Chen",
+          "action": "APPROVED",
+          "comments": "Approved for talent sourcing campaign.",
+          "approvedAt": "2026-10-23T13:25:25.418Z"
+        }
+      ],
+      "syndicatedBoards": [
+        "Naukri.com Enterprise",
+        "Indeed Worldwide",
+        "Monster (Foundit)",
+        "Dice Tech Jobs"
+      ],
+      "syndicationStatus": "ACTIVE",
+      "lastSyndicatedAt": "2026-10-23T13:25:25.451Z"
     }
   ],
   "candidates": [
@@ -1539,13 +3004,112 @@
       "tags": [
         "Inbound Applicant"
       ]
+    },
+    {
+      "_id": "doc_e1840fbb5ea902e3",
+      "createdAt": "2026-10-23T12:54:50.704Z",
+      "updatedAt": "2026-10-23T12:54:50.704Z",
+      "firstName": "Priya",
+      "lastName": "Sharma",
+      "email": "priya.sharma@example.com",
+      "totalExperienceYears": 7,
+      "skills": [
+        "React",
+        "Node.js",
+        "System Architecture",
+        "AWS"
+      ]
+    },
+    {
+      "_id": "doc_72864ae1415382d8",
+      "createdAt": "2026-10-23T12:55:36.515Z",
+      "updatedAt": "2026-10-23T12:55:36.520Z",
+      "firstName": "Priya",
+      "lastName": "Sharma",
+      "email": "priya.sharma@example.com",
+      "totalExperienceYears": 7,
+      "skills": [
+        "react",
+        "node.js",
+        "typescript",
+        "aws"
+      ],
+      "education": [
+        {
+          "degree": "B.Tech Computer Science"
+        }
+      ],
+      "summary": "Senior Full Stack Engineer specialized in cloud and microservices",
+      "stage": "Interview"
+    },
+    {
+      "_id": "doc_1f31747151feea56",
+      "createdAt": "2026-10-23T12:56:05.057Z",
+      "updatedAt": "2026-10-23T12:56:05.061Z",
+      "firstName": "Priya",
+      "lastName": "Sharma",
+      "email": "priya.sharma@example.com",
+      "totalExperienceYears": 7,
+      "skills": [
+        "react",
+        "node.js",
+        "typescript",
+        "aws"
+      ],
+      "education": [
+        {
+          "degree": "B.Tech Computer Science"
+        }
+      ],
+      "summary": "Senior Full Stack Engineer specialized in cloud and microservices",
+      "stage": "Interview"
+    },
+    {
+      "_id": "doc_3c603e3c2b84ea47",
+      "createdAt": "2026-10-23T13:09:34.450Z",
+      "updatedAt": "2026-10-23T13:25:25.486Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "firstName": "Samantha",
+      "lastName": "Ray",
+      "email": "samantha.ray.1792760974415@example.com",
+      "phone": "+1 (555) 234-5678",
+      "linkedinUrl": "https://linkedin.com/in/candidate-applicant",
+      "githubUrl": "https://github.com/candidate",
+      "skills": [
+        "distributed systems"
+      ],
+      "totalExperienceYears": 3.5,
+      "education": [
+        {
+          "institution": "State University",
+          "degree": "Bachelor of Science",
+          "fieldOfStudy": "Computer Science",
+          "graduationYear": 2020
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Acme Technologies",
+          "title": "Software Engineer",
+          "startDate": "2021-06-01",
+          "endDate": "Present",
+          "isCurrent": true,
+          "description": "Designed and deployed scalable microservices and user interfaces."
+        }
+      ],
+      "summary": "Senior software architect with 8 years distributed systems and Go experience...",
+      "source": "CAREER_PAGE",
+      "tags": [
+        "Inbound Applicant"
+      ],
+      "stage": "Shortlisted"
     }
   ],
   "applications": [
     {
       "_id": "doc_72423cd33a5dd21f",
       "createdAt": "2026-09-04T01:14:50.371Z",
-      "updatedAt": "2026-10-22T20:12:54.436Z",
+      "updatedAt": "2026-10-23T13:09:34.074Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_job_staff_ai",
       "candidateId": "doc_08f6825f7b58afff",
@@ -1826,14 +3390,40 @@
           "toStage": "Interview",
           "changedById": "doc_a9289f33c4f52c25",
           "changedAt": "2026-10-22T20:12:54.436Z"
+        },
+        {
+          "fromStage": "Interview",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-10-23T12:54:13.984Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-10-23T12:54:50.317Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-10-23T12:55:36.092Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedAt": "2026-10-23T12:56:04.659Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Interview",
+          "changedById": "doc_a9289f33c4f52c25",
+          "changedAt": "2026-10-23T13:09:34.074Z"
         }
       ],
       "$push": {
         "stageHistory": {
-          "fromStage": "Interview",
+          "fromStage": "Shortlisted",
           "toStage": "Interview",
           "changedById": "doc_a9289f33c4f52c25",
-          "changedAt": "2026-10-22T20:12:54.436Z"
+          "changedAt": "2026-10-23T13:09:34.074Z"
         }
       }
     },
@@ -2673,12 +4263,12 @@
     {
       "_id": "doc_3d0b14b49e74cb2a",
       "createdAt": "2026-10-22T20:12:54.880Z",
-      "updatedAt": "2026-10-22T20:12:54.880Z",
+      "updatedAt": "2026-10-23T13:09:34.231Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_7ba6bb15f83e573b",
       "candidateId": "doc_c3a0c2ce44ca4073",
-      "stageId": "Applied",
-      "status": "ACTIVE",
+      "stageId": "Hired",
+      "status": "HIRED",
       "rejectionReason": null,
       "knockoutAnswers": [
         {
@@ -2710,8 +4300,100 @@
           "fromStage": "None",
           "toStage": "Applied",
           "changedAt": "2026-10-22T20:12:54.880Z"
+        },
+        {
+          "fromStage": "Applied",
+          "toStage": "Offer",
+          "changedAt": "2026-10-23T13:09:34.215Z"
+        },
+        {
+          "fromStage": "Offer",
+          "toStage": "Hired",
+          "changedAt": "2026-10-23T13:09:34.231Z"
         }
-      ]
+      ],
+      "$push": {
+        "stageHistory": {
+          "fromStage": "Offer",
+          "toStage": "Hired",
+          "changedAt": "2026-10-23T13:09:34.231Z"
+        }
+      }
+    },
+    {
+      "_id": "doc_7ad91817eefd8eec",
+      "createdAt": "2026-10-23T13:09:34.456Z",
+      "updatedAt": "2026-10-23T13:25:25.493Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_f6d8ec2b1f0d49d5",
+      "candidateId": "doc_3c603e3c2b84ea47",
+      "stageId": "Shortlisted",
+      "status": "ACTIVE",
+      "rejectionReason": null,
+      "knockoutAnswers": [
+        {
+          "questionText": "Do you have at least 48 years of relevant experience in React?",
+          "answer": null,
+          "passed": true
+        }
+      ],
+      "aiMatchScore": {
+        "overallScore": 39,
+        "skillsScore": 13,
+        "experienceScore": 20,
+        "educationScore": 90,
+        "semanticScore": 95,
+        "matchingSkills": [],
+        "missingSkills": [
+          "react",
+          "node.js",
+          "aws",
+          "microservices",
+          "docker"
+        ],
+        "recommendation": "Requires Further Evaluation",
+        "explanation": "Lower match score due to gaps in primary required competencies (react, node.js, aws, microservices, docker) or lower verified years of seniority (3.5 yrs vs 48 yrs target).",
+        "calculatedAt": "2026-10-23T13:09:34.456Z"
+      },
+      "stageHistory": [
+        {
+          "fromStage": "None",
+          "toStage": "Applied",
+          "changedAt": "2026-10-23T13:09:34.456Z"
+        },
+        {
+          "fromStage": "Applied",
+          "toStage": "Shortlisted",
+          "changedById": "doc_0fb361d68f52fe0e",
+          "changedAt": "2026-10-23T13:19:49.731Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedById": "doc_132e024bb83b832d",
+          "changedAt": "2026-10-23T13:22:06.717Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedById": "doc_432707d38cb448d8",
+          "changedAt": "2026-10-23T13:22:42.585Z"
+        },
+        {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedById": "doc_ed1d8413899faa70",
+          "changedAt": "2026-10-23T13:25:25.493Z"
+        }
+      ],
+      "$push": {
+        "stageHistory": {
+          "fromStage": "Shortlisted",
+          "toStage": "Shortlisted",
+          "changedById": "doc_ed1d8413899faa70",
+          "changedAt": "2026-10-23T13:25:25.493Z"
+        }
+      }
     }
   ],
   "interviews": [
@@ -2885,6 +4567,26 @@
       "status": "COMPLETED",
       "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_07dc385447c3752a_1792699974522.mp4",
       "completedAt": "2026-10-22T20:12:54.530Z"
+    },
+    {
+      "_id": "doc_a12fb7d4b1a26f05",
+      "createdAt": "2026-10-23T13:09:34.116Z",
+      "updatedAt": "2026-10-23T13:09:34.159Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "applicationId": "doc_72423cd33a5dd21f",
+      "candidateId": "doc_08f6825f7b58afff",
+      "jobId": "doc_job_staff_ai",
+      "roundName": "System Architecture Bar Raiser",
+      "interviewerIds": [
+        "doc_a9289f33c4f52c25"
+      ],
+      "scheduledStartTime": "2026-10-24T13:09:34.111Z",
+      "scheduledEndTime": "2026-10-24T13:54:34.111Z",
+      "meetingUrl": "https://meet.google.com/meet-4ed59ac5-bafae1e4",
+      "calendarEventId": "cal_evt_324bd491241c6ea9",
+      "status": "COMPLETED",
+      "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_a12fb7d4b1a26f05_1792760974149.mp4",
+      "completedAt": "2026-10-23T13:09:34.159Z"
     }
   ],
   "scorecards": [
@@ -3078,13 +4780,78 @@
       "isSubmitted": true,
       "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_07dc385447c3752a_1792699974522.mp4",
       "submittedAt": "2026-10-22T20:12:54.550Z"
+    },
+    {
+      "_id": "doc_0117025e7adfee64",
+      "createdAt": "2026-10-23T12:54:50.699Z",
+      "updatedAt": "2026-10-23T12:54:50.699Z",
+      "interviewId": "int_mock_123",
+      "candidateId": "cand_mock_123",
+      "interviewerId": "usr_interviewer",
+      "overallRating": 5,
+      "isFrozen": true,
+      "frozenAt": "2026-10-23T12:54:50.699Z"
+    },
+    {
+      "_id": "doc_22318eb7c06b7971",
+      "createdAt": "2026-10-23T12:55:36.510Z",
+      "updatedAt": "2026-10-23T12:55:36.510Z",
+      "interviewId": "int_mock_123",
+      "candidateId": "cand_mock_123",
+      "interviewerId": "usr_interviewer",
+      "overallRating": 5,
+      "isFrozen": true,
+      "frozenAt": "2026-10-23T12:55:36.510Z"
+    },
+    {
+      "_id": "doc_1eeb926893778952",
+      "createdAt": "2026-10-23T12:56:05.053Z",
+      "updatedAt": "2026-10-23T12:56:05.053Z",
+      "interviewId": "int_mock_123",
+      "candidateId": "cand_mock_123",
+      "interviewerId": "usr_interviewer",
+      "overallRating": 5,
+      "isFrozen": true,
+      "frozenAt": "2026-10-23T12:56:05.053Z"
+    },
+    {
+      "_id": "doc_73e38daea968c5d9",
+      "createdAt": "2026-10-23T13:09:34.154Z",
+      "updatedAt": "2026-10-23T13:09:34.192Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "interviewId": "doc_a12fb7d4b1a26f05",
+      "interviewerId": "doc_a9289f33c4f52c25",
+      "interviewerName": "Alex Morgan",
+      "criteriaRatings": [
+        {
+          "name": "technicalSkills",
+          "score": 5,
+          "feedback": "Evaluated"
+        },
+        {
+          "name": "communication",
+          "score": 4,
+          "feedback": "Evaluated"
+        },
+        {
+          "name": "cultureFit",
+          "score": 5,
+          "feedback": "Evaluated"
+        }
+      ],
+      "overallRecommendation": "STRONG_HIRE",
+      "privateNotes": "Exceptional system architecture understanding.",
+      "isSubmitted": true,
+      "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_a12fb7d4b1a26f05_1792760974149.mp4",
+      "submittedAt": "2026-10-23T13:09:34.192Z",
+      "isFrozen": true
     }
   ],
   "offers": [
     {
       "_id": "doc_offer_jordan_miller",
       "createdAt": "2026-09-07T14:30:00.000Z",
-      "updatedAt": "2026-10-22T20:12:54.899Z",
+      "updatedAt": "2026-10-23T13:09:34.484Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "applicationId": "doc_72423cd33a5dd21f",
       "candidateId": "doc_08f6825f7b58afff",
@@ -3100,7 +4867,7 @@
       "signedDocumentUrl": null,
       "sentAt": "2026-09-07T14:30:00.000Z",
       "signedOffBy": "Recruiter",
-      "signedOffAt": "2026-10-22T20:12:54.899Z",
+      "signedOffAt": "2026-10-23T13:09:34.484Z",
       "managerNotes": "Approved via AI Assistant automation."
     },
     {
@@ -3349,6 +5116,76 @@
       "sentAt": "2026-10-22T20:12:54.591Z",
       "eSignSignatureId": "sig_1792699974613_candidate",
       "signedAt": "2026-10-22T20:12:54.613Z"
+    },
+    {
+      "_id": "doc_6c2feab18e1ea923",
+      "createdAt": "2026-10-23T12:54:50.724Z",
+      "updatedAt": "2026-10-23T12:54:50.724Z",
+      "candidateId": "cand_test_offer",
+      "candidateName": "Priya Sharma",
+      "jobTitle": "Principal Cloud Platform Engineer",
+      "baseSalary": 2800000,
+      "currency": "INR",
+      "equityShares": 2500,
+      "approvalStatus": "APPROVED",
+      "candidateDecision": "PENDING"
+    },
+    {
+      "_id": "doc_3f58657c7e146e57",
+      "createdAt": "2026-10-23T12:55:36.524Z",
+      "updatedAt": "2026-10-23T12:55:36.529Z",
+      "candidateId": "cand_test_offer",
+      "candidateName": "Priya Sharma",
+      "jobTitle": "Principal Cloud Platform Engineer",
+      "baseSalary": 2800000,
+      "currency": "INR",
+      "equityShares": 2500,
+      "approvalStatus": "APPROVED",
+      "candidateDecision": "PENDING",
+      "docusignEnvelopeId": "env_docu_test_9921",
+      "docusignSentAt": "2026-10-23T12:55:36.528Z",
+      "docusignStatus": "SENT"
+    },
+    {
+      "_id": "doc_9fc2f6685711de3e",
+      "createdAt": "2026-10-23T12:56:05.065Z",
+      "updatedAt": "2026-10-23T12:56:05.070Z",
+      "candidateId": "cand_test_offer",
+      "candidateName": "Priya Sharma",
+      "jobTitle": "Principal Cloud Platform Engineer",
+      "baseSalary": 2800000,
+      "currency": "INR",
+      "equityShares": 2500,
+      "approvalStatus": "APPROVED",
+      "candidateDecision": "PENDING",
+      "docusignEnvelopeId": "env_docu_test_9921",
+      "docusignSentAt": "2026-10-23T12:56:05.070Z",
+      "docusignStatus": "SENT"
+    },
+    {
+      "_id": "doc_24232bec493b50e4",
+      "createdAt": "2026-10-23T13:09:34.210Z",
+      "updatedAt": "2026-10-23T13:25:25.535Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "applicationId": "doc_3d0b14b49e74cb2a",
+      "candidateId": "doc_c3a0c2ce44ca4073",
+      "jobTitle": "Senior Distributed Systems Architect",
+      "baseSalary": 165000,
+      "currency": "USD",
+      "variableBonus": 0,
+      "equityShares": 25000,
+      "equity": "25,000 RSUs",
+      "targetStartDate": "2026-11-06T13:09:34.207Z",
+      "expirationDate": "2026-10-30T13:09:34.210Z",
+      "approvalStatus": "APPROVED",
+      "candidateDecision": "SENT",
+      "signedDocumentUrl": null,
+      "sentAt": "2026-10-23T13:25:25.521Z",
+      "eSignSignatureId": "sig_1792760974227_candidate",
+      "signedAt": "2026-10-23T13:09:34.227Z",
+      "signatureProvider": "DocuSign Enterprise",
+      "externalEnvelopeId": "env_ds_1792761925521_dvk6us",
+      "pdfUrl": "https://s3.us-east-1.amazonaws.com/company-ats/offers/OFFER_doc_24232bec493b50e4.pdf"
     }
   ],
   "talentPools": [],
@@ -3696,6 +5533,64 @@
       },
       "status": "DELIVERED",
       "sentAt": "2026-10-22T20:12:54.534Z"
+    },
+    {
+      "_id": "doc_774a67b73474a843",
+      "createdAt": "2026-10-23T13:09:34.179Z",
+      "updatedAt": "2026-10-23T13:09:34.179Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "recipientEmail": "RAHUL.bajediyal@gmail.com",
+      "direction": "OUTBOUND",
+      "channel": "EMAIL",
+      "type": "INTERVIEW_EVALUATION_REPORT",
+      "subject": "[ATS EVALUATION] Live Video Interview Report: Jordan Miller - Staff AI Engineer (Autonomous Agents & Inference) (System Architecture Bar Raiser)",
+      "body": "================================================================================\nENTERPRISE ATS: AUTOMATED INTERVIEW EVALUATION & RECORDING REPORT\n================================================================================\nGenerated for Master Administrator: RAHUL.bajediyal@gmail.com\nDispatch Timestamp: 2026-10-23T13:09:34.179Z\n\n1. CANDIDATE & REQUISITION DETAILS\n--------------------------------------------------------------------------------\nCandidate Name     : Jordan Miller\nCandidate Email    : jordan.miller@example.com\nPosition Applied   : Staff AI Engineer (Autonomous Agents & Inference)\nInterview Round    : System Architecture Bar Raiser\nInterviewer        : Alex Morgan\nSession Duration   : 45 Minutes\n\n2. EVALUATION & SCORECARD RATINGS (1 - 5 STARS)\n--------------------------------------------------------------------------------\n• Technical Depth: ★★★★★ (5/5) - Strong conceptual mastery of backend architectures and cloud patterns.\n• System Architecture: ★★★★☆ (4/5) - Solid grasp of concurrency, event-driven pipelines, and caching.\n• Articulation & Communication: ★★★★★ (5/5) - Clear, concise, and structured communication style.\n• Culture & Leadership: ★★★★★ (5/5) - Demonstrated proactive ownership and team mentorship skills.\n\nFinal Recommendation: YES\nInterviewer Notes   : Strong candidate. Recommended to move forward to offer stage.\n\n3. CLOUD RECORDING & ARCHIVE ACCESS\n--------------------------------------------------------------------------------\nEncrypted Recording Link : https://vault.enterprise-ats.io/recordings/int_doc_a12fb7d4b1a26f05_1792760974149.mp4\nStorage Protocol         : AES-256 Cloud Object Vault (Expiring Token Link)\n\n4. TIMESTAMPED BOOKMARKS\n--------------------------------------------------------------------------------\n• [03:15] Technical problem solving & architecture overview\n• [15:40] Live coding & data structure optimization\n• [32:10] System design, scalability, and microservices discussion\n\n5. BACKUP AUDIO TRANSCRIPT EXCERPT\n--------------------------------------------------------------------------------\n[00:02] Alex Morgan: Hello Jordan Miller, welcome to the System Architecture Bar Raiser round.\n[00:10] Jordan Miller: Thank you, glad to be here and excited to discuss the role.\n[01:00] Alex Morgan: Could you walk me through your experience with large-scale distributed systems?\n[01:25] Jordan Miller: In my recent role, I led the migration of monolithic microservices to an event-driven Kafka architecture.\n[12:40] Alex Morgan: Excellent explanation. How did you handle partition rebalancing and data consistency?\n[13:10] Jordan Miller: We implemented idempotency keys, dead-letter queues, and exactly-once processing semantics.\n\n================================================================================\nConfidential Recruitment Document - Enterprise ATS Automated Alert Subsystem\nDispatched to Master Recruiter / Admin: RAHUL.bajediyal@gmail.com\n================================================================================",
+      "metadata": {
+        "candidateName": "Jordan Miller",
+        "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+        "roundName": "System Architecture Bar Raiser",
+        "overallRecommendation": "YES",
+        "cloudRecordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_a12fb7d4b1a26f05_1792760974149.mp4",
+        "criteriaRatings": [
+          {
+            "name": "Technical Depth",
+            "score": 5,
+            "feedback": "Strong conceptual mastery of backend architectures and cloud patterns."
+          },
+          {
+            "name": "System Architecture",
+            "score": 4,
+            "feedback": "Solid grasp of concurrency, event-driven pipelines, and caching."
+          },
+          {
+            "name": "Articulation & Communication",
+            "score": 5,
+            "feedback": "Clear, concise, and structured communication style."
+          },
+          {
+            "name": "Culture & Leadership",
+            "score": 5,
+            "feedback": "Demonstrated proactive ownership and team mentorship skills."
+          }
+        ],
+        "bookmarks": [
+          {
+            "timestamp": "03:15",
+            "note": "Technical problem solving & architecture overview"
+          },
+          {
+            "timestamp": "15:40",
+            "note": "Live coding & data structure optimization"
+          },
+          {
+            "timestamp": "32:10",
+            "note": "System design, scalability, and microservices discussion"
+          }
+        ]
+      },
+      "status": "DELIVERED",
+      "sentAt": "2026-10-23T13:09:34.179Z"
     }
   ],
   "auditLogs": [
@@ -5103,6 +6998,741 @@
       "userAgent": "node",
       "method": "POST",
       "path": "/api/v1/job-boards/import"
+    },
+    {
+      "_id": "doc_0687a97c846dd1bf",
+      "createdAt": "2026-10-23T12:02:59.499Z",
+      "updatedAt": "2026-10-23T12:02:59.499Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_f498dda4a79ee504",
+      "actorEmail": "interviewer@techcorp.com",
+      "action": "AGENCY_INVOICE_GENERATED",
+      "resourceType": "Agency",
+      "resourceId": "N/A",
+      "ipAddress": "::1",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+      "method": "POST",
+      "path": "/api/v1/agency/invoices/generate"
+    },
+    {
+      "_id": "doc_27e0a880f24259e3",
+      "createdAt": "2026-10-23T13:09:34.050Z",
+      "updatedAt": "2026-10-23T13:09:34.050Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_fcf08b8258c5cbdf",
+      "createdAt": "2026-10-23T13:09:34.081Z",
+      "updatedAt": "2026-10-23T13:09:34.081Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "STAGE_MOVED",
+      "resourceType": "Application",
+      "resourceId": "doc_72423cd33a5dd21f",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "PATCH",
+      "path": "/api/v1/applications/doc_72423cd33a5dd21f/move-stage"
+    },
+    {
+      "_id": "doc_6fff5904dcad6552",
+      "createdAt": "2026-10-23T13:09:34.121Z",
+      "updatedAt": "2026-10-23T13:09:34.121Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "INTERVIEW_SCHEDULED",
+      "resourceType": "Interview",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/interviews/schedule"
+    },
+    {
+      "_id": "doc_1225a1313fd70fd8",
+      "createdAt": "2026-10-23T13:09:34.184Z",
+      "updatedAt": "2026-10-23T13:09:34.184Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "VIDEO_INTERVIEW_COMPLETED",
+      "resourceType": "Interview",
+      "resourceId": "doc_a12fb7d4b1a26f05",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/interviews/doc_a12fb7d4b1a26f05/complete-studio"
+    },
+    {
+      "_id": "doc_3cb7d3d95f1b748b",
+      "createdAt": "2026-10-23T13:09:34.197Z",
+      "updatedAt": "2026-10-23T13:09:34.197Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "SCORECARD_SUBMITTED",
+      "resourceType": "Scorecard",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/scorecards"
+    },
+    {
+      "_id": "doc_a31c1e92518c1027",
+      "createdAt": "2026-10-23T13:09:34.219Z",
+      "updatedAt": "2026-10-23T13:09:34.219Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "OFFER_CREATED",
+      "resourceType": "Offer",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers"
+    },
+    {
+      "_id": "doc_03f1dd65f12e9830",
+      "createdAt": "2026-10-23T13:09:34.254Z",
+      "updatedAt": "2026-10-23T13:09:34.254Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "OFFER_ACCEPTED",
+      "resourceType": "Offer",
+      "resourceId": "doc_24232bec493b50e4",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers/doc_24232bec493b50e4/accept"
+    },
+    {
+      "_id": "doc_d0b899d1419233db",
+      "createdAt": "2026-10-23T13:09:34.275Z",
+      "updatedAt": "2026-10-23T13:09:34.275Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "VERAHIRE_SCREENING_TRIGGERED",
+      "resourceType": "VeraHire",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/verahire/screen"
+    },
+    {
+      "_id": "doc_9da23ffb92c3715a",
+      "createdAt": "2026-10-23T13:09:34.316Z",
+      "updatedAt": "2026-10-23T13:09:34.316Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "DEEL_EOR_ONBOARD",
+      "resourceType": "Deel",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/deel/onboard"
+    },
+    {
+      "_id": "doc_83536b89f32ab112",
+      "createdAt": "2026-10-23T13:09:34.339Z",
+      "updatedAt": "2026-10-23T13:09:34.340Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "RAZORPAYX_SALARY_DISBURSED",
+      "resourceType": "Payroll",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/payroll/disburse"
+    },
+    {
+      "_id": "doc_52b73afa481d0b30",
+      "createdAt": "2026-10-23T13:09:34.360Z",
+      "updatedAt": "2026-10-23T13:09:34.360Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "AGENCY_INVOICE_GENERATED",
+      "resourceType": "Agency",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/agency/invoices/generate"
+    },
+    {
+      "_id": "doc_5a924d1bb9a45740",
+      "createdAt": "2026-10-23T13:09:34.376Z",
+      "updatedAt": "2026-10-23T13:09:34.376Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_RULE_TOGGLED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/toggle"
+    },
+    {
+      "_id": "doc_126ba4b91e00c1da",
+      "createdAt": "2026-10-23T13:09:34.391Z",
+      "updatedAt": "2026-10-23T13:09:34.391Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_RULE_TOGGLED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/toggle"
+    },
+    {
+      "_id": "doc_208c26f8324b8826",
+      "createdAt": "2026-10-23T13:09:34.402Z",
+      "updatedAt": "2026-10-23T13:09:34.402Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_a9289f33c4f52c25",
+      "actorEmail": "recruiter@techcorp.com",
+      "action": "WORKFLOW_TRIGGERED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/trigger"
+    },
+    {
+      "_id": "doc_f503f0a2b19fe16d",
+      "createdAt": "2026-10-23T13:10:11.008Z",
+      "updatedAt": "2026-10-23T13:10:11.008Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_58e8f62151d0fb88",
+      "actorEmail": "test_hr_1792761010700@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_072fe80f08c7ef34",
+      "createdAt": "2026-10-23T13:10:11.064Z",
+      "updatedAt": "2026-10-23T13:10:11.064Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_7bbdb936658b9b85",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_7bbdb936658b9b85/approve"
+    },
+    {
+      "_id": "doc_9be2cd10a0a5342b",
+      "createdAt": "2026-10-23T13:10:35.108Z",
+      "updatedAt": "2026-10-23T13:10:35.108Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_3a790e35e20e980d",
+      "actorEmail": "test_hr_1792761034702@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_3dfb39aacd55ed71",
+      "createdAt": "2026-10-23T13:10:35.157Z",
+      "updatedAt": "2026-10-23T13:10:35.157Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_9ed12fcae5111ca6",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_9ed12fcae5111ca6/approve"
+    },
+    {
+      "_id": "doc_bd1bc664f6416662",
+      "createdAt": "2026-10-23T13:11:37.372Z",
+      "updatedAt": "2026-10-23T13:11:37.372Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_9f9ae652aefdd1a5",
+      "actorEmail": "test_hr_1792761096956@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_e89bb853bcb29603",
+      "createdAt": "2026-10-23T13:11:37.408Z",
+      "updatedAt": "2026-10-23T13:11:37.408Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_794f3a67eb1c5d8e",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_794f3a67eb1c5d8e/approve"
+    },
+    {
+      "_id": "doc_075cb01e22f925e4",
+      "createdAt": "2026-10-23T13:12:20.729Z",
+      "updatedAt": "2026-10-23T13:12:20.729Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_966c0dca9a55ab01",
+      "actorEmail": "test_hr_1792761140325@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_16bc1f48bf7ec423",
+      "createdAt": "2026-10-23T13:12:20.819Z",
+      "updatedAt": "2026-10-23T13:12:20.820Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_09eea7236b6bcafe",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_09eea7236b6bcafe/approve"
+    },
+    {
+      "_id": "doc_2314c5d4c1999e01",
+      "createdAt": "2026-10-23T13:13:55.381Z",
+      "updatedAt": "2026-10-23T13:13:55.381Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_aa927aa3374a01a3",
+      "actorEmail": "test_hr_1792761234964@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_5ba8ff82549ba018",
+      "createdAt": "2026-10-23T13:13:55.435Z",
+      "updatedAt": "2026-10-23T13:13:55.435Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_74e759128d7cc349",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_74e759128d7cc349/approve"
+    },
+    {
+      "_id": "doc_6e0efda4b33621e8",
+      "createdAt": "2026-10-23T13:16:07.558Z",
+      "updatedAt": "2026-10-23T13:16:07.558Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_4f9034804bf88036",
+      "actorEmail": "test_hr_1792761367262@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_39671f4f62f61a2a",
+      "createdAt": "2026-10-23T13:16:07.621Z",
+      "updatedAt": "2026-10-23T13:16:07.621Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_f3a2ac13719779e7",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_f3a2ac13719779e7/approve"
+    },
+    {
+      "_id": "doc_884a67cd61f991fd",
+      "createdAt": "2026-10-23T13:18:09.648Z",
+      "updatedAt": "2026-10-23T13:18:09.648Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_f05d3bc437063a19",
+      "actorEmail": "test_hr_1792761489239@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_ef271a6cf33a02f9",
+      "createdAt": "2026-10-23T13:18:09.795Z",
+      "updatedAt": "2026-10-23T13:18:09.795Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_27097bc33e7edae8",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_27097bc33e7edae8/approve"
+    },
+    {
+      "_id": "doc_de738767dff790a0",
+      "createdAt": "2026-10-23T13:19:49.504Z",
+      "updatedAt": "2026-10-23T13:19:49.504Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_0fb361d68f52fe0e",
+      "actorEmail": "test_hr_1792761589141@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_fc5bc45b672a9c98",
+      "createdAt": "2026-10-23T13:19:49.659Z",
+      "updatedAt": "2026-10-23T13:19:49.659Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_784a1c51c5520ffd",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_784a1c51c5520ffd/approve"
+    },
+    {
+      "_id": "doc_bc39e517c54be25b",
+      "createdAt": "2026-10-23T13:19:49.736Z",
+      "updatedAt": "2026-10-23T13:19:49.737Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_0fb361d68f52fe0e",
+      "actorEmail": "test_hr_1792761589141@techcorp.com",
+      "action": "CANDIDATES_BULK_STAGE_UPDATED",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-status"
+    },
+    {
+      "_id": "doc_344bb7db5e8b2644",
+      "createdAt": "2026-10-23T13:19:49.762Z",
+      "updatedAt": "2026-10-23T13:19:49.762Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_0fb361d68f52fe0e",
+      "actorEmail": "test_hr_1792761589141@techcorp.com",
+      "action": "CANDIDATES_BULK_EMAIL_SENT",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-email"
+    },
+    {
+      "_id": "doc_f5a8f867ea8a046e",
+      "createdAt": "2026-10-23T13:22:06.602Z",
+      "updatedAt": "2026-10-23T13:22:06.603Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_132e024bb83b832d",
+      "actorEmail": "test_hr_1792761726370@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_61ad4f75dbcaddee",
+      "createdAt": "2026-10-23T13:22:06.675Z",
+      "updatedAt": "2026-10-23T13:22:06.675Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_64874669321ac8ed",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_64874669321ac8ed/approve"
+    },
+    {
+      "_id": "doc_a4e6233a81f07677",
+      "createdAt": "2026-10-23T13:22:06.722Z",
+      "updatedAt": "2026-10-23T13:22:06.723Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_132e024bb83b832d",
+      "actorEmail": "test_hr_1792761726370@techcorp.com",
+      "action": "CANDIDATES_BULK_STAGE_UPDATED",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-status"
+    },
+    {
+      "_id": "doc_200fade5b18ef569",
+      "createdAt": "2026-10-23T13:22:06.730Z",
+      "updatedAt": "2026-10-23T13:22:06.730Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_132e024bb83b832d",
+      "actorEmail": "test_hr_1792761726370@techcorp.com",
+      "action": "CANDIDATES_BULK_EMAIL_SENT",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-email"
+    },
+    {
+      "_id": "doc_18af05abb23d871e",
+      "createdAt": "2026-10-23T13:22:06.749Z",
+      "updatedAt": "2026-10-23T13:22:06.749Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_132e024bb83b832d",
+      "actorEmail": "test_hr_1792761726370@techcorp.com",
+      "action": "OFFER_SENT_DOCUSIGN",
+      "resourceType": "Offer",
+      "resourceId": "doc_24232bec493b50e4",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers/doc_24232bec493b50e4/send-docusign"
+    },
+    {
+      "_id": "doc_e1c0525eb0d14d78",
+      "createdAt": "2026-10-23T13:22:42.513Z",
+      "updatedAt": "2026-10-23T13:22:42.513Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_432707d38cb448d8",
+      "actorEmail": "test_hr_1792761762257@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_fb7828a56e4f9261",
+      "createdAt": "2026-10-23T13:22:42.555Z",
+      "updatedAt": "2026-10-23T13:22:42.555Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_40b0a9f8c7b52054",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_40b0a9f8c7b52054/approve"
+    },
+    {
+      "_id": "doc_b984b51057c00781",
+      "createdAt": "2026-10-23T13:22:42.590Z",
+      "updatedAt": "2026-10-23T13:22:42.590Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_432707d38cb448d8",
+      "actorEmail": "test_hr_1792761762257@techcorp.com",
+      "action": "CANDIDATES_BULK_STAGE_UPDATED",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-status"
+    },
+    {
+      "_id": "doc_2f7635577af79199",
+      "createdAt": "2026-10-23T13:22:42.599Z",
+      "updatedAt": "2026-10-23T13:22:42.599Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_432707d38cb448d8",
+      "actorEmail": "test_hr_1792761762257@techcorp.com",
+      "action": "CANDIDATES_BULK_EMAIL_SENT",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-email"
+    },
+    {
+      "_id": "doc_cacc3a9d7ce873d3",
+      "createdAt": "2026-10-23T13:22:42.615Z",
+      "updatedAt": "2026-10-23T13:22:42.615Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_432707d38cb448d8",
+      "actorEmail": "test_hr_1792761762257@techcorp.com",
+      "action": "OFFER_SENT_DOCUSIGN",
+      "resourceType": "Offer",
+      "resourceId": "doc_24232bec493b50e4",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers/doc_24232bec493b50e4/send-docusign"
+    },
+    {
+      "_id": "doc_640e295fba027382",
+      "createdAt": "2026-10-23T13:25:25.402Z",
+      "updatedAt": "2026-10-23T13:25:25.403Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_ed1d8413899faa70",
+      "actorEmail": "test_hr_1792761925072@techcorp.com",
+      "action": "JOB_CREATED",
+      "resourceType": "Job",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs"
+    },
+    {
+      "_id": "doc_d54d3d55a93373ad",
+      "createdAt": "2026-10-23T13:25:25.463Z",
+      "updatedAt": "2026-10-23T13:25:25.463Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_493030e468962233",
+      "actorEmail": "manager@techcorp.com",
+      "action": "JOB_APPROVED",
+      "resourceType": "Job",
+      "resourceId": "doc_bbdeb91fb7d56fe7",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/jobs/doc_bbdeb91fb7d56fe7/approve"
+    },
+    {
+      "_id": "doc_a94d7b4b32fee4f5",
+      "createdAt": "2026-10-23T13:25:25.498Z",
+      "updatedAt": "2026-10-23T13:25:25.498Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_ed1d8413899faa70",
+      "actorEmail": "test_hr_1792761925072@techcorp.com",
+      "action": "CANDIDATES_BULK_STAGE_UPDATED",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-status"
+    },
+    {
+      "_id": "doc_f60c1c293e9608de",
+      "createdAt": "2026-10-23T13:25:25.508Z",
+      "updatedAt": "2026-10-23T13:25:25.508Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_ed1d8413899faa70",
+      "actorEmail": "test_hr_1792761925072@techcorp.com",
+      "action": "CANDIDATES_BULK_EMAIL_SENT",
+      "resourceType": "Candidate",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/candidates/bulk-email"
+    },
+    {
+      "_id": "doc_59538ab0b413440b",
+      "createdAt": "2026-10-23T13:25:25.527Z",
+      "updatedAt": "2026-10-23T13:25:25.527Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_ed1d8413899faa70",
+      "actorEmail": "test_hr_1792761925072@techcorp.com",
+      "action": "OFFER_SENT_DOCUSIGN",
+      "resourceType": "Offer",
+      "resourceId": "doc_24232bec493b50e4",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/offers/doc_24232bec493b50e4/send-docusign"
+    },
+    {
+      "_id": "doc_d078314567b4071d",
+      "createdAt": "2026-10-23T13:25:25.556Z",
+      "updatedAt": "2026-10-23T13:25:25.556Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "actorId": "doc_ed1d8413899faa70",
+      "actorEmail": "test_hr_1792761925072@techcorp.com",
+      "action": "WORKFLOW_RULE_CREATED",
+      "resourceType": "Workflow",
+      "resourceId": "N/A",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "node",
+      "method": "POST",
+      "path": "/api/v1/workflows/rules"
     }
   ],
   "departments": [],
@@ -5502,13 +8132,76 @@
       ],
       "durationMinutes": 45,
       "endedAt": "2026-10-22T20:12:54.522Z"
+    },
+    {
+      "_id": "doc_108e69c703fb9794",
+      "createdAt": "2026-10-23T13:09:34.138Z",
+      "updatedAt": "2026-10-23T13:09:34.149Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "interviewId": "doc_a12fb7d4b1a26f05",
+      "applicationId": "doc_72423cd33a5dd21f",
+      "candidateId": "doc_08f6825f7b58afff",
+      "roomToken": "room_doc_a12fb7d4b1a26f05_1792760974138",
+      "recordingStatus": "COMPLETED",
+      "recordingUrl": "https://vault.enterprise-ats.io/recordings/int_doc_a12fb7d4b1a26f05_1792760974149.mp4",
+      "startedAt": "2026-10-23T13:09:34.138Z",
+      "candidateConsentGiven": false,
+      "hardwareCheckPassed": false,
+      "bookmarks": [
+        {
+          "timestamp": "03:15",
+          "note": "Technical problem solving & architecture overview"
+        },
+        {
+          "timestamp": "15:40",
+          "note": "Live coding & data structure optimization"
+        },
+        {
+          "timestamp": "32:10",
+          "note": "System design, scalability, and microservices discussion"
+        }
+      ],
+      "transcript": [
+        {
+          "speaker": "Alex Morgan",
+          "time": "00:02",
+          "text": "Hello Jordan Miller, welcome to the System Architecture Bar Raiser round."
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "00:10",
+          "text": "Thank you, glad to be here and excited to discuss the role."
+        },
+        {
+          "speaker": "Alex Morgan",
+          "time": "01:00",
+          "text": "Could you walk me through your experience with large-scale distributed systems?"
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "01:25",
+          "text": "In my recent role, I led the migration of monolithic microservices to an event-driven Kafka architecture."
+        },
+        {
+          "speaker": "Alex Morgan",
+          "time": "12:40",
+          "text": "Excellent explanation. How did you handle partition rebalancing and data consistency?"
+        },
+        {
+          "speaker": "Jordan Miller",
+          "time": "13:10",
+          "text": "We implemented idempotency keys, dead-letter queues, and exactly-once processing semantics."
+        }
+      ],
+      "durationMinutes": 45,
+      "endedAt": "2026-10-23T13:09:34.149Z"
     }
   ],
   "verahireInterviews": [
     {
       "_id": "doc_3088a4d36cbbc9f0",
       "createdAt": "2026-10-01T18:05:59.688Z",
-      "updatedAt": "2026-10-21T14:21:23.649Z",
+      "updatedAt": "2026-10-23T12:56:04.831Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_bbe4c6051f27d640",
       "jobTitle": "Senior Full-Stack Engineer (React / Node.js)",
@@ -5517,12 +8210,12 @@
       "candidateEmail": "jordan.miller@example.com",
       "applicationId": null,
       "status": "COMPLETED",
-      "overallScore": 95,
+      "overallScore": 97,
       "evidenceScores": {
         "technical_depth": 99,
         "system_design": 98,
-        "communication": 91,
-        "situational_reasoning": 89
+        "communication": 95,
+        "situational_reasoning": 93
       },
       "criteria": [
         {
@@ -5584,10 +8277,10 @@
       ],
       "speechConfidence": 0.94,
       "voiceDurationMinutes": 18,
-      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1792592483649.wav",
+      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1792760164831.wav",
       "recommendation": "STRONG_SHORTLIST",
-      "keyEvidenceSummary": "Jordan scored 95/100 in autonomous voice screening. Highly articulate on distributed system tradeoffs, scored 99% in technical depth, and demonstrated high-pressure incident mitigation.",
-      "completedAt": "2026-10-21T14:21:23.649Z"
+      "keyEvidenceSummary": "Jordan scored 97/100 in autonomous voice screening. Highly articulate on distributed system tradeoffs, scored 99% in technical depth, and demonstrated high-pressure incident mitigation.",
+      "completedAt": "2026-10-23T12:56:04.831Z"
     },
     {
       "_id": "doc_e3f16416cea8ee76",
@@ -5676,7 +8369,7 @@
     {
       "_id": "doc_4c78b0a23b400cd5",
       "createdAt": "2026-10-21T15:20:14.986Z",
-      "updatedAt": "2026-10-22T20:12:54.663Z",
+      "updatedAt": "2026-10-23T13:09:34.270Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "jobId": "doc_job_staff_ai",
       "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
@@ -5685,12 +8378,12 @@
       "candidateEmail": "jordan.miller@example.com",
       "applicationId": null,
       "status": "COMPLETED",
-      "overallScore": 85,
+      "overallScore": 83,
       "evidenceScores": {
         "technical_depth": 76,
         "system_design": 83,
-        "communication": 93,
-        "situational_reasoning": 93
+        "communication": 94,
+        "situational_reasoning": 86
       },
       "criteria": [
         {
@@ -5752,10 +8445,10 @@
       ],
       "speechConfidence": 0.94,
       "voiceDurationMinutes": 18,
-      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1792699974663.wav",
-      "recommendation": "STRONG_SHORTLIST",
-      "keyEvidenceSummary": "Jordan scored 85/100 in autonomous voice screening. Highly articulate on distributed system tradeoffs, scored 76% in technical depth, and demonstrated high-pressure incident mitigation.",
-      "completedAt": "2026-10-22T20:12:54.663Z"
+      "audioWaveformUrl": "https://vault.enterprise-ats.io/verahire/audio_doc_08f6825f7b58afff_1792760974270.wav",
+      "recommendation": "CONSIDER",
+      "keyEvidenceSummary": "Jordan scored 83/100 in autonomous voice screening. Highly articulate on distributed system tradeoffs, scored 76% in technical depth, and demonstrated high-pressure incident mitigation.",
+      "completedAt": "2026-10-23T13:09:34.270Z"
     }
   ],
   "deelContracts": [
@@ -6514,17 +9207,197 @@
         ]
       },
       "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-974701.pdf"
+    },
+    {
+      "_id": "doc_82545e35d8c396aa",
+      "createdAt": "2026-10-23T12:54:14.186Z",
+      "updatedAt": "2026-10-23T12:54:14.186Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_bbe4c6051f27d640",
+      "contractNumber": "DEEL-IN-054186",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-054186",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Senior Full-Stack Engineer (React / Node.js)",
+        "annualSalary": 2100000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-054186.pdf"
+    },
+    {
+      "_id": "doc_10824987c10b234b",
+      "createdAt": "2026-10-23T12:54:50.506Z",
+      "updatedAt": "2026-10-23T12:54:50.506Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_bbe4c6051f27d640",
+      "contractNumber": "DEEL-IN-090506",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-090506",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Senior Full-Stack Engineer (React / Node.js)",
+        "annualSalary": 2100000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-090506.pdf"
+    },
+    {
+      "_id": "doc_9cd7b792ca256508",
+      "createdAt": "2026-10-23T12:55:36.275Z",
+      "updatedAt": "2026-10-23T12:55:36.275Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_bbe4c6051f27d640",
+      "contractNumber": "DEEL-IN-136275",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-136275",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Senior Full-Stack Engineer (React / Node.js)",
+        "annualSalary": 2100000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-136275.pdf"
+    },
+    {
+      "_id": "doc_b29747e9e06d21af",
+      "createdAt": "2026-10-23T12:56:04.837Z",
+      "updatedAt": "2026-10-23T12:56:04.837Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_bbe4c6051f27d640",
+      "contractNumber": "DEEL-IN-164837",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-164837",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Senior Full-Stack Engineer (React / Node.js)",
+        "annualSalary": 2100000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-164837.pdf"
+    },
+    {
+      "_id": "doc_37dbac27ac3283ac",
+      "createdAt": "2026-10-23T13:09:34.306Z",
+      "updatedAt": "2026-10-23T13:09:34.306Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_08f6825f7b58afff",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobId": "doc_job_staff_ai",
+      "contractNumber": "DEEL-IN-974306",
+      "status": "AWAITING_SIGNATURE",
+      "terms": {
+        "contractNumber": "DEEL-IN-974306",
+        "country": "India",
+        "countryCode": "IN",
+        "workerType": "FULL_TIME_EOR",
+        "eorLegalEntity": "Deel India Pvt Ltd (EOR)",
+        "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+        "annualSalary": 1800000,
+        "currency": "INR",
+        "probationMonths": 3,
+        "noticePeriodDays": 30,
+        "ipAssignmentClause": "All intellectual property, patents, source code, and deliverables created during the engagement vest 100% irrevocably with the Client.",
+        "mandatoryStatutoryBenefits": [
+          "Provident Fund (EPF 12%)",
+          "Gratuity Act",
+          "Medical Insurance (ESI/Group Cover)"
+        ],
+        "requiredTaxDocuments": [
+          "PAN Verification",
+          "Form 16 / TDS Slabs",
+          "Aadhaar / UAN Registration"
+        ]
+      },
+      "contractPdfUrl": "https://vault.enterprise-ats.io/deel/contracts/DEEL-IN-974306.pdf"
     }
   ],
   "deelWorkers": [
     {
       "_id": "doc_ce5963bdc3218b91",
       "createdAt": "2026-10-01T18:05:59.693Z",
-      "updatedAt": "2026-10-22T20:12:54.706Z",
+      "updatedAt": "2026-10-23T13:09:34.311Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
-      "workerId": "DEEL-WRK-974706",
+      "workerId": "DEEL-WRK-974311",
       "candidateId": "doc_08f6825f7b58afff",
-      "contractId": "doc_378759e376289b61",
+      "contractId": "doc_37dbac27ac3283ac",
       "fullName": "Jordan Miller",
       "email": "jordan.miller@example.com",
       "phone": "+1 (415) 555-0142",
@@ -6565,11 +9438,11 @@
       "globalPayrollStatus": "SYNCED_READY",
       "bankDetails": {
         "accountHolder": "Jordan Miller",
-        "ibanOrAccount": "ACCT-3930924149",
+        "ibanOrAccount": "ACCT-9356165988",
         "swiftOrIfsc": "HDFC0001234",
         "payoutCurrency": "INR"
       },
-      "onboardedAt": "2026-10-22T20:12:54.706Z"
+      "onboardedAt": "2026-10-23T13:09:34.311Z"
     },
     {
       "_id": "doc_091ec2ce8676c6c8",
@@ -6948,13 +9821,67 @@
         "payoutCurrency": "INR"
       },
       "onboardedAt": "2026-10-22T20:12:54.624Z"
+    },
+    {
+      "_id": "doc_44be68d48aa09546",
+      "createdAt": "2026-10-23T13:09:34.236Z",
+      "updatedAt": "2026-10-23T13:09:34.236Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "workerId": "DEEL-WRK-974236",
+      "candidateId": "doc_c3a0c2ce44ca4073",
+      "contractId": null,
+      "fullName": "Samantha Ray",
+      "email": "samantha.ray.1792699974834@example.com",
+      "phone": "+1 (555) 234-5678",
+      "country": "India",
+      "countryCode": "IN",
+      "workerType": "FULL_TIME_EOR",
+      "eorEntity": "Deel India Pvt Ltd (EOR)",
+      "hrStatus": "ACTIVE_ONBOARDING",
+      "complianceStatus": "VERIFIED",
+      "taxDocumentsCollected": [
+        {
+          "docName": "PAN Verification",
+          "status": "COLLECTED"
+        },
+        {
+          "docName": "Form 16 / TDS Slabs",
+          "status": "COLLECTED"
+        },
+        {
+          "docName": "Aadhaar / UAN Registration",
+          "status": "COLLECTED"
+        }
+      ],
+      "benefitsEnrolled": [
+        {
+          "benefit": "Provident Fund (EPF 12%)",
+          "status": "ACTIVE"
+        },
+        {
+          "benefit": "Gratuity Act",
+          "status": "ACTIVE"
+        },
+        {
+          "benefit": "Medical Insurance (ESI/Group Cover)",
+          "status": "ACTIVE"
+        }
+      ],
+      "globalPayrollStatus": "SYNCED_READY",
+      "bankDetails": {
+        "accountHolder": "Samantha Ray",
+        "ibanOrAccount": "ACCT-2751232481",
+        "swiftOrIfsc": "HDFC0001234",
+        "payoutCurrency": "INR"
+      },
+      "onboardedAt": "2026-10-23T13:09:34.236Z"
     }
   ],
   "payrollRecords": [
     {
       "_id": "doc_6f3125d22fdc7262",
-      "createdAt": "2026-10-21T14:21:23.658Z",
-      "updatedAt": "2026-10-22T20:12:54.729Z",
+      "createdAt": "2026-10-23T12:56:04.848Z",
+      "updatedAt": "2026-10-23T13:09:34.330Z",
       "tenantId": "doc_a71bf70ad6ed56ce",
       "candidateId": "doc_08f6825f7b58afff",
       "employeeName": "Jordan Miller",
@@ -6962,12 +9889,13 @@
       "phone": "+1 (415) 555-0142",
       "designation": "Full Stack Engineer",
       "panNumber": "ABCDE1234F",
-      "uanNumber": "101883643081",
-      "esicNumber": "3100974058",
+      "uanNumber": "101835978844",
+      "esicNumber": "3100621296",
       "ctcBreakup": {
         "annualCTC": 1800000,
         "currency": "INR",
         "monthlyGross": 150000,
+        "basic": 75000,
         "components": {
           "basicSalary": {
             "monthly": 75000,
@@ -7043,13 +9971,13 @@
       "paymentMethod": "RAZORPAYX_DIRECT_BANK_TRANSFER",
       "bankDetails": {
         "accountHolder": "Jordan Miller",
-        "accountNumber": "910228838900",
+        "accountNumber": "910279049847",
         "ifscCode": "HDFC0001234",
         "bankName": "HDFC Bank Ltd"
       },
       "payrollStatus": "ACTIVE",
-      "lastDisbursementDate": "2026-10-22T20:12:54.729Z",
-      "lastDisbursementUTR": "RZPX_UTR_1792699974729_9300"
+      "lastDisbursementDate": "2026-10-23T13:09:34.330Z",
+      "lastDisbursementUTR": "RZPX_UTR_1792760974330_1969"
     },
     {
       "_id": "doc_a8d84f13a5cfd5a2",
@@ -7655,6 +10583,107 @@
       "payrollStatus": "ACTIVE",
       "lastDisbursementDate": null,
       "lastDisbursementUTR": null
+    },
+    {
+      "_id": "doc_3c719e155cdd86f7",
+      "createdAt": "2026-10-23T13:09:34.241Z",
+      "updatedAt": "2026-10-23T13:09:34.242Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "candidateId": "doc_c3a0c2ce44ca4073",
+      "employeeName": "Samantha Ray",
+      "email": "samantha.ray.1792699974834@example.com",
+      "phone": "+1 (555) 234-5678",
+      "designation": "Full Stack Engineer",
+      "panNumber": "ABCDE1234F",
+      "uanNumber": "104429678796",
+      "esicNumber": "3100906599",
+      "ctcBreakup": {
+        "annualCTC": 1800000,
+        "currency": "INR",
+        "monthlyGross": 150000,
+        "basic": 75000,
+        "components": {
+          "basicSalary": {
+            "monthly": 75000,
+            "annual": 900000,
+            "label": "Basic Salary (50%)"
+          },
+          "hra": {
+            "monthly": 30000,
+            "annual": 360000,
+            "label": "House Rent Allowance (HRA 20%)"
+          },
+          "specialAllowance": {
+            "monthly": 45000,
+            "annual": 540000,
+            "label": "Special Allowance"
+          }
+        },
+        "deductions": {
+          "employeePF": {
+            "monthly": 1800,
+            "annual": 21600,
+            "label": "Provident Fund (EPF 12%)"
+          },
+          "employeeESI": {
+            "monthly": 0,
+            "annual": 0,
+            "label": "Employee State Insurance (ESI)"
+          },
+          "professionalTax": {
+            "monthly": 200,
+            "annual": 2400,
+            "label": "Professional Tax (PT)"
+          },
+          "tds": {
+            "monthly": 20000,
+            "annual": 240000,
+            "label": "TDS (Income Tax Slabs)"
+          },
+          "totalDeductions": {
+            "monthly": 22000,
+            "annual": 264000
+          }
+        },
+        "employerContributions": {
+          "employerPF": {
+            "monthly": 1800,
+            "annual": 21600,
+            "label": "Employer PF Contribution"
+          },
+          "employerESI": {
+            "monthly": 0,
+            "annual": 0,
+            "label": "Employer ESI Contribution"
+          },
+          "gratuity": {
+            "monthly": 3607,
+            "annual": 43284,
+            "label": "Gratuity Provision (4.81%)"
+          }
+        },
+        "netTakeHome": {
+          "monthly": 128000,
+          "annual": 1536000,
+          "label": "Net In-Hand Take Home Pay"
+        },
+        "complianceBadges": [
+          "EPF Act 1952 Compliant",
+          "ESIC Act 1948 Compliant",
+          "TDS Section 192 Compliant",
+          "Payment of Gratuity Act 1972"
+        ]
+      },
+      "paymentMethod": "RAZORPAYX_DIRECT_BANK_TRANSFER",
+      "bankDetails": {
+        "accountHolder": "Samantha Ray",
+        "accountNumber": "910244050095",
+        "ifscCode": "HDFC0001234",
+        "bankName": "HDFC Bank Ltd"
+      },
+      "payrollStatus": "ACTIVE",
+      "lastDisbursementDate": null,
+      "lastDisbursementUTR": null
     }
   ],
   "payrollPayouts": [
@@ -7972,20 +11001,95 @@
       "status": "PROCESSED_SUCCESS",
       "bankRef": "910228838900",
       "disbursedAt": "2026-10-22T20:12:54.733Z"
+    },
+    {
+      "_id": "doc_8156264afa37e46e",
+      "createdAt": "2026-10-23T12:54:14.201Z",
+      "updatedAt": "2026-10-23T12:54:14.201Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792760054198_1702",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910224062427",
+      "disbursedAt": "2026-10-23T12:54:14.201Z"
+    },
+    {
+      "_id": "doc_c5140d603859b858",
+      "createdAt": "2026-10-23T12:54:50.524Z",
+      "updatedAt": "2026-10-23T12:54:50.524Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792760090520_7827",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910271990669",
+      "disbursedAt": "2026-10-23T12:54:50.524Z"
+    },
+    {
+      "_id": "doc_a5a0071c8178930e",
+      "createdAt": "2026-10-23T12:55:36.294Z",
+      "updatedAt": "2026-10-23T12:55:36.294Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792760136290_2254",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910259294379",
+      "disbursedAt": "2026-10-23T12:55:36.293Z"
+    },
+    {
+      "_id": "doc_293164030ffdc500",
+      "createdAt": "2026-10-23T12:56:04.855Z",
+      "updatedAt": "2026-10-23T12:56:04.855Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792760164852_2365",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910279049847",
+      "disbursedAt": "2026-10-23T12:56:04.855Z"
+    },
+    {
+      "_id": "doc_fe6d597410bdb7a7",
+      "createdAt": "2026-10-23T13:09:34.335Z",
+      "updatedAt": "2026-10-23T13:09:34.335Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "recordId": "doc_6f3125d22fdc7262",
+      "employeeName": "Jordan Miller",
+      "month": "October 2026",
+      "amount": 128000,
+      "currency": "INR",
+      "utrNumber": "RZPX_UTR_1792760974330_1969",
+      "status": "PROCESSED_SUCCESS",
+      "bankRef": "910279049847",
+      "disbursedAt": "2026-10-23T13:09:34.335Z"
     }
   ],
   "workflows": [
     {
       "_id": "doc_a8f54f2f0629368c",
       "createdAt": "2026-10-01T18:06:00.022Z",
-      "updatedAt": "2026-10-22T20:12:54.804Z",
+      "updatedAt": "2026-10-23T13:09:34.385Z",
       "id": "rule_auto_reject_email",
       "name": "Polite Auto-Rejection Email",
       "trigger": "CANDIDATE_REJECTED",
       "description": "When candidate status is set to Rejected, automatically dispatch a polite, brand-safe Thank You email.",
       "isEnabled": false,
-      "executionCount": 39,
-      "lastTriggeredAt": "2026-10-21T14:21:23.951Z"
+      "executionCount": 43,
+      "lastTriggeredAt": "2026-10-23T12:56:05.010Z"
     },
     {
       "_id": "doc_6b2e16ce648f9ac3",
@@ -8001,26 +11105,72 @@
     {
       "_id": "doc_95b4d81c353e516c",
       "createdAt": "2026-10-01T18:06:00.025Z",
-      "updatedAt": "2026-10-22T20:12:54.452Z",
+      "updatedAt": "2026-10-23T13:09:34.091Z",
       "id": "rule_auto_interview_scheduling",
       "name": "Auto-Send Self-Scheduling Link",
       "trigger": "STAGE_MOVED_INTERVIEW",
       "description": "When candidate is advanced to Interview stage, send calendar link for instant slot self-selection.",
       "isEnabled": true,
-      "executionCount": 36,
-      "lastTriggeredAt": "2026-10-22T20:12:54.452Z"
+      "executionCount": 37,
+      "lastTriggeredAt": "2026-10-23T13:09:34.091Z"
     },
     {
       "_id": "doc_4cae31809c61dd49",
       "createdAt": "2026-10-01T18:06:00.026Z",
-      "updatedAt": "2026-10-22T20:12:54.638Z",
+      "updatedAt": "2026-10-23T13:09:34.250Z",
       "id": "rule_offer_accepted_onboarding",
       "name": "Auto-Provision Deel HR & RazorpayX Payroll",
       "trigger": "OFFER_ACCEPTED",
       "description": "Upon offer acceptance, automatically generate global EOR contracts and seed payroll record in RazorpayX.",
       "isEnabled": true,
-      "executionCount": 33,
-      "lastTriggeredAt": "2026-10-22T20:12:54.638Z"
+      "executionCount": 38,
+      "lastTriggeredAt": "2026-10-23T13:09:34.250Z"
+    },
+    {
+      "_id": "doc_7e094ca90c31cfa8",
+      "createdAt": "2026-10-23T12:54:50.731Z",
+      "updatedAt": "2026-10-23T12:54:50.731Z",
+      "companyId": "comp_default",
+      "name": "Polite 24h Rejection Dispatcher",
+      "trigger": "CANDIDATE_REJECTED",
+      "action": "SEND_EMAIL",
+      "delayHours": 24,
+      "enabled": true
+    },
+    {
+      "_id": "doc_ffe230e0b5b22ada",
+      "createdAt": "2026-10-23T12:55:36.532Z",
+      "updatedAt": "2026-10-23T12:55:36.532Z",
+      "companyId": "comp_default",
+      "name": "Polite 24h Rejection Dispatcher",
+      "trigger": "CANDIDATE_REJECTED",
+      "action": "SEND_EMAIL",
+      "delayHours": 24,
+      "enabled": true
+    },
+    {
+      "_id": "doc_7a48b0aea49b0f07",
+      "createdAt": "2026-10-23T12:56:05.074Z",
+      "updatedAt": "2026-10-23T12:56:05.074Z",
+      "companyId": "comp_default",
+      "name": "Polite 24h Rejection Dispatcher",
+      "trigger": "CANDIDATE_REJECTED",
+      "action": "SEND_EMAIL",
+      "delayHours": 24,
+      "enabled": true
+    },
+    {
+      "_id": "doc_fa4fe407c600aa91",
+      "createdAt": "2026-10-23T13:25:25.550Z",
+      "updatedAt": "2026-10-23T13:25:25.550Z",
+      "id": "rule_1792761925550_2vd3",
+      "name": "Polite Rejection 24h Queue",
+      "trigger": "CANDIDATE_REJECTED",
+      "actionType": "SEND_EMAIL",
+      "delayHours": 24,
+      "description": "IF CANDIDATE_REJECTED THEN execute SEND_EMAIL (Delayed by 24h).",
+      "isEnabled": true,
+      "executionCount": 0
     }
   ],
   "autopilotLogs": [
@@ -8728,6 +11878,156 @@
       "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
       "status": "SUCCESS",
       "executedAt": "2026-10-22T20:12:54.635Z"
+    },
+    {
+      "_id": "doc_30679b59c80a155b",
+      "createdAt": "2026-10-23T12:54:14.411Z",
+      "updatedAt": "2026-10-23T12:54:14.411Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_auto_reject_email",
+      "ruleName": "Polite Auto-Rejection Email",
+      "trigger": "CANDIDATE_REJECTED",
+      "candidateName": "Test Candidate",
+      "candidateEmail": "test.cand@example.com",
+      "jobTitle": "Lead Architect",
+      "actionResult": "Automated polite rejection email dispatched to test.cand@example.com for role Lead Architect. Rejection template rendered with zero recruiter manual effort.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:54:14.411Z"
+    },
+    {
+      "_id": "doc_3cedb8756dd2f08d",
+      "createdAt": "2026-10-23T12:54:14.417Z",
+      "updatedAt": "2026-10-23T12:54:14.417Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Accepted Candidate",
+      "candidateEmail": "accepted@example.com",
+      "jobTitle": "Principal Engineer",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:54:14.417Z"
+    },
+    {
+      "_id": "doc_89c6b9004183510d",
+      "createdAt": "2026-10-23T12:54:50.664Z",
+      "updatedAt": "2026-10-23T12:54:50.664Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_auto_reject_email",
+      "ruleName": "Polite Auto-Rejection Email",
+      "trigger": "CANDIDATE_REJECTED",
+      "candidateName": "Test Candidate",
+      "candidateEmail": "test.cand@example.com",
+      "jobTitle": "Lead Architect",
+      "actionResult": "Automated polite rejection email dispatched to test.cand@example.com for role Lead Architect. Rejection template rendered with zero recruiter manual effort.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:54:50.664Z"
+    },
+    {
+      "_id": "doc_3b4ebc3493f6d24c",
+      "createdAt": "2026-10-23T12:54:50.671Z",
+      "updatedAt": "2026-10-23T12:54:50.671Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Accepted Candidate",
+      "candidateEmail": "accepted@example.com",
+      "jobTitle": "Principal Engineer",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:54:50.671Z"
+    },
+    {
+      "_id": "doc_73525bd05a67daac",
+      "createdAt": "2026-10-23T12:55:36.460Z",
+      "updatedAt": "2026-10-23T12:55:36.460Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_auto_reject_email",
+      "ruleName": "Polite Auto-Rejection Email",
+      "trigger": "CANDIDATE_REJECTED",
+      "candidateName": "Test Candidate",
+      "candidateEmail": "test.cand@example.com",
+      "jobTitle": "Lead Architect",
+      "actionResult": "Automated polite rejection email dispatched to test.cand@example.com for role Lead Architect. Rejection template rendered with zero recruiter manual effort.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:55:36.460Z"
+    },
+    {
+      "_id": "doc_65442193fac11254",
+      "createdAt": "2026-10-23T12:55:36.467Z",
+      "updatedAt": "2026-10-23T12:55:36.467Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Accepted Candidate",
+      "candidateEmail": "accepted@example.com",
+      "jobTitle": "Principal Engineer",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:55:36.467Z"
+    },
+    {
+      "_id": "doc_fa7fd63329877366",
+      "createdAt": "2026-10-23T12:56:05.007Z",
+      "updatedAt": "2026-10-23T12:56:05.007Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_auto_reject_email",
+      "ruleName": "Polite Auto-Rejection Email",
+      "trigger": "CANDIDATE_REJECTED",
+      "candidateName": "Test Candidate",
+      "candidateEmail": "test.cand@example.com",
+      "jobTitle": "Lead Architect",
+      "actionResult": "Automated polite rejection email dispatched to test.cand@example.com for role Lead Architect. Rejection template rendered with zero recruiter manual effort.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:56:05.007Z"
+    },
+    {
+      "_id": "doc_708fe96c4faa52f6",
+      "createdAt": "2026-10-23T12:56:05.014Z",
+      "updatedAt": "2026-10-23T12:56:05.014Z",
+      "tenantId": "tenant_test",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Accepted Candidate",
+      "candidateEmail": "accepted@example.com",
+      "jobTitle": "Principal Engineer",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T12:56:05.014Z"
+    },
+    {
+      "_id": "doc_057a6a8130cbbbf4",
+      "createdAt": "2026-10-23T13:09:34.087Z",
+      "updatedAt": "2026-10-23T13:09:34.087Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "ruleId": "rule_auto_interview_scheduling",
+      "ruleName": "Auto-Send Self-Scheduling Link",
+      "trigger": "STAGE_MOVED_INTERVIEW",
+      "candidateName": "Jordan Miller",
+      "candidateEmail": "jordan.miller@example.com",
+      "jobTitle": "Staff AI Engineer (Autonomous Agents & Inference)",
+      "actionResult": "Generated Google Meet self-scheduling calendar link and dispatched to jordan.miller@example.com.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T13:09:34.087Z"
+    },
+    {
+      "_id": "doc_4feecb856360c99d",
+      "createdAt": "2026-10-23T13:09:34.246Z",
+      "updatedAt": "2026-10-23T13:09:34.246Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "ruleId": "rule_offer_accepted_onboarding",
+      "ruleName": "Auto-Provision Deel HR & RazorpayX Payroll",
+      "trigger": "OFFER_ACCEPTED",
+      "candidateName": "Samantha Ray",
+      "candidateEmail": "samantha.ray.1792699974834@example.com",
+      "jobTitle": "Senior Distributed Systems Architect",
+      "actionResult": "Accepted offer triggered immediate worker creation in Deel Global HR and synced CTC into RazorpayX Payroll.",
+      "status": "SUCCESS",
+      "executedAt": "2026-10-23T13:09:34.246Z"
     }
   ],
   "agencyClients": [
@@ -8954,6 +12254,42 @@
       "status": "ISSUED",
       "dueDate": "2026-11-21T20:12:54.767Z",
       "issuedAt": "2026-10-22T20:12:54.767Z"
+    },
+    {
+      "_id": "doc_273fe95939bc1dc7",
+      "createdAt": "2026-10-23T12:02:59.483Z",
+      "updatedAt": "2026-10-23T12:02:59.483Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "invoiceNumber": "INV-AGY-979483",
+      "clientName": "OmniHealth AI",
+      "candidateName": "hgsdfkhvj",
+      "annualCTC": 2400000,
+      "feePercentage": 20,
+      "baseFee": 480000,
+      "taxAmount": 86400,
+      "totalAmount": 566400,
+      "currency": "INR",
+      "status": "ISSUED",
+      "dueDate": "2026-11-22T12:02:59.483Z",
+      "issuedAt": "2026-10-23T12:02:59.483Z"
+    },
+    {
+      "_id": "doc_620430d3b04641fa",
+      "createdAt": "2026-10-23T13:09:34.355Z",
+      "updatedAt": "2026-10-23T13:09:34.355Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "invoiceNumber": "INV-AGY-974355",
+      "clientName": "Nexus Cloud Technologies",
+      "candidateName": "Jordan Miller",
+      "annualCTC": 2400000,
+      "feePercentage": 20,
+      "baseFee": 480000,
+      "taxAmount": 86400,
+      "totalAmount": 566400,
+      "currency": "INR",
+      "status": "ISSUED",
+      "dueDate": "2026-11-22T13:09:34.355Z",
+      "issuedAt": "2026-10-23T13:09:34.355Z"
     }
   ],
   "agencySubmissions": [
@@ -9001,6 +12337,1236 @@
       "expectedCTC": 2200000,
       "status": "UNDER_REVIEW",
       "submittedAt": "2026-09-28T19:23:03.697Z"
+    }
+  ],
+  "jobBoardCredentials": [
+    {
+      "_id": "doc_0bc493def825acc0",
+      "createdAt": "2026-10-23T12:54:14.428Z",
+      "updatedAt": "2026-10-23T12:54:14.428Z",
+      "tenantId": "tenant_test",
+      "boards": {
+        "naukri": {
+          "apiKey": "NAUKRI_FREE_DEV_SANDBOX_KEY_2026",
+          "clientId": "naukri_client_free_9921",
+          "status": "CONNECTED",
+          "lastVerifiedAt": "2026-10-23T12:54:14.428Z"
+        },
+        "indeed": {
+          "apiKey": "INDEED_FREE_PUBLISHER_KEY_88410",
+          "publisherId": "pub_indeed_free_88410",
+          "status": "CONNECTED",
+          "lastVerifiedAt": "2026-10-23T12:54:14.428Z"
+        },
+        "monster": {
+          "apiKey": "MONSTER_FOUNDIT_FREE_API_773",
+          "partnerId": "monster_partner_free_773",
+          "status": "CONNECTED",
+          "lastVerifiedAt": "2026-10-23T12:54:14.428Z"
+        },
+        "dice": {
+          "apiKey": "DICE_REST_PUBLIC_API_V1",
+          "developerKey": "dice_dev_free_tech_5510",
+          "status": "CONNECTED",
+          "lastVerifiedAt": "2026-10-23T12:54:14.428Z"
+        }
+      }
+    }
+  ],
+  "jobBoardPostings": [
+    {
+      "_id": "doc_e56223dbd6975d95",
+      "createdAt": "2026-10-23T12:54:14.432Z",
+      "updatedAt": "2026-10-23T12:54:14.432Z",
+      "tenantId": "tenant_test",
+      "jobId": "job_gen_1792760054432",
+      "title": "Senior Staff AI & Cloud Architect",
+      "department": "Engineering",
+      "location": "Bangalore, India",
+      "experienceYears": "5 - 9 Years",
+      "skills": [
+        "Distributed Systems",
+        "Python",
+        "React",
+        "Kubernetes"
+      ],
+      "salaryRange": "₹30,00,000 - ₹50,00,000 P.A.",
+      "description": "",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-054432-958",
+          "liveUrl": "https://www.naukri.com/job-listings-senior-staff-ai---cloud-architect-naukri-req-054432-958",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:14.432Z",
+          "viewsCount": 181,
+          "clicksCount": 124,
+          "applicantsCount": 10
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-054432-396",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-054432-396",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:14.432Z",
+          "viewsCount": 296,
+          "clicksCount": 46,
+          "applicantsCount": 17
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-054432-645",
+          "liveUrl": "https://www.foundit.in/job/senior-staff-ai---cloud-architect-monster-req-054432-645",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:14.432Z",
+          "viewsCount": 137,
+          "clicksCount": 105,
+          "applicantsCount": 20
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-054432-226",
+          "liveUrl": "https://www.dice.com/jobs/detail/senior-staff-ai---cloud-architect/dice-req-054432-226",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:14.432Z",
+          "viewsCount": 418,
+          "clicksCount": 111,
+          "applicantsCount": 9
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T12:54:14.432Z"
+    },
+    {
+      "_id": "doc_1966b13f8cbaa607",
+      "createdAt": "2026-10-23T12:54:50.685Z",
+      "updatedAt": "2026-10-23T12:54:50.685Z",
+      "tenantId": "tenant_test",
+      "jobId": "job_gen_1792760090685",
+      "title": "Senior Staff AI & Cloud Architect",
+      "department": "Engineering",
+      "location": "Bangalore, India",
+      "experienceYears": "5 - 9 Years",
+      "skills": [
+        "Distributed Systems",
+        "Python",
+        "React",
+        "Kubernetes"
+      ],
+      "salaryRange": "₹30,00,000 - ₹50,00,000 P.A.",
+      "description": "",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-090685-837",
+          "liveUrl": "https://www.naukri.com/job-listings-senior-staff-ai---cloud-architect-naukri-req-090685-837",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:50.685Z",
+          "viewsCount": 356,
+          "clicksCount": 112,
+          "applicantsCount": 6
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-090685-146",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-090685-146",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:50.685Z",
+          "viewsCount": 454,
+          "clicksCount": 65,
+          "applicantsCount": 16
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-090685-198",
+          "liveUrl": "https://www.foundit.in/job/senior-staff-ai---cloud-architect-monster-req-090685-198",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:50.685Z",
+          "viewsCount": 410,
+          "clicksCount": 49,
+          "applicantsCount": 12
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-090685-866",
+          "liveUrl": "https://www.dice.com/jobs/detail/senior-staff-ai---cloud-architect/dice-req-090685-866",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:54:50.685Z",
+          "viewsCount": 121,
+          "clicksCount": 99,
+          "applicantsCount": 21
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T12:54:50.685Z"
+    },
+    {
+      "_id": "doc_cf52c7a66b5a3f28",
+      "createdAt": "2026-10-23T12:55:36.481Z",
+      "updatedAt": "2026-10-23T12:55:36.481Z",
+      "tenantId": "tenant_test",
+      "jobId": "job_gen_1792760136481",
+      "title": "Senior Staff AI & Cloud Architect",
+      "department": "Engineering",
+      "location": "Bangalore, India",
+      "experienceYears": "5 - 9 Years",
+      "skills": [
+        "Distributed Systems",
+        "Python",
+        "React",
+        "Kubernetes"
+      ],
+      "salaryRange": "₹30,00,000 - ₹50,00,000 P.A.",
+      "description": "",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-136481-425",
+          "liveUrl": "https://www.naukri.com/job-listings-senior-staff-ai---cloud-architect-naukri-req-136481-425",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.481Z",
+          "viewsCount": 286,
+          "clicksCount": 66,
+          "applicantsCount": 14
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-136481-801",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-136481-801",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.481Z",
+          "viewsCount": 221,
+          "clicksCount": 96,
+          "applicantsCount": 16
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-136481-233",
+          "liveUrl": "https://www.foundit.in/job/senior-staff-ai---cloud-architect-monster-req-136481-233",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.481Z",
+          "viewsCount": 447,
+          "clicksCount": 101,
+          "applicantsCount": 22
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-136481-678",
+          "liveUrl": "https://www.dice.com/jobs/detail/senior-staff-ai---cloud-architect/dice-req-136481-678",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.481Z",
+          "viewsCount": 466,
+          "clicksCount": 93,
+          "applicantsCount": 6
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T12:55:36.481Z"
+    },
+    {
+      "_id": "doc_884bee89f990d54d",
+      "createdAt": "2026-10-23T12:55:36.498Z",
+      "updatedAt": "2026-10-23T12:55:36.499Z",
+      "tenantId": "comp_default",
+      "jobId": "job_gen_1792760136499",
+      "title": "Principal Cloud Platform Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3 - 6 Years",
+      "skills": [
+        "Cloud",
+        "Kubernetes",
+        "Go",
+        "AWS"
+      ],
+      "salaryRange": "₹18,00,000 - ₹28,00,000",
+      "description": "",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-136498-166",
+          "liveUrl": "https://www.naukri.com/job-listings-principal-cloud-platform-engineer-naukri-req-136498-166",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.498Z",
+          "viewsCount": 199,
+          "clicksCount": 88,
+          "applicantsCount": 16
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-136498-466",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-136498-466",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.498Z",
+          "viewsCount": 348,
+          "clicksCount": 42,
+          "applicantsCount": 5
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-136498-212",
+          "liveUrl": "https://www.foundit.in/job/principal-cloud-platform-engineer-monster-req-136498-212",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.498Z",
+          "viewsCount": 374,
+          "clicksCount": 43,
+          "applicantsCount": 5
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-136499-478",
+          "liveUrl": "https://www.dice.com/jobs/detail/principal-cloud-platform-engineer/dice-req-136499-478",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:55:36.498Z",
+          "viewsCount": 290,
+          "clicksCount": 47,
+          "applicantsCount": 24
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T12:55:36.498Z"
+    },
+    {
+      "_id": "doc_bb459eeb0d040d1f",
+      "createdAt": "2026-10-23T12:56:05.029Z",
+      "updatedAt": "2026-10-23T12:56:05.029Z",
+      "tenantId": "tenant_test",
+      "jobId": "job_gen_1792760165029",
+      "title": "Senior Staff AI & Cloud Architect",
+      "department": "Engineering",
+      "location": "Bangalore, India",
+      "experienceYears": "5 - 9 Years",
+      "skills": [
+        "Distributed Systems",
+        "Python",
+        "React",
+        "Kubernetes"
+      ],
+      "salaryRange": "₹30,00,000 - ₹50,00,000 P.A.",
+      "description": "",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-165029-829",
+          "liveUrl": "https://www.naukri.com/job-listings-senior-staff-ai---cloud-architect-naukri-req-165029-829",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.029Z",
+          "viewsCount": 214,
+          "clicksCount": 116,
+          "applicantsCount": 18
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-165029-545",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-165029-545",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.029Z",
+          "viewsCount": 313,
+          "clicksCount": 45,
+          "applicantsCount": 13
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-165029-148",
+          "liveUrl": "https://www.foundit.in/job/senior-staff-ai---cloud-architect-monster-req-165029-148",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.029Z",
+          "viewsCount": 287,
+          "clicksCount": 74,
+          "applicantsCount": 14
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-165029-177",
+          "liveUrl": "https://www.dice.com/jobs/detail/senior-staff-ai---cloud-architect/dice-req-165029-177",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.029Z",
+          "viewsCount": 241,
+          "clicksCount": 61,
+          "applicantsCount": 14
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T12:56:05.029Z"
+    },
+    {
+      "_id": "doc_31a12e946ff19230",
+      "createdAt": "2026-10-23T12:56:05.047Z",
+      "updatedAt": "2026-10-23T12:56:05.047Z",
+      "tenantId": "comp_default",
+      "jobId": "job_gen_1792760165047",
+      "title": "Principal Cloud Platform Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3 - 6 Years",
+      "skills": [
+        "Cloud",
+        "Kubernetes",
+        "Go",
+        "AWS"
+      ],
+      "salaryRange": "₹18,00,000 - ₹28,00,000",
+      "description": "",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-165047-248",
+          "liveUrl": "https://www.naukri.com/job-listings-principal-cloud-platform-engineer-naukri-req-165047-248",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.047Z",
+          "viewsCount": 150,
+          "clicksCount": 88,
+          "applicantsCount": 7
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-165047-172",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-165047-172",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.047Z",
+          "viewsCount": 412,
+          "clicksCount": 122,
+          "applicantsCount": 7
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-165047-712",
+          "liveUrl": "https://www.foundit.in/job/principal-cloud-platform-engineer-monster-req-165047-712",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.047Z",
+          "viewsCount": 137,
+          "clicksCount": 45,
+          "applicantsCount": 18
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-165047-599",
+          "liveUrl": "https://www.dice.com/jobs/detail/principal-cloud-platform-engineer/dice-req-165047-599",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T12:56:05.047Z",
+          "viewsCount": 256,
+          "clicksCount": 68,
+          "applicantsCount": 22
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T12:56:05.047Z"
+    },
+    {
+      "_id": "doc_0e4d116b048a7323",
+      "createdAt": "2026-10-23T13:09:34.041Z",
+      "updatedAt": "2026-10-23T13:09:34.041Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_859a730daf921a40",
+      "title": "Senior Distributed Systems Architect",
+      "department": "Engineering",
+      "location": "San Francisco, CA (Remote)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "distributed-systems",
+        "go",
+        "kubernetes"
+      ],
+      "salaryRange": "USD 140,000 - 180,000",
+      "description": "<p>Lead our distributed computing infrastructure</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-974041-528",
+          "liveUrl": "https://www.naukri.com/job-listings-senior-distributed-systems-architect-naukri-req-974041-528",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:09:34.041Z",
+          "viewsCount": 182,
+          "clicksCount": 103,
+          "applicantsCount": 15
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-974041-710",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-974041-710",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:09:34.041Z",
+          "viewsCount": 440,
+          "clicksCount": 102,
+          "applicantsCount": 13
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-974041-884",
+          "liveUrl": "https://www.foundit.in/job/senior-distributed-systems-architect-monster-req-974041-884",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:09:34.041Z",
+          "viewsCount": 355,
+          "clicksCount": 110,
+          "applicantsCount": 5
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-974041-408",
+          "liveUrl": "https://www.dice.com/jobs/detail/senior-distributed-systems-architect/dice-req-974041-408",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:09:34.041Z",
+          "viewsCount": 375,
+          "clicksCount": 112,
+          "applicantsCount": 5
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:09:34.041Z"
+    },
+    {
+      "_id": "doc_3f1923743b3eb982",
+      "createdAt": "2026-10-23T13:10:11.044Z",
+      "updatedAt": "2026-10-23T13:10:11.045Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_7bbdb936658b9b85",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-011044-733",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-011044-733",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:11.044Z",
+          "viewsCount": 357,
+          "clicksCount": 83,
+          "applicantsCount": 9
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-011045-504",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-011045-504",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:11.044Z",
+          "viewsCount": 271,
+          "clicksCount": 129,
+          "applicantsCount": 10
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-011045-703",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-011045-703",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:11.044Z",
+          "viewsCount": 358,
+          "clicksCount": 59,
+          "applicantsCount": 21
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-011045-118",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-011045-118",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:11.044Z",
+          "viewsCount": 428,
+          "clicksCount": 99,
+          "applicantsCount": 5
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:10:11.044Z"
+    },
+    {
+      "_id": "doc_00d5847754992aba",
+      "createdAt": "2026-10-23T13:10:35.141Z",
+      "updatedAt": "2026-10-23T13:10:35.141Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_9ed12fcae5111ca6",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-035141-710",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-035141-710",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:35.141Z",
+          "viewsCount": 281,
+          "clicksCount": 79,
+          "applicantsCount": 5
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-035141-411",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-035141-411",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:35.141Z",
+          "viewsCount": 388,
+          "clicksCount": 45,
+          "applicantsCount": 10
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-035141-342",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-035141-342",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:35.141Z",
+          "viewsCount": 402,
+          "clicksCount": 95,
+          "applicantsCount": 22
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-035141-846",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-035141-846",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:10:35.141Z",
+          "viewsCount": 156,
+          "clicksCount": 63,
+          "applicantsCount": 26
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:10:35.141Z"
+    },
+    {
+      "_id": "doc_66d564b166b2d1b4",
+      "createdAt": "2026-10-23T13:11:37.397Z",
+      "updatedAt": "2026-10-23T13:11:37.397Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_794f3a67eb1c5d8e",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-097397-373",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-097397-373",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:11:37.397Z",
+          "viewsCount": 267,
+          "clicksCount": 113,
+          "applicantsCount": 26
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-097397-870",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-097397-870",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:11:37.397Z",
+          "viewsCount": 279,
+          "clicksCount": 41,
+          "applicantsCount": 10
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-097397-354",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-097397-354",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:11:37.397Z",
+          "viewsCount": 468,
+          "clicksCount": 71,
+          "applicantsCount": 23
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-097397-192",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-097397-192",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:11:37.397Z",
+          "viewsCount": 212,
+          "clicksCount": 114,
+          "applicantsCount": 8
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:11:37.397Z"
+    },
+    {
+      "_id": "doc_35decae9dc9d1b64",
+      "createdAt": "2026-10-23T13:12:20.806Z",
+      "updatedAt": "2026-10-23T13:12:20.806Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_09eea7236b6bcafe",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-140806-876",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-140806-876",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:12:20.806Z",
+          "viewsCount": 331,
+          "clicksCount": 76,
+          "applicantsCount": 25
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-140806-135",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-140806-135",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:12:20.806Z",
+          "viewsCount": 143,
+          "clicksCount": 96,
+          "applicantsCount": 17
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-140806-929",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-140806-929",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:12:20.806Z",
+          "viewsCount": 150,
+          "clicksCount": 57,
+          "applicantsCount": 8
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-140806-693",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-140806-693",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:12:20.806Z",
+          "viewsCount": 381,
+          "clicksCount": 112,
+          "applicantsCount": 8
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:12:20.806Z"
+    },
+    {
+      "_id": "doc_b6c8ba5aae56f151",
+      "createdAt": "2026-10-23T13:13:55.412Z",
+      "updatedAt": "2026-10-23T13:13:55.413Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_74e759128d7cc349",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-235412-772",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-235412-772",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:13:55.412Z",
+          "viewsCount": 349,
+          "clicksCount": 124,
+          "applicantsCount": 25
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-235412-547",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-235412-547",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:13:55.412Z",
+          "viewsCount": 457,
+          "clicksCount": 94,
+          "applicantsCount": 17
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-235412-779",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-235412-779",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:13:55.412Z",
+          "viewsCount": 183,
+          "clicksCount": 88,
+          "applicantsCount": 22
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-235412-362",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-235412-362",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:13:55.412Z",
+          "viewsCount": 311,
+          "clicksCount": 93,
+          "applicantsCount": 13
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:13:55.412Z"
+    },
+    {
+      "_id": "doc_95538633ccffb7b6",
+      "createdAt": "2026-10-23T13:16:07.608Z",
+      "updatedAt": "2026-10-23T13:16:07.608Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_f3a2ac13719779e7",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-367608-566",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-367608-566",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:16:07.608Z",
+          "viewsCount": 376,
+          "clicksCount": 73,
+          "applicantsCount": 10
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-367608-693",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-367608-693",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:16:07.608Z",
+          "viewsCount": 285,
+          "clicksCount": 109,
+          "applicantsCount": 10
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-367608-976",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-367608-976",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:16:07.608Z",
+          "viewsCount": 217,
+          "clicksCount": 86,
+          "applicantsCount": 19
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-367608-348",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-367608-348",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:16:07.608Z",
+          "viewsCount": 176,
+          "clicksCount": 52,
+          "applicantsCount": 24
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:16:07.608Z"
+    },
+    {
+      "_id": "doc_62936118472aab52",
+      "createdAt": "2026-10-23T13:18:09.768Z",
+      "updatedAt": "2026-10-23T13:18:09.769Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_27097bc33e7edae8",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-489768-180",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-489768-180",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:18:09.768Z",
+          "viewsCount": 397,
+          "clicksCount": 96,
+          "applicantsCount": 13
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-489768-188",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-489768-188",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:18:09.768Z",
+          "viewsCount": 383,
+          "clicksCount": 73,
+          "applicantsCount": 11
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-489768-532",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-489768-532",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:18:09.768Z",
+          "viewsCount": 168,
+          "clicksCount": 77,
+          "applicantsCount": 20
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-489768-713",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-489768-713",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:18:09.768Z",
+          "viewsCount": 268,
+          "clicksCount": 36,
+          "applicantsCount": 8
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:18:09.768Z"
+    },
+    {
+      "_id": "doc_ad9c344a5e2e066d",
+      "createdAt": "2026-10-23T13:19:49.629Z",
+      "updatedAt": "2026-10-23T13:19:49.630Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_784a1c51c5520ffd",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-589629-299",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-589629-299",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:19:49.629Z",
+          "viewsCount": 352,
+          "clicksCount": 60,
+          "applicantsCount": 15
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-589629-251",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-589629-251",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:19:49.629Z",
+          "viewsCount": 152,
+          "clicksCount": 97,
+          "applicantsCount": 21
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-589629-377",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-589629-377",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:19:49.629Z",
+          "viewsCount": 166,
+          "clicksCount": 113,
+          "applicantsCount": 23
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-589629-678",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-589629-678",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:19:49.629Z",
+          "viewsCount": 339,
+          "clicksCount": 55,
+          "applicantsCount": 17
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:19:49.629Z"
+    },
+    {
+      "_id": "doc_d45710e2825efc03",
+      "createdAt": "2026-10-23T13:22:06.664Z",
+      "updatedAt": "2026-10-23T13:22:06.665Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_64874669321ac8ed",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-726664-284",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-726664-284",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:06.664Z",
+          "viewsCount": 126,
+          "clicksCount": 107,
+          "applicantsCount": 17
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-726664-384",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-726664-384",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:06.664Z",
+          "viewsCount": 299,
+          "clicksCount": 66,
+          "applicantsCount": 25
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-726664-667",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-726664-667",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:06.664Z",
+          "viewsCount": 127,
+          "clicksCount": 73,
+          "applicantsCount": 14
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-726664-599",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-726664-599",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:06.664Z",
+          "viewsCount": 454,
+          "clicksCount": 96,
+          "applicantsCount": 26
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:22:06.664Z"
+    },
+    {
+      "_id": "doc_4d12006aedde63d1",
+      "createdAt": "2026-10-23T13:22:42.544Z",
+      "updatedAt": "2026-10-23T13:22:42.544Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_40b0a9f8c7b52054",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-762544-710",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-762544-710",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:42.544Z",
+          "viewsCount": 179,
+          "clicksCount": 129,
+          "applicantsCount": 19
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-762544-592",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-762544-592",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:42.544Z",
+          "viewsCount": 449,
+          "clicksCount": 89,
+          "applicantsCount": 23
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-762544-722",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-762544-722",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:42.544Z",
+          "viewsCount": 303,
+          "clicksCount": 84,
+          "applicantsCount": 20
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-762544-562",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-762544-562",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:22:42.544Z",
+          "viewsCount": 415,
+          "clicksCount": 80,
+          "applicantsCount": 17
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:22:42.544Z"
+    },
+    {
+      "_id": "doc_4e2bd0ec69092613",
+      "createdAt": "2026-10-23T13:25:25.451Z",
+      "updatedAt": "2026-10-23T13:25:25.452Z",
+      "tenantId": "doc_a71bf70ad6ed56ce",
+      "jobId": "doc_bbdeb91fb7d56fe7",
+      "title": "Staff Distributed Systems Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India (Hybrid)",
+      "experienceYears": "3+ Years",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "salaryRange": "USD 120,000 - 160,000",
+      "description": "<p>We are seeking a talented <strong>Staff Distributed Systems Engineer</strong> to join our team.</p>",
+      "syndicatedBoards": [
+        {
+          "boardKey": "naukri",
+          "boardName": "Naukri.com Enterprise",
+          "externalRefId": "NAUKRI-REQ-925451-521",
+          "liveUrl": "https://www.naukri.com/job-listings-staff-distributed-systems-engineer-naukri-req-925451-521",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:25:25.451Z",
+          "viewsCount": 445,
+          "clicksCount": 75,
+          "applicantsCount": 20
+        },
+        {
+          "boardKey": "indeed",
+          "boardName": "Indeed Worldwide",
+          "externalRefId": "INDEED-REQ-925451-393",
+          "liveUrl": "https://www.indeed.com/viewjob?jk=indeed-req-925451-393",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:25:25.451Z",
+          "viewsCount": 130,
+          "clicksCount": 47,
+          "applicantsCount": 10
+        },
+        {
+          "boardKey": "monster",
+          "boardName": "Monster (Foundit)",
+          "externalRefId": "MONSTER-REQ-925451-492",
+          "liveUrl": "https://www.foundit.in/job/staff-distributed-systems-engineer-monster-req-925451-492",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:25:25.451Z",
+          "viewsCount": 267,
+          "clicksCount": 44,
+          "applicantsCount": 20
+        },
+        {
+          "boardKey": "dice",
+          "boardName": "Dice Tech Jobs",
+          "externalRefId": "DICE-REQ-925452-128",
+          "liveUrl": "https://www.dice.com/jobs/detail/staff-distributed-systems-engineer/dice-req-925452-128",
+          "status": "PUBLISHED",
+          "publishedAt": "2026-10-23T13:25:25.451Z",
+          "viewsCount": 149,
+          "clicksCount": 113,
+          "applicantsCount": 18
+        }
+      ],
+      "overallStatus": "ACTIVE",
+      "lastSyncedAt": "2026-10-23T13:25:25.451Z"
     }
   ]
 }

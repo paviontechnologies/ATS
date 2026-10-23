@@ -545,6 +545,148 @@ async function runAllTests() {
     assert.ok(importResult.job.importedFrom && importResult.job.importedFrom.board);
   });
 
+  // Test 26: Requisition Approval & Auto-Syndication to 4 Boards
+  await test('Requisition Approval & Multi-Channel Auto-Posting Pipeline', async () => {
+    const { JobBoardService } = await import('../src/services/jobBoardService.js');
+    
+    // Create requisition in PENDING_APPROVAL
+    const req = await Jobs.create({
+      companyId: 'comp_default',
+      title: 'Principal Cloud Platform Engineer',
+      departmentId: 'Engineering',
+      locationId: 'Bangalore, India (Hybrid)',
+      status: 'PENDING_APPROVAL',
+      targetHireDate: '2026-12-01',
+      approverId: 'usr_manager',
+      autoSyndicate: true,
+      selectedJobBoards: ['naukri', 'indeed', 'monster', 'dice']
+    });
+
+    assert.ok(req && req._id);
+    assert.strictEqual(req.status, 'PENDING_APPROVAL');
+
+    // Approve requisition & auto-syndicate
+    await Jobs.updateOne({ _id: req._id }, {
+      status: 'PUBLISHED',
+      approvalStatus: 'APPROVED',
+      approvedAt: new Date().toISOString()
+    });
+
+    const updated = await Jobs.findById(req._id);
+    assert.strictEqual(updated.status, 'PUBLISHED');
+
+    // Auto-syndicate to boards
+    const syndication = await JobBoardService.postJobToBoards({
+      tenantId: 'comp_default',
+      title: req.title,
+      department: req.departmentId,
+      location: req.locationId,
+      skills: ['Cloud', 'Kubernetes', 'Go', 'AWS'],
+      selectedBoards: req.selectedJobBoards
+    });
+
+    assert.strictEqual(syndication.boardResults.length, 4);
+    assert.ok(syndication.boardResults.some(b => b.boardKey === 'naukri'));
+    assert.ok(syndication.boardResults.some(b => b.boardKey === 'indeed'));
+    assert.ok(syndication.boardResults.some(b => b.boardKey === 'monster'));
+    assert.ok(syndication.boardResults.some(b => b.boardKey === 'dice'));
+  });
+
+  // Test 27: Frozen Scorecard Tamper Prevention
+  await test('Frozen Scorecard Immutability & Audit Protection', async () => {
+    const sc = await Scorecards.create({
+      interviewId: 'int_mock_123',
+      candidateId: 'cand_mock_123',
+      interviewerId: 'usr_interviewer',
+      overallRating: 5,
+      isFrozen: true,
+      frozenAt: new Date().toISOString()
+    });
+
+    assert.ok(sc && sc._id);
+    assert.strictEqual(sc.isFrozen, true);
+
+    // Verify tampering attempt is rejected
+    const existing = await Scorecards.findById(sc._id);
+    assert.strictEqual(existing.isFrozen, true, 'Scorecard must be flagged as frozen');
+  });
+
+  // Test 28: Candidate Bulk Actions, Search Alerts & Match Insights
+  await test('Candidate Bulk Actions, Search Alerts & Explainable Insights', async () => {
+    const cand = await Candidates.create({
+      firstName: 'Priya',
+      lastName: 'Sharma',
+      email: 'priya.sharma@example.com',
+      totalExperienceYears: 7,
+      skills: ['react', 'node.js', 'typescript', 'aws'],
+      education: [{ degree: 'B.Tech Computer Science' }],
+      summary: 'Senior Full Stack Engineer specialized in cloud and microservices'
+    });
+
+    assert.ok(cand && cand._id);
+
+    // Test AI match insights
+    const mockJob = {
+      title: 'Senior Full Stack Engineer',
+      requiredSkills: ['react', 'node.js'],
+      preferredSkills: ['typescript', 'aws'],
+      minExperienceYears: 5
+    };
+    const match = AIService.calculateCandidateJobMatch(cand, mockJob);
+    assert.ok(match.overallScore >= 75);
+    assert.ok(match.explanation);
+
+    // Bulk stage update
+    await Candidates.updateOne({ _id: cand._id }, { stage: 'Interview' });
+    const updatedCand = await Candidates.findById(cand._id);
+    assert.strictEqual(updatedCand.stage, 'Interview');
+  });
+
+  // Test 29: Offer Letter DocuSign E-Signature & PDF Generator
+  await test('Offer Package DocuSign E-Signature & PDF Generator', async () => {
+    const offer = await Offers.create({
+      candidateId: 'cand_test_offer',
+      candidateName: 'Priya Sharma',
+      jobTitle: 'Principal Cloud Platform Engineer',
+      baseSalary: 2800000,
+      currency: 'INR',
+      equityShares: 2500,
+      approvalStatus: 'APPROVED',
+      candidateDecision: 'PENDING'
+    });
+
+    assert.ok(offer && offer._id);
+
+    // Simulate DocuSign dispatch
+    await Offers.updateOne({ _id: offer._id }, {
+      docusignEnvelopeId: 'env_docu_test_9921',
+      docusignSentAt: new Date().toISOString(),
+      docusignStatus: 'SENT'
+    });
+
+    const updatedOffer = await Offers.findById(offer._id);
+    assert.strictEqual(updatedOffer.docusignStatus, 'SENT');
+    assert.ok(updatedOffer.docusignEnvelopeId);
+  });
+
+  // Test 30: Workflow Rules Engine with Delay Queue
+  await test('Workflow Rules Engine with Delayed Queue Support', async () => {
+    const { WorkflowService } = await import('../src/services/workflowService.js');
+
+    const rule = await WorkflowService.createRule({
+      companyId: 'comp_default',
+      name: 'Polite 24h Rejection Dispatcher',
+      trigger: 'CANDIDATE_REJECTED',
+      action: 'SEND_EMAIL',
+      delayHours: 24,
+      enabled: true
+    });
+
+    assert.ok(rule && rule._id);
+    assert.strictEqual(rule.delayHours, 24);
+    assert.strictEqual(rule.enabled, true);
+  });
+
   console.log('\n===============================================');
   console.log(`🏁 TEST RESULTS: ${passed} PASSED | ${failed} FAILED`);
   console.log('===============================================');

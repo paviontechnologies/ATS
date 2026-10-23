@@ -91,6 +91,71 @@ async function handleApiRequest(request, url, method, env = {}) {
       }
     });
   }
+  if (path === '/auth/signup' && method === 'POST') {
+    const newUser = {
+      _id: 'usr_' + Date.now(),
+      firstName: body.firstName || 'New',
+      lastName: body.lastName || 'User',
+      email: body.email || 'user@example.com',
+      role: body.role || 'RECRUITER',
+      tenantId: 'tenant_techcorp_global',
+      avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'
+    };
+    db.users.push(newUser);
+    return jsonResponse({
+      message: 'Account created successfully!',
+      token: 'jwt_mock_token_' + Date.now(),
+      user: newUser
+    }, 201);
+  }
+  if (path === '/auth/sso' && method === 'POST') {
+    return jsonResponse({
+      message: `Signed in successfully via ${body.provider === 'google' ? 'Google Workspace' : 'Microsoft Azure AD'} SSO.`,
+      token: 'jwt_mock_token_' + Date.now(),
+      user: {
+        id: 'usr_sso_' + Date.now(),
+        firstName: (body.name || 'SSO User').split(' ')[0],
+        lastName: (body.name || 'SSO User').split(' ')[1] || '',
+        email: body.email || 'user@techcorp.com',
+        role: 'RECRUITER',
+        avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80'
+      }
+    });
+  }
+  if (path === '/auth/forgot-password' && method === 'POST') {
+    return jsonResponse({
+      message: `Password reset instructions have been dispatched to ${body.email}. Check your inbox within 2 minutes.`,
+      resetToken: 'rst_' + Math.random().toString(36).substring(2, 10),
+      expiresIn: '15 minutes'
+    });
+  }
+
+  // 1.2 ADMIN & USERS
+  if (path === '/admin/users') {
+    if (method === 'GET') return jsonResponse(db.users || []);
+    if (method === 'POST') {
+      const u = {
+        _id: 'usr_' + Date.now(),
+        firstName: body.firstName || 'Team',
+        lastName: body.lastName || 'Member',
+        email: body.email,
+        role: (body.role || 'RECRUITER').toUpperCase(),
+        tenantId: 'tenant_techcorp_global',
+        isActive: true,
+        avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80'
+      };
+      db.users.push(u);
+      return jsonResponse({ message: `User ${u.firstName} added successfully.`, user: u }, 201);
+    }
+  }
+  if (path === '/admin/roles-permissions' && method === 'GET') {
+    return jsonResponse([
+      { role: 'ADMIN', displayName: 'Company Administrator', accessLevel: 'Full Access', badgeColor: 'bg-purple-100 text-purple-800' },
+      { role: 'RECRUITER', displayName: 'Talent Acquisition Partner', accessLevel: 'Pipeline & Sourcing', badgeColor: 'bg-blue-100 text-blue-800' },
+      { role: 'HIRING_MANAGER', displayName: 'Department Hiring Manager', accessLevel: 'Requisition & Approval', badgeColor: 'bg-emerald-100 text-emerald-800' },
+      { role: 'INTERVIEWER', displayName: 'Technical / Cultural Interviewer', accessLevel: 'Scorecards & Feedback Only', badgeColor: 'bg-amber-100 text-amber-800' }
+    ]);
+  }
 
   // 2. JOBS
   if (path === '/jobs') {
@@ -99,12 +164,54 @@ async function handleApiRequest(request, url, method, env = {}) {
       const newJob = {
         _id: 'job_' + Date.now(),
         createdAt: new Date().toISOString(),
-        status: 'PUBLISHED',
+        status: body.status || 'PUBLISHED',
         ...body
       };
       db.jobs.unshift(newJob);
       return jsonResponse(newJob, 201);
     }
+  }
+  if (path === '/jobs/requisitions/pending' && method === 'GET') {
+    const pending = (db.jobs || []).filter(j => j.status === 'PENDING_APPROVAL');
+    return jsonResponse(pending);
+  }
+  if (path.match(/^\/jobs\/([^/]+)\/approve$/) && method === 'POST') {
+    const jId = path.split('/')[2];
+    const job = (db.jobs || []).find(j => j._id === jId) || db.jobs[0];
+    if (job) {
+      job.status = 'PUBLISHED';
+      job.approvedAt = new Date().toISOString();
+    }
+    return jsonResponse({
+      message: `Job Requisition "${job?.title || 'Requisition'}" has been APPROVED and successfully broadcast to connected job boards!`,
+      job
+    });
+  }
+  if (path.match(/^\/jobs\/([^/]+)\/reject$/) && method === 'POST') {
+    const jId = path.split('/')[2];
+    const job = (db.jobs || []).find(j => j._id === jId) || db.jobs[0];
+    if (job) {
+      job.status = 'REJECTED';
+      job.rejectionComments = body.comments || 'Rejected';
+    }
+    return jsonResponse({
+      message: `Job Requisition "${job?.title || 'Requisition'}" has been rejected with feedback.`,
+      job
+    });
+  }
+  if (path.match(/^\/jobs\/([^/]+)\/auto-post-boards$/) && method === 'POST') {
+    const jId = path.split('/')[2];
+    const job = (db.jobs || []).find(j => j._id === jId) || db.jobs[0];
+    return jsonResponse({
+      message: `Job "${job?.title}" successfully posted to 4 job boards (Naukri, Indeed, Monster, Dice).`,
+      boards: ['naukri', 'indeed', 'monster', 'dice']
+    });
+  }
+  if (path.match(/^\/jobs\/([^/]+)$/) && method === 'DELETE') {
+    const jId = path.split('/')[2];
+    const idx = (db.jobs || []).findIndex(j => j._id === jId);
+    if (idx !== -1) db.jobs.splice(idx, 1);
+    return jsonResponse({ message: 'Job Requisition permanently deleted.' });
   }
   if (path === '/jobs/generate-ai-jd' && method === 'POST') {
     return jsonResponse({
@@ -125,6 +232,56 @@ async function handleApiRequest(request, url, method, env = {}) {
   // 3. CANDIDATES
   if (path === '/candidates') {
     if (method === 'GET') return jsonResponse(db.candidates || []);
+  }
+  if (path === '/candidates/bulk-status' && method === 'POST') {
+    return jsonResponse({
+      message: `Successfully updated ${(body.candidateIds || []).length} candidate applications to "${body.newStage}".`,
+      updatedCount: (body.candidateIds || []).length
+    });
+  }
+  if (path === '/candidates/bulk-email' && method === 'POST') {
+    return jsonResponse({
+      message: `Campaign "${body.subject || 'Recruitment Update'}" queued for ${(body.candidateIds || []).length} candidates.`,
+      dispatchedCount: (body.candidateIds || []).length,
+      queuedCount: (body.candidateIds || []).length
+    });
+  }
+  if (path.match(/^\/candidates\/([^/]+)\/match-insights$/) && method === 'GET') {
+    const cId = path.split('/')[2];
+    const candidate = db.candidates.find(c => c._id === cId) || db.candidates[0] || {};
+    return jsonResponse({
+      candidateId: candidate._id,
+      candidateName: `${candidate.firstName || 'Candidate'} ${candidate.lastName || ''}`.trim(),
+      overallScore: candidate.fitScore || 92,
+      matchScore: candidate.fitScore || 92,
+      percentile: 'Top 5% of talent pool',
+      percentileRank: 'Top 5% of talent pool',
+      matchedSkills: ['React', 'Node.js', 'Distributed Systems'],
+      missingSkills: ['Kubernetes Advanced Tuning'],
+      aiRecommendation: 'High confidence match. Strong alignment on core distributed systems and frontend frameworks.',
+      rationale: 'High confidence match. Strong alignment on core distributed systems and frontend frameworks.',
+      breakdown: {
+        skillsMatchPercentage: 92,
+        matchedSkills: ['React', 'Node.js', 'Distributed Systems'],
+        missingSkills: ['Kubernetes Advanced Tuning'],
+        experienceRequiredYears: 3,
+        candidateExperienceYears: 5,
+        experienceFit: 'EXCEEDS_REQUIREMENT',
+        educationFit: 'Degree Verified'
+      }
+    });
+  }
+  if (path === '/candidates/save-search-alert' && method === 'POST') {
+    return jsonResponse({
+      message: `Search alert "${body.searchName || 'Custom Alert'}" successfully saved!`,
+      alertId: 'alert_' + Date.now()
+    });
+  }
+  if (path.match(/^\/candidates\/([^/]+)$/) && method === 'DELETE') {
+    const cId = path.split('/')[2];
+    const idx = (db.candidates || []).findIndex(c => c._id === cId);
+    if (idx !== -1) db.candidates.splice(idx, 1);
+    return jsonResponse({ message: 'Candidate permanently deleted from talent pool.' });
   }
   if (path.startsWith('/candidates/') && method === 'GET') {
     const id = path.split('/')[2];
@@ -222,18 +379,77 @@ async function handleApiRequest(request, url, method, env = {}) {
     if (offer) offer.status = 'ACCEPTED';
     return jsonResponse({ message: 'Offer accepted and HRIS onboarding dispatched.', status: 'ACCEPTED' });
   }
+  if (path.match(/^\/offers\/([^/]+)\/send-docusign$/) && method === 'POST') {
+    const offerId = path.split('/')[2];
+    return jsonResponse({
+      message: 'Official offer envelope successfully dispatched via DocuSign!',
+      envelopeId: 'env_ds_' + Date.now(),
+      status: 'SENT'
+    });
+  }
+  if (path.match(/^\/offers\/([^/]+)\/generate-pdf$/) && method === 'POST') {
+    const offerId = path.split('/')[2];
+    return jsonResponse({
+      message: 'Official branded employment offer letter (PDF) generated successfully!',
+      pdfUrl: `https://s3.us-east-1.amazonaws.com/company-ats/offers/OFFER_${offerId}.pdf`
+    });
+  }
 
   // 8. ANALYTICS
   if (path === '/analytics/funnel') {
     return jsonResponse({
+      summary: {
+        activeJobs: 14,
+        totalCandidates: 14,
+        totalApplications: 248,
+        scheduledInterviews: 18,
+        activeOffers: 12,
+        totalHires: 6,
+        avgTimeToHireDays: 21.4,
+        costPerHireUSD: 2850,
+        offerAcceptanceRate: 88.9
+      },
       applied: 248,
       screening: 142,
       interview: 52,
       offer: 18,
       hired: 14,
-      velocityDays: 13.8,
-      offerAcceptanceRate: 88.9
+      velocityDays: 21.4,
+      offerAcceptanceRate: 88.9,
+      sourceBreakdown: [
+        { source: 'LinkedIn Talent Hub', candidates: 94, percent: 38 },
+        { source: 'Indeed Worldwide', candidates: 68, percent: 27 },
+        { source: 'Naukri.com Enterprise', candidates: 42, percent: 17 },
+        { source: 'Monster (Foundit)', candidates: 24, percent: 10 },
+        { source: 'Dice Tech Jobs', candidates: 20, percent: 8 }
+      ]
     });
+  }
+  if (path === '/analytics/export' && method === 'GET') {
+    const csv = 'Metric,Value,Unit\nTime-to-Hire,21.4,Days\nCost-per-Hire,$2850,USD\nTotal Active Jobs,14,Jobs\nOffer Acceptance Rate,89,Percent\n';
+    return new Response(csv, {
+      status: 200,
+      headers: {
+        ...CORS_HEADERS,
+        'Content-Type': 'text/csv',
+        'Content-Disposition': 'attachment; filename="ats_analytics_report.csv"'
+      }
+    });
+  }
+
+  // 8.1 WORKFLOW RULES
+  if (path === '/workflows/rules' && method === 'POST') {
+    const newRule = {
+      id: 'rule_' + Date.now(),
+      name: body.name || 'Custom Rule',
+      trigger: body.triggerEvent || 'STAGE_CHANGED',
+      actionType: body.actionType || 'SEND_EMAIL',
+      delayHours: body.delayHours || 24,
+      description: body.description || 'Custom delayed automation rule',
+      isEnabled: true,
+      executionCount: 0
+    };
+    return jsonResponse({ message: 'Automation rule created successfully.', rule: newRule }, 201);
   }
 
   // 9. CAREER JOBS

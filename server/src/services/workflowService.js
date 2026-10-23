@@ -69,6 +69,14 @@ export class WorkflowService {
   }
 
   /**
+   * Creates a new custom automation rule
+   */
+  static async createRule(ruleData) {
+    const inserted = await Workflows.insertOne(ruleData);
+    return inserted;
+  }
+
+  /**
    * Dispatches and processes an autopilot event
    */
   static async handleEvent(eventName, payload = {}) {

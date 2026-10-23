@@ -38,7 +38,7 @@ router.post('/', authenticate, auditAction('SCORECARD_SUBMITTED', 'Scorecard'), 
     }
     const targetInterviewId = interview._id;
 
-    // Check if interviewer already submitted
+    // Check if interviewer already submitted and frozen
     let existing = await Scorecards.findOne({
       interviewId: targetInterviewId,
       interviewerId: req.user.id
@@ -47,14 +47,23 @@ router.post('/', authenticate, auditAction('SCORECARD_SUBMITTED', 'Scorecard'), 
     const parsedRatings = criteriaRatings || (ratings ? Object.entries(ratings).map(([name, score]) => ({ name, score, feedback: 'Evaluated' })) : [
       { name: 'Technical Depth', score: 4, feedback: 'Strong foundational understanding' },
       { name: 'System Design', score: 4, feedback: 'Good distributed systems concepts' },
-      { name: 'Communication', score: 5, feedback: 'Clear, concise and articulate' }
+      { name: 'Communication', score: 5, feedback: 'Clear, concise and articulate' },
+      { name: 'Problem Solving', score: 5, feedback: 'Analytical and structured thinking' }
     ]);
+
+    if (existing && existing.isFrozen) {
+      return res.status(403).json({
+        error: 'Scorecard is permanently frozen and locked for audit integrity. Once submitted, ratings cannot be altered.',
+        scorecard: existing
+      });
+    }
 
     if (existing) {
       const updated = await Scorecards.updateById(existing._id, {
         criteriaRatings: parsedRatings,
         overallRecommendation,
         privateNotes: privateNotes || notes || '',
+        isFrozen: true,
         submittedAt: new Date().toISOString()
       });
       return res.json(updated.doc);
@@ -69,6 +78,7 @@ router.post('/', authenticate, auditAction('SCORECARD_SUBMITTED', 'Scorecard'), 
       overallRecommendation,
       privateNotes: privateNotes || notes || '',
       isSubmitted: true,
+      isFrozen: true,
       submittedAt: new Date().toISOString()
     });
 
