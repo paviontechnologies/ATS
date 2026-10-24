@@ -148,6 +148,7 @@
       "name": "CANDIDATE"
     }
   ],
+  "user_roles": [],
   "jobs": [
     {
       "_id": "doc_bbe4c6051f27d640",
@@ -1913,6 +1914,7 @@
       ]
     }
   ],
+  "application_stage_history": [],
   "interviews": [
     {
       "_id": "doc_536c72ad490efe17",
@@ -2185,6 +2187,10 @@
       "signedAt": "2026-09-08T09:00:00.000Z"
     }
   ],
+  "job_boards_credentials": [],
+  "job_board_postings": [],
+  "workflow_rules": [],
+  "workflow_logs": [],
   "audit_logs": [
     {
       "_id": "doc_a4c2a7176661a625",
@@ -2557,6 +2563,12 @@
       "path": "/api/v1/workflows/trigger"
     }
   ],
+  "search_alerts": [],
+  "agency_clients": [],
+  "agency_submissions": [],
+  "agency_invoices": [],
+  "deel_workers": [],
+  "razorpayx_payroll": [],
   "subscriptions": [
     {
       "id": "sub_enterprise",

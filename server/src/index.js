@@ -36,6 +36,8 @@ const __dirname = path.dirname(__filename);
 await seedDatabase();
 
 const app = express();
+// Trust reverse proxy (Nginx) headers for client IP and SSL termination
+app.set('trust proxy', 1);
 const server = http.createServer(app);
 
 // Setup Socket.IO with CORS

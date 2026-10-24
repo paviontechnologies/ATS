@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.CLIENT_PORT || 3001;
 const CORE_API_URL = process.env.CORE_API_URL || 'http://127.0.0.1:5000';
 const ADMIN_API_URL = process.env.ADMIN_API_URL || 'http://127.0.0.1:5001';

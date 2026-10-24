@@ -7,6 +7,8 @@ import { requestLogger, logger } from './middleware/logger.js';
 import { TEST_CREDENTIALS } from './seed.js';
 
 const app = express();
+// Trust reverse proxy (Nginx) headers for client IP and SSL termination
+app.set('trust proxy', 1);
 const PORT = process.env.ADMIN_PORT || 5001;
 
 // Ensure database initialization
