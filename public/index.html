@@ -77,10 +77,18 @@
     }
 
     function openHmEngineeringOpeningsModal() {
-      openModal('hmEngineeringOpeningsModal');
+      if (typeof window.renderHmEngineeringOpeningsModal === 'function') {
+        window.renderHmEngineeringOpeningsModal();
+      } else {
+        openModal('hmEngineeringOpeningsModal');
+      }
     }
     function openHmCandidatesInReviewModal() {
-      openModal('hmCandidatesInReviewModal');
+      if (typeof window.renderHmCandidatesInReviewModal === 'function') {
+        window.renderHmCandidatesInReviewModal();
+      } else {
+        openModal('hmCandidatesInReviewModal');
+      }
     }
     function openHmPendingScorecardsModal() {
       openModal('hmPendingScorecardsModal');
@@ -5752,7 +5760,7 @@ Pavion Technologies</textarea>
           <div>
             <div class="flex items-center space-x-2">
               <h3 class="text-lg font-bold text-slate-900">Engineering Openings & Requisitions</h3>
-              <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-xs font-bold rounded-full">5 Open Roles</span>
+              <span id="hmEngOpeningsBadge" class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-xs font-bold rounded-full">26 Open Roles</span>
               <span class="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">Engineering Dept</span>
             </div>
             <p class="text-xs text-slate-500 mt-0.5">Hiring Manager: David Chen • Active engineering headcount allocations, salary bands & pipeline depth</p>
@@ -5767,18 +5775,18 @@ Pavion Technologies</textarea>
       <div class="p-4 bg-gradient-to-r from-teal-50/80 via-emerald-50/50 to-teal-50/80 border-b border-teal-100 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
         <div class="p-3 bg-white/90 rounded-xl border border-teal-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Approved Openings</div>
-          <div class="text-lg font-bold text-slate-900 mt-0.5">5 Requisitions</div>
+          <div id="hmEngApprovedOpeningsCount" class="text-lg font-bold text-slate-900 mt-0.5">26 Requisitions</div>
           <div class="text-[10px] text-teal-600 font-semibold">100% Department Budgeted</div>
         </div>
         <div class="p-3 bg-white/90 rounded-xl border border-teal-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Engineering Pipeline</div>
-          <div class="text-lg font-bold text-blue-700 mt-0.5">10 Candidates</div>
-          <div class="text-[10px] text-blue-600 font-semibold">2.0 Per Open Role</div>
+          <div id="hmEngPipelineCount" class="text-lg font-bold text-blue-700 mt-0.5">69 Candidates</div>
+          <div class="text-[10px] text-blue-600 font-semibold">Active Pipeline Depth</div>
         </div>
         <div class="p-3 bg-white/90 rounded-xl border border-teal-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Total Headcount Budget</div>
-          <div class="text-lg font-bold text-emerald-700 mt-0.5">$885,000</div>
-          <div class="text-[10px] text-emerald-600 font-semibold">+ 90,000 ISO Shares Pool</div>
+          <div id="hmEngBudgetCount" class="text-lg font-bold text-emerald-700 mt-0.5">$3,840,000</div>
+          <div class="text-[10px] text-emerald-600 font-semibold">+ Equity ISO Shares Pool</div>
         </div>
         <div class="p-3 bg-white/90 rounded-xl border border-teal-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Target Closure Velocity</div>
@@ -5801,144 +5809,13 @@ Pavion Technologies</textarea>
                 <th class="p-3.5 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-100 text-slate-700 bg-white">
-              <!-- Role 1: Staff AI Engineer -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="font-bold text-slate-900 text-sm">Staff AI Engineer</div>
-                  <div class="text-[11px] text-slate-500">AI Research & Core Algorithms • #REQ-2026-AI-042</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 font-semibold rounded-md text-[10px]">REMOTE / SF</span>
-                  <div class="text-[11px] text-slate-600 mt-0.5">Min 6+ Yrs Exp</div>
-                </td>
-                <td class="p-3.5 font-mono font-bold text-slate-800">$165,000 – $190,000</td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-amber-100 text-amber-800 font-bold rounded-full text-[10px]">Offer Extended</span>
-                  <div class="text-[10px] text-slate-500 mt-0.5">Jordan Miller (96% Match)</div>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">PyTorch</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">vLLM</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">CUDA</span>
+            <tbody id="hmEngineeringOpeningsTableBody" class="divide-y divide-slate-100 text-slate-700 bg-white">
+              <tr>
+                <td colspan="6" class="p-8 text-center text-slate-500">
+                  <div class="inline-flex items-center space-x-2 text-teal-600 font-semibold text-xs">
+                    <i data-lucide="loader" class="w-4 h-4 animate-spin"></i>
+                    <span>Loading live engineering requisitions & pipelines...</span>
                   </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmEngineeringOpeningsModal'); openPipelineForJob('doc_857640f80e9a4f49');" class="px-2.5 py-1 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-md font-semibold text-xs transition cursor-pointer">
-                    Pipeline →
-                  </button>
-                </td>
-              </tr>
-              <!-- Role 2: Senior AI / NLP Engineer -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="font-bold text-slate-900 text-sm">Senior AI / NLP Engineer (Python & LLMs)</div>
-                  <div class="text-[11px] text-slate-500">AI & Data Intelligence • #REQ-2026-NLP-018</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-blue-50 text-blue-700 font-semibold rounded-md text-[10px]">HYBRID (SF)</span>
-                  <div class="text-[11px] text-slate-600 mt-0.5">Min 5+ Yrs Exp</div>
-                </td>
-                <td class="p-3.5 font-mono font-bold text-slate-800">$170,000 – $195,000</td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Offer Accepted</span>
-                  <div class="text-[10px] text-slate-500 mt-0.5">Maya Patel (HRIS Synced)</div>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Transformers</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Python</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">LangChain</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmEngineeringOpeningsModal'); switchTab('pipeline');" class="px-2.5 py-1 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-md font-semibold text-xs transition cursor-pointer">
-                    Pipeline →
-                  </button>
-                </td>
-              </tr>
-              <!-- Role 3: Lead DevOps & Cloud Infrastructure -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="font-bold text-slate-900 text-sm">Lead DevOps & Cloud Infrastructure Engineer</div>
-                  <div class="text-[11px] text-slate-500">Platform & Infrastructure • #REQ-2026-OPS-031</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 font-semibold rounded-md text-[10px]">REMOTE</span>
-                  <div class="text-[11px] text-slate-600 mt-0.5">Min 7+ Yrs Exp</div>
-                </td>
-                <td class="p-3.5 font-mono font-bold text-slate-800">$160,000 – $185,000</td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Offer Accepted</span>
-                  <div class="text-[10px] text-slate-500 mt-0.5">Lucas Silva (HRIS Synced)</div>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Kubernetes</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Terraform</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">AWS</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmEngineeringOpeningsModal'); switchTab('pipeline');" class="px-2.5 py-1 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-md font-semibold text-xs transition cursor-pointer">
-                    Pipeline →
-                  </button>
-                </td>
-              </tr>
-              <!-- Role 4: Senior Full-Stack Engineer -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="font-bold text-slate-900 text-sm">Senior Full-Stack Engineer (React / Node.js)</div>
-                  <div class="text-[11px] text-slate-500">Core Product Engineering • #REQ-2026-ENG-001</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 font-semibold rounded-md text-[10px]">REMOTE / SF</span>
-                  <div class="text-[11px] text-slate-600 mt-0.5">Min 4+ Yrs Exp</div>
-                </td>
-                <td class="p-3.5 font-mono font-bold text-slate-800">$140,000 – $175,000</td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-indigo-100 text-indigo-800 font-bold rounded-full text-[10px]">Technical Round</span>
-                  <div class="text-[10px] text-slate-500 mt-0.5">Sarah Jenkins (91% Match)</div>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">React 19</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Node.js</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Postgres</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmEngineeringOpeningsModal'); switchTab('pipeline');" class="px-2.5 py-1 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-md font-semibold text-xs transition cursor-pointer">
-                    Pipeline →
-                  </button>
-                </td>
-              </tr>
-              <!-- Role 5: Director of AI Systems -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="font-bold text-slate-900 text-sm">Director of AI Systems & LLM Architecture</div>
-                  <div class="text-[11px] text-slate-500">AI & Data Intelligence • #REQ-2026-DIR-099</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 font-semibold rounded-md text-[10px]">REMOTE / SF</span>
-                  <div class="text-[11px] text-slate-600 mt-0.5">Min 8+ Yrs Exp</div>
-                </td>
-                <td class="p-3.5 font-mono font-bold text-slate-800">$195,000 – $230,000</td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Hired (Leadership)</span>
-                  <div class="text-[10px] text-slate-500 mt-0.5">Rahul Bajediyal ($210k + 30k Sh)</div>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Distributed LLM</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Swarms</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmEngineeringOpeningsModal'); switchTab('pipeline');" class="px-2.5 py-1 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-md font-semibold text-xs transition cursor-pointer">
-                    Pipeline →
-                  </button>
                 </td>
               </tr>
             </tbody>
@@ -5979,7 +5856,7 @@ Pavion Technologies</textarea>
           <div>
             <div class="flex items-center space-x-2">
               <h3 class="text-lg font-bold text-slate-900">Engineering Candidates In Review</h3>
-              <span class="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">8 Shortlisted</span>
+              <span id="hmCandidatesInReviewBadge" class="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">67 Shortlisted</span>
               <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-xs font-bold rounded-full">Technical Fit Stage</span>
             </div>
             <p class="text-xs text-slate-500 mt-0.5">David Chen's active engineering candidate roster across technical interview, code review & offer stages</p>
@@ -5994,23 +5871,23 @@ Pavion Technologies</textarea>
       <div class="p-4 bg-gradient-to-r from-blue-50/80 via-indigo-50/50 to-blue-50/80 border-b border-blue-100 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
         <div class="p-3 bg-white/90 rounded-xl border border-blue-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Total Shortlisted</div>
-          <div class="text-lg font-bold text-slate-900 mt-0.5">8 Candidates</div>
+          <div id="hmCandidatesInReviewCount" class="text-lg font-bold text-slate-900 mt-0.5">67 Candidates</div>
           <div class="text-[10px] text-blue-600 font-semibold">100% Technical Screen Passed</div>
         </div>
         <div class="p-3 bg-white/90 rounded-xl border border-blue-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Average AI Fit Score</div>
-          <div class="text-lg font-bold text-emerald-700 mt-0.5">93.4% Match</div>
+          <div id="hmCandidatesAvgScore" class="text-lg font-bold text-emerald-700 mt-0.5">93.4% Match</div>
           <div class="text-[10px] text-emerald-600 font-semibold">Top 2% Percentile Benchmark</div>
         </div>
         <div class="p-3 bg-white/90 rounded-xl border border-blue-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Manager Decision Pending</div>
-          <div class="text-lg font-bold text-amber-600 mt-0.5">2 Profiles</div>
-          <div class="text-[10px] text-amber-600 font-semibold">Jordan Miller, Sarah Jenkins</div>
+          <div id="hmCandidatesPendingCount" class="text-lg font-bold text-amber-600 mt-0.5">13 Profiles</div>
+          <div class="text-[10px] text-amber-600 font-semibold">Active Interview Stage</div>
         </div>
         <div class="p-3 bg-white/90 rounded-xl border border-blue-100 shadow-xs">
           <div class="text-slate-500 font-medium text-[11px]">Offer Conversion Rate</div>
-          <div class="text-lg font-bold text-indigo-700 mt-0.5">75% Conversion</div>
-          <div class="text-[10px] text-indigo-600 font-semibold">6 Offers Extended / Closed</div>
+          <div id="hmCandidatesConversionRate" class="text-lg font-bold text-indigo-700 mt-0.5">7 Offers</div>
+          <div class="text-[10px] text-indigo-600 font-semibold">Offers Extended / Closed</div>
         </div>
       </div>
 
@@ -6028,286 +5905,13 @@ Pavion Technologies</textarea>
                 <th class="p-3.5 text-right">Manager Action</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-100 text-slate-700 bg-white">
-              <!-- Candidate 1: Jordan Miller -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" class="w-8 h-8 rounded-full object-cover ring-2 ring-emerald-300" />
-                    <div>
-                      <div class="font-bold text-slate-900">Jordan Miller</div>
-                      <div class="text-[10px] text-slate-500 font-mono">jordan.miller@example.com</div>
-                    </div>
+            <tbody id="hmCandidatesInReviewTableBody" class="divide-y divide-slate-100 text-slate-700 bg-white">
+              <tr>
+                <td colspan="6" class="p-8 text-center text-slate-500">
+                  <div class="inline-flex items-center space-x-2 text-blue-600 font-semibold text-xs">
+                    <i data-lucide="loader" class="w-4 h-4 animate-spin"></i>
+                    <span>Loading live candidate shortlist & 360° dossiers...</span>
                   </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Staff AI Engineer</div>
-                  <div class="text-[10px] text-slate-500">AI Research & Systems</div>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-1">
-                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">96% Match</span>
-                    <span class="text-[9px] text-emerald-600 font-semibold">Top 1%</span>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-amber-100 text-amber-800 font-bold rounded-full text-[10px]">Offer Extended</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-teal-50 text-teal-700 rounded text-[9px] font-mono">PyTorch</span>
-                    <span class="px-1.5 py-0.5 bg-teal-50 text-teal-700 rounded text-[9px] font-mono">vLLM</span>
-                    <span class="px-1.5 py-0.5 bg-teal-50 text-teal-700 rounded text-[9px] font-mono">CUDA</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <div class="flex items-center justify-end space-x-1.5">
-                    <button onclick="showToast('Candidate Jordan Miller Greenlit 👍 by Hiring Manager David Chen!', 'success')" class="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-300 rounded-lg text-xs font-bold transition cursor-pointer">
-                      👍 Greenlight
-                    </button>
-                    <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('doc_08f6825f7b58afff');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                      Dossier 360°
-                    </button>
-                  </div>
-                </td>
-              </tr>
-              <!-- Candidate 2: Sarah Jenkins -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" class="w-8 h-8 rounded-full object-cover ring-2 ring-indigo-300" />
-                    <div>
-                      <div class="font-bold text-slate-900">Sarah Jenkins</div>
-                      <div class="text-[10px] text-slate-500 font-mono">sarah.jenkins@example.com</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Senior Full-Stack Engineer</div>
-                  <div class="text-[10px] text-slate-500">Core Engineering</div>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-1">
-                    <span class="px-2 py-0.5 bg-blue-100 text-blue-800 font-bold rounded-full text-[10px]">91% Match</span>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-indigo-100 text-indigo-800 font-bold rounded-full text-[10px]">Technical Round</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">React 19</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">TypeScript</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Node.js</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <div class="flex items-center justify-end space-x-1.5">
-                    <button onclick="showToast('Candidate Sarah Jenkins Greenlit 👍 by Hiring Manager David Chen!', 'success')" class="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-300 rounded-lg text-xs font-bold transition cursor-pointer">
-                      👍 Greenlight
-                    </button>
-                    <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('cand_sarah_jenkins');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                      Dossier 360°
-                    </button>
-                  </div>
-                </td>
-              </tr>
-              <!-- Candidate 3: Maya Patel -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-800 font-bold flex items-center justify-center text-xs">MP</div>
-                    <div>
-                      <div class="font-bold text-slate-900">Maya Patel</div>
-                      <div class="text-[10px] text-slate-500 font-mono">maya.patel@example.com</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Senior AI / NLP Engineer</div>
-                  <div class="text-[10px] text-slate-500">AI Intelligence</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">94% Match</span>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Hired (HRIS Synced)</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Transformers</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Python</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('cand_maya_patel');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                    Dossier 360°
-                  </button>
-                </td>
-              </tr>
-              <!-- Candidate 4: Lucas Silva -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-xs">LS</div>
-                    <div>
-                      <div class="font-bold text-slate-900">Lucas Silva</div>
-                      <div class="text-[10px] text-slate-500 font-mono">lucas.silva@example.com</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Lead DevOps & Cloud</div>
-                  <div class="text-[10px] text-slate-500">Platform Eng</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">92% Match</span>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Hired (HRIS Synced)</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Kubernetes</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">AWS</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('cand_lucas_silva');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                    Dossier 360°
-                  </button>
-                </td>
-              </tr>
-              <!-- Candidate 5: Marcus Johnson -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-xs">MJ</div>
-                    <div>
-                      <div class="font-bold text-slate-900">Marcus Johnson</div>
-                      <div class="text-[10px] text-slate-500 font-mono">marcus.j@example.com</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Senior Data Platform Engineer</div>
-                  <div class="text-[10px] text-slate-500">Data Platform</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-blue-100 text-blue-800 font-bold rounded-full text-[10px]">89% Match</span>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Hired (HRIS Synced)</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Spark</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Kafka</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('cand_marcus_j');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                    Dossier 360°
-                  </button>
-                </td>
-              </tr>
-              <!-- Candidate 6: Sophia Vargas -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-800 font-bold flex items-center justify-center text-xs">SV</div>
-                    <div>
-                      <div class="font-bold text-slate-900">Sophia Vargas</div>
-                      <div class="text-[10px] text-slate-500 font-mono">sophia.vargas@example.com</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Cloud Security & Compliance</div>
-                  <div class="text-[10px] text-slate-500">Security Architecture</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">90% Match</span>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Hired (HRIS Synced)</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Zero Trust</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">AWS IAM</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('cand_sophia_vargas');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                    Dossier 360°
-                  </button>
-                </td>
-              </tr>
-              <!-- Candidate 7: Devon Zhao -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-800 font-bold flex items-center justify-center text-xs">DZ</div>
-                    <div>
-                      <div class="font-bold text-slate-900">Devon Zhao</div>
-                      <div class="text-[10px] text-slate-500 font-mono">devon.zhao@example.com</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Lead DevOps & Cloud</div>
-                  <div class="text-[10px] text-slate-500">Infrastructure</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-blue-100 text-blue-800 font-bold rounded-full text-[10px]">87% Match</span>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-amber-100 text-amber-800 font-bold rounded-full text-[10px]">Draft Offer</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Docker</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Linux</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('cand_devon_zhao');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                    Dossier 360°
-                  </button>
-                </td>
-              </tr>
-              <!-- Candidate 8: Rahul Bajediyal -->
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3.5">
-                  <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-xs">RB</div>
-                    <div>
-                      <div class="font-bold text-slate-900">Rahul Bajediyal</div>
-                      <div class="text-[10px] text-slate-500 font-mono">rahul.bajediyal@gmail.com</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="p-3.5">
-                  <div class="font-semibold text-slate-900">Director of AI Systems</div>
-                  <div class="text-[10px] text-slate-500">AI Leadership</div>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">98% Match</span>
-                </td>
-                <td class="p-3.5">
-                  <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-[10px]">Executive Hired</span>
-                </td>
-                <td class="p-3.5">
-                  <div class="flex flex-wrap gap-1">
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">LLM Arch</span>
-                    <span class="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-mono">Distributed</span>
-                  </div>
-                </td>
-                <td class="p-3.5 text-right">
-                  <button onclick="closeModal('hmCandidatesInReviewModal'); openCandidateDossier('cand_rahul_bajediyal');" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition cursor-pointer">
-                    Dossier 360°
-                  </button>
                 </td>
               </tr>
             </tbody>
