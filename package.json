@@ -12,6 +12,7 @@
     "start:frontend": "CLIENT_PORT=3001 node client/server.js",
     "seed": "node server/src/seed.js",
     "db:setup": "node scripts/setupMySQL.js",
+    "db:seed-indian": "node scripts/seedIndianCandidates.js",
     "nginx:setup": "bash scripts/setup-nginx.sh",
     "pm2:start": "pm2 start ecosystem.config.cjs",
     "test": "node server/test/runTests.js",
