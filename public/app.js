@@ -5262,18 +5262,14 @@ async function simulateAutopilotEvent(eventName) {
    15. ODOO APP LAUNCHER, MULTI-BOARD SYNDICATION & ATS MODE
    ========================================================================= */
 function openAppLauncherModal() {
-  const modal = document.getElementById('appLauncherModal');
-  if (modal) modal.classList.remove('hidden');
-  if (window.lucide) lucide.createIcons();
+  openModal('appLauncherModal');
 }
 
 let activeSyndicateJobId = null;
 
 function openMultiJobBoardModal(jobId) {
   activeSyndicateJobId = jobId;
-  const modal = document.getElementById('multiJobBoardModal');
-  if (modal) modal.classList.remove('hidden');
-  if (window.lucide) lucide.createIcons();
+  openModal('multiJobBoardModal');
 }
 
 async function submitJobSyndication() {

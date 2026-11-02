@@ -96,6 +96,10 @@
     function openHmOfferSignOffsModal() {
       openModal('hmOfferSignOffsModal');
     }
+    function openAppLauncherModal() {
+      openModal('appLauncherModal');
+    }
+    window.openAppLauncherModal = openAppLauncherModal;
   </script>
 
   <style>
@@ -1643,31 +1647,71 @@
   </div>
 
   <!-- ================= ODOO-STYLE MODULAR APP LAUNCHER MODAL ================= -->
-  <div id="appLauncherModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl p-6 space-y-4 border border-slate-200">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <div class="flex items-center space-x-2">
-          <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+  <div id="appLauncherModal" onclick="if(event.target === this) closeModal('appLauncherModal')" class="fixed inset-0 z-[100] hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full shadow-2xl p-6 space-y-4 border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 shrink-0">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-blue-600 flex items-center justify-center text-white shadow-xs">
             <i data-lucide="layout-grid" class="w-5 h-5"></i>
           </div>
           <div>
             <h3 class="text-base font-bold text-slate-900">Enterprise Operating Apps Suite</h3>
-            <p class="text-xs text-slate-500">Modular business platform: ATS + AI Recruiter + Global EOR + Payroll + CRM</p>
+            <p class="text-xs text-slate-500">Modular business platform: ATS + AI Recruiter + Global EOR + Payroll + CRM + Syndication</p>
           </div>
         </div>
-        <button onclick="closeModal('appLauncherModal')" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition">
+        <button onclick="closeModal('appLauncherModal')" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition cursor-pointer">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <!-- 8-Apps Modular Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
+      <!-- 12-Apps Modular Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 overflow-y-auto custom-scrollbar flex-1">
+        <div onclick="switchTab('jobs'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Job Requisitions</div>
+          <div class="text-[10px] text-slate-500">Approvals & Postings</div>
+        </div>
+
         <div onclick="switchTab('pipeline'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 transition cursor-pointer group text-center space-y-2">
           <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
             <i data-lucide="trello" class="w-6 h-6"></i>
           </div>
           <div class="text-xs font-bold text-slate-900">Recruitment ATS</div>
-          <div class="text-[10px] text-slate-500">Kanban & CRM</div>
+          <div class="text-[10px] text-slate-500">Kanban & Screening</div>
+        </div>
+
+        <div onclick="switchTab('candidates'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Talent Directory</div>
+          <div class="text-[10px] text-slate-500">360° Candidate Dossier</div>
+        </div>
+
+        <div onclick="switchTab('jobboards'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-orange-400 hover:bg-orange-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="share-2" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Job Boards Hub</div>
+          <div class="text-[10px] text-slate-500">Naukri, Indeed, Monster</div>
+        </div>
+
+        <div onclick="switchTab('interviews'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-violet-400 hover:bg-violet-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="calendar" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Interviews</div>
+          <div class="text-[10px] text-slate-500">Calendar & Scorecards</div>
+        </div>
+
+        <div onclick="switchTab('offers'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-amber-400 hover:bg-amber-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+            <i data-lucide="file-check" class="w-6 h-6"></i>
+          </div>
+          <div class="text-xs font-bold text-slate-900">Offers & E-Sign</div>
+          <div class="text-[10px] text-slate-500">DocuSign Packages</div>
         </div>
 
         <div onclick="switchTab('verahire'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-purple-400 hover:bg-purple-50/50 transition cursor-pointer group text-center space-y-2">
@@ -1675,7 +1719,7 @@
             <i data-lucide="bot" class="w-6 h-6"></i>
           </div>
           <div class="text-xs font-bold text-slate-900">VeraHire AI</div>
-          <div class="text-[10px] text-slate-500">Voice Screening</div>
+          <div class="text-[10px] text-slate-500">Autonomous Screening</div>
         </div>
 
         <div onclick="switchTab('deel'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50/50 transition cursor-pointer group text-center space-y-2">
@@ -1686,28 +1730,28 @@
           <div class="text-[10px] text-slate-500">110+ Countries EOR</div>
         </div>
 
-        <div onclick="switchTab('payroll'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 transition cursor-pointer group text-center space-y-2">
-          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+        <div onclick="switchTab('payroll'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
             <i data-lucide="receipt" class="w-6 h-6"></i>
           </div>
           <div class="text-xs font-bold text-slate-900">RazorpayX Payroll</div>
-          <div class="text-[10px] text-slate-500">Indian Compliance</div>
+          <div class="text-[10px] text-slate-500">Indian Statutory Tax</div>
         </div>
 
-        <div onclick="switchTab('agency'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-amber-400 hover:bg-amber-50/50 transition cursor-pointer group text-center space-y-2">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
+        <div onclick="switchTab('agency'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-yellow-400 hover:bg-yellow-50/50 transition cursor-pointer group text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-yellow-100 text-yellow-700 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
             <i data-lucide="building-2" class="w-6 h-6"></i>
           </div>
           <div class="text-xs font-bold text-slate-900">Agency CRM</div>
-          <div class="text-[10px] text-slate-500">Clients & Invoices</div>
+          <div class="text-[10px] text-slate-500">Clients & Invoicing</div>
         </div>
 
         <div onclick="switchTab('workflows'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-rose-400 hover:bg-rose-50/50 transition cursor-pointer group text-center space-y-2">
           <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
             <i data-lucide="zap" class="w-6 h-6"></i>
           </div>
-          <div class="text-xs font-bold text-slate-900">Autopilot</div>
-          <div class="text-[10px] text-slate-500">Auto Rejection</div>
+          <div class="text-xs font-bold text-slate-900">Autopilot Rules</div>
+          <div class="text-[10px] text-slate-500">Event Automation</div>
         </div>
 
         <div onclick="switchTab('analytics'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-cyan-400 hover:bg-cyan-50/50 transition cursor-pointer group text-center space-y-2">
@@ -1715,15 +1759,7 @@
             <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
           </div>
           <div class="text-xs font-bold text-slate-900">BI Analytics</div>
-          <div class="text-[10px] text-slate-500">Funnel & Velocity</div>
-        </div>
-
-        <div onclick="switchTab('careers'); closeModal('appLauncherModal');" class="p-3.5 rounded-xl border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 transition cursor-pointer group text-center space-y-2">
-          <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mx-auto group-hover:scale-105 transition shadow-2xs">
-            <i data-lucide="globe-2" class="w-6 h-6"></i>
-          </div>
-          <div class="text-xs font-bold text-slate-900">Career Portal</div>
-          <div class="text-[10px] text-slate-500">Branded Site</div>
+          <div class="text-[10px] text-slate-500">Hiring Velocity & Funnel</div>
         </div>
       </div>
     </div>
