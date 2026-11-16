@@ -9,7 +9,7 @@
     "start:all": "node scripts/startAll.js",
     "start:core": "PORT=5000 node server/src/index.js",
     "start:admin": "ADMIN_PORT=5001 node server/src/adminServer.js",
-    "start:frontend": "CLIENT_PORT=3001 node client/server.js",
+    "start:frontend": "CLIENT_PORT=3010 node client/server.js",
     "seed": "node server/src/seed.js",
     "db:setup": "node scripts/setupMySQL.js",
     "db:seed-indian": "node scripts/seedIndianCandidates.js",

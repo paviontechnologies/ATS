@@ -9,8 +9,10 @@ const rootDir = path.resolve(__dirname, '..');
 console.log(`\x1b[1;36m=========================================================================\x1b[0m`);
 console.log(`\x1b[1;32m🚀 STARTING FULL ENTERPRISE ATS MULTI-SERVICE FLEET\x1b[0m`);
 console.log(`\x1b[1;34m  1. Core REST API Gateway:     http://localhost:5000/api/v1 (Docs: /docs)\x1b[0m`);
+const clientPort = process.env.CLIENT_PORT || '3010';
+
 console.log(`\x1b[1;35m  2. Admin API Gateway:         http://localhost:5001/api/v1 (Docs: /docs)\x1b[0m`);
-console.log(`\x1b[1;33m  3. Frontend SPA Client:       http://localhost:3001\x1b[0m`);
+console.log(`\x1b[1;33m  3. Frontend SPA Client:       http://localhost:${clientPort}\x1b[0m`);
 console.log(`\x1b[1;32m  4. Database Engine:           MySQL Relational Engine\x1b[0m`);
 console.log(`\x1b[1;36m=========================================================================\x1b[0m\n`);
 
@@ -30,11 +32,11 @@ const services = [
     env: { ...process.env, ADMIN_PORT: '5001' }
   },
   {
-    name: 'FRONTEND (3001)',
+    name: `FRONTEND (${clientPort})`,
     color: '\x1b[33m',
     cmd: 'node',
     args: ['client/server.js'],
-    env: { ...process.env, CLIENT_PORT: '3001', CORE_API_URL: 'http://127.0.0.1:5000', ADMIN_API_URL: 'http://127.0.0.1:5001' }
+    env: { ...process.env, CLIENT_PORT: clientPort, CORE_API_URL: 'http://127.0.0.1:5000', ADMIN_API_URL: 'http://127.0.0.1:5001' }
   }
 ];
 

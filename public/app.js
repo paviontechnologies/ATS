@@ -8,11 +8,11 @@
  */
 
 // Dynamic API Targets (Direct port communication with CORS for maximum speed & reliability)
-const API_BASE = (typeof window !== 'undefined' && (window.location.port === '3001' || window.location.port === '5000'))
+const API_BASE = (typeof window !== 'undefined' && (window.location.port === '3001' || window.location.port === '3010' || window.location.port === '5000'))
   ? `${window.location.protocol}//${window.location.hostname}:5000/api/v1`
   : '/api/v1';
 
-const ADMIN_API_BASE = (typeof window !== 'undefined' && (window.location.port === '3001' || window.location.port === '5001'))
+const ADMIN_API_BASE = (typeof window !== 'undefined' && (window.location.port === '3001' || window.location.port === '3010' || window.location.port === '5001'))
   ? `${window.location.protocol}//${window.location.hostname}:5001/api/v1`
   : '/admin-api/v1';
 
@@ -144,7 +144,7 @@ function initSocket() {
   if (typeof io === 'undefined') return;
   try {
     // Socket.io connects to Core API on port 5000
-    const socketUrl = (typeof window !== 'undefined' && (window.location.port === '3001' || window.location.port === '5000'))
+    const socketUrl = (typeof window !== 'undefined' && (window.location.port === '3001' || window.location.port === '3010' || window.location.port === '5000'))
       ? `${window.location.protocol}//${window.location.hostname}:5000`
       : window.location.origin;
 

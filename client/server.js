@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.set('trust proxy', 1);
-const PORT = process.env.CLIENT_PORT || 3001;
+const PORT = process.env.CLIENT_PORT || 3010;
 const CORE_API_URL = process.env.CORE_API_URL || 'http://127.0.0.1:5000';
 const ADMIN_API_URL = process.env.ADMIN_API_URL || 'http://127.0.0.1:5001';
 
@@ -91,7 +91,7 @@ app.use((req, res, next) => {
   const start = Date.now();
   res.on('finish', () => {
     if (!req.originalUrl.includes('.')) {
-      console.log(`[FRONTEND (3001)] ${req.method} ${req.originalUrl} ${res.statusCode} - ${Date.now() - start}ms`);
+      console.log(`[FRONTEND (${PORT})] ${req.method} ${req.originalUrl} ${res.statusCode} - ${Date.now() - start}ms`);
     }
   });
   next();
